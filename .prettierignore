@@ -1,0 +1,4 @@
+# prettier默认也是忽略node_modules的,不写也不影响
+node_modules
+# go语言有自己的格式化工具,不用prettier,所以忽略
+*.go

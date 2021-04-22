@@ -1,3 +1,7 @@
+# 忽略vuepress产生的缓存
+.temp/
+.cache/
+
 # Logs
 logs
 *.log
