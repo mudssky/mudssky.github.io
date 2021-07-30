@@ -1,6 +1,7 @@
 {
   "name": "mudssky.github.io",
   "version": "0.1.0",
+  "license": "Apache License 2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
