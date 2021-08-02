@@ -18,7 +18,8 @@ export default function Header() {
         <a
           href="https://github.com/mudssky"
           target="_blank"
-          className="h-6 flex text-sm mr-4 mt-2 text-gray-600 font-sans font-semibold "
+          rel="noreferrer"
+          className="h-6 flex text-sm mr-4 mt-2 text-gray-600 font-sans font-semibold"
         >
           GitHub
           {/* prettier-ignore */}
