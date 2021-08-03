@@ -1,12 +1,12 @@
 import Head from 'next/head'
-import Header from '../components/header/header'
+import Header from './Header/header'
 // import Image from 'next/image'
 // import Link from 'next/link'
 // import '../styles/globals.css'
 const name = 'my name'
 export const siteTitle = 'Next.js Sample Website'
 
-export default function Layout({ children }:any ) {
+export default function Layout({ children }: any) {
   return (
     <div>
       <Head>
@@ -17,8 +17,8 @@ export default function Layout({ children }:any ) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
-		  </Head>
-	  <Header></Header>
+      </Head>
+      <Header></Header>
       <main>{children}</main>
     </div>
   )

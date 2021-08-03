@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { getSortedPostsData, PostMatter } from '../lib/post'
 import React from 'react'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import Link from 'next/link'
 
 export async function getStaticProps() {
