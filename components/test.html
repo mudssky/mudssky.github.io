@@ -7,11 +7,17 @@
     <title>Document</title>
   </head>
   <body>
+    <button id="btn">click</button>
     <script src="test.js" async>
       console.log('html' )
     </script>
-    <script async>
-      console.log('test2')
+    <script>
+      const btn = document.getElementById('btn')
+      function alertTest() {
+        alert('test')
+      }
+      btn.addEventListener('click', alertTest)
+      //   btn.addEventListener('click', alertTest)
     </script>
   </body>
 </html>

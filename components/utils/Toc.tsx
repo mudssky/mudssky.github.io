@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function Toc() {
   const [headList, setHeadList] = useState(Array<any>())
@@ -8,10 +8,12 @@ export default function Toc() {
   // 记录组件的位置
   const [tocPosition, setTocPostion] = useState({ left: 0, top: 0 })
 
+  // 相对于父组件的基础偏移值，用于判断实际滚动距离。
+  const baseOffset = useRef(0)
   useEffect(() => {
     const currentTitleList = Array<any>()
-    const headList = document.querySelectorAll('h1,h2,h3,h4,h5,h6')
-    headList.forEach(
+    const currentHeadNodeList = document.querySelectorAll('h1,h2,h3,h4,h5,h6')
+    currentHeadNodeList.forEach(
       (head: any, index: number, parrent: NodeListOf<Element>) => {
         const mark = `heading-${index}`
         const prop = 'data-headid'
@@ -19,7 +21,7 @@ export default function Toc() {
 
         currentTitleList.push({
           title: head.innerText,
-          node: parrent,
+          node: head,
           prop: prop,
           mark: mark,
           tagName: head.tagName,
@@ -28,12 +30,21 @@ export default function Toc() {
       }
     )
     setHeadList(currentTitleList)
-    // console.log(headList)
+    console.log(headList)
+    baseOffset.current = currentTitleList[0].node.offsetTop
+
     // 页面距离清零到第一个标题的位置
-    const baseTop = currentTitleList[0].node.offsetTop
+    // const baseTop = currentTitleList[0].node.offsetTop
     // const baseTop = headList[0].childNodes
     // 添加滚动条事件
-    window.addEventListener('scroll', (event) => {
+
+    return () => {
+      // cleanup
+    }
+  }, [])
+
+  useEffect(() => {
+    function handleScrollToc() {
       //   可视区域高度
       //  let clientHeight = document.documentElement.clientHeight;
       // 滚动内容高度,即页面所有内容的高度
@@ -41,17 +52,16 @@ export default function Toc() {
       // 滚动条已滚动的高度
       const scrollTop = document.documentElement.scrollTop
       headList.forEach((head: any, index: number) => {
-        if (scrollTop < head.offsetTop - baseTop) {
+        if (scrollTop < head.offsetTop - baseOffset.current) {
           return
         } else {
           setActiveIndex(index)
         }
       })
-    })
-    return () => {
-      // cleanup
     }
-  }, [])
+    window.addEventListener('scroll', handleScrollToc)
+    return () => {}
+  }, [headList])
   // 添加拖拽组件位置的监听
   useEffect(() => {
     //   组件生成时，从localStorage获取过去使用的位置
