@@ -6,7 +6,9 @@ import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
 
 import hljs from 'highlight.js'
-import 'highlight.js/styles/github.css'
+// import 'highlight.js/styles/github.css'
+import 'highlight.js/styles/github-dark.css'
+
 
 import Toc from '../../components/Utils/Toc'
 

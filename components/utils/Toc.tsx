@@ -30,7 +30,7 @@ export default function Toc() {
       }
     )
     setHeadList(currentTitleList)
-    console.log(headList)
+    // console.log(headList)
     baseOffset.current = currentTitleList[0].node.offsetTop
 
     // 页面距离清零到第一个标题的位置
@@ -71,7 +71,6 @@ export default function Toc() {
       startPostion = JSON.parse(jsonstr)
     }
     setTocPostion(startPostion)
-
     return () => {
       //   cleanup
     }
