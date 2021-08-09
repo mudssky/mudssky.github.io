@@ -5,11 +5,12 @@ export default function Toc() {
   const [activeIndex, setActiveIndex] = useState(0)
   // 是否隐藏toc组件
   const [hideToc, setHideToc] = useState(false)
-  // 记录组件的位置
-  const [tocPosition, setTocPostion] = useState({ left: 0, top: 0 })
 
   // 相对于父组件的基础偏移值，用于判断实际滚动距离。
   const baseOffset = useRef(0)
+
+  const tocEl = useRef<HTMLDivElement>(null)
+  // 收集标题相关信息
   useEffect(() => {
     const currentTitleList = Array<any>()
     const currentHeadNodeList = document.querySelectorAll('h1,h2,h3,h4,h5,h6')
@@ -29,20 +30,15 @@ export default function Toc() {
         })
       }
     )
+
     setHeadList(currentTitleList)
     // console.log(headList)
     baseOffset.current = currentTitleList[0].node.offsetTop
-
-    // 页面距离清零到第一个标题的位置
-    // const baseTop = currentTitleList[0].node.offsetTop
-    // const baseTop = headList[0].childNodes
-    // 添加滚动条事件
-
     return () => {
       // cleanup
     }
   }, [])
-
+  // 添加滚动条监听事件
   useEffect(() => {
     function handleScrollToc() {
       //   可视区域高度
@@ -70,7 +66,47 @@ export default function Toc() {
     if (jsonstr) {
       startPostion = JSON.parse(jsonstr)
     }
-    setTocPostion(startPostion)
+    let tocPosition = startPostion
+    function moveAt(tocPosition: { left: number; top: number }) {
+      tocEl.current!.style.left = tocPosition.left + 'px'
+      tocEl.current!.style.top = tocPosition.top + 'px'
+    }
+    moveAt(tocPosition)
+
+    if (tocEl.current) {
+      // console.log(tocEl)
+
+      const onMouseDown = function (event: MouseEvent) {
+        // 按下鼠标时,我们可以记住鼠标按下的位置相对于拖动地节点左上角的距离
+        const shiftX =
+          event.clientX - (tocEl.current?.getBoundingClientRect().left || 0)
+        const shiftY =
+          event.clientY - (tocEl.current?.getBoundingClientRect().top || 0)
+
+        // 按下鼠标后,添加移动事件和鼠标放下的事件
+        function onMouseMove(event: MouseEvent) {
+          // console.log(event.pageX, event.pageY, event.clientX, event.clientY)
+          tocPosition = {
+            left: event.clientX - shiftX,
+            top: event.clientY - shiftY,
+          }
+          moveAt(tocPosition)
+        }
+        document.addEventListener('mousemove', onMouseMove)
+        function onMouseUp(event: MouseEvent) {
+          // 放下后移除事件
+          document.removeEventListener('mousemove', onMouseMove)
+          document.removeEventListener('mouseup', onMouseUp)
+          localStorage.setItem('tocposition', JSON.stringify(tocPosition))
+        }
+        document.addEventListener('mouseup', onMouseUp)
+      }
+      tocEl.current.addEventListener('mousedown', onMouseDown)
+
+      tocEl.current.ondragstart = function () {
+        return false
+      }
+    }
     return () => {
       //   cleanup
     }
@@ -86,7 +122,11 @@ export default function Toc() {
   }
 
   return (
-    <div style={tocPosition} className="bg-pink-50 fixed shadow rounded">
+    <div
+      ref={tocEl}
+      draggable="true"
+      className="bg-pink-50 fixed shadow rounded"
+    >
       <div
         className="absolute"
         onClick={() => {
@@ -98,7 +138,7 @@ export default function Toc() {
       </div>
       <ul className={'w-80 flex flex-col' + (hideToc ? ' hidden' : '')}>
         <li
-          draggable="true"
+          // draggable="true"
           className="font-bold border-b-2 border-gray-300 pl-7 select-none cursor-move"
         >
           目录
