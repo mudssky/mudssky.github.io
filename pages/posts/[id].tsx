@@ -9,7 +9,7 @@ import hljs from 'highlight.js'
 // import 'highlight.js/styles/github.css'
 import 'highlight.js/styles/github-dark.css'
 
-import Toc from '../../components/Utils/Toc'
+import Toc from '../../components/utils/Toc'
 
 export default function Post({ postData }: { postData: PostData }) {
   // 使用highlight.js
