@@ -9,27 +9,27 @@ on:
 jobs:
   deploy-my-blog:
     runs-on: ubuntu-latest
-  # strategy:
-  #     matrix:
-  #       node-version: [10.x, 12.x, 14.x, 15.x]
-  steps:
-    - uses: actions/checkout@v2
+    # strategy:
+    #     matrix:
+    #       node-version: [10.x, 12.x, 14.x, 15.x]
+    steps:
+      - uses: actions/checkout@v2
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        # node-version: ${{ matrix.node-version }}
-        node-version: 14.x
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          # node-version: ${{ matrix.node-version }}
+          node-version: 14.x
 
-    - run: npm install yarn -g
-    - run: yarn
-    - run: yarn build --if-present
-    - run: npm test
+      - run: npm install yarn -g
+      - run: yarn
+      - run: yarn build --if-present
+      - run: npm test
 
-    - name: Deploy
-    - uses: peaceiris/actions-gh-pages@v3
-    - with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./out
-        publish_branch: gh-pages
-        # publish_branch: your-branch  # default: gh-pages
+      - name: Deploy
+      - uses: peaceiris/actions-gh-pages@v3
+      - with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          publish_branch: gh-pages
+          # publish_branch: your-branch  # default: gh-pages
