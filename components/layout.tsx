@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Header from './Header/header'
+import Header from './Header/Header'
 // import Image from 'next/image'
 // import Link from 'next/link'
 // import '../styles/globals.css'
