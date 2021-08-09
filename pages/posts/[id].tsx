@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Layout from '../../components/Layout'
+import Layout from '../../components/layout'
 import { getAllPostIds, getPostData, PostData } from '../../lib/post'
 import React, { useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
@@ -9,7 +9,7 @@ import hljs from 'highlight.js'
 // import 'highlight.js/styles/github.css'
 import 'highlight.js/styles/github-dark.css'
 
-import Toc from '../../components/utils/Toc'
+import Toc from '../../components/utils/toc'
 
 export default function Post({ postData }: { postData: PostData }) {
   // 使用highlight.js
