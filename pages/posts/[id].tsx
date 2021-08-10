@@ -41,10 +41,22 @@ export default function Post({ postData }: { postData: PostData }) {
         className="w-1/2 m-auto prose"
         dangerouslySetInnerHTML={{ __html: postData.content }}
       /> */}
-      <ReactMarkdown remarkPlugins={[gfm]} className="w-1/2 m-auto prose">
-        {postData.content}
-      </ReactMarkdown>
-
+      <div className="w-800 pt-8 m-auto ring-1 ring-gray-50 shadow-md">
+        <ReactMarkdown
+          linkTarget="_blank"
+          // 转换图片链接到根目录
+          transformImageUri={(src, alt, title) => {
+            if (src.startsWith('assets')) {
+              return '/' + src
+            }
+            return src
+          }}
+          remarkPlugins={[gfm]}
+          className="m-auto prose prose-indigo"
+        >
+          {postData.content}
+        </ReactMarkdown>
+      </div>
       {/* <script
         src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"
         defer

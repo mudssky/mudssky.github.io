@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-
+import fsPromises from 'fs/promises'
 // import remark from 'remark'
 // import html from 'remark-html'
 
@@ -16,25 +16,59 @@ export interface PostData extends PostMatter {
 }
 const postsDirectory = path.join(process.cwd(), 'posts')
 
-export function getSortedPostsData(): PostMatter[] {
-  // Get file names under /posts 读取posts下的文件名
-  const fileNames = fs.readdirSync(postsDirectory)
-  const allPostsData = fileNames.map((fileName) => {
+// 获取一个目录下所有文件,支持正则匹配文件名
+export async function getFileList(dir: string, filterReggex?: RegExp) {
+  const fileList: { fileName: string; filePath: string }[] = []
+  async function inner_getFileList(pathstr: string) {
+    const fileDirents = await fsPromises.readdir(pathstr, {
+      withFileTypes: true,
+    })
+    for (let index in fileDirents) {
+      const filename = fileDirents[index].name
+      const filePath = path.join(pathstr, filename)
+      if (fileDirents[index].isDirectory()) {
+        await inner_getFileList(filePath)
+      } else {
+        // 过滤不满足正则的,对满足文件条件的进行过滤
+        if (filterReggex && !filterReggex.test(filename)) {
+          // console.log(filterReggex)
+          continue
+        }
+        fileList.push({
+          fileName: filename,
+          filePath: filePath,
+        })
+      }
+    }
+  }
+  await inner_getFileList(dir)
+  return fileList
+}
+
+export async function getSortedPostsData() {
+  // 匹配所有后缀是md的文件
+  const fileList = await getFileList(postsDirectory, /.md$/)
+  const allPostsData = fileList.map((fileInfo) => {
     // Remove ".md" from file name to get id 获取无后缀的文件名
+    const fileName = fileInfo.fileName
     const id = fileName.replace(/\.md$/, '')
 
     // Read markdown file as string 读取markdown文件
-    const fullPath = path.join(postsDirectory, fileName)
+    const fullPath = fileInfo.filePath
     const fileContents = fs.readFileSync(fullPath, 'utf8')
 
     // Use gray-matter to parse the post metadata section 解析matter data
     const matterResult = matter(fileContents)
+    // 截取开头的内容, 去除markdown里的特殊符号
+    const excerpt = matterResult.content.substring(0, 150).replace(/[#*`]/g, '')
 
     // 组合提取到的matter data
     return {
       id,
       title: matterResult.data.title,
       date: matterResult.data.date,
+      excerpt,
+      category: matterResult.data!.category || '',
     }
   })
   // Sort posts by date
@@ -48,8 +82,12 @@ export function getSortedPostsData(): PostMatter[] {
 }
 
 export function getAllPostIds() {
-  const fileNames = fs.readdirSync(postsDirectory)
-
+  const fileNameDirents = fs.readdirSync(postsDirectory, {
+    withFileTypes: true,
+  })
+  const fileNames = fileNameDirents.filter(function (f) {
+    return f.isFile()
+  })
   // Returns an array that looks like this:
   // [
   //   {
@@ -66,7 +104,7 @@ export function getAllPostIds() {
   return fileNames.map((fileName) => {
     return {
       params: {
-        id: fileName.replace(/\.md$/, ''),
+        id: fileName.name.replace(/\.md$/, ''),
       },
     }
   })

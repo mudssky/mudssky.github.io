@@ -2,3 +2,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.w-800 {
+  width: 800px;
+}
+
+.font-yahei {
+  font-family: 'Microsoft YaHei';
+}
+.font-simsun {
+  font-family: 'SimSun';
+}

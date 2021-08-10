@@ -3,14 +3,14 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <div className="flex justify-between border-b-2 border-gray-50 h-10">
-      <div className="w-16 text-center text-2xl text-blue-500">
+    <div className="flex justify-between border-b-2 border-gray-50 h-12">
+      <div className="w-16 flex items-center justify-center text-2xl text-blue-500">
         <Link href="/">
           <a>Blog</a>
         </Link>
       </div>
-      <div className="flex w-3/4 justify-end items-center space-x-6">
-        <div className="inline-block h-5 text-sm border-b-2 border-opacity-0 border-green-500 hover:border-opacity-100">
+      <div className="flex w-3/4 justify-end space-x-6">
+        <div className="flex items-center text-2xl font-mono  border-b-2 border-opacity-0 border-green-500 hover:border-opacity-100">
           <Link href="/posts/test">
             <a>test</a>
           </Link>
@@ -19,7 +19,7 @@ export default function Header() {
           href="https://github.com/mudssky"
           target="_blank"
           rel="noreferrer"
-          className="h-6 flex text-sm mr-4 mt-2 text-gray-600 font-sans font-semibold"
+          className="flex text-lg items-center text-gray-600 font-sans font-semibold"
         >
           GitHub
           {/* prettier-ignore */}
