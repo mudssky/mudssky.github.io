@@ -68,7 +68,9 @@ export async function getSortedPostsData() {
       title: matterResult.data.title,
       date: matterResult.data.date,
       excerpt,
-      category: matterResult.data!.category || '',
+      // 文章分类
+      category: matterResult.data.category || '',
+      keywords: matterResult.data.keywords || [],
     }
   })
   // Sort posts by date
