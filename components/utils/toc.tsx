@@ -128,7 +128,10 @@ export default function Toc() {
     <div
       ref={tocEl}
       draggable="true"
-      className="bg-pink-50 fixed shadow rounded w-1/5"
+      className="bg-pink-50 fixed shadow rounded w-1/5 overflow-auto overflow-x-hidden"
+      style={{
+        maxHeight: '70vh',
+      }}
     >
       <div
         className="absolute"
@@ -167,7 +170,7 @@ export default function Toc() {
               className={
                 (activeIndex === index
                   ? 'text-blue-400 border-l-2 border-red-500'
-                  : '') + ' pl-2 truncate'
+                  : '') + ' pl-2 text-xs font-sans truncate'
               }
               key={head.mark}
               onClick={() => {

@@ -34,14 +34,11 @@ export default function Post({ postData }: { postData: PostData }) {
           href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css"
         /> */}
       </Head>
-      {postData.id}
-      <br />
-      {postData.date}
       {/* <div
         className="w-1/2 m-auto prose"
         dangerouslySetInnerHTML={{ __html: postData.content }}
       /> */}
-      <div className="w-800 pt-8 m-auto ring-1 ring-gray-50 shadow-md">
+      <div className="w-800 pt-8 mt-2 m-auto ring-1 ring-gray-100 shadow-sm">
         <ReactMarkdown
           linkTarget="_blank"
           // 转换图片链接到根目录
@@ -67,7 +64,7 @@ export default function Post({ postData }: { postData: PostData }) {
 }
 export async function getStaticPaths() {
   // Return a list of possible value for id
-  const paths = getAllPostIds()
+  const paths = await getAllPostIds()
   return {
     paths,
     fallback: false,

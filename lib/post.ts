@@ -11,7 +11,10 @@ export interface PostMatter {
   date: string
 }
 
-export interface PostData extends PostMatter {
+export interface PostData {
+  id: string
+  title: string
+  date: string
   content: string
 }
 const postsDirectory = path.join(process.cwd(), 'posts')
@@ -56,7 +59,7 @@ export async function getSortedPostsData() {
     // Read markdown file as string 读取markdown文件
     const fullPath = fileInfo.filePath
     const fileContents = fs.readFileSync(fullPath, 'utf8')
-
+    // const fileContents = await fsPromises.readFile(fullPath, 'utf8')
     // Use gray-matter to parse the post metadata section 解析matter data
     const matterResult = matter(fileContents)
     // 截取开头的内容, 去除markdown里的特殊符号
@@ -70,26 +73,23 @@ export async function getSortedPostsData() {
       excerpt,
       // 文章分类
       category: matterResult.data.category || '',
-      keywords: matterResult.data.keywords || [],
+      tags: matterResult.data.tags || [],
     }
   })
   // Sort posts by date
-  return allPostsData.sort((a: PostMatter, b: PostMatter) => {
+  return allPostsData.sort((a: any, b: any) => {
     if (a.date < b.date) {
       return 1
+    } else if (a.date === b.date) {
+      return 0
     } else {
       return -1
     }
   })
 }
 
-export function getAllPostIds() {
-  const fileNameDirents = fs.readdirSync(postsDirectory, {
-    withFileTypes: true,
-  })
-  const fileNames = fileNameDirents.filter(function (f) {
-    return f.isFile()
-  })
+export async function getAllPostIds() {
+  const fileList = await getFileList(postsDirectory, /.md$/)
   // Returns an array that looks like this:
   // [
   //   {
@@ -103,19 +103,23 @@ export function getAllPostIds() {
   //     }
   //   }
   // ]
-  return fileNames.map((fileName) => {
+  return fileList.map((fileInfo) => {
     return {
       params: {
-        id: fileName.name.replace(/\.md$/, ''),
+        id: fileInfo.fileName.replace(/\.md$/, ''),
       },
     }
   })
 }
 
 export async function getPostData(id: string): Promise<PostData> {
-  const fullPath = path.join(postsDirectory, `${id}.md`)
-  const fileContents = fs.readFileSync(fullPath, 'utf8')
-
+  // 匹配所有后缀是md的文件
+  const fileList = await getFileList(postsDirectory, new RegExp(`${id}\.md$`))
+  if (!fileList || fileList.length < 1) {
+    throw new Error(`id:${id},post not found`)
+  }
+  const fullPath = fileList[0].filePath
+  const fileContents = await fsPromises.readFile(fullPath, 'utf8')
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents)
 
