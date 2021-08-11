@@ -1,0 +1,1181 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="description" content="Learn how to build a personal website using Next.js"/><meta name="og:title" content="Next.js Sample Website"/><meta name="twitter:card" content="summary_large_image"/><title>函数式编程笔记</title><meta name="next-head-count" content="7"/><link rel="preload" href="/_next/static/css/4b11aab1474a5bf62cf4.css" as="style"/><link rel="stylesheet" href="/_next/static/css/4b11aab1474a5bf62cf4.css" data-n-g=""/><link rel="preload" href="/_next/static/css/baf1dedd808a50ceb3ed.css" as="style"/><link rel="stylesheet" href="/_next/static/css/baf1dedd808a50ceb3ed.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-a54b4f32bdc1ef890ddd.js"></script><script src="/_next/static/chunks/webpack-61095c13c5984b221292.js" defer=""></script><script src="/_next/static/chunks/framework-2191d16384373197bc0a.js" defer=""></script><script src="/_next/static/chunks/main-655ad0ce567efa01caa9.js" defer=""></script><script src="/_next/static/chunks/pages/_app-02523805f1f9350d0682.js" defer=""></script><script src="/_next/static/chunks/996-00b4c4d5f8d80ac92fd3.js" defer=""></script><script src="/_next/static/chunks/326-9f57b3028ed8d83c7cdd.js" defer=""></script><script src="/_next/static/chunks/pages/posts/%5Bid%5D-4d481a9735f84ced0d23.js" defer=""></script><script src="/_next/static/Ro36G9FxWC1Wycvzj7mgP/_buildManifest.js" defer=""></script><script src="/_next/static/Ro36G9FxWC1Wycvzj7mgP/_ssgManifest.js" defer=""></script></head><body><div id="__next"><div><div class="flex justify-between border-b-2 border-gray-50 h-12"><div class="w-16 flex items-center justify-center text-2xl text-blue-500"><a href="/">Blog</a></div><div class="flex w-3/4 justify-end space-x-6"><div class="flex items-center text-2xl font-mono  border-b-2 border-opacity-0 border-green-500 hover:border-opacity-100"><a href="/posts/test">test</a></div><a href="https://github.com/mudssky" target="_blank" rel="noreferrer" class="flex text-lg items-center text-gray-600 font-sans font-semibold">GitHub<span class="ml-1 mt-1"><svg class="fill-current text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15"><path fill="none" d="M0 0h24v24H0z"></path><path d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3h8z"></path></svg></span></a></div></div><main><div class="w-800 pt-8 mt-2 m-auto ring-1 ring-gray-100 shadow-sm"><div class="m-auto prose prose-indigo"><h1>functional-programming</h1>
+<h2>01.纯函数(Purity)</h2>
+<h3>1.纯函数的定义</h3>
+<p>输出仅由输入决定，且不产生副作用。</p>
+<pre><code class="language-javascript">const greet = (name) =&gt; `hello, ${name}`
+greet(&#x27;world&#x27;)
+</code></pre>
+<p>以下代码不是纯函数：</p>
+<pre><code class="language-javascript">window.name = &#x27;Brianne&#x27;
+
+const greet = () =&gt; `Hi, ${window.name}`
+
+greet() // &quot;Hi, Brianne&quot;
+</code></pre>
+<p>以上示例中，函数依赖外部状态。</p>
+<pre><code class="language-javascript">let greeting
+
+const greet = (name) =&gt; {
+    greeting = `Hi, ${name}`
+}
+
+greet(&#x27;Brianne&#x27;)
+greeting // &quot;Hi, Brianne&quot;
+</code></pre>
+<p>以上实例中，函数修改了外部状态。</p>
+<p><strong>纯函数的几个特性</strong>:</p>
+<ul>
+<li>无<strong>副作用(Side effects)</strong></li>
+<li>可缓存性 (Cacheable)</li>
+<li>可移植性,自文档化（Portable / Self-Documenting）</li>
+<li>可测试性（Testable）</li>
+<li>合理性,引用透明性（Reasonable）</li>
+<li>并行运算</li>
+</ul>
+<h3>2.特性1:无副作用(Side effects)</h3>
+<p>如果函数与外部可变状态进行交互，则它是有副作用的。</p>
+<p>副作用可能包含，但不限于：</p>
+<ul>
+<li>更改文件系统</li>
+<li>往数据库插入记录</li>
+<li>发送一个 http 请求</li>
+<li>可变数据</li>
+<li>打印/log</li>
+<li>获取用户输入</li>
+<li>DOM 查询</li>
+<li>访问系统状态</li>
+<li>...</li>
+</ul>
+<pre><code class="language-javascript">const differentEveryTime = new Date()//可变日期函数是副作用
+console.log(&#x27;IO is a side effect!&#x27;)//log函数也是副作用
+</code></pre>
+<h3>3.特性2:可缓存性 (Cacheable)</h3>
+<p>由于纯函数的输入就决定了输出,就和数学中的函数一样(所以我们也可以像数学公式一样推导),一个确定的输入对应一个确定的输出,</p>
+<p>因此我们可以根据传入的参数把结果缓存起来,这样后续以同样的参数调用的时候就可以直接返回结果,而不是重新执行一遍算法.</p>
+<p>实现缓存的一种典型方式是memoize技术,</p>
+<p>下面的代码是一个粗略的实现,	传入纯函数作为参数,就能返回一个带缓存的纯函数.</p>
+<pre><code class="language-javascript">var memoize = function(f) {
+  var cache = {};
+
+  return function() {
+    var arg_str = JSON.stringify(arguments);
+    cache[arg_str] = cache[arg_str] || f.apply(f, arguments);
+    return cache[arg_str];
+  };
+};
+</code></pre>
+<p>下面是我参考lodash的代码用typescript写的memoize函数，</p>
+<p>lodash的代码里面用给函数加cache属性的方式，但是在typescript里面函数是不能用<code>.</code>语法随便添加属性的。</p>
+<p>所以我实现的版本没办法查看缓存究竟有多少</p>
+<pre><code class="language-typescript">/**
+ *
+ * 传入一个函数,返回它的带缓存版本,
+ * 缺点是缓存在闭包里面没办法获取,也没办法消除.
+ * 第二个参数resolver是用来产生缓存的key的函数,如果你不提供这个函数,将会用函数的第一个参数作为key
+ * @param func 需要缓存的函数
+ * @param resolver 生成缓存key的映射的函数
+ */
+function memoize(
+  func: (...args: any) =&gt; any,
+  resolver?: (...args: any) =&gt; any
+): (...args: any) =&gt; any {
+  // func 和 resolve需要都是函数类型
+  if (
+    typeof func !== &#x27;function&#x27; ||
+    (resolver != null &amp;&amp; typeof resolver !== &#x27;function&#x27;)
+  ) {
+    throw new TypeError(&#x27;Expected a function&#x27;)
+  }
+  const cache = new Map()
+  const memoized = function (...args: any): any {
+    const key = resolver ? resolver(args) : args[0]
+    if (cache.has(key)) {
+      return cache.get(key)
+    }
+    const result = func(args)
+    cache.set(key, result)
+    return result
+  }
+  return memoized
+}
+export default memoize
+</code></pre>
+<p>下面是编译成es2015的代码，基本上除了没有类型也没什么变化了。</p>
+<pre><code class="language-javascript">/**
+ *
+ * 传入一个函数,返回它的带缓存版本,
+ * 缺点是缓存在闭包里面没办法获取,也没办法消除.
+ * 第二个参数resolver是用来产生缓存的key的函数,如果你不提供这个函数,将会用函数的第一个参数作为key
+ * @param func 需要缓存的函数
+ * @param resolver 生成缓存key的映射的函数
+ */
+function memoize(func, resolver) {
+    // func 和 resolve需要都是函数类型
+    if (typeof func !== &#x27;function&#x27; ||
+        (resolver != null &amp;&amp; typeof resolver !== &#x27;function&#x27;)) {
+        throw new TypeError(&#x27;Expected a function&#x27;);
+    }
+    var cache = new Map();
+    var memoized = function () {
+        var args = [];
+        for (var _i = 0; _i &lt; arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        var key = resolver ? resolver(args) : args[0];
+        if (cache.has(key)) {
+            return cache.get(key);
+        }
+        var result = func(args);
+        cache.set(key, result);
+        return result;
+    };
+    return memoized;
+}
+</code></pre>
+<h3>4.特性3：可移植性,自文档化（Portable / Self-Documenting）</h3>
+<p>纯函数的依赖很明确，因此更易于观察和理解</p>
+<p>因为他们与环境无关，所以可以拷贝到任何地方运行，提高了代码的复用性。</p>
+<p>对比面向对象，你从类中拷贝一个方法，就要麻烦得多。</p>
+<h3>5.特性4：可测试性（Testable）</h3>
+<p>纯函数让测试更加容易。</p>
+<p>只需要给定输入，断言输出就可以了。</p>
+<p>甚至有专门的测试工具帮我们自动生成输入，并断言输出。</p>
+<p>比如<strong>Quickcheck</strong></p>
+<h3>6.特性5：引用透明性(referential transparency)，合理性（Reasonable）</h3>
+<p>一个表达式能够被它的值替代而不改变程序的行为称为引用透明。</p>
+<pre><code class="language-typescript">const greet = () =&gt; &#x27;hello, world.&#x27;
+</code></pre>
+<p>引用透明有利于我们使用一种 “等式推导”（equational reasoning）的技术来分析代码，</p>
+<h3>7.特性6：可以并行运行</h3>
+<p>我们可以并行运行任意纯函数。因为纯函数根本不需要访问共享的内存，而且根据其定义，纯函数也不会因副作用而进入竞争态（race condition）。</p>
+<p>js毕竟是个单线程的语言，在其他多线程的语言里面这个作用就比较明显了，比如golang，比如julia，利用纯函数的特性并行计算，可以充分利用计算机的性能。</p>
+<h2>02.柯里化(Currying)</h2>
+<p><strong>柯里化</strong>  将一个多元函数转变为一元函数的过程。 每当函数被调用时，它仅仅接收一个参数并且返回带有一个参数的函数，直到传递完所有的参数。</p>
+<p>下面是例子</p>
+<pre><code class="language-javascript">const sum = (a, b) =&gt; a + b
+
+const curriedSum = (a) =&gt; (b) =&gt; a + b
+
+curriedSum(3)(4)         // 7
+
+const add2 = curriedSum(2)
+
+add2(10)     // 
+</code></pre>
+<p>当我们编写柯里化相关的函数的时候，通常会把内存占用大的参数放在列表的后面，比如map，第一个参数是函数，第二个才是数值，这样柯里化之后，可以再最后传入数值，减少性能浪费，也更符合充分利用函数作为一等公民的便利性。</p>
+<p>下面我们从介绍柯里化相关的术语开始</p>
+<h3>1.Arity 函数参数的个数</h3>
+<p>函数参数的个数。来自于单词 unary, binary, ternary 等等。这个单词是由 -ary 与 -ity 两个后缀拼接而成。例如，一个带有两个参数的函数被称为二元函数或者它的 arity 是2。它也被那些更喜欢希腊词根而非拉丁词根的人称为 <code>dyadic</code>。同样地，带有可变数量参数的函数被称为 <code>variadic</code>，而二元函数只能带两个参数。</p>
+<pre><code class="language-javascript">const sum = (a, b) =&gt; a + b
+
+const arity = sum.length
+console.log(arity)        // 2
+</code></pre>
+<p>在JavaScript的api里面，函数的参数个数可以通过函数的<code>length</code>属性来获取。</p>
+<p>如何定义一个任意个参数的函数,我们可以用到es6的语法，下面<code>...arg</code>就表示任意个参数</p>
+<p>获取的时候，args相当于数组，<code>...</code>是数组解构的语法，另外我们在函数的内部的时候，作用域里面有一个argument参数，用过这个也可以获取到函数的参数和参数个数。</p>
+<pre><code class="language-javascript">function(...args){
+ args.forEach(()=&gt;{
+     
+ })   
+}
+</code></pre>
+<h3>2.高阶函数 (Higher-Order Function / HOF)</h3>
+<p>以函数为参数或返回值。</p>
+<p>柯里化函数算是典型的高阶函数</p>
+<pre><code class="language-javascript">const filter = (predicate, xs) =&gt; xs.filter(predicate)
+
+const is = (type) =&gt; (x) =&gt; Object(x) instanceof type
+
+filter(is(Number), [0, &#x27;1&#x27;, 2, null]) // 0, 2
+</code></pre>
+<h3>3.偏函数 (Partial Function)</h3>
+<p>对原始函数预设参数作为一个新的函数。</p>
+<p>当我们柯里化函数之后，部分传参后返回的函数也就是偏函数。</p>
+<pre><code class="language-JavaScript">// 创建偏函数，固定一些参数
+const partical = (f, ...args) =&gt;
+  // 返回一个带有剩余参数的函数
+  (...moreArgs) =&gt;
+    // 调用原始函数
+    f(...args, ...moreArgs)
+
+const add3 = (a, b, c) =&gt; a + b + c
+
+// (...args) =&gt; add3(2, 3, ...args)
+// (c) =&gt; 2 + 3 + c
+const fivePlus = partical(add3, 2, 3)
+
+fivePlus(4)  // 9
+</code></pre>
+<p>也可以使用 <code>Function.prototype.bind</code> 实现偏函数。</p>
+<pre><code class="language-javascript">const add1More = add3.bind(null, 2, 3)
+</code></pre>
+<p>偏函数应用通过对复杂的函数填充一部分数据来构成一个简单的函数。柯里化通过偏函数实现。</p>
+<h3>4.自动柯里化 (Auto Currying)</h3>
+<p><code>lodash</code>，<code>understore</code> 和 <code>ramda</code> 有 <code>curry</code> 函数可以自动完成柯里化。</p>
+<pre><code class="language-javascript">const add = (x, y) =&gt; x + y
+
+const curriedAdd = _.curry(add)
+
+curriedAdd(1, 2)   // 3
+curriedAdd(1)(2)   // 3
+curriedAdd(1)      // (y) =&gt; 1 + y
+</code></pre>
+<h4>typescript 实现两个参数函数的柯里化</h4>
+<pre><code class="language-typescript">/**
+ * 对有两个参数的函数进行柯里化
+ * @param func 有两个参数的函数
+ * @returns 柯里化后的函数
+ */
+function curry2(func: (x: any, y: any) =&gt; any) {
+  return function f2(a?: any, b?: any) {
+    switch (arguments.length) {
+      case 0:
+        return f2
+      case 1:
+        return (_b: any): any =&gt; {
+          return func(a, _b)
+        }
+      case 2:
+        return func(a, b)
+      default:
+        throw new Error(
+          &#x27;curry2 arity must be a non-negative integer no greater than 2&#x27;
+        )
+    }
+  }
+}
+export default curry2
+</code></pre>
+<p>经过tsc编译后，es6的代码如下</p>
+<pre><code class="language-javascript">function curry2(func) {
+    return function f2(a, b) {
+        switch (arguments.length) {
+            case 0:
+                return f2;
+            case 1:
+                return (_b) =&gt; {
+                    return func(a, _b);
+                };
+            case 2:
+                return func(a, b);
+            default:
+                throw new Error(&#x27;curry2 arity must be a non-negative integer no greater than 2&#x27;);
+        }
+    };
+}
+</code></pre>
+<h4>typescript 实现任意个参数函数的柯里化</h4>
+<p>柯里化的实质很简单，就是随便你分几次传参，每次传几个参数，每次传参都会把传进去的参数存到闭包里，直到传入了函数所有的参数才会进行调用。</p>
+<p>讲究的是延迟调用，也使得函数的传参更加灵活。</p>
+<p>下面实现了任意个参数的函数的柯里化，主要逻辑是不断收集传入函数的参数，直到收集齐参数后，用这些参数调用原来的函数即可。如果没有收集齐参数，则是递归调用，再次返回同一个函数，并且把收集到的参数都传入。</p>
+<pre><code class="language-typescript">/**
+ *
+ * @param fn  需要柯里化的函数
+ * @param length 柯里化的参数个数，默认值为传入函数的参数个数
+ * @returns 返回柯里化后的函数，可以传入任意小于原函数参数个数的参数，参数全部传递完成就会返回执行结果
+ */
+function curryN(fn: (...args: any) =&gt; any, length: number = fn.length) {
+  return _curry(fn, length)
+}
+
+function _curry(fn: (...args: any) =&gt; any, length: number, ...args: any) {
+  // args 是已经收集到的数据，函数第一次执行时不传入相当于0
+  // param用来收集这次传入的参数
+  // _args则是把两者拼起来，累计已经收集到的数据
+  return function (...params: any) {
+    //   收集所有输入的参数
+    let _args = [...args, ...params]
+    // 如果收集参数的个数达到最初得到的函数参数总个数,直接传入收集到的所有参数并返回执行结果
+    if (_args.length &gt;= length) {
+      return fn(..._args)
+    } else {
+      // 如果收集的参数未达到目标,继续收集参数
+      return _curry(fn, length, ..._args)
+    }
+  }
+}
+
+export default curryN
+</code></pre>
+<p>下面是编译成es6</p>
+<pre><code class="language-javascript">/**
+ *
+ * @param fn  需要柯里化的函数
+ * @param length 柯里化的参数个数，默认值为传入函数的参数个数
+ * @returns 返回柯里化后的函数，可以传入任意小于原函数参数个数的参数，参数全部传递完成就会返回执行结果
+ */
+function curryN(fn, length = fn.length) {
+    return _curry(fn, length);
+}
+function _curry(fn, length, ...args) {
+    // args 是已经收集到的数据，函数第一次执行时不传入相当于0
+    // param用来收集这次传入的参数
+    // _args则是把两者拼起来，累计已经收集到的数据
+    return function (...params) {
+        //   收集所有输入的参数
+        let _args = [...args, ...params];
+        // 如果收集参数的个数达到最初得到的函数参数总个数,直接传入收集到的所有参数并返回执行结果
+        if (_args.length &gt;= length) {
+            return fn(..._args);
+        }
+        else {
+            // 如果收集的参数未达到目标,继续收集参数
+            return _curry(fn, length, ..._args);
+        }
+    };
+}
+exports.default = curryN;
+</code></pre>
+<h4>typescript 给curryN添加占位符功能</h4>
+<p>lodash的curry函数有用占位符，调整参数传入顺序的功能，简单来说就是占位符所在的参数可以延后传入的时间。</p>
+<p>下面是例子</p>
+<pre><code class="language-javascript">let fn = function(a, b, c, d, e) {
+    console.log([a, b, c, d, e]);
+}
+
+let _fn = _.curry(fn);  
+_fn(1, 2, 3, 4, 5);                 // print: 1,2,3,4,5
+_fn(_, 2, 3, 4, 5)(1);              // print: 1,2,3,4,5
+_fn(1, _, 3, 4, 5)(2);              // print: 1,2,3,4,5
+</code></pre>
+<p>lodash采用了lodash对象来做占位符，但是我们的curry函数没有挂载对象，因此采用了curry函数自身作为默认的占位符</p>
+<p>下面是具体实现</p>
+<p>相比之前就复杂了很多，因为我们还要记录占位符和占位符的位置。</p>
+<pre><code class="language-typescript">/**
+ * 返回柯里化后的函数，支持用占位符改变参数的传递顺序，
+ * 默认的占位符是curry函数本身
+ *
+ * @param fn 柯里化的原函数
+ * @param length 需要的参数个数，默认为函数的形参个数
+ * @param placeHolder 占位符，默认当前柯里化函数
+ * @returns 柯里化后的函数
+ */
+function curry(
+  fn: (...args: any) =&gt; any,
+  length: number = fn.length,
+  placeHolder: any = curry
+) {
+  return _curry(fn, length, placeHolder, [], [])
+}
+/**
+ * 递归调用实现柯里化的中间函数
+ * @param fn 柯里化的原函数
+ * @param length 原函数需要的参数个数
+ * @param placeHolder 接收的占位符
+ * @param argsCopy 已接收的参数列表
+ * @param holdersCopy 已接收的占位符位置列表
+ * @returns 柯里化后的函数,或是递归调用收集参数的函数
+ */
+function _curry(
+  fn: (...args: any) =&gt; any,
+  length: number = fn.length,
+  placeHolder: any,
+  args: any[],
+  holders: number[]
+) {
+  return function (..._args: any) {
+    //   两个参数列表是引用类型，复制一份后再操作，防止函数重复调用操作初始值地址把初始值搞乱影响结果
+    let argsCopy = args.slice()
+    let holdersCopy = holders.slice()
+
+    _args.forEach((value: any, index: number) =&gt; {
+      if (argsCopy.length &lt; length) {
+        //   如果新增参数中包含占位符，除了加入args列表，还要再在holders里面添加位置索引
+        if (value === placeHolder) {
+          // 占位符的位置就是当前参数数组末尾
+          holdersCopy.push(argsCopy.length)
+          argsCopy.push(placeHolder)
+        } else {
+          // 如果是普通参数，直接加入args现存参数列表
+          argsCopy.push(value)
+        }
+      }
+      // 参数列表等于函数形参个数，此时占位符全部忽略,开始清理占位符，替换占位符为新增参数
+      else {
+        if (value !== placeHolder &amp;&amp; holdersCopy.length &gt; 0) {
+          const holdIdx = holdersCopy[0]
+          holdersCopy.shift()
+          argsCopy[holdIdx] = value
+        }
+      }
+    })
+    //现存参数等于形参，并且占位符全部替换完成,说明参数收集完成=
+    if (argsCopy.length &gt;= length &amp;&amp; holdersCopy.length &lt;= 0) {
+      return fn(...argsCopy)
+    } else {
+      // 参数没有收集齐，则进入下一轮收集
+      return _curry(fn, length, placeHolder, argsCopy, holdersCopy)
+    }
+  }
+}
+
+export default curry
+</code></pre>
+<p>编译成es6</p>
+<pre><code class="language-javascript">/**
+ * 递归调用实现柯里化的中间函数
+ * @param fn 柯里化的原函数
+ * @param length 原函数需要的参数个数
+ * @param placeHolder 接收的占位符
+ * @param argsCopy 已接收的参数列表
+ * @param holdersCopy 已接收的占位符位置列表
+ * @returns 柯里化后的函数,或是递归调用收集参数的函数
+ */
+function _curry(fn, length = fn.length, placeHolder, args, holders) {
+    return function (..._args) {
+        //   两个参数列表是引用类型，复制一份后再操作，防止函数重复调用操作初始值地址把初始值搞乱影响结果
+        let argsCopy = args.slice();
+        let holdersCopy = holders.slice();
+        _args.forEach((value, index) =&gt; {
+            if (argsCopy.length &lt; length) {
+                //   如果新增参数中包含占位符，除了加入args列表，还要再在holders里面添加位置索引
+                if (value === placeHolder) {
+                    // 占位符的位置就是当前参数数组末尾
+                    holdersCopy.push(argsCopy.length);
+                    argsCopy.push(placeHolder);
+                }
+                else {
+                    // 如果是普通参数，直接加入args现存参数列表
+                    argsCopy.push(value);
+                }
+            }
+            // 参数列表等于函数形参个数，此时占位符全部忽略,开始清理占位符，替换占位符为新增参数
+            else {
+                if (value !== placeHolder &amp;&amp; holdersCopy.length &gt; 0) {
+                    const holdIdx = holdersCopy[0];
+                    holdersCopy.shift();
+                    argsCopy[holdIdx] = value;
+                }
+            }
+        });
+        //现存参数等于形参，并且占位符全部替换完成,说明参数收集完成=
+        if (argsCopy.length &gt;= length &amp;&amp; holdersCopy.length &lt;= 0) {
+            return fn(...argsCopy);
+        }
+        else {
+            // 参数没有收集齐，则进入下一轮收集
+            return _curry(fn, length, placeHolder, argsCopy, holdersCopy);
+        }
+    };
+}
+</code></pre>
+<h4>jest为curry函数编写单元测试</h4>
+<pre><code class="language-typescript">import curry from &#x27;../../fp-lib/curry&#x27;
+
+test(&#x27;normal curry test&#x27;, () =&gt; {
+  const testFn = (a, b, c, d, e) =&gt; {
+    return [a, b, c, d, e]
+  }
+  const input = [1, 2, 3, 4, 5]
+  const expected = [1, 2, 3, 4, 5]
+  const curriedFn = curry(testFn)
+  expect(curriedFn(1)(2)(3)(4)(5)).toEqual(expected)
+  expect(curriedFn(1)(2, 3)(4)(5)).toEqual(expected)
+  expect(curriedFn(1)(2, 3)(4, 5)).toEqual(expected)
+  expect(curriedFn(...input)).toEqual(expected)
+})
+
+test(&#x27;curry placeholder&#x27;, () =&gt; {
+  const testFn = (a, b, c, d, e) =&gt; {
+    return [a, b, c, d, e]
+  }
+  const input = [1, 2, 3, 4, 5]
+  const expected = [1, 2, 3, 4, 5]
+  const curriedFn = curry(testFn)
+  // 默认占位符是curry函数本身
+  expect(curriedFn(1)(curry)(3)(4)(5)(2)).toEqual(expected)
+  expect(curriedFn(1)(curry, 3)(4)(5)(2)).toEqual(expected)
+  expect(curriedFn(1)(2, 3)(curry, curry)(4)(5)).toEqual(expected)
+})
+</code></pre>
+<h2>03.函数组合 (Function Composing)</h2>
+<p>接收多个函数作为参数，从右到左，一个函数的输入为另一个函数的输出。</p>
+<pre><code class="language-javascript">const compose = (f, g) =&gt; (a) =&gt; f(g(a))    // 定义
+const floorAndToString = compose((val) =&gt; val.toString(), Math.floor) // 使用
+floorAndToString(12.12)   // &#x27;12&#x27;
+</code></pre>
+<p>下面从相关的术语开始介绍.</p>
+<h3>1.范畴 (Category)</h3>
+<p>在范畴论中，范畴是指对象集合及它们之间的态射 (morphism)。在编程中，数据类型作为对象，函数作为态射。</p>
+<p>一个有效的范畴遵从以下三个原则：</p>
+<ol>
+<li>必有一个 identity 态射，使得 map 一个对象是它自身。<code>a</code> 是范畴里的一个对象时，必有一个函数使 <code>a -&gt; a</code>。</li>
+<li>态射必是可组合的。<code>a</code>，<code>b</code>，<code>c</code> 是范畴里的对象，<code>f</code> 是态射 <code>a -&gt; b</code>，<code>g</code> 是 <code>b -&gt; c</code> 态射。<code>g(f(x))</code> 一定与 <code>(g ● f)(x)</code> 是等价的。</li>
+<li>组合满足结合律。<code>f ● (g ● h)</code> 与 <code>(f ● g) ● h</code> 是等价的。</li>
+</ol>
+<p>由于组合的结合律,我们一连串函数的组合,就可以像积木一样任意拆分了,具有很大的灵活性.</p>
+<p>下面是一个典型的例子</p>
+<pre><code class="language-javascript">var loudLastUpper = compose(exclaim, toUpperCase, head, reverse);
+
+// 或
+var last = compose(head, reverse);
+var loudLastUpper = compose(exclaim, toUpperCase, last);
+
+// 或
+var last = compose(head, reverse);
+var angry = compose(exclaim, toUpperCase);
+var loudLastUpper = compose(angry, last);
+
+// 更多变种...
+</code></pre>
+<h4>态射 (Morphism)</h4>
+<p>一个变形的函数。</p>
+<p><strong>自同态 (Endomorphism)</strong></p>
+<p>输入输出是相同类型的函数。</p>
+<pre><code class="language-js">// uppercase :: String -&gt; String
+const uppercase = (str) =&gt; str.toUpperCase()
+
+// decrement :: Number -&gt; Number
+const decrement = (x) =&gt; x - 1
+</code></pre>
+<p><strong>同构 (Isomorphism)</strong></p>
+<p>不用类型对象的变形，保持结构并且不丢失数据。</p>
+<p>例如，一个二维坐标既可以表示为数组 <code>[2, 3]</code>，也可以表示为对象 <code>{x: 2, y: 3}</code>。</p>
+<pre><code class="language-js">// 提供函数在两种类型间互相转换
+const pairToCoords = (pair) =&gt; ({x: pair[0], y: pair[1]})
+
+const coordsToPair = (coords) =&gt; [coords.x, coords.y]
+
+coordsToPair(pairToCoords([1, 2])) // [1, 2]
+
+pairToCoords(coordsToPair({x: 1, y: 2})) // {x: 1, y: 2}
+</code></pre>
+<h3>2.identity态射</h3>
+<p>让我们介绍一个名为 <code>id</code> 的实用函数。这个函数接受随便什么输入然后原封不动地返回它：</p>
+<pre><code class="language-javascript">var id = function(x){ return x; };
+</code></pre>
+<p>有下面的例子</p>
+<pre><code class="language-javascript">// identity
+compose(id, f) == compose(f, id) == f;
+// true
+</code></pre>
+<p>因为id函数返回传入的参数的特性,相当于它就什么都没做,有他没他一个样,所以就有了上面的等式.</p>
+<p>id函数就相当于乘法运算里的1,加法运算里的0.同时compose和这两种运算一样都是满足结合律的.</p>
+<p>下面我们要实现的compose函数,当你不传入参数进行调用时,就是返回一个id函数</p>
+<h3>3.Point-Free 风格 (Point-Free Style)</h3>
+<p>定义函数时，不显式地指出函数所带参数。这种风格通常需要柯里化或者高阶函数。也叫 Tacit programming。</p>
+<pre><code class="language-javascript">const map = (fn) =&gt; (list) =&gt; list.map(fn)
+const add = (a) =&gt; (b) =&gt; a + b
+
+# Points-Free   list 是显式参数
+const incrementAll = (numbers) =&gt; map(add(1))(numbers)
+
+# Points-Free   list 是隐式参数
+const incrementAll2 = map(add(1))
+</code></pre>
+<p><code>incrementAll</code> 识别并且使用了 <code>numbers</code> 参数，因此它不是 Point-Free 风格的。 <code>incrementAll2</code> 连接函数与值，并不提及它所使用的参数，因为它是 Point-Free 风格的。</p>
+<p>Point-Free 风格的函数就像平常的赋值，不使用 <code>function</code> 或者 <code>=&gt;</code>。</p>
+<p>point free最明显的好处是,能够帮助我们减少不必要的命名，让代码保持简洁和通用。毕竟现在的ide都很智能了,如果我们要看函数的参数,直接光标移到函数上就能显示出来了,没必要特意写出参数,这样代码会更简洁.</p>
+<h3>4.typescript实现接收任意个函数参数的compose函数</h3>
+<p>我们只需要接收任意个函数参数,然后用reduce循环套娃就可以了.</p>
+<pre><code class="language-typescript">/**
+ * 组合任意多个函数
+ * @param funcs 被组合的函数
+ * @returns 返回组合后的函数
+ */
+
+function compose(...funcs: ((...args: any) =&gt; any)[]) {
+  if (funcs.length === 0) {
+    //   compose不传入参数的情况,返回一个返回输入的函数,也就是id函数
+    return (x: any) =&gt; x
+  }
+  if (funcs.length === 1) {
+    return funcs[0]
+  }
+  return funcs.reduce(function (
+    a: (...args: any) =&gt; any,
+    b: (...args: any) =&gt; any
+  ): (...args: any) =&gt; any {
+    return (...args: any) =&gt; {
+      return a(b(...args))
+    }
+  })
+}
+export default compose
+
+</code></pre>
+<p>下面是编译成es6后的代码</p>
+<pre><code class="language-javascript">&quot;use strict&quot;;
+/**
+ * 组合任意多个函数
+ * @param funcs 被组合的函数
+ * @returns 返回组合后的函数
+ */
+function compose(...funcs) {
+    if (funcs.length === 0) {
+        //   compose不传入参数的情况,返回一个返回输入的函数,也就是id函数
+        return (x) =&gt; x;
+    }
+    if (funcs.length === 1) {
+        return funcs[0];
+    }
+    return funcs.reduce(function (a, b) {
+        return (...args) =&gt; {
+            return a(b(...args));
+        };
+    });
+}
+</code></pre>
+<h3>5.使用jest测试组合函数</h3>
+<pre><code class="language-typescript">import compose from &#x27;../../fp-lib/compose&#x27;
+
+test(&#x27;normal compose&#x27;, () =&gt; {
+  const add = (x) =&gt; x + 1
+  expect(compose(add, add, add, add, add)(0)).toBe(5)
+
+  // 测试0个参数时
+  expect(compose()(add)).toBe(add)
+  // 测试1个参数时
+  expect(compose(add)).toBe(add)
+})
+</code></pre>
+<h3>6.组合中的debug</h3>
+<p>组合就类似于shell中的管道,因此比较常见的debug方法就是把在管道的某处把数据打印出来查看.</p>
+<p>我们可以实现一个trace函数来进行debug.</p>
+<p>下面是typescript中的一个具体的实现,</p>
+<p>这样我们在组合中加入这个函数,可以查看某处的数据,并且不会影响后续的数据流</p>
+<pre><code class="language-typescript">import curry from &#x27;./curry&#x27;
+
+const trace = curry(function (tag: string, x: any): any {
+  console.log(tag, x)
+  return x
+})
+
+export default trace
+</code></pre>
+<h2>04.类型签名(Type Signatures)</h2>
+<p>虽然typescript也有类型,但是当你用compose把函数串联起来的最终函数,是显示不出中间的路径的.</p>
+<p>所以我们要给自己的代码添加类型注释,以便让自己以后还能看懂自己的代码.</p>
+<p>这次我们介绍的是一种比较通用的类型注释系统 Hindley-Milner函数签名 .</p>
+<p>下面是一些常见函数类型的写法,一个箭头表示一次传参.</p>
+<pre><code class="language-js">//  capitalize :: String -&gt; String
+var capitalize = function(s){
+  return toUpperCase(head(s)) + toLowerCase(tail(s));
+}
+
+capitalize(&quot;smurf&quot;);
+//=&gt; &quot;Smurf&quot;
+</code></pre>
+<pre><code class="language-js">//  strLength :: String -&gt; Number
+var strLength = function(s){
+  return s.length;
+}
+
+//  join :: String -&gt; [String] -&gt; String
+var join = curry(function(what, xs){
+  return xs.join(what);
+});
+
+//  match :: Regex -&gt; String -&gt; [String]
+var match = curry(function(reg, s){
+  return s.match(reg);
+});
+
+//  replace :: Regex -&gt; String -&gt; String -&gt; String
+var replace = curry(function(reg, sub, s){
+  return s.replace(reg, sub);
+});
+
+// 下面的a,b属于任意类型
+//  id :: a -&gt; a
+var id = function(x){ return x; }
+
+//  map :: (a -&gt; b) -&gt; [a] -&gt; [b]
+var map = curry(function(f, xs){
+  return xs.map(f);
+});
+//  head :: [a] -&gt; a
+var head = function(xs){ return xs[0]; }
+
+//  filter :: (a -&gt; Bool) -&gt; [a] -&gt; [a]
+var filter = curry(function(f, xs){
+  return xs.filter(f);
+});
+
+//  reduce :: (b -&gt; a -&gt; b) -&gt; b -&gt; [a] -&gt; b
+var reduce = curry(function(f, x, xs){
+  return xs.reduce(f, x);
+});
+</code></pre>
+<h3>自由定理（free theorems）</h3>
+<p>类型签名除了能够帮助我们推断函数可能的实现，还能够给我们带来<em>自由定理</em>（free theorems）</p>
+<p>下面是两个例子</p>
+<pre><code class="language-js">// head :: [a] -&gt; a
+compose(f, head) == compose(head, map(f));
+
+// filter :: (a -&gt; Bool) -&gt; [a] -&gt; [a]
+compose(map(f), filter(compose(p, f))) == compose(filter(p), map(f));
+</code></pre>
+<p>这些等式是直接根据类型可以推断出来的</p>
+<p>第一个例子中，等式左边说的是，先获取数组的<code>头部</code>，然后对它调用函数 <code>f</code>；等式右边说的是，先对数组中的每一个元素调用 <code>f</code>，然后再取其返回结果的<code>头部</code>。这两个表达式的作用是相等的，但是前者要快得多。</p>
+<p>第二个例子 <code>filter</code> 也是一样。等式左边是说，先组合 <code>f</code> 和 <code>p</code> 检查哪些元素要过滤掉，然后再通过 <code>map</code> 实际调用 <code>f</code>（别忘了 <code>filter</code> 是不会改变数组中元素的，这就保证了 <code>a</code> 将保持不变）；等式右边是说，先用 <code>map</code> 调用 <code>f</code>，然后再根据 <code>p</code> 过滤元素。这两者也是相等的。</p>
+<h3>类型约束（type constraints）</h3>
+<p>签名也可以把类型约束为一个特定的接口</p>
+<pre><code class="language-js">// sort :: Ord a =&gt; [a] -&gt; [a]
+</code></pre>
+<p>比如上面的注释表明 a变量是一个Ord对象.</p>
+<h2>05.函子 (Functor)</h2>
+<p>一个实现了map 函数的对象，map 会遍历对象中的每个值并生成一个新的对象。遵守两个准则</p>
+<p><strong>一致性 (Preserves identity)</strong></p>
+<pre><code class="language-js">object.map(x =&gt; x) ≍ object
+</code></pre>
+<p><strong>组合性 (Composable)</strong></p>
+<pre><code class="language-js">object.map(compose(f, g)) ≍ object.map(g).map(f)  // f, g 为任意函数
+</code></pre>
+<p>在 javascript 中一个常见的函子是 Array, 因为它遵守因子的两个准则。</p>
+<pre><code class="language-js">const f = x =&gt; x + 1
+const g = x =&gt; x * 2
+
+;[1, 2, 3].map(x =&gt; f(g(x)))
+;[1, 2, 3].map(g).map(f)
+</code></pre>
+<p><strong>Pointed Functor</strong></p>
+<p>一个实现了 of 函数的对象。</p>
+<p>ES2015 添加了 <code>Array.of</code>，使 Array 成为了 Pointed Functor。</p>
+<pre><code>Array.of(1)
+</code></pre>
+<p>下面我们从关于functor开始介绍</p>
+<h3>1.容器（container）</h3>
+<p>下面我们封装一个能装载任意类型值的容器.</p>
+<p>容器是一个对象,使用of作为构造器(Pointed Functor),因为对象默认的new关键字在函数式编程里还是太别扭了.</p>
+<p>使用typescript的实现如下</p>
+<p>其中我们把of作为一个static方法,这样就可以直接通过类名调用了,相当于一个简单工厂函数.</p>
+<pre><code class="language-typescript">class Container {
+  private value: any
+  constructor(value: any) {
+    this.value = value
+  }
+
+  static of(value: any) {
+    return new Container(value)
+  }
+}
+</code></pre>
+<p>下面我们可以试试这个容器</p>
+<pre><code class="language-javascript">&gt; Container.of(3)
+Container { value: 3 }
+&gt; Container.of(&#x27;hotdogs&#x27;)
+Container { value: &#x27;hotdogs&#x27; }
+&gt; Container.of(Container.of({ name: &#x27;yoda&#x27; }))
+Container { value: Container { value: { name: &#x27;yoda&#x27; } } }
+</code></pre>
+<ul>
+<li><code>Container</code> 是个只有一个属性的对象。尽管容器可以有不止一个的属性，但大多数容器还是只有一个。</li>
+<li><code>value</code> 不能是某个特定的类型，不然 <code>Container</code> 就对不起它这个名字了。</li>
+<li>数据一旦存放到 <code>Container</code>，就会一直待在那儿。我们<em>可以</em>用 <code>.value</code> 获取到数据，但这样做有悖初衷,所以这里使用了private关键字防止外部访问.</li>
+</ul>
+<h3>2.map函数</h3>
+<p>容器有了值以后,我们还需要一个让别的函数能够操作它的方法.</p>
+<p>我们可以定义一个map方法,类似于数组的map.</p>
+<p>只不过这个map和数组map的区别是,这个map的参数是容器,作用是把容器里的值交给你定义好的函数处理.</p>
+<p>下面是这个map方法的实现</p>
+<pre><code class="language-typescript">// (a -&gt; b) -&gt; Container a -&gt; Container b
+map(f: (...args: any) =&gt; any):any {
+      return Container.of(f(this.value))
+  }
+</code></pre>
+<pre><code class="language-js">Container.of(2).map(function(two){ return two + 2 })
+//=&gt; Container(4)
+
+
+Container.of(&quot;flamethrowers&quot;).map(function(s){ return s.toUpperCase() })
+//=&gt; Container(&quot;FLAMETHROWERS&quot;)
+
+
+Container.of(&quot;bombs&quot;).map(concat(&#x27; away&#x27;)).map(_.prop(&#x27;length&#x27;))
+//=&gt; Container(10)
+</code></pre>
+<p>这个map方法使得我们可以直接处理容器,而不用把容器中的值拿出来这一步.而且map函数执行完后,容器内的值并不会变化,保持了不变性.</p>
+<p>因为map的返回值是container,所以只要我们在map调用后再返回容器,就可以无限地用map链式调用下去...</p>
+<h3>3.Maybe  一种带空值检查的functor</h3>
+<p>Container类似于Identity函数,会返回传入的值.</p>
+<p>过于单纯了,其实我们还可以添加对传入值的处理,比如检查传入的值是否为空</p>
+<p>下面是代码实现</p>
+<pre><code class="language-typescript">/**
+ * Maybe 容器类，
+ * 实现了map函数，并且map执行之前有空值检查
+ */
+class Maybe {
+  private value: any
+  constructor(value: any) {
+    this.value = value
+  }
+  static of(value: any) {
+    return new Maybe(value)
+  }
+  isNothing() {
+    return this.value === null || this.value === undefined
+  }
+  map(f: (...args: any) =&gt; any) {
+    return this.isNothing() ? Maybe.of(null) : Maybe.of(f(this.value))
+  }
+}
+export default Maybe
+</code></pre>
+<p>使用这个Maybe容器的好处是,出现null的时候就不会报错了,因为每次执行之前都有空值检查,如果有一次是null,后续的map无论执行多少次都是null.</p>
+<h3>4.更通用的map</h3>
+<p>我们使用柯里化,可以定义一个map可以应用到所有functor上面.这样我们就能像处理普通函数的参数一样处理functor了.</p>
+<pre><code class="language-js">//  map :: Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
+var map = curry(function(f, any_functor_at_all) {
+  return any_functor_at_all.map(f);
+});
+</code></pre>
+<h3>5.Maybe使用场景</h3>
+<p><code>Maybe</code> 最常用在那些可能会无法成功返回结果的函数中。</p>
+<pre><code class="language-js">//  safeHead :: [a] -&gt; Maybe(a)
+var safeHead = function(xs) {
+  return Maybe.of(xs[0]);
+};
+
+var streetName = compose(map(_.prop(&#x27;street&#x27;)), safeHead, _.prop(&#x27;addresses&#x27;));
+
+streetName({addresses: []});
+// Maybe(null)
+
+streetName({addresses: [{street: &quot;Shady Ln.&quot;, number: 4201}]});
+// Maybe(&quot;Shady Ln.&quot;)
+</code></pre>
+<p>有时候函数可以明确返回一个 <code>Maybe(null)</code> 来表明失败</p>
+<h3>6.纯错误处理</h3>
+<p><code>throw/catch</code>并非纯错误处理,因为他们抛出错误的时候,函数不会收到返回值.</p>
+<p>下面我们用一种更友好的方式来进行处理.</p>
+<p>下面是使用Either进行错误处理的实现,其中Left和Right是Either的子类.</p>
+<p>Left调用map只会返回自身,所以我们在出错的时候返回Left最后错误的结果就会传递到末尾.</p>
+<pre><code class="language-typescript">class Left {
+  private value: any
+  constructor(value: any) {
+    this.value = value
+  }
+  static of(value: any) {
+    return new Left(value)
+  }
+  map(f: (...args: any) =&gt; any): Left {
+    return this
+  }
+}
+class Right {
+  private value: any
+  constructor(value: any) {
+    this.value = value
+  }
+  static of(value: any) {
+    return new Right(value)
+  }
+  map(f: (...args: any) =&gt; any): Right {
+    return Right.of(f(this.value))
+  }
+}
+
+</code></pre>
+<p>下面是具体的使用例子</p>
+<pre><code class="language-javascript">var moment = require(&#x27;moment&#x27;);
+
+//  getAge :: Date -&gt; User -&gt; Either(String, Number)
+var getAge = curry(function(now, user) {
+  var birthdate = moment(user.birthdate, &#x27;YYYY-MM-DD&#x27;);
+  if(!birthdate.isValid()) return Left.of(&quot;Birth date could not be parsed&quot;);
+  return Right.of(now.diff(birthdate, &#x27;years&#x27;));
+});
+
+getAge(moment(), {birthdate: &#x27;2005-12-12&#x27;});
+// Right(9)
+
+getAge(moment(), {birthdate: &#x27;balloons!&#x27;});
+// Left(&quot;Birth date could not be parsed&quot;)
+</code></pre>
+<p>我们也可以使用柯里化,把either变成一个用于错误处理的函数</p>
+<pre><code class="language-js">//  either :: (a -&gt; c) -&gt; (b -&gt; c) -&gt; Either a b -&gt; c
+var either = curry(function(f, g, e) {
+  switch(e.constructor) {
+    case Left: return f(e.__value);
+    case Right: return g(e.__value);
+  }
+});
+
+//  zoltar :: User -&gt; _
+// 这里的id函数仅仅用于传递值给log
+var zoltar = compose(console.log, either(id, fortune), getAge(moment()));
+
+zoltar({birthdate: &#x27;2005-12-12&#x27;});
+// &quot;If you survive, you will be 10&quot;
+// undefined
+
+zoltar({birthdate: &#x27;balloons!&#x27;});
+// &quot;Birth date could not be parsed&quot;
+// undefined
+</code></pre>
+<h3>7.副作用处理</h3>
+<p>有很多函数都有副作用，但是我们可以通过把它包裹在另一个函数里的方式把它变得看起来像一个纯函数。</p>
+<p>其实就是把函数再包裹一层，执行的时候就会返回函数本身罢了。</p>
+<p>下面是一个例子</p>
+<pre><code class="language-typescript">import compose from &#x27;./compose&#x27;
+class IO {
+  // 保存函数的容器
+  __fn: (...args: any) =&gt; any
+
+  constructor(fn: (...args: any) =&gt; any) {
+    this.__fn = fn
+  }
+
+  static of(x: any) {
+    return new IO(function () {
+      return x
+    })
+  }
+
+  map(f: (...args: any) =&gt; any) {
+    return new IO(compose(f, this.__fn))
+  }
+}
+</code></pre>
+<p>io容器用来包裹产生副作用的函数。</p>
+<p>这样做的好处是，把责任推迟到调用的时候，变量用<code>  __fn</code>命名，是为了起到警示作用，告诉调用者，这个部分是有副作用的。</p>
+<p>下面是个调用的例子</p>
+<pre><code class="language-typescript">////// 纯代码库: lib/params.js ///////
+
+//  url :: IO String
+var url = new IO(function() { return window.location.href; });
+
+//  toPairs =  String -&gt; [[String]]
+var toPairs = compose(map(split(&#x27;=&#x27;)), split(&#x27;&amp;&#x27;));
+
+//  params :: String -&gt; [[String]]
+var params = compose(toPairs, last, split(&#x27;?&#x27;));
+
+//  findParam :: String -&gt; IO Maybe [String]
+var findParam = function(key) {
+  return map(compose(Maybe.of, filter(compose(eq(key), head)), params), url);
+};
+
+////// 非纯调用代码: main.js ///////
+
+// 调用 __fn() 来运行它！
+findParam(&quot;searchTerm&quot;).__fn();
+// Maybe([&#x27;searchTerm&#x27;, &#x27;wafflehouse&#x27;])
+</code></pre>
+<h3>8.关于functor的一些理论</h3>
+<p>同一律和结合律</p>
+<pre><code class="language-js">// identity
+map(id) === id;
+// composition
+compose(map(f), map(g)) === map(compose(f, g));
+</code></pre>
+<h2>06.Monad</h2>
+<p>拥有 <code>of</code> 和 <code>chain</code> 函数的对象。<code>chain</code> 很像 <code>map</code>， 除了用来铺平嵌套数据。</p>
+<pre><code class="language-js">Array.prototype.chain = function (f) {
+  return this.reduce((acc, it) =&gt; acc.concat(f(it)), [])  
+}
+
+// [&#x27;cat&#x27;, &#x27;dog&#x27;, &#x27;fish&#x27;, &#x27;bird&#x27;]
+;Array.of(&#x27;cat,dog&#x27;, &#x27;fish,bird&#x27;).chain(s =&gt; s.split(&#x27;,&#x27;))
+
+// [[&#x27;cat&#x27;, &#x27;dog&#x27;], [&#x27;fish&#x27;, &#x27;bird&#x27;]]
+;Array.of(&#x27;cat,dog&#x27;, &#x27;fish,bird&#x27;).map(s =&gt; s.split(&#x27;,&#x27;))
+</code></pre>
+<p>在有些语言中，<code>of</code> 也称为 <code>return</code>，<code>chain</code> 也称为 <code>flatmap</code> 与 <code>bind</code>。</p>
+<h3>1.join方法</h3>
+<p>下面是一个例子，当functor之间存在嵌套的时候，我们需要新的解决方案，</p>
+<p>因为这种情况下，你需要调用多次才能取到值。</p>
+<pre><code class="language-js">// Support
+// ===========================
+var fs = require(&#x27;fs&#x27;);
+
+//  readFile :: String -&gt; IO String
+var readFile = function(filename) {
+  return new IO(function() {
+    return fs.readFileSync(filename, &#x27;utf-8&#x27;);
+  });
+};
+
+//  print :: String -&gt; IO String
+var print = function(x) {
+  return new IO(function() {
+    console.log(x);
+    return x;
+  });
+}
+
+// Example
+// ===========================
+//  cat :: IO (IO String)
+var cat = compose(map(print), readFile);
+
+cat(&quot;.git/config&quot;)
+// IO(IO(&quot;[core]\nrepositoryformatversion = 0\n&quot;))
+</code></pre>
+<p>下面我们定义一个join函数，作用就是把嵌套解开，直接返回容器包裹的值，这样就不会出现容器包容器的事情了。</p>
+<p>下面是一个实例</p>
+<pre><code class="language-js">//  join :: Monad m =&gt; m (m a) -&gt; m a
+var join = function(mma){ return mma.join(); }
+
+//  firstAddressStreet :: User -&gt; Maybe Street
+var firstAddressStreet = compose(
+  join, map(safeProp(&#x27;street&#x27;)), join, map(safeHead), safeProp(&#x27;addresses&#x27;)
+);
+
+firstAddressStreet(
+  {addresses: [{street: {name: &#x27;Mulburry&#x27;, number: 8402}, postcode: &quot;WC2N&quot; }]}
+);
+// Maybe({name: &#x27;Mulburry&#x27;, number: 8402})
+</code></pre>
+<h3>2.chain</h3>
+<p>我们只要紧跟着map后面调用join，就是chain函数了。</p>
+<p>chain又称为flatMap</p>
+<pre><code class="language-js">//  chain :: Monad m =&gt; (a -&gt; m b) -&gt; m a -&gt; m b
+var chain = curry(function(f, m){
+  return m.map(f).join(); // 或者 compose(join, map(f))(m)
+});
+</code></pre>
+<h2>07.Applicative Functor</h2>
+<p>一个拥有 ap 函数的对象。</p>
+<pre><code class="language-js">// 实现
+Array.prototype.ap = function (xs) {
+    return this.reduce((acc, f) =&gt; acc.concat(xs.map(f)), [])
+}
+
+// 示例
+;[(a) =&gt; a + 1].ap([1]) // [2]
+</code></pre>
+<p>如果你有两个对象，并需要对他们的元素执行一个二元函数</p>
+<pre><code class="language-js">// Arrays that you want to combine
+const arg1 = [1, 3]
+const arg2 = [4, 5]
+
+// combining function - must be curried for this to work
+const add = (x) =&gt; (y) =&gt; x + y
+
+const partiallyAppliedAdds = [add].ap(arg1) // [(y) =&gt; 1 + y, (y) =&gt; 3 + y]
+</code></pre>
+<p>由此得到了一个函数数组，并且可以调用 <code>ap</code> 函数得到结果</p>
+<pre><code class="language-js">partiallyAppliedAdds.ap(arg2) // [5, 6, 7, 8]
+</code></pre>
+<h3>1.ap函数</h3>
+<p>当我们相对容器中的值直接计算，把一个容器作为参数传递给另一个容器，我们发现是非常困难的。</p>
+<pre><code class="language-js">// 这样是行不通的，因为 2 和 3 都藏在瓶子里。
+add(Container.of(2), Container.of(3));
+//NaN
+
+// 使用可靠的 map 函数试试
+var container_of_add_2 = map(add, Container.of(2));
+// Container(add(2))
+</code></pre>
+<p>我们可以用chain函数达到效果</p>
+<pre><code class="language-js">Container.of(2).chain(function(two) {
+  return Container.of(3).map(add(two));
+});
+</code></pre>
+<p>但是这种方式的缺点很明显，那就是 monad 的顺序执行问题：所有的代码都只会在前一个 monad 执行完毕之后才执行。</p>
+<p>实际上我们可以用ap来实现这个效果</p>
+<p><code>ap</code> 就是一种函数，能够把一个 functor 的函数值应用到另一个 functor 的值上。</p>
+<p>下面是一个简单的实现。</p>
+<pre><code class="language-js">Container.prototype.ap = function(other_container) {
+  return other_container.map(this.__value);
+}
+</code></pre>
+<p>这样我们就可以针对容器进行操作了。</p>
+<p>在容器中封装一个curry化好的add函数，这样，后续可以调用ap传入其他容器</p>
+<pre><code class="language-js">Container.of(add(2)).ap(Container.of(3));
+// Container(5)
+
+// all together now
+Container.of(2).map(add).ap(Container.of(3));
+// Container(5)
+</code></pre>
+<p>下面有一个特性</p>
+<pre><code class="language-js">F.of(x).map(f) == F.of(f).ap(F.of(x))
+</code></pre>
+<p>翻译过来就是，map 一个 <code>f</code> 等价于 <code>ap</code> 一个值为 <code>f</code> 的 functor</p>
+<h3>2.lift</h3>
+<p>Lifting指的是当你有放在对象里的值，比如各种functor，你可以把他们里面的值用ap调用。</p>
+<p>有些实现会命名为 <code>lift</code>, <code>liftA2</code></p>
+<pre><code class="language-js">const liftA2 = (f) =&gt; (a, b) =&gt; a.map(f).ap(b) // note it&#x27;s `ap` and not `map`.
+
+const mult = a =&gt; b =&gt; a * b
+
+const liftedMult = liftA2(mult) // this function now works on functors like array
+
+liftedMult([1, 2], [3]) // [3, 6]
+liftA2(a =&gt; b =&gt; a + b)([1, 2], [3, 4]) // [4, 5, 5, 6]
+</code></pre>
+<p>Lifting 针对只有一个参数的函数的时候效果等于 <code>map</code>.</p>
+<pre><code class="language-js">const increment = (x) =&gt; x + 1
+
+lift(increment)([2]) // [3]
+;[2].map(increment) // [3]
+</code></pre>
+<p>下面是Lift函数实现的例子</p>
+<pre><code class="language-js">var liftA2 = curry(function(f, functor1, functor2) {
+  return functor1.map(f).ap(functor2);
+});
+
+var liftA3 = curry(function(f, functor1, functor2, functor3) {
+  return functor1.map(f).ap(functor2).ap(functor3);
+});
+
+//liftA4, etc
+</code></pre>
+<p>下面是用例：</p>
+<pre><code class="language-js">// checkEmail :: User -&gt; Either String Email
+// checkName :: User -&gt; Either String String
+
+//  createUser :: Email -&gt; String -&gt; IO User
+var createUser = curry(function(email, name) { /* creating... */ });
+
+Either.of(createUser).ap(checkEmail(user)).ap(checkName(user));
+// Left(&quot;invalid email&quot;)
+
+liftA2(createUser, checkEmail(user), checkName(user));
+// Left(&quot;invalid email&quot;)
+</code></pre>
+<p>我们用lift重写上面的用例</p>
+<pre><code class="language-js">liftA2(add, Maybe.of(2), Maybe.of(3));
+// Maybe(5)
+
+liftA2(renderPage, Http.get(&#x27;/destinations&#x27;), Http.get(&#x27;/events&#x27;))
+// Task(&quot;&lt;div&gt;some page with dest and events&lt;/div&gt;&quot;)
+
+liftA3(signIn, getVal(&#x27;#email&#x27;), getVal(&#x27;#password&#x27;), IO.of(false));
+// IO({id: 3, email: &quot;gg@allin.com&quot;})
+</code></pre>
+<h3>3.相关的范畴学知识</h3>
+<h4>同一律（identity）</h4>
+<pre><code class="language-js">// 同一律
+A.of(id).ap(v) == v
+</code></pre>
+<p>是的，对一个 functor 应用 <code>id</code> 函数不会改变 <code>v</code> 里的值。比如：</p>
+<pre><code class="language-js">var v = Identity.of(&quot;Pillow Pets&quot;);
+Identity.of(id).ap(v) == v
+</code></pre>
+<p><code>Identity.of(id)</code> 的“无用性”让我不禁莞尔。这里有意思的一点是，就像我们之前证明了的，<code>of/ap</code> 等价于 <code>map</code>，因此这个同一律遵循的是 functor 的同一律：<code>map(id) == id</code>。</p>
+<p>使用这些定律的优美之处在于，就像一个富有激情的幼儿园健身教练让所有的小朋友都能愉快地一块玩耍一样，它们能够强迫所有的接口都能完美结合。</p>
+<h4>同态（homomorphism）</h4>
+<pre><code class="language-js">// 同态
+A.of(f).ap(A.of(x)) == A.of(f(x))
+</code></pre>
+<p><em>同态</em>就是一个能够保持结构的映射（structure preserving map）。实际上，functor 就是一个在不同范畴间的同态，因为 functor 在经过映射之后保持了原始范畴的结构。</p>
+<p>事实上，我们不过是把普通的函数和值放进了一个容器，然后在里面进行各种计算。所以，不管是把所有的计算都放在容器里（等式左边），还是先在外面进行计算然后再放到容器里（等式右边），其结果都是一样的。</p>
+<p>一个简单例子：</p>
+<pre><code class="language-js">Either.of(_.toUpper).ap(Either.of(&quot;oreos&quot;)) == Either.of(_.toUpper(&quot;oreos&quot;))
+</code></pre>
+<h4>互换（interchange）</h4>
+<p>互换（interchange）表明的是选择让函数在 <code>ap</code> 的左边还是右边发生 lift 是无关紧要的。</p>
+<pre><code class="language-js">// 互换
+v.ap(A.of(x)) == A.of(function(f) { return f(x) }).ap(v)
+</code></pre>
+<p>这里有个例子：</p>
+<pre><code class="language-js">var v = Task.of(_.reverse);
+var x = &#x27;Sparklehorse&#x27;;
+
+v.ap(Task.of(x)) == Task.of(function(f) { return f(x) }).ap(v)
+</code></pre>
+<h4>组合（composition）</h4>
+<p>最后是组合。组合不过是在检查标准的函数组合是否适用于容器内部的函数调用。</p>
+<pre><code class="language-js">// 组合
+A.of(compose).ap(u).ap(v).ap(w) == u.ap(v.ap(w));
+var u = IO.of(_.toUpper);
+var v = IO.of(_.concat(&quot;&amp; beyond&quot;));
+var w = IO.of(&quot;blood bath &quot;);
+
+IO.of(_.compose).ap(u).ap(v).ap(w) == u.ap(v.ap(w))
+</code></pre></div></div><div draggable="true" class="bg-pink-50 fixed shadow rounded w-1/5 overflow-auto overflow-x-hidden" style="max-height:70vh"><div class="absolute"><svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3262" width="22" height="22"><path d="M91.89 238.457c-29.899 0-54.133 24.239-54.133 54.134 0 29.899 24.234 54.137 54.133 54.137s54.138-24.238 54.138-54.137c0-29.896-24.239-54.134-54.138-54.134z" fill="#E5594F" p-id="3263"></path><path d="M91.89 462.463c-29.899 0-54.133 24.239-54.133 54.139 0 29.895 24.234 54.133 54.133 54.133s54.138-24.238 54.138-54.133c0-29.9-24.239-54.139-54.138-54.139z" fill="#C45FA0" p-id="3264"></path><path d="M91.89 686.475c-29.899 0-54.133 24.237-54.133 54.133 0 29.899 24.234 54.138 54.133 54.138s54.138-24.238 54.138-54.138c0-29.896-24.239-54.133-54.138-54.133z" fill="#F39A2B" p-id="3265"></path><path d="M941.26 234.723H328.964c-28.867 0-52.263 23.4-52.263 52.268v3.734c0 28.868 23.396 52.269 52.263 52.269H941.26c28.869 0 52.269-23.401 52.269-52.269v-3.734c-0.001-28.868-23.4-52.268-52.269-52.268z" fill="#F0D043" p-id="3266"></path><path d="M941.26 682.74H328.964c-28.867 0-52.263 23.399-52.263 52.268v3.734c0 28.863 23.396 52.269 52.263 52.269H941.26c28.869 0 52.269-23.405 52.269-52.269v-3.734c-0.001-28.868-23.4-52.268-52.269-52.268z" fill="#4A5699" p-id="3267"></path><path d="M709.781 458.729H328.964c-28.867 0-52.263 23.4-52.263 52.269v3.734c0 28.873 23.396 52.269 52.263 52.269h380.817c28.866 0 52.271-23.396 52.271-52.269v-3.734c0.001-28.869-23.405-52.269-52.271-52.269z" fill="#E5594F" p-id="3268"></path></svg></div><div class="absolute right-0 transition duration-500 transform rotate-180"><svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1196" width="22" height="22"><path d="M432.2304 103.2192c-9.216-6.5536-22.016-4.3008-28.5696 4.9152-6.5536 9.216-4.3008 22.016 4.9152 28.5696l59.0848 41.7792 3.2768 2.2528c-71.8848 9.9328-138.3424 42.8032-190.5664 95.0272-63.3856 63.3856-98.2016 147.5584-98.2016 237.1584 0 45.568 9.0112 89.7024 26.7264 131.3792 17.1008 40.1408 41.5744 76.1856 72.704 107.008 3.9936 3.9936 9.216 5.9392 14.4384 5.9392 5.3248 0 10.5472-2.048 14.5408-6.0416 7.9872-7.9872 7.8848-20.992-0.1024-28.9792-56.32-55.7056-87.2448-130.048-87.2448-209.2032 0-78.6432 30.6176-152.576 86.2208-208.1792 46.4896-46.4896 105.8816-75.5712 169.984-83.7632l-2.9696 3.072-52.4288 52.9408c-7.9872 7.9872-7.8848 20.992 0.1024 28.9792 3.9936 3.9936 9.216 5.9392 14.4384 5.9392 5.3248 0 10.5472-2.048 14.5408-6.0416l109.4656-110.4896-130.3552-92.2624zM841.9328 511.0784c0-45.568-9.0112-89.7024-26.7264-131.3792-17.1008-40.1408-41.5744-76.1856-72.704-107.008-3.9936-3.9936-9.216-5.9392-14.4384-5.9392-5.3248 0-10.5472 2.048-14.5408 6.0416-7.9872 7.9872-7.8848 20.992 0.1024 28.9792 56.32 55.7056 87.2448 130.048 87.2448 209.2032 0 78.6432-30.6176 152.576-86.2208 208.1792-46.4896 46.4896-105.8816 75.5712-169.984 83.7632l2.9696-3.072 52.4288-52.9408c7.9872-7.9872 7.8848-20.992-0.1024-28.9792-3.9936-3.9936-9.216-5.9392-14.4384-5.9392-5.3248 0-10.5472 2.048-14.5408 6.0416L461.6192 828.7232l130.1504 92.0576c9.216 6.5536 22.016 4.3008 28.5696-4.9152 6.5536-9.216 4.3008-22.016-4.9152-28.5696l-59.0848-41.7792-3.2768-2.2528c71.8848-9.9328 138.3424-42.8032 190.5664-95.0272 63.3856-63.3856 98.304-147.5584 98.304-237.1584z" p-id="1197"></path></svg></div><ul class="flex flex-col"><li class="font-bold border-b-2 border-gray-300 pl-7 select-none cursor-move">目录</li></ul></div></main></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"id":"函数式编程笔记","title":"函数式编程笔记","date":"20210612155010","content":"# functional-programming\n\n\n\n## 01.纯函数(Purity)\n\n### 1.纯函数的定义\n\n输出仅由输入决定，且不产生副作用。\n\n```javascript\nconst greet = (name) =\u003e `hello, ${name}`\ngreet('world')\n```\n\n以下代码不是纯函数：\n\n```javascript\nwindow.name = 'Brianne'\n\nconst greet = () =\u003e `Hi, ${window.name}`\n\ngreet() // \"Hi, Brianne\"\n```\n\n以上示例中，函数依赖外部状态。\n\n```javascript\nlet greeting\n\nconst greet = (name) =\u003e {\n    greeting = `Hi, ${name}`\n}\n\ngreet('Brianne')\ngreeting // \"Hi, Brianne\"\n```\n\n以上实例中，函数修改了外部状态。\n\n**纯函数的几个特性**:\n\n- 无**副作用(Side effects)**\n- 可缓存性 (Cacheable)\n- 可移植性,自文档化（Portable / Self-Documenting）\n- 可测试性（Testable）\n- 合理性,引用透明性（Reasonable）\n- 并行运算\n\n### 2.特性1:无副作用(Side effects)\n\n如果函数与外部可变状态进行交互，则它是有副作用的。\n\n副作用可能包含，但不限于：\n\n- 更改文件系统\n- 往数据库插入记录\n- 发送一个 http 请求\n- 可变数据\n- 打印/log\n- 获取用户输入\n- DOM 查询\n- 访问系统状态\n- ...\n\n```javascript\nconst differentEveryTime = new Date()//可变日期函数是副作用\nconsole.log('IO is a side effect!')//log函数也是副作用\n```\n\n### 3.特性2:可缓存性 (Cacheable)\n\n由于纯函数的输入就决定了输出,就和数学中的函数一样(所以我们也可以像数学公式一样推导),一个确定的输入对应一个确定的输出,\n\n因此我们可以根据传入的参数把结果缓存起来,这样后续以同样的参数调用的时候就可以直接返回结果,而不是重新执行一遍算法.\n\n\n\n实现缓存的一种典型方式是memoize技术,\n\n下面的代码是一个粗略的实现,\t传入纯函数作为参数,就能返回一个带缓存的纯函数.\n\n```javascript\nvar memoize = function(f) {\n  var cache = {};\n\n  return function() {\n    var arg_str = JSON.stringify(arguments);\n    cache[arg_str] = cache[arg_str] || f.apply(f, arguments);\n    return cache[arg_str];\n  };\n};\n```\n\n\n\n下面是我参考lodash的代码用typescript写的memoize函数，\n\nlodash的代码里面用给函数加cache属性的方式，但是在typescript里面函数是不能用`.`语法随便添加属性的。\n\n所以我实现的版本没办法查看缓存究竟有多少\n\n```typescript\n/**\n *\n * 传入一个函数,返回它的带缓存版本,\n * 缺点是缓存在闭包里面没办法获取,也没办法消除.\n * 第二个参数resolver是用来产生缓存的key的函数,如果你不提供这个函数,将会用函数的第一个参数作为key\n * @param func 需要缓存的函数\n * @param resolver 生成缓存key的映射的函数\n */\nfunction memoize(\n  func: (...args: any) =\u003e any,\n  resolver?: (...args: any) =\u003e any\n): (...args: any) =\u003e any {\n  // func 和 resolve需要都是函数类型\n  if (\n    typeof func !== 'function' ||\n    (resolver != null \u0026\u0026 typeof resolver !== 'function')\n  ) {\n    throw new TypeError('Expected a function')\n  }\n  const cache = new Map()\n  const memoized = function (...args: any): any {\n    const key = resolver ? resolver(args) : args[0]\n    if (cache.has(key)) {\n      return cache.get(key)\n    }\n    const result = func(args)\n    cache.set(key, result)\n    return result\n  }\n  return memoized\n}\nexport default memoize\n```\n\n下面是编译成es2015的代码，基本上除了没有类型也没什么变化了。\n\n```javascript\n/**\n *\n * 传入一个函数,返回它的带缓存版本,\n * 缺点是缓存在闭包里面没办法获取,也没办法消除.\n * 第二个参数resolver是用来产生缓存的key的函数,如果你不提供这个函数,将会用函数的第一个参数作为key\n * @param func 需要缓存的函数\n * @param resolver 生成缓存key的映射的函数\n */\nfunction memoize(func, resolver) {\n    // func 和 resolve需要都是函数类型\n    if (typeof func !== 'function' ||\n        (resolver != null \u0026\u0026 typeof resolver !== 'function')) {\n        throw new TypeError('Expected a function');\n    }\n    var cache = new Map();\n    var memoized = function () {\n        var args = [];\n        for (var _i = 0; _i \u003c arguments.length; _i++) {\n            args[_i] = arguments[_i];\n        }\n        var key = resolver ? resolver(args) : args[0];\n        if (cache.has(key)) {\n            return cache.get(key);\n        }\n        var result = func(args);\n        cache.set(key, result);\n        return result;\n    };\n    return memoized;\n}\n```\n\n### 4.特性3：可移植性,自文档化（Portable / Self-Documenting）\n\n纯函数的依赖很明确，因此更易于观察和理解\n\n因为他们与环境无关，所以可以拷贝到任何地方运行，提高了代码的复用性。\n\n对比面向对象，你从类中拷贝一个方法，就要麻烦得多。\n\n### 5.特性4：可测试性（Testable）\n\n纯函数让测试更加容易。\n\n只需要给定输入，断言输出就可以了。\n\n甚至有专门的测试工具帮我们自动生成输入，并断言输出。\n\n比如**Quickcheck**\n\n### 6.特性5：引用透明性(referential transparency)，合理性（Reasonable）\n\n一个表达式能够被它的值替代而不改变程序的行为称为引用透明。\n\n```typescript\nconst greet = () =\u003e 'hello, world.'\n```\n\n引用透明有利于我们使用一种 “等式推导”（equational reasoning）的技术来分析代码，\n\n\n\n### 7.特性6：可以并行运行\n\n我们可以并行运行任意纯函数。因为纯函数根本不需要访问共享的内存，而且根据其定义，纯函数也不会因副作用而进入竞争态（race condition）。\n\njs毕竟是个单线程的语言，在其他多线程的语言里面这个作用就比较明显了，比如golang，比如julia，利用纯函数的特性并行计算，可以充分利用计算机的性能。\n\n## 02.柯里化(Currying)\n\n**柯里化**  将一个多元函数转变为一元函数的过程。 每当函数被调用时，它仅仅接收一个参数并且返回带有一个参数的函数，直到传递完所有的参数。\n\n下面是例子\n\n```javascript\nconst sum = (a, b) =\u003e a + b\n\nconst curriedSum = (a) =\u003e (b) =\u003e a + b\n\ncurriedSum(3)(4)         // 7\n\nconst add2 = curriedSum(2)\n\nadd2(10)     // \n```\n\n当我们编写柯里化相关的函数的时候，通常会把内存占用大的参数放在列表的后面，比如map，第一个参数是函数，第二个才是数值，这样柯里化之后，可以再最后传入数值，减少性能浪费，也更符合充分利用函数作为一等公民的便利性。\n\n下面我们从介绍柯里化相关的术语开始\n\n### 1.Arity 函数参数的个数\n\n函数参数的个数。来自于单词 unary, binary, ternary 等等。这个单词是由 -ary 与 -ity 两个后缀拼接而成。例如，一个带有两个参数的函数被称为二元函数或者它的 arity 是2。它也被那些更喜欢希腊词根而非拉丁词根的人称为 `dyadic`。同样地，带有可变数量参数的函数被称为 `variadic`，而二元函数只能带两个参数。\n\n```javascript\nconst sum = (a, b) =\u003e a + b\n\nconst arity = sum.length\nconsole.log(arity)        // 2\n```\n\n在JavaScript的api里面，函数的参数个数可以通过函数的`length`属性来获取。\n\n如何定义一个任意个参数的函数,我们可以用到es6的语法，下面`...arg`就表示任意个参数\n\n获取的时候，args相当于数组，`...`是数组解构的语法，另外我们在函数的内部的时候，作用域里面有一个argument参数，用过这个也可以获取到函数的参数和参数个数。\n\n```javascript\nfunction(...args){\n args.forEach(()=\u003e{\n     \n })   \n}\n```\n\n### 2.高阶函数 (Higher-Order Function / HOF)\n\n以函数为参数或返回值。\n\n柯里化函数算是典型的高阶函数\n\n```javascript\nconst filter = (predicate, xs) =\u003e xs.filter(predicate)\n\nconst is = (type) =\u003e (x) =\u003e Object(x) instanceof type\n\nfilter(is(Number), [0, '1', 2, null]) // 0, 2\n```\n\n### 3.偏函数 (Partial Function)\n\n对原始函数预设参数作为一个新的函数。\n\n当我们柯里化函数之后，部分传参后返回的函数也就是偏函数。\n\n```JavaScript\n// 创建偏函数，固定一些参数\nconst partical = (f, ...args) =\u003e\n  // 返回一个带有剩余参数的函数\n  (...moreArgs) =\u003e\n    // 调用原始函数\n    f(...args, ...moreArgs)\n\nconst add3 = (a, b, c) =\u003e a + b + c\n\n// (...args) =\u003e add3(2, 3, ...args)\n// (c) =\u003e 2 + 3 + c\nconst fivePlus = partical(add3, 2, 3)\n\nfivePlus(4)  // 9\n```\n\n也可以使用 `Function.prototype.bind` 实现偏函数。\n\n```javascript\nconst add1More = add3.bind(null, 2, 3)\n```\n\n偏函数应用通过对复杂的函数填充一部分数据来构成一个简单的函数。柯里化通过偏函数实现。\n\n### 4.自动柯里化 (Auto Currying)\n\n`lodash`，`understore` 和 `ramda` 有 `curry` 函数可以自动完成柯里化。\n\n```javascript\nconst add = (x, y) =\u003e x + y\n\nconst curriedAdd = _.curry(add)\n\ncurriedAdd(1, 2)   // 3\ncurriedAdd(1)(2)   // 3\ncurriedAdd(1)      // (y) =\u003e 1 + y\n```\n\n#### typescript 实现两个参数函数的柯里化\n\n```typescript\n/**\n * 对有两个参数的函数进行柯里化\n * @param func 有两个参数的函数\n * @returns 柯里化后的函数\n */\nfunction curry2(func: (x: any, y: any) =\u003e any) {\n  return function f2(a?: any, b?: any) {\n    switch (arguments.length) {\n      case 0:\n        return f2\n      case 1:\n        return (_b: any): any =\u003e {\n          return func(a, _b)\n        }\n      case 2:\n        return func(a, b)\n      default:\n        throw new Error(\n          'curry2 arity must be a non-negative integer no greater than 2'\n        )\n    }\n  }\n}\nexport default curry2\n```\n\n经过tsc编译后，es6的代码如下\n\n```javascript\nfunction curry2(func) {\n    return function f2(a, b) {\n        switch (arguments.length) {\n            case 0:\n                return f2;\n            case 1:\n                return (_b) =\u003e {\n                    return func(a, _b);\n                };\n            case 2:\n                return func(a, b);\n            default:\n                throw new Error('curry2 arity must be a non-negative integer no greater than 2');\n        }\n    };\n}\n```\n\n#### typescript 实现任意个参数函数的柯里化\n\n柯里化的实质很简单，就是随便你分几次传参，每次传几个参数，每次传参都会把传进去的参数存到闭包里，直到传入了函数所有的参数才会进行调用。\n\n讲究的是延迟调用，也使得函数的传参更加灵活。\n\n\n\n下面实现了任意个参数的函数的柯里化，主要逻辑是不断收集传入函数的参数，直到收集齐参数后，用这些参数调用原来的函数即可。如果没有收集齐参数，则是递归调用，再次返回同一个函数，并且把收集到的参数都传入。\n\n\n\n```typescript\n/**\n *\n * @param fn  需要柯里化的函数\n * @param length 柯里化的参数个数，默认值为传入函数的参数个数\n * @returns 返回柯里化后的函数，可以传入任意小于原函数参数个数的参数，参数全部传递完成就会返回执行结果\n */\nfunction curryN(fn: (...args: any) =\u003e any, length: number = fn.length) {\n  return _curry(fn, length)\n}\n\nfunction _curry(fn: (...args: any) =\u003e any, length: number, ...args: any) {\n  // args 是已经收集到的数据，函数第一次执行时不传入相当于0\n  // param用来收集这次传入的参数\n  // _args则是把两者拼起来，累计已经收集到的数据\n  return function (...params: any) {\n    //   收集所有输入的参数\n    let _args = [...args, ...params]\n    // 如果收集参数的个数达到最初得到的函数参数总个数,直接传入收集到的所有参数并返回执行结果\n    if (_args.length \u003e= length) {\n      return fn(..._args)\n    } else {\n      // 如果收集的参数未达到目标,继续收集参数\n      return _curry(fn, length, ..._args)\n    }\n  }\n}\n\nexport default curryN\n```\n\n下面是编译成es6\n\n```javascript\n/**\n *\n * @param fn  需要柯里化的函数\n * @param length 柯里化的参数个数，默认值为传入函数的参数个数\n * @returns 返回柯里化后的函数，可以传入任意小于原函数参数个数的参数，参数全部传递完成就会返回执行结果\n */\nfunction curryN(fn, length = fn.length) {\n    return _curry(fn, length);\n}\nfunction _curry(fn, length, ...args) {\n    // args 是已经收集到的数据，函数第一次执行时不传入相当于0\n    // param用来收集这次传入的参数\n    // _args则是把两者拼起来，累计已经收集到的数据\n    return function (...params) {\n        //   收集所有输入的参数\n        let _args = [...args, ...params];\n        // 如果收集参数的个数达到最初得到的函数参数总个数,直接传入收集到的所有参数并返回执行结果\n        if (_args.length \u003e= length) {\n            return fn(..._args);\n        }\n        else {\n            // 如果收集的参数未达到目标,继续收集参数\n            return _curry(fn, length, ..._args);\n        }\n    };\n}\nexports.default = curryN;\n```\n\n#### typescript 给curryN添加占位符功能\n\nlodash的curry函数有用占位符，调整参数传入顺序的功能，简单来说就是占位符所在的参数可以延后传入的时间。\n\n下面是例子\n\n```javascript\nlet fn = function(a, b, c, d, e) {\n    console.log([a, b, c, d, e]);\n}\n\nlet _fn = _.curry(fn);  \n_fn(1, 2, 3, 4, 5);                 // print: 1,2,3,4,5\n_fn(_, 2, 3, 4, 5)(1);              // print: 1,2,3,4,5\n_fn(1, _, 3, 4, 5)(2);              // print: 1,2,3,4,5\n```\n\nlodash采用了lodash对象来做占位符，但是我们的curry函数没有挂载对象，因此采用了curry函数自身作为默认的占位符\n\n\n\n下面是具体实现\n\n相比之前就复杂了很多，因为我们还要记录占位符和占位符的位置。\n\n```typescript\n/**\n * 返回柯里化后的函数，支持用占位符改变参数的传递顺序，\n * 默认的占位符是curry函数本身\n *\n * @param fn 柯里化的原函数\n * @param length 需要的参数个数，默认为函数的形参个数\n * @param placeHolder 占位符，默认当前柯里化函数\n * @returns 柯里化后的函数\n */\nfunction curry(\n  fn: (...args: any) =\u003e any,\n  length: number = fn.length,\n  placeHolder: any = curry\n) {\n  return _curry(fn, length, placeHolder, [], [])\n}\n/**\n * 递归调用实现柯里化的中间函数\n * @param fn 柯里化的原函数\n * @param length 原函数需要的参数个数\n * @param placeHolder 接收的占位符\n * @param argsCopy 已接收的参数列表\n * @param holdersCopy 已接收的占位符位置列表\n * @returns 柯里化后的函数,或是递归调用收集参数的函数\n */\nfunction _curry(\n  fn: (...args: any) =\u003e any,\n  length: number = fn.length,\n  placeHolder: any,\n  args: any[],\n  holders: number[]\n) {\n  return function (..._args: any) {\n    //   两个参数列表是引用类型，复制一份后再操作，防止函数重复调用操作初始值地址把初始值搞乱影响结果\n    let argsCopy = args.slice()\n    let holdersCopy = holders.slice()\n\n    _args.forEach((value: any, index: number) =\u003e {\n      if (argsCopy.length \u003c length) {\n        //   如果新增参数中包含占位符，除了加入args列表，还要再在holders里面添加位置索引\n        if (value === placeHolder) {\n          // 占位符的位置就是当前参数数组末尾\n          holdersCopy.push(argsCopy.length)\n          argsCopy.push(placeHolder)\n        } else {\n          // 如果是普通参数，直接加入args现存参数列表\n          argsCopy.push(value)\n        }\n      }\n      // 参数列表等于函数形参个数，此时占位符全部忽略,开始清理占位符，替换占位符为新增参数\n      else {\n        if (value !== placeHolder \u0026\u0026 holdersCopy.length \u003e 0) {\n          const holdIdx = holdersCopy[0]\n          holdersCopy.shift()\n          argsCopy[holdIdx] = value\n        }\n      }\n    })\n    //现存参数等于形参，并且占位符全部替换完成,说明参数收集完成=\n    if (argsCopy.length \u003e= length \u0026\u0026 holdersCopy.length \u003c= 0) {\n      return fn(...argsCopy)\n    } else {\n      // 参数没有收集齐，则进入下一轮收集\n      return _curry(fn, length, placeHolder, argsCopy, holdersCopy)\n    }\n  }\n}\n\nexport default curry\n```\n\n编译成es6\n\n```javascript\n/**\n * 递归调用实现柯里化的中间函数\n * @param fn 柯里化的原函数\n * @param length 原函数需要的参数个数\n * @param placeHolder 接收的占位符\n * @param argsCopy 已接收的参数列表\n * @param holdersCopy 已接收的占位符位置列表\n * @returns 柯里化后的函数,或是递归调用收集参数的函数\n */\nfunction _curry(fn, length = fn.length, placeHolder, args, holders) {\n    return function (..._args) {\n        //   两个参数列表是引用类型，复制一份后再操作，防止函数重复调用操作初始值地址把初始值搞乱影响结果\n        let argsCopy = args.slice();\n        let holdersCopy = holders.slice();\n        _args.forEach((value, index) =\u003e {\n            if (argsCopy.length \u003c length) {\n                //   如果新增参数中包含占位符，除了加入args列表，还要再在holders里面添加位置索引\n                if (value === placeHolder) {\n                    // 占位符的位置就是当前参数数组末尾\n                    holdersCopy.push(argsCopy.length);\n                    argsCopy.push(placeHolder);\n                }\n                else {\n                    // 如果是普通参数，直接加入args现存参数列表\n                    argsCopy.push(value);\n                }\n            }\n            // 参数列表等于函数形参个数，此时占位符全部忽略,开始清理占位符，替换占位符为新增参数\n            else {\n                if (value !== placeHolder \u0026\u0026 holdersCopy.length \u003e 0) {\n                    const holdIdx = holdersCopy[0];\n                    holdersCopy.shift();\n                    argsCopy[holdIdx] = value;\n                }\n            }\n        });\n        //现存参数等于形参，并且占位符全部替换完成,说明参数收集完成=\n        if (argsCopy.length \u003e= length \u0026\u0026 holdersCopy.length \u003c= 0) {\n            return fn(...argsCopy);\n        }\n        else {\n            // 参数没有收集齐，则进入下一轮收集\n            return _curry(fn, length, placeHolder, argsCopy, holdersCopy);\n        }\n    };\n}\n```\n\n#### jest为curry函数编写单元测试\n\n```typescript\nimport curry from '../../fp-lib/curry'\n\ntest('normal curry test', () =\u003e {\n  const testFn = (a, b, c, d, e) =\u003e {\n    return [a, b, c, d, e]\n  }\n  const input = [1, 2, 3, 4, 5]\n  const expected = [1, 2, 3, 4, 5]\n  const curriedFn = curry(testFn)\n  expect(curriedFn(1)(2)(3)(4)(5)).toEqual(expected)\n  expect(curriedFn(1)(2, 3)(4)(5)).toEqual(expected)\n  expect(curriedFn(1)(2, 3)(4, 5)).toEqual(expected)\n  expect(curriedFn(...input)).toEqual(expected)\n})\n\ntest('curry placeholder', () =\u003e {\n  const testFn = (a, b, c, d, e) =\u003e {\n    return [a, b, c, d, e]\n  }\n  const input = [1, 2, 3, 4, 5]\n  const expected = [1, 2, 3, 4, 5]\n  const curriedFn = curry(testFn)\n  // 默认占位符是curry函数本身\n  expect(curriedFn(1)(curry)(3)(4)(5)(2)).toEqual(expected)\n  expect(curriedFn(1)(curry, 3)(4)(5)(2)).toEqual(expected)\n  expect(curriedFn(1)(2, 3)(curry, curry)(4)(5)).toEqual(expected)\n})\n```\n\n## 03.函数组合 (Function Composing)\n\n接收多个函数作为参数，从右到左，一个函数的输入为另一个函数的输出。\n\n```javascript\nconst compose = (f, g) =\u003e (a) =\u003e f(g(a))    // 定义\nconst floorAndToString = compose((val) =\u003e val.toString(), Math.floor) // 使用\nfloorAndToString(12.12)   // '12'\n```\n\n下面从相关的术语开始介绍.\n\n### 1.范畴 (Category)\n\n在范畴论中，范畴是指对象集合及它们之间的态射 (morphism)。在编程中，数据类型作为对象，函数作为态射。\n\n一个有效的范畴遵从以下三个原则：\n\n1. 必有一个 identity 态射，使得 map 一个对象是它自身。`a` 是范畴里的一个对象时，必有一个函数使 `a -\u003e a`。\n2. 态射必是可组合的。`a`，`b`，`c` 是范畴里的对象，`f` 是态射 `a -\u003e b`，`g` 是 `b -\u003e c` 态射。`g(f(x))` 一定与 `(g ● f)(x)` 是等价的。\n3. 组合满足结合律。`f ● (g ● h)` 与 `(f ● g) ● h` 是等价的。\n\n由于组合的结合律,我们一连串函数的组合,就可以像积木一样任意拆分了,具有很大的灵活性.\n\n下面是一个典型的例子\n\n```javascript\nvar loudLastUpper = compose(exclaim, toUpperCase, head, reverse);\n\n// 或\nvar last = compose(head, reverse);\nvar loudLastUpper = compose(exclaim, toUpperCase, last);\n\n// 或\nvar last = compose(head, reverse);\nvar angry = compose(exclaim, toUpperCase);\nvar loudLastUpper = compose(angry, last);\n\n// 更多变种...\n```\n\n#### 态射 (Morphism)\n\n一个变形的函数。\n\n**自同态 (Endomorphism)**\n\n输入输出是相同类型的函数。\n\n```js\n// uppercase :: String -\u003e String\nconst uppercase = (str) =\u003e str.toUpperCase()\n\n// decrement :: Number -\u003e Number\nconst decrement = (x) =\u003e x - 1\n```\n\n\n\n**同构 (Isomorphism)**\n\n不用类型对象的变形，保持结构并且不丢失数据。\n\n例如，一个二维坐标既可以表示为数组 `[2, 3]`，也可以表示为对象 `{x: 2, y: 3}`。\n\n```js\n// 提供函数在两种类型间互相转换\nconst pairToCoords = (pair) =\u003e ({x: pair[0], y: pair[1]})\n\nconst coordsToPair = (coords) =\u003e [coords.x, coords.y]\n\ncoordsToPair(pairToCoords([1, 2])) // [1, 2]\n\npairToCoords(coordsToPair({x: 1, y: 2})) // {x: 1, y: 2}\n```\n\n\n\n### 2.identity态射\n\n让我们介绍一个名为 `id` 的实用函数。这个函数接受随便什么输入然后原封不动地返回它：\n\n```javascript\nvar id = function(x){ return x; };\n```\n\n有下面的例子\n\n```javascript\n// identity\ncompose(id, f) == compose(f, id) == f;\n// true\n```\n\n因为id函数返回传入的参数的特性,相当于它就什么都没做,有他没他一个样,所以就有了上面的等式.\n\nid函数就相当于乘法运算里的1,加法运算里的0.同时compose和这两种运算一样都是满足结合律的.\n\n下面我们要实现的compose函数,当你不传入参数进行调用时,就是返回一个id函数\n\n\n\n### 3.Point-Free 风格 (Point-Free Style)\n\n定义函数时，不显式地指出函数所带参数。这种风格通常需要柯里化或者高阶函数。也叫 Tacit programming。\n\n```javascript\nconst map = (fn) =\u003e (list) =\u003e list.map(fn)\nconst add = (a) =\u003e (b) =\u003e a + b\n\n# Points-Free   list 是显式参数\nconst incrementAll = (numbers) =\u003e map(add(1))(numbers)\n\n# Points-Free   list 是隐式参数\nconst incrementAll2 = map(add(1))\n```\n\n`incrementAll` 识别并且使用了 `numbers` 参数，因此它不是 Point-Free 风格的。 `incrementAll2` 连接函数与值，并不提及它所使用的参数，因为它是 Point-Free 风格的。\n\nPoint-Free 风格的函数就像平常的赋值，不使用 `function` 或者 `=\u003e`。\n\npoint free最明显的好处是,能够帮助我们减少不必要的命名，让代码保持简洁和通用。毕竟现在的ide都很智能了,如果我们要看函数的参数,直接光标移到函数上就能显示出来了,没必要特意写出参数,这样代码会更简洁.\n\n### 4.typescript实现接收任意个函数参数的compose函数\n\n我们只需要接收任意个函数参数,然后用reduce循环套娃就可以了.\n\n```typescript\n/**\n * 组合任意多个函数\n * @param funcs 被组合的函数\n * @returns 返回组合后的函数\n */\n\nfunction compose(...funcs: ((...args: any) =\u003e any)[]) {\n  if (funcs.length === 0) {\n    //   compose不传入参数的情况,返回一个返回输入的函数,也就是id函数\n    return (x: any) =\u003e x\n  }\n  if (funcs.length === 1) {\n    return funcs[0]\n  }\n  return funcs.reduce(function (\n    a: (...args: any) =\u003e any,\n    b: (...args: any) =\u003e any\n  ): (...args: any) =\u003e any {\n    return (...args: any) =\u003e {\n      return a(b(...args))\n    }\n  })\n}\nexport default compose\n\n```\n\n下面是编译成es6后的代码\n\n```javascript\n\"use strict\";\n/**\n * 组合任意多个函数\n * @param funcs 被组合的函数\n * @returns 返回组合后的函数\n */\nfunction compose(...funcs) {\n    if (funcs.length === 0) {\n        //   compose不传入参数的情况,返回一个返回输入的函数,也就是id函数\n        return (x) =\u003e x;\n    }\n    if (funcs.length === 1) {\n        return funcs[0];\n    }\n    return funcs.reduce(function (a, b) {\n        return (...args) =\u003e {\n            return a(b(...args));\n        };\n    });\n}\n```\n\n### 5.使用jest测试组合函数\n\n```typescript\nimport compose from '../../fp-lib/compose'\n\ntest('normal compose', () =\u003e {\n  const add = (x) =\u003e x + 1\n  expect(compose(add, add, add, add, add)(0)).toBe(5)\n\n  // 测试0个参数时\n  expect(compose()(add)).toBe(add)\n  // 测试1个参数时\n  expect(compose(add)).toBe(add)\n})\n```\n\n### 6.组合中的debug\n\n组合就类似于shell中的管道,因此比较常见的debug方法就是把在管道的某处把数据打印出来查看.\n\n我们可以实现一个trace函数来进行debug.\n\n下面是typescript中的一个具体的实现,\n\n这样我们在组合中加入这个函数,可以查看某处的数据,并且不会影响后续的数据流\n\n```typescript\nimport curry from './curry'\n\nconst trace = curry(function (tag: string, x: any): any {\n  console.log(tag, x)\n  return x\n})\n\nexport default trace\n```\n\n## 04.类型签名(Type Signatures)\n\n虽然typescript也有类型,但是当你用compose把函数串联起来的最终函数,是显示不出中间的路径的.\n\n所以我们要给自己的代码添加类型注释,以便让自己以后还能看懂自己的代码.\n\n\n\n这次我们介绍的是一种比较通用的类型注释系统 Hindley-Milner函数签名 .\n\n下面是一些常见函数类型的写法,一个箭头表示一次传参.\n\n```js\n//  capitalize :: String -\u003e String\nvar capitalize = function(s){\n  return toUpperCase(head(s)) + toLowerCase(tail(s));\n}\n\ncapitalize(\"smurf\");\n//=\u003e \"Smurf\"\n```\n\n```js\n//  strLength :: String -\u003e Number\nvar strLength = function(s){\n  return s.length;\n}\n\n//  join :: String -\u003e [String] -\u003e String\nvar join = curry(function(what, xs){\n  return xs.join(what);\n});\n\n//  match :: Regex -\u003e String -\u003e [String]\nvar match = curry(function(reg, s){\n  return s.match(reg);\n});\n\n//  replace :: Regex -\u003e String -\u003e String -\u003e String\nvar replace = curry(function(reg, sub, s){\n  return s.replace(reg, sub);\n});\n\n// 下面的a,b属于任意类型\n//  id :: a -\u003e a\nvar id = function(x){ return x; }\n\n//  map :: (a -\u003e b) -\u003e [a] -\u003e [b]\nvar map = curry(function(f, xs){\n  return xs.map(f);\n});\n//  head :: [a] -\u003e a\nvar head = function(xs){ return xs[0]; }\n\n//  filter :: (a -\u003e Bool) -\u003e [a] -\u003e [a]\nvar filter = curry(function(f, xs){\n  return xs.filter(f);\n});\n\n//  reduce :: (b -\u003e a -\u003e b) -\u003e b -\u003e [a] -\u003e b\nvar reduce = curry(function(f, x, xs){\n  return xs.reduce(f, x);\n});\n```\n\n### 自由定理（free theorems）\n\n类型签名除了能够帮助我们推断函数可能的实现，还能够给我们带来*自由定理*（free theorems）\n\n下面是两个例子\n\n```js\n// head :: [a] -\u003e a\ncompose(f, head) == compose(head, map(f));\n\n// filter :: (a -\u003e Bool) -\u003e [a] -\u003e [a]\ncompose(map(f), filter(compose(p, f))) == compose(filter(p), map(f));\n```\n\n这些等式是直接根据类型可以推断出来的\n\n第一个例子中，等式左边说的是，先获取数组的`头部`，然后对它调用函数 `f`；等式右边说的是，先对数组中的每一个元素调用 `f`，然后再取其返回结果的`头部`。这两个表达式的作用是相等的，但是前者要快得多。\n\n第二个例子 `filter` 也是一样。等式左边是说，先组合 `f` 和 `p` 检查哪些元素要过滤掉，然后再通过 `map` 实际调用 `f`（别忘了 `filter` 是不会改变数组中元素的，这就保证了 `a` 将保持不变）；等式右边是说，先用 `map` 调用 `f`，然后再根据 `p` 过滤元素。这两者也是相等的。\n\n### 类型约束（type constraints）\n\n签名也可以把类型约束为一个特定的接口\n\n```js\n// sort :: Ord a =\u003e [a] -\u003e [a]\n```\n\n比如上面的注释表明 a变量是一个Ord对象.\n\n\n\n## 05.函子 (Functor)\n\n一个实现了map 函数的对象，map 会遍历对象中的每个值并生成一个新的对象。遵守两个准则\n\n**一致性 (Preserves identity)**\n\n```js\nobject.map(x =\u003e x) ≍ object\n```\n\n**组合性 (Composable)**\n\n```js\nobject.map(compose(f, g)) ≍ object.map(g).map(f)  // f, g 为任意函数\n```\n\n在 javascript 中一个常见的函子是 Array, 因为它遵守因子的两个准则。\n\n```js\nconst f = x =\u003e x + 1\nconst g = x =\u003e x * 2\n\n;[1, 2, 3].map(x =\u003e f(g(x)))\n;[1, 2, 3].map(g).map(f)\n```\n\n**Pointed Functor**\n\n一个实现了 of 函数的对象。\n\nES2015 添加了 `Array.of`，使 Array 成为了 Pointed Functor。\n\n```\nArray.of(1)\n```\n\n下面我们从关于functor开始介绍\n\n### 1.容器（container）\n\n下面我们封装一个能装载任意类型值的容器.\n\n容器是一个对象,使用of作为构造器(Pointed Functor),因为对象默认的new关键字在函数式编程里还是太别扭了.\n\n使用typescript的实现如下\n\n其中我们把of作为一个static方法,这样就可以直接通过类名调用了,相当于一个简单工厂函数.\n\n```typescript\nclass Container {\n  private value: any\n  constructor(value: any) {\n    this.value = value\n  }\n\n  static of(value: any) {\n    return new Container(value)\n  }\n}\n```\n\n下面我们可以试试这个容器\n\n```javascript\n\u003e Container.of(3)\nContainer { value: 3 }\n\u003e Container.of('hotdogs')\nContainer { value: 'hotdogs' }\n\u003e Container.of(Container.of({ name: 'yoda' }))\nContainer { value: Container { value: { name: 'yoda' } } }\n```\n\n\n\n- `Container` 是个只有一个属性的对象。尽管容器可以有不止一个的属性，但大多数容器还是只有一个。\n- `value` 不能是某个特定的类型，不然 `Container` 就对不起它这个名字了。\n- 数据一旦存放到 `Container`，就会一直待在那儿。我们*可以*用 `.value` 获取到数据，但这样做有悖初衷,所以这里使用了private关键字防止外部访问.\n\n### 2.map函数\n\n容器有了值以后,我们还需要一个让别的函数能够操作它的方法.\n\n我们可以定义一个map方法,类似于数组的map.\n\n只不过这个map和数组map的区别是,这个map的参数是容器,作用是把容器里的值交给你定义好的函数处理.\n\n下面是这个map方法的实现\n\n```typescript\n// (a -\u003e b) -\u003e Container a -\u003e Container b\nmap(f: (...args: any) =\u003e any):any {\n      return Container.of(f(this.value))\n  }\n```\n\n\n\n```js\nContainer.of(2).map(function(two){ return two + 2 })\n//=\u003e Container(4)\n\n\nContainer.of(\"flamethrowers\").map(function(s){ return s.toUpperCase() })\n//=\u003e Container(\"FLAMETHROWERS\")\n\n\nContainer.of(\"bombs\").map(concat(' away')).map(_.prop('length'))\n//=\u003e Container(10)\n```\n\n这个map方法使得我们可以直接处理容器,而不用把容器中的值拿出来这一步.而且map函数执行完后,容器内的值并不会变化,保持了不变性.\n\n因为map的返回值是container,所以只要我们在map调用后再返回容器,就可以无限地用map链式调用下去...\n\n\n\n### 3.Maybe  一种带空值检查的functor\n\nContainer类似于Identity函数,会返回传入的值.\n\n过于单纯了,其实我们还可以添加对传入值的处理,比如检查传入的值是否为空\n\n下面是代码实现\n\n```typescript\n/**\n * Maybe 容器类，\n * 实现了map函数，并且map执行之前有空值检查\n */\nclass Maybe {\n  private value: any\n  constructor(value: any) {\n    this.value = value\n  }\n  static of(value: any) {\n    return new Maybe(value)\n  }\n  isNothing() {\n    return this.value === null || this.value === undefined\n  }\n  map(f: (...args: any) =\u003e any) {\n    return this.isNothing() ? Maybe.of(null) : Maybe.of(f(this.value))\n  }\n}\nexport default Maybe\n```\n\n使用这个Maybe容器的好处是,出现null的时候就不会报错了,因为每次执行之前都有空值检查,如果有一次是null,后续的map无论执行多少次都是null.\n\n\n\n### 4.更通用的map\n\n我们使用柯里化,可以定义一个map可以应用到所有functor上面.这样我们就能像处理普通函数的参数一样处理functor了.\n\n```js\n//  map :: Functor f =\u003e (a -\u003e b) -\u003e f a -\u003e f b\nvar map = curry(function(f, any_functor_at_all) {\n  return any_functor_at_all.map(f);\n});\n```\n\n### 5.Maybe使用场景\n\n`Maybe` 最常用在那些可能会无法成功返回结果的函数中。\n\n```js\n//  safeHead :: [a] -\u003e Maybe(a)\nvar safeHead = function(xs) {\n  return Maybe.of(xs[0]);\n};\n\nvar streetName = compose(map(_.prop('street')), safeHead, _.prop('addresses'));\n\nstreetName({addresses: []});\n// Maybe(null)\n\nstreetName({addresses: [{street: \"Shady Ln.\", number: 4201}]});\n// Maybe(\"Shady Ln.\")\n```\n\n有时候函数可以明确返回一个 `Maybe(null)` 来表明失败\n\n### 6.纯错误处理\n\n`throw/catch`并非纯错误处理,因为他们抛出错误的时候,函数不会收到返回值.\n\n下面我们用一种更友好的方式来进行处理.\n\n下面是使用Either进行错误处理的实现,其中Left和Right是Either的子类.\n\nLeft调用map只会返回自身,所以我们在出错的时候返回Left最后错误的结果就会传递到末尾.\n\n```typescript\nclass Left {\n  private value: any\n  constructor(value: any) {\n    this.value = value\n  }\n  static of(value: any) {\n    return new Left(value)\n  }\n  map(f: (...args: any) =\u003e any): Left {\n    return this\n  }\n}\nclass Right {\n  private value: any\n  constructor(value: any) {\n    this.value = value\n  }\n  static of(value: any) {\n    return new Right(value)\n  }\n  map(f: (...args: any) =\u003e any): Right {\n    return Right.of(f(this.value))\n  }\n}\n\n```\n\n下面是具体的使用例子\n\n```javascript\nvar moment = require('moment');\n\n//  getAge :: Date -\u003e User -\u003e Either(String, Number)\nvar getAge = curry(function(now, user) {\n  var birthdate = moment(user.birthdate, 'YYYY-MM-DD');\n  if(!birthdate.isValid()) return Left.of(\"Birth date could not be parsed\");\n  return Right.of(now.diff(birthdate, 'years'));\n});\n\ngetAge(moment(), {birthdate: '2005-12-12'});\n// Right(9)\n\ngetAge(moment(), {birthdate: 'balloons!'});\n// Left(\"Birth date could not be parsed\")\n```\n\n我们也可以使用柯里化,把either变成一个用于错误处理的函数\n\n```js\n//  either :: (a -\u003e c) -\u003e (b -\u003e c) -\u003e Either a b -\u003e c\nvar either = curry(function(f, g, e) {\n  switch(e.constructor) {\n    case Left: return f(e.__value);\n    case Right: return g(e.__value);\n  }\n});\n\n//  zoltar :: User -\u003e _\n// 这里的id函数仅仅用于传递值给log\nvar zoltar = compose(console.log, either(id, fortune), getAge(moment()));\n\nzoltar({birthdate: '2005-12-12'});\n// \"If you survive, you will be 10\"\n// undefined\n\nzoltar({birthdate: 'balloons!'});\n// \"Birth date could not be parsed\"\n// undefined\n```\n\n\n\n### 7.副作用处理\n\n有很多函数都有副作用，但是我们可以通过把它包裹在另一个函数里的方式把它变得看起来像一个纯函数。\n\n其实就是把函数再包裹一层，执行的时候就会返回函数本身罢了。\n\n下面是一个例子\n\n```typescript\nimport compose from './compose'\nclass IO {\n  // 保存函数的容器\n  __fn: (...args: any) =\u003e any\n\n  constructor(fn: (...args: any) =\u003e any) {\n    this.__fn = fn\n  }\n\n  static of(x: any) {\n    return new IO(function () {\n      return x\n    })\n  }\n\n  map(f: (...args: any) =\u003e any) {\n    return new IO(compose(f, this.__fn))\n  }\n}\n```\n\nio容器用来包裹产生副作用的函数。\n\n这样做的好处是，把责任推迟到调用的时候，变量用`  __fn`命名，是为了起到警示作用，告诉调用者，这个部分是有副作用的。\n\n下面是个调用的例子\n\n```typescript\n////// 纯代码库: lib/params.js ///////\n\n//  url :: IO String\nvar url = new IO(function() { return window.location.href; });\n\n//  toPairs =  String -\u003e [[String]]\nvar toPairs = compose(map(split('=')), split('\u0026'));\n\n//  params :: String -\u003e [[String]]\nvar params = compose(toPairs, last, split('?'));\n\n//  findParam :: String -\u003e IO Maybe [String]\nvar findParam = function(key) {\n  return map(compose(Maybe.of, filter(compose(eq(key), head)), params), url);\n};\n\n////// 非纯调用代码: main.js ///////\n\n// 调用 __fn() 来运行它！\nfindParam(\"searchTerm\").__fn();\n// Maybe(['searchTerm', 'wafflehouse'])\n```\n\n\n\n### 8.关于functor的一些理论\n\n同一律和结合律\n\n```js\n// identity\nmap(id) === id;\n// composition\ncompose(map(f), map(g)) === map(compose(f, g));\n```\n\n\n\n## 06.Monad\n\n拥有 `of` 和 `chain` 函数的对象。`chain` 很像 `map`， 除了用来铺平嵌套数据。\n\n```js\nArray.prototype.chain = function (f) {\n  return this.reduce((acc, it) =\u003e acc.concat(f(it)), [])  \n}\n\n// ['cat', 'dog', 'fish', 'bird']\n;Array.of('cat,dog', 'fish,bird').chain(s =\u003e s.split(','))\n\n// [['cat', 'dog'], ['fish', 'bird']]\n;Array.of('cat,dog', 'fish,bird').map(s =\u003e s.split(','))\n```\n\n在有些语言中，`of` 也称为 `return`，`chain` 也称为 `flatmap` 与 `bind`。\n\n\n\n### 1.join方法\n\n下面是一个例子，当functor之间存在嵌套的时候，我们需要新的解决方案，\n\n因为这种情况下，你需要调用多次才能取到值。\n\n```js\n// Support\n// ===========================\nvar fs = require('fs');\n\n//  readFile :: String -\u003e IO String\nvar readFile = function(filename) {\n  return new IO(function() {\n    return fs.readFileSync(filename, 'utf-8');\n  });\n};\n\n//  print :: String -\u003e IO String\nvar print = function(x) {\n  return new IO(function() {\n    console.log(x);\n    return x;\n  });\n}\n\n// Example\n// ===========================\n//  cat :: IO (IO String)\nvar cat = compose(map(print), readFile);\n\ncat(\".git/config\")\n// IO(IO(\"[core]\\nrepositoryformatversion = 0\\n\"))\n```\n\n下面我们定义一个join函数，作用就是把嵌套解开，直接返回容器包裹的值，这样就不会出现容器包容器的事情了。\n\n下面是一个实例\n\n```js\n//  join :: Monad m =\u003e m (m a) -\u003e m a\nvar join = function(mma){ return mma.join(); }\n\n//  firstAddressStreet :: User -\u003e Maybe Street\nvar firstAddressStreet = compose(\n  join, map(safeProp('street')), join, map(safeHead), safeProp('addresses')\n);\n\nfirstAddressStreet(\n  {addresses: [{street: {name: 'Mulburry', number: 8402}, postcode: \"WC2N\" }]}\n);\n// Maybe({name: 'Mulburry', number: 8402})\n```\n\n### 2.chain\n\n我们只要紧跟着map后面调用join，就是chain函数了。\n\nchain又称为flatMap\n\n```js\n//  chain :: Monad m =\u003e (a -\u003e m b) -\u003e m a -\u003e m b\nvar chain = curry(function(f, m){\n  return m.map(f).join(); // 或者 compose(join, map(f))(m)\n});\n```\n\n## 07.Applicative Functor\n\n一个拥有 ap 函数的对象。\n\n```js\n// 实现\nArray.prototype.ap = function (xs) {\n    return this.reduce((acc, f) =\u003e acc.concat(xs.map(f)), [])\n}\n\n// 示例\n;[(a) =\u003e a + 1].ap([1]) // [2]\n```\n\n如果你有两个对象，并需要对他们的元素执行一个二元函数\n\n```js\n// Arrays that you want to combine\nconst arg1 = [1, 3]\nconst arg2 = [4, 5]\n\n// combining function - must be curried for this to work\nconst add = (x) =\u003e (y) =\u003e x + y\n\nconst partiallyAppliedAdds = [add].ap(arg1) // [(y) =\u003e 1 + y, (y) =\u003e 3 + y]\n```\n\n由此得到了一个函数数组，并且可以调用 `ap` 函数得到结果\n\n```js\npartiallyAppliedAdds.ap(arg2) // [5, 6, 7, 8]\n```\n\n### 1.ap函数\n\n当我们相对容器中的值直接计算，把一个容器作为参数传递给另一个容器，我们发现是非常困难的。\n\n```js\n// 这样是行不通的，因为 2 和 3 都藏在瓶子里。\nadd(Container.of(2), Container.of(3));\n//NaN\n\n// 使用可靠的 map 函数试试\nvar container_of_add_2 = map(add, Container.of(2));\n// Container(add(2))\n```\n\n我们可以用chain函数达到效果\n\n```js\nContainer.of(2).chain(function(two) {\n  return Container.of(3).map(add(two));\n});\n```\n\n但是这种方式的缺点很明显，那就是 monad 的顺序执行问题：所有的代码都只会在前一个 monad 执行完毕之后才执行。\n\n\n\n实际上我们可以用ap来实现这个效果\n\n`ap` 就是一种函数，能够把一个 functor 的函数值应用到另一个 functor 的值上。\n\n下面是一个简单的实现。\n\n```js\nContainer.prototype.ap = function(other_container) {\n  return other_container.map(this.__value);\n}\n```\n\n这样我们就可以针对容器进行操作了。\n\n在容器中封装一个curry化好的add函数，这样，后续可以调用ap传入其他容器\n\n```js\nContainer.of(add(2)).ap(Container.of(3));\n// Container(5)\n\n// all together now\nContainer.of(2).map(add).ap(Container.of(3));\n// Container(5)\n```\n\n\n\n下面有一个特性\n\n```js\nF.of(x).map(f) == F.of(f).ap(F.of(x))\n```\n\n翻译过来就是，map 一个 `f` 等价于 `ap` 一个值为 `f` 的 functor\n\n### 2.lift\n\nLifting指的是当你有放在对象里的值，比如各种functor，你可以把他们里面的值用ap调用。\n\n有些实现会命名为 `lift`, `liftA2` \n\n```js\nconst liftA2 = (f) =\u003e (a, b) =\u003e a.map(f).ap(b) // note it's `ap` and not `map`.\n\nconst mult = a =\u003e b =\u003e a * b\n\nconst liftedMult = liftA2(mult) // this function now works on functors like array\n\nliftedMult([1, 2], [3]) // [3, 6]\nliftA2(a =\u003e b =\u003e a + b)([1, 2], [3, 4]) // [4, 5, 5, 6]\n```\n\nLifting 针对只有一个参数的函数的时候效果等于 `map`.\n\n```js\nconst increment = (x) =\u003e x + 1\n\nlift(increment)([2]) // [3]\n;[2].map(increment) // [3]\n```\n\n下面是Lift函数实现的例子\n\n```js\nvar liftA2 = curry(function(f, functor1, functor2) {\n  return functor1.map(f).ap(functor2);\n});\n\nvar liftA3 = curry(function(f, functor1, functor2, functor3) {\n  return functor1.map(f).ap(functor2).ap(functor3);\n});\n\n//liftA4, etc\n```\n\n下面是用例：\n\n```js\n// checkEmail :: User -\u003e Either String Email\n// checkName :: User -\u003e Either String String\n\n//  createUser :: Email -\u003e String -\u003e IO User\nvar createUser = curry(function(email, name) { /* creating... */ });\n\nEither.of(createUser).ap(checkEmail(user)).ap(checkName(user));\n// Left(\"invalid email\")\n\nliftA2(createUser, checkEmail(user), checkName(user));\n// Left(\"invalid email\")\n```\n\n我们用lift重写上面的用例\n\n```js\nliftA2(add, Maybe.of(2), Maybe.of(3));\n// Maybe(5)\n\nliftA2(renderPage, Http.get('/destinations'), Http.get('/events'))\n// Task(\"\u003cdiv\u003esome page with dest and events\u003c/div\u003e\")\n\nliftA3(signIn, getVal('#email'), getVal('#password'), IO.of(false));\n// IO({id: 3, email: \"gg@allin.com\"})\n```\n\n### 3.相关的范畴学知识\n\n#### 同一律（identity）\n\n```js\n// 同一律\nA.of(id).ap(v) == v\n```\n\n是的，对一个 functor 应用 `id` 函数不会改变 `v` 里的值。比如：\n\n```js\nvar v = Identity.of(\"Pillow Pets\");\nIdentity.of(id).ap(v) == v\n```\n\n`Identity.of(id)` 的“无用性”让我不禁莞尔。这里有意思的一点是，就像我们之前证明了的，`of/ap` 等价于 `map`，因此这个同一律遵循的是 functor 的同一律：`map(id) == id`。\n\n使用这些定律的优美之处在于，就像一个富有激情的幼儿园健身教练让所有的小朋友都能愉快地一块玩耍一样，它们能够强迫所有的接口都能完美结合。\n\n#### 同态（homomorphism）\n\n```js\n// 同态\nA.of(f).ap(A.of(x)) == A.of(f(x))\n```\n\n*同态*就是一个能够保持结构的映射（structure preserving map）。实际上，functor 就是一个在不同范畴间的同态，因为 functor 在经过映射之后保持了原始范畴的结构。\n\n事实上，我们不过是把普通的函数和值放进了一个容器，然后在里面进行各种计算。所以，不管是把所有的计算都放在容器里（等式左边），还是先在外面进行计算然后再放到容器里（等式右边），其结果都是一样的。\n\n一个简单例子：\n\n```js\nEither.of(_.toUpper).ap(Either.of(\"oreos\")) == Either.of(_.toUpper(\"oreos\"))\n```\n\n#### 互换（interchange）\n\n互换（interchange）表明的是选择让函数在 `ap` 的左边还是右边发生 lift 是无关紧要的。\n\n```js\n// 互换\nv.ap(A.of(x)) == A.of(function(f) { return f(x) }).ap(v)\n```\n\n这里有个例子：\n\n```js\nvar v = Task.of(_.reverse);\nvar x = 'Sparklehorse';\n\nv.ap(Task.of(x)) == Task.of(function(f) { return f(x) }).ap(v)\n```\n\n#### 组合（composition）\n\n最后是组合。组合不过是在检查标准的函数组合是否适用于容器内部的函数调用。\n\n```js\n// 组合\nA.of(compose).ap(u).ap(v).ap(w) == u.ap(v.ap(w));\nvar u = IO.of(_.toUpper);\nvar v = IO.of(_.concat(\"\u0026 beyond\"));\nvar w = IO.of(\"blood bath \");\n\nIO.of(_.compose).ap(u).ap(v).ap(w) == u.ap(v.ap(w))\n```\n\n"}},"__N_SSG":true},"page":"/posts/[id]","query":{"id":"函数式编程笔记"},"buildId":"Ro36G9FxWC1Wycvzj7mgP","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
