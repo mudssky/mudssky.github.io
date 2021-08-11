@@ -8,13 +8,13 @@ import fsPromises from 'fs/promises'
 export interface PostMatter {
   id: string
   title: string
-  date: string
+  lastUpdated: number
 }
 
 export interface PostData {
   id: string
   title: string
-  date: string
+  lastUpdated: number
   content: string
 }
 const postsDirectory = path.join(process.cwd(), 'posts')
@@ -69,7 +69,7 @@ export async function getSortedPostsData() {
     return {
       id,
       title: matterResult.data.title,
-      date: matterResult.data.date,
+      lastUpdated: matterResult.data.lastUpdated,
       excerpt,
       // 文章分类
       category: matterResult.data.category || '',
@@ -78,7 +78,7 @@ export async function getSortedPostsData() {
   })
   // Sort posts by date
   return allPostsData.sort((a: any, b: any) => {
-    if (a.date < b.date) {
+    if (a.lastUpdated < b.lastUpdated) {
       return 1
     } else if (a.date === b.date) {
       return 0
@@ -132,7 +132,7 @@ export async function getPostData(id: string): Promise<PostData> {
   return {
     id,
     title: matterResult.data.title,
-    date: matterResult.data.date,
+    lastUpdated: matterResult.data.lastUpdated,
     content: matterResult.content,
     // markdown: matterResult.content,
   }

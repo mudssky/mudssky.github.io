@@ -1,8 +1,8 @@
 ---
 category: 'webpack'
-date: '20210711142917'
+lastUpdated: 1628674131
 tags: ['webpack','vue']
-timestamp: 1625984957
+createdAt: 1625984957
 title: 'webpack5 手动配置vue3的开发环境'
 ---
 # webpack5 手动配置vue3的开发环境
