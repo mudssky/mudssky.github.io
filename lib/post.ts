@@ -63,7 +63,7 @@ export async function getSortedPostsData() {
     // Use gray-matter to parse the post metadata section 解析matter data
     const matterResult = matter(fileContents)
     // 截取开头的内容, 去除markdown里的特殊符号
-    const excerpt = matterResult.content.substring(0, 150).replace(/[#*`]/g, '')
+    const excerpt = matterResult.content.substring(0, 200).replace(/[#*`]/g, '')
 
     // 组合提取到的matter data
     return {

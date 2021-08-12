@@ -13,3 +13,15 @@
 .font-simsun {
   font-family: 'SimSun';
 }
+
+/* 首页 文章时间后分隔用的黑点 */
+#home-lastUpdated:after {
+  content: '·';
+  margin: 0 0.3em;
+  color: black;
+}
+/* 设置首页 tag之间的分界线，选择除了最后一个span的所有span */
+#home-taglist span:not(:last-child):after {
+  content: '|';
+  margin: 0 0.2em;
+}
