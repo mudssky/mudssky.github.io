@@ -77,21 +77,21 @@ export default function Toc() {
   }, [headList])
   // 添加拖拽组件位置的监听
   useEffect(() => {
-    //   组件生成时，从localStorage获取过去使用的位置
-    const jsonstr = localStorage.getItem('tocposition')
-    let startPostion = { left: 10, top: 50 }
-    if (jsonstr) {
-      startPostion = JSON.parse(jsonstr)
-    }
-    let tocPosition = startPostion
     function moveAt(tocPosition: { left: number; top: number }) {
       tocEl.current!.style.left = tocPosition.left + 'px'
       tocEl.current!.style.top = tocPosition.top + 'px'
     }
-    moveAt(tocPosition)
     if (isMobile()) {
-      setHideToc(false)
+      setHideToc(true)
     }
+    //   组件生成时，从localStorage获取过去使用的位置
+    const jsonstr = localStorage.getItem('tocposition')
+    let tocPosition = { left: 10, top: 50 }
+    if (jsonstr) {
+      tocPosition = JSON.parse(jsonstr)
+      moveAt(tocPosition)
+    }
+
     if (tocEl.current) {
       // console.log(tocEl)
 
