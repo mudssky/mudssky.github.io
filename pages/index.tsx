@@ -7,10 +7,23 @@ import Link from 'next/link'
 
 export async function getStaticProps() {
   const allPostsData = await getSortedPostsData()
-  // console.log(allPostsData);
+  const tagInfos: any = {}
+  const tags = ['JavaScript', '函数式编程', 'webpack', 'vue']
+  tags.forEach((tag) => {
+    tagInfos[tag] = []
+  })
+  allPostsData.forEach((post) => {
+    post.tags.forEach((tag: string) => {
+      if (tagInfos[tag]) {
+        tagInfos[tag].push(post.id)
+      }
+    })
+  })
+
   return {
     props: {
       allPostsData,
+      tagInfos,
     },
   }
 }
@@ -41,39 +54,65 @@ function TimestampDiff(lastTimestamp: number) {
   }
   return resStr
 }
-
-export default function Home({ allPostsData }: any) {
+function Tags(props: any) {
+  // tagInfos: Map<any, any>
+  const tagInfos = props.tagInfos
+  const tags = Object.keys(tagInfos)
+  return (
+    <div className="flex">
+      {tags.map((tag: string) => (
+        <div key={tag} className="bg-red-400" title={tagInfos[tag].length}>
+          {tag}
+        </div>
+      ))}
+    </div>
+  )
+}
+export default function Home({
+  allPostsData,
+  tagInfos,
+}: {
+  allPostsData: any
+  tagInfos: Map<any, any>
+}) {
   return (
     <Layout>
-      <ul className="flex-col mt-8 space-y-3">
-        {allPostsData.map(({ id, lastUpdated, title, excerpt, tags }: any) => (
-          <li
-            className="w-1/2 min-w-min mx-auto pb-2 border-b-2 border-gray-100"
-            key={id}
-          >
-            <div className="text-xs text-gray-500 flex justify-items-start">
-              <span id="home-lastUpdated" className="">
-                {TimestampDiff(lastUpdated)}
-              </span>
-              <div id="home-taglist" className="">
-                {tags.map((tag: any) => (
-                  <span key={tag} className="">
-                    {tag}
+      <div>
+        <ul className="flex-col mt-8 space-y-3">
+          {allPostsData.map(
+            ({ id, lastUpdated, title, excerpt, tags }: any) => (
+              <li
+                className="w-1/2 min-w-min mx-auto pb-2 border-b-2 border-gray-100"
+                key={id}
+              >
+                <div className="text-xs text-gray-500 flex justify-items-start">
+                  <span id="home-lastUpdated" className="">
+                    {TimestampDiff(lastUpdated)}
                   </span>
-                ))}
-              </div>
-            </div>
-            <Link href={'/posts/' + id}>
-              <a className="cursor-pointer inline-block pt-1">
-                <div className="text-base font-sans font-semibold">{id}</div>
-                <div className="text-xs text-gray-400 font-sans pt-1">
-                  {excerpt}...
+                  <div id="home-taglist" className="">
+                    {tags.map((tag: any) => (
+                      <span key={tag} className="">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+                <Link href={'/posts/' + id}>
+                  <a className="cursor-pointer inline-block pt-1">
+                    <div className="text-base font-sans font-semibold">
+                      {id}
+                    </div>
+                    <div className="text-xs text-gray-400 font-sans pt-1">
+                      {excerpt}...
+                    </div>
+                  </a>
+                </Link>
+              </li>
+            )
+          )}
+        </ul>
+        <Tags tagInfos={tagInfos}></Tags>
+      </div>
     </Layout>
   )
 }

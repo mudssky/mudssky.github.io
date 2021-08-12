@@ -48,7 +48,7 @@ export async function getFileList(dir: string, filterReggex?: RegExp) {
   return fileList
 }
 
-export async function getSortedPostsData() {
+export async function getAllPostsData() {
   // 匹配所有后缀是md的文件
   const fileList = await getFileList(postsDirectory, /.md$/)
   const allPostsData = fileList.map((fileInfo) => {
@@ -76,7 +76,10 @@ export async function getSortedPostsData() {
       tags: matterResult.data.tags || [],
     }
   })
-  // Sort posts by date
+  return allPostsData
+}
+export async function getSortedPostsData() {
+  const allPostsData = await getAllPostsData()
   return allPostsData.sort((a: any, b: any) => {
     if (a.lastUpdated < b.lastUpdated) {
       return 1
