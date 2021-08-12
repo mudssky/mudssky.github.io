@@ -138,7 +138,9 @@ export default function Toc() {
               overflow: 'hidden',
               // transition: 'height 1s',
             }
-          : {}
+          : {
+              minWidth: '10rem',
+            }
       }
     >
       <div
