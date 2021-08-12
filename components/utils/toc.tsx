@@ -1,5 +1,19 @@
 import { useEffect, useRef, useState } from 'react'
-
+function isMobile() {
+  let info = navigator.userAgent
+  let agents = [
+    'Android',
+    'iPhone',
+    'SymbianOS',
+    'Windows Phone',
+    'iPod',
+    'iPad',
+  ]
+  for (let i = 0; i < agents.length; i++) {
+    if (info.indexOf(agents[i]) >= 0) return true
+  }
+  return false
+}
 export default function Toc() {
   const [headList, setHeadList] = useState(Array<any>())
   const [activeIndex, setActiveIndex] = useState(0)
@@ -75,7 +89,9 @@ export default function Toc() {
       tocEl.current!.style.top = tocPosition.top + 'px'
     }
     moveAt(tocPosition)
-
+    if (isMobile()) {
+      setHideToc(false)
+    }
     if (tocEl.current) {
       // console.log(tocEl)
 
@@ -128,7 +144,7 @@ export default function Toc() {
     <div
       ref={tocEl}
       draggable="true"
-      className="bg-pink-50 fixed shadow rounded w-1/5 transition-all"
+      className="bg-pink-50 left-2 top-14 fixed shadow rounded w-1/5"
       // 利用overflow hidden
       style={
         hideToc
@@ -136,7 +152,9 @@ export default function Toc() {
               width: '25px',
               height: '22px',
               overflow: 'hidden',
-              // transition: 'height 1s',
+              transitionProperty: 'height,width',
+              transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+              transitionDuration: '150ms',
             }
           : {
               minWidth: '10rem',
@@ -171,7 +189,8 @@ export default function Toc() {
       </div>
       <div
         // draggable="true"
-        className="font-bold border-b-2 border-gray-300 pl-7 select-none cursor-move"
+        className="font-bold   pl-7 select-none cursor-move"
+        // className="font-bold border-b-2 border-gray-300 pl-7 select-none cursor-move"
       >
         目录
       </div>
