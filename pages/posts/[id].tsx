@@ -25,7 +25,7 @@ export default function Post({ postData }: { postData: PostData }) {
     // }
   }, [])
   return (
-    <Layout>
+    <Layout className="lg:w-full flex justify-center">
       <Head>
         <title>{postData.title}</title>
         {/*  eslint-disable-next-line @next/next/no-css-tags */}
@@ -38,7 +38,7 @@ export default function Post({ postData }: { postData: PostData }) {
         className="w-1/2 m-auto prose"
         dangerouslySetInnerHTML={{ __html: postData.content }}
       /> */}
-      <div className="w-800 pt-8 mt-2 m-auto ring-1 ring-gray-100 shadow-sm">
+      <div className="w-full lg:w-auto  p-10 mt-5 ring-1 ring-gray-100 shadow-sm">
         <ReactMarkdown
           linkTarget="_blank"
           // 转换图片链接到根目录
