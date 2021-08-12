@@ -138,11 +138,7 @@ export default function Toc() {
               overflow: 'hidden',
               // transition: 'height 1s',
             }
-          : {
-              maxHeight: '70vh',
-              overflowY: 'auto',
-              overflowX: 'hidden',
-            }
+          : {}
       }
     >
       <div
@@ -171,39 +167,47 @@ export default function Toc() {
         <svg className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1196" width="22" height="22"><path d="M432.2304 103.2192c-9.216-6.5536-22.016-4.3008-28.5696 4.9152-6.5536 9.216-4.3008 22.016 4.9152 28.5696l59.0848 41.7792 3.2768 2.2528c-71.8848 9.9328-138.3424 42.8032-190.5664 95.0272-63.3856 63.3856-98.2016 147.5584-98.2016 237.1584 0 45.568 9.0112 89.7024 26.7264 131.3792 17.1008 40.1408 41.5744 76.1856 72.704 107.008 3.9936 3.9936 9.216 5.9392 14.4384 5.9392 5.3248 0 10.5472-2.048 14.5408-6.0416 7.9872-7.9872 7.8848-20.992-0.1024-28.9792-56.32-55.7056-87.2448-130.048-87.2448-209.2032 0-78.6432 30.6176-152.576 86.2208-208.1792 46.4896-46.4896 105.8816-75.5712 169.984-83.7632l-2.9696 3.072-52.4288 52.9408c-7.9872 7.9872-7.8848 20.992 0.1024 28.9792 3.9936 3.9936 9.216 5.9392 14.4384 5.9392 5.3248 0 10.5472-2.048 14.5408-6.0416l109.4656-110.4896-130.3552-92.2624zM841.9328 511.0784c0-45.568-9.0112-89.7024-26.7264-131.3792-17.1008-40.1408-41.5744-76.1856-72.704-107.008-3.9936-3.9936-9.216-5.9392-14.4384-5.9392-5.3248 0-10.5472 2.048-14.5408 6.0416-7.9872 7.9872-7.8848 20.992 0.1024 28.9792 56.32 55.7056 87.2448 130.048 87.2448 209.2032 0 78.6432-30.6176 152.576-86.2208 208.1792-46.4896 46.4896-105.8816 75.5712-169.984 83.7632l2.9696-3.072 52.4288-52.9408c7.9872-7.9872 7.8848-20.992-0.1024-28.9792-3.9936-3.9936-9.216-5.9392-14.4384-5.9392-5.3248 0-10.5472 2.048-14.5408 6.0416L461.6192 828.7232l130.1504 92.0576c9.216 6.5536 22.016 4.3008 28.5696-4.9152 6.5536-9.216 4.3008-22.016-4.9152-28.5696l-59.0848-41.7792-3.2768-2.2528c71.8848-9.9328 138.3424-42.8032 190.5664-95.0272 63.3856-63.3856 98.304-147.5584 98.304-237.1584z" p-id="1197"></path></svg>
         {/* 刷新图标 */}
       </div>
-      <ul className={'flex flex-col'}>
-        <li
-          // draggable="true"
-          className="font-bold border-b-2 border-gray-300 pl-7 select-none cursor-move"
-        >
-          目录
-        </li>
-        {headList.map((head, index) => {
-          return (
-            <li
-              className={
-                (activeIndex === index
-                  ? 'text-blue-400 border-l-2 border-red-500'
-                  : '') + ' pl-2 text-xs font-sans truncate'
-              }
-              key={head.mark}
-              onClick={() => {
-                head.node.scrollIntoView(true, { behavior: 'auto' })
-              }}
-              // behavior One of auto or smooth. Defaults to auto.
-            >
-              <a
+      <div
+        // draggable="true"
+        className="font-bold border-b-2 border-gray-300 pl-7 select-none cursor-move"
+      >
+        目录
+      </div>
+      <div
+        className="overflow-auto"
+        style={{
+          maxHeight: '70vh',
+        }}
+      >
+        <ul className={'flex flex-col'}>
+          {headList.map((head, index) => {
+            return (
+              <li
                 className={
-                  'hover:underline hover:bg-gray-200 ' + headStyle[head.tagName]
+                  (activeIndex === index
+                    ? 'text-blue-400 border-l-2 border-red-500'
+                    : '') + ' pl-2 text-xs font-sans truncate'
                 }
-                title={head.title}
+                key={head.mark}
+                onClick={() => {
+                  head.node.scrollIntoView(true, { behavior: 'auto' })
+                }}
+                // behavior One of auto or smooth. Defaults to auto.
               >
-                {head.title}
-              </a>
-            </li>
-          )
-        })}
-      </ul>
+                <a
+                  className={
+                    'hover:underline hover:bg-gray-200 ' +
+                    headStyle[head.tagName]
+                  }
+                  title={head.title}
+                >
+                  {head.title}
+                </a>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
     </div>
   )
 }
