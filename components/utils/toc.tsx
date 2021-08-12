@@ -65,7 +65,7 @@ export default function Toc() {
   useEffect(() => {
     //   组件生成时，从localStorage获取过去使用的位置
     const jsonstr = localStorage.getItem('tocposition')
-    let startPostion = { left: 20, top: 50 }
+    let startPostion = { left: 10, top: 50 }
     if (jsonstr) {
       startPostion = JSON.parse(jsonstr)
     }
