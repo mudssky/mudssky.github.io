@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { getSortedPostsData, PostMatter } from '../lib/post'
-import React from 'react'
+import React, { useState } from 'react'
 import Layout from '../components/layout'
 import Link from 'next/link'
+import { TimestampDiff } from '../lib/utils'
 
 export async function getStaticProps() {
   const allPostsData = await getSortedPostsData()
@@ -27,44 +28,48 @@ export async function getStaticProps() {
     },
   }
 }
-// 计算一个时间戳(秒)，离当前时间戳的距离
-function TimestampDiff(lastTimestamp: number) {
-  const currentTimestamp = Math.floor(new Date().getTime() / 1000)
-  const diffSeconds = currentTimestamp - lastTimestamp
-  // const second=1
-  const minute = 60
-  const hour = minute * 60
-  const day = hour * 24
-  const month = day * 30
-  const year = month * 12
-
-  let resStr = ''
-  if (diffSeconds > year) {
-    resStr = `${Math.floor(diffSeconds / year)}年前`
-  } else if (diffSeconds > month) {
-    resStr = `${Math.floor(diffSeconds / month)}月前`
-  } else if (diffSeconds > day) {
-    resStr = `${Math.floor(diffSeconds / day)}天前`
-  } else if (diffSeconds > hour) {
-    resStr = `${Math.floor(diffSeconds / hour)}小时前`
-  } else if (diffSeconds > minute) {
-    resStr = `${Math.floor(diffSeconds / minute)}分钟前`
-  } else {
-    resStr = `${Math.floor(diffSeconds)}秒前`
-  }
-  return resStr
+function Tag(props: any) {
+  return (
+    <div
+      className={props.className}
+      title={props.title}
+      onClick={() => {
+        props.handleClick(props.tagname)
+      }}
+    >
+      {props.children}
+    </div>
+  )
 }
 function Tags(props: any) {
-  // tagInfos: Map<any, any>
   const tagInfos = props.tagInfos
   const tags = Object.keys(tagInfos)
+
   return (
-    <div className="flex">
-      {tags.map((tag: string) => (
-        <div key={tag} className="bg-red-400" title={tagInfos[tag].length}>
-          {tag}
+    <div className="">
+      {/* <div className="absolute lg:hidden right-0 top-1/3 rounded-full bg-green-400">
+        tags
+      </div> */}
+      <div
+        className={
+          'w-full  p-1 lg:w-56 lg:absolute lg:top-1/4 lg:right-0 bg-gray-50 transition-all'
+        }
+      >
+        <div className="font-serif text-center text-gray-500  mb-2">TAGS</div>
+        <div className="flex flex-wrap justify-center lg:justify-start">
+          {tags.map((tag: string) => (
+            <Tag
+              tagname={tag}
+              key={tag}
+              className="text-xs font-serif p-1 mt-1 cursor-pointer text-gray-500 rounded-full border-2 border-gray-500 mx-1 hover:text-blue-500 hover:border-blue-500"
+              title={tagInfos[tag].length + '篇'}
+              handleClick={props.handleClick}
+            >
+              {tag} ({tagInfos[tag].length}篇)
+            </Tag>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   )
 }
@@ -75,43 +80,59 @@ export default function Home({
   allPostsData: any
   tagInfos: Map<any, any>
 }) {
+  const [postData, setPostData] = useState(allPostsData)
+
+  function filterTag(tagname: string) {
+    setPostData(
+      allPostsData.filter((post: any) => {
+        return post.tags.includes(tagname)
+      })
+    )
+  }
   return (
-    <Layout>
-      <div>
+    <Layout
+      handleLogoClick={() => {
+        if (postData.length !== allPostsData.length) {
+          setPostData(allPostsData)
+        }
+      }}
+    >
+      <div className="relative">
+        <Tags tagInfos={tagInfos} handleClick={filterTag}></Tags>
         <ul className="flex-col mt-8 space-y-3">
-          {allPostsData.map(
-            ({ id, lastUpdated, title, excerpt, tags }: any) => (
-              <li
-                className="w-1/2 min-w-min mx-auto pb-2 border-b-2 border-gray-100"
-                key={id}
-              >
-                <div className="text-xs text-gray-500 flex justify-items-start">
-                  <span id="home-lastUpdated" className="">
-                    {TimestampDiff(lastUpdated)}
-                  </span>
-                  <div id="home-taglist" className="">
-                    {tags.map((tag: any) => (
-                      <span key={tag} className="">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+          {postData.map(({ id, lastUpdated, title, excerpt, tags }: any) => (
+            <li
+              className="w-1/2 min-w-min mx-auto pb-2 border-b-2 border-gray-100"
+              key={id}
+            >
+              <div className="text-xs text-gray-500 flex justify-items-start">
+                <span id="home-lastUpdated" className="">
+                  {TimestampDiff(lastUpdated)}
+                </span>
+                <div id="home-taglist" className="">
+                  {tags.map((tag: any) => (
+                    <Tag
+                      key={tag}
+                      tagname={tag}
+                      className="inline hover:text-pink-400 cursor-pointer"
+                      handleClick={filterTag}
+                    >
+                      {tag}
+                    </Tag>
+                  ))}
                 </div>
-                <Link href={'/posts/' + id}>
-                  <a className="cursor-pointer inline-block pt-1">
-                    <div className="text-base font-sans font-semibold">
-                      {id}
-                    </div>
-                    <div className="text-xs text-gray-400 font-sans pt-1">
-                      {excerpt}...
-                    </div>
-                  </a>
-                </Link>
-              </li>
-            )
-          )}
+              </div>
+              <Link href={'/posts/' + id}>
+                <a className="cursor-pointer inline-block pt-1">
+                  <div className="text-base font-sans font-semibold">{id}</div>
+                  <div className="text-xs text-gray-400 font-sans pt-1">
+                    {excerpt}...
+                  </div>
+                </a>
+              </Link>
+            </li>
+          ))}
         </ul>
-        <Tags tagInfos={tagInfos}></Tags>
       </div>
     </Layout>
   )

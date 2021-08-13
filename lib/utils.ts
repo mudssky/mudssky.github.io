@@ -38,3 +38,31 @@ export function dateFormat(timeStamp: number, fmtStr: string): string {
   //   console.log(opt)
   return fmtStr
 }
+
+// 计算一个时间戳(秒)，离当前时间戳的距离
+export function TimestampDiff(lastTimestamp: number) {
+  const currentTimestamp = Math.floor(new Date().getTime() / 1000)
+  const diffSeconds = currentTimestamp - lastTimestamp
+  // const second=1
+  const minute = 60
+  const hour = minute * 60
+  const day = hour * 24
+  const month = day * 30
+  const year = month * 12
+
+  let resStr = ''
+  if (diffSeconds > year) {
+    resStr = `${Math.floor(diffSeconds / year)}年前`
+  } else if (diffSeconds > month) {
+    resStr = `${Math.floor(diffSeconds / month)}月前`
+  } else if (diffSeconds > day) {
+    resStr = `${Math.floor(diffSeconds / day)}天前`
+  } else if (diffSeconds > hour) {
+    resStr = `${Math.floor(diffSeconds / hour)}小时前`
+  } else if (diffSeconds > minute) {
+    resStr = `${Math.floor(diffSeconds / minute)}分钟前`
+  } else {
+    resStr = `${Math.floor(diffSeconds)}秒前`
+  }
+  return resStr
+}

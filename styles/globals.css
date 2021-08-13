@@ -21,7 +21,7 @@
   color: black;
 }
 /* 设置首页 tag之间的分界线，选择除了最后一个span的所有span */
-#home-taglist span:not(:last-child):after {
+#home-taglist .inline:not(:last-child):after {
   content: '|';
   margin: 0 0.2em;
 }

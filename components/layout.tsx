@@ -6,7 +6,7 @@ import Header from './header/header'
 const name = 'my name'
 export const siteTitle = 'Next.js Sample Website'
 
-export default function Layout({ children, className }: any) {
+export default function Layout(props: any) {
   return (
     <div>
       <Head>
@@ -22,8 +22,8 @@ export default function Layout({ children, className }: any) {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         ></meta>
       </Head>
-      <Header></Header>
-      <main className={className}>{children}</main>
+      <Header handleLogoClick={props.handleLogoClick}></Header>
+      <main className={props.className}>{props.children}</main>
     </div>
   )
 }

@@ -1,10 +1,13 @@
 import Link from 'next/link'
 // import Image from 'next/image'
 
-export default function Header() {
+export default function Header(props: any) {
   return (
     <div className="flex justify-between border-b-2 border-gray-50 h-12">
-      <div className="w-16 flex items-center justify-center text-2xl text-blue-500">
+      <div
+        className="w-16 flex items-center justify-center text-2xl text-blue-500"
+        onClick={props.handleLogoClick}
+      >
         <Link href="/">
           <a>Blog</a>
         </Link>
