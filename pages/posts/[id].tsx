@@ -10,6 +10,7 @@ import hljs from 'highlight.js'
 import 'highlight.js/styles/github-dark.css'
 
 import Toc from '../../components/utils/toc'
+import { dateFormat } from '../../lib/utils'
 
 export default function Post({ postData }: { postData: PostData }) {
   // 使用highlight.js
@@ -39,6 +40,12 @@ export default function Post({ postData }: { postData: PostData }) {
         dangerouslySetInnerHTML={{ __html: postData.content }}
       /> */}
       <div className="w-full lg:w-auto  p-10 mt-5 ring-1 ring-gray-100 shadow-sm">
+        <div className="text-xs text-gray-400 space-x-4 border-b-2 mb-2 shadow-xs">
+          <span>
+            {dateFormat(postData.lastUpdated * 1000, 'yyyy.MM.dd hh:mm:ss')}
+          </span>
+          <span>字数: {postData.content.length}</span>
+        </div>
         <ReactMarkdown
           linkTarget="_blank"
           // 转换图片链接到根目录
