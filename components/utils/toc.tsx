@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { getElementToPageTop } from '../../lib/utils'
 function isMobile() {
   let info = navigator.userAgent
   let agents = [
@@ -14,6 +15,7 @@ function isMobile() {
   }
   return false
 }
+
 export default function Toc() {
   const [headList, setHeadList] = useState(Array<any>())
   const [activeIndex, setActiveIndex] = useState(0)
@@ -30,6 +32,8 @@ export default function Toc() {
   useEffect(() => {
     const currentTitleList = Array<any>()
     const currentHeadNodeList = document.querySelectorAll('h1,h2,h3,h4,h5,h6')
+    // console.log(currentHeadNodeList)
+
     currentHeadNodeList.forEach(
       (head: any, index: number, parrent: NodeListOf<Element>) => {
         const mark = `heading-${index}`
@@ -42,13 +46,18 @@ export default function Toc() {
           prop: prop,
           mark: mark,
           tagName: head.tagName,
-          offsetTop: head.offsetTop,
+          // offsetTop: head.offsetTop,
+          toPageTop: getElementToPageTop(head),
         })
       }
     )
     setHeadList(currentTitleList)
     // console.log(headList)
-    baseOffset.current = currentTitleList[0].node.offsetTop
+    // baseOffset.current = currentTitleList[0].node.offsetTop
+    baseOffset.current = currentTitleList[0].toPageTop
+    // console.log(baseOffset.current, currentTitleList[0].node.offsetTop)
+    // console.log(currentTitleList[0].node.offsetTop)
+
     // console.log(currentTitleList)
     return () => {
       // cleanup
@@ -64,14 +73,20 @@ export default function Toc() {
       // let scrollHeight =document.documentElement.scrollHeight
       // 滚动条已滚动的高度
       const scrollTop = document.documentElement.scrollTop
-      headList.forEach((head: any, index: number) => {
-        if (scrollTop < head.offsetTop - baseOffset.current) {
-          return
-        } else {
-          setActiveIndex(index)
+      // const firstOffset= headList[0].offse
+      let currentIndex = 0
+      console.log(scrollTop, headList[1].toPageTop)
+
+      for (const index in headList) {
+        if (scrollTop > headList[index].toPageTop) {
+          currentIndex = parseInt(index)
         }
-      })
+      }
+      console.log(currentIndex)
+
+      setActiveIndex(currentIndex)
     }
+
     window.addEventListener('scroll', handleScrollToc)
     return () => {}
   }, [headList])

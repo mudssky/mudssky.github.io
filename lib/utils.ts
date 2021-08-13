@@ -66,3 +66,10 @@ export function TimestampDiff(lastTimestamp: number) {
   }
   return resStr
 }
+
+export function getElementToPageTop(el: any): number {
+  if (el.parentElement) {
+    return getElementToPageTop(el.parentElement) + el.offsetTop
+  }
+  return el.offsetTop
+}
