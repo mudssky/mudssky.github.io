@@ -1,5 +1,6 @@
+import head from 'next/head'
 import { useEffect, useRef, useState } from 'react'
-import { getElementToPageTop } from '../../lib/utils'
+
 function isMobile() {
   let info = navigator.userAgent
   let agents = [
@@ -21,9 +22,6 @@ export default function Toc() {
   const [activeIndex, setActiveIndex] = useState(0)
   // 是否隐藏toc组件
   const [hideToc, setHideToc] = useState(false)
-
-  // 相对于父组件的基础偏移值，用于判断实际滚动距离。
-  const baseOffset = useRef(0)
 
   const tocEl = useRef<HTMLDivElement>(null)
 
@@ -47,46 +45,40 @@ export default function Toc() {
           mark: mark,
           tagName: head.tagName,
           // offsetTop: head.offsetTop,
-          toPageTop: getElementToPageTop(head),
+          // toPageTop: getElementToPageTop(head),
         })
       }
     )
     setHeadList(currentTitleList)
-    // console.log(headList)
-    // baseOffset.current = currentTitleList[0].node.offsetTop
-    baseOffset.current = currentTitleList[0].toPageTop
-    // console.log(baseOffset.current, currentTitleList[0].node.offsetTop)
-    // console.log(currentTitleList[0].node.offsetTop)
 
-    // console.log(currentTitleList)
     return () => {
       // cleanup
     }
   }, [collectTitleFlag])
 
-  // 添加滚动条监听事件
+  // 添加滚动条监听事件,随着滚动判断标题是否出现在可视区域
   useEffect(() => {
     function handleScrollToc() {
-      //   可视区域高度
-      //  let clientHeight = document.documentElement.clientHeight;
-      // 滚动内容高度,即页面所有内容的高度
-      // let scrollHeight =document.documentElement.scrollHeight
-      // 滚动条已滚动的高度
-      const scrollTop = document.documentElement.scrollTop
-      // const firstOffset= headList[0].offse
+      // 可视窗口的高度
+      const viewHeight = window.innerHeight
       let currentIndex = 0
-      console.log(scrollTop, headList[1].toPageTop)
 
       for (const index in headList) {
-        if (scrollTop > headList[index].toPageTop) {
+        const clientRect = headList[index].node.getBoundingClientRect()
+        // |<—————————————————— 视口起点
+        // |——————rect.top—————|
+        // |                   |
+        // |    rect.height    |
+        // |                   |
+        // |—————rect.bottom———|
+        // 判断元素是否在可视区域内
+        if (clientRect.bottom >= 0 && clientRect.bottom < viewHeight) {
           currentIndex = parseInt(index)
+          setActiveIndex(currentIndex)
+          break
         }
       }
-      console.log(currentIndex)
-
-      setActiveIndex(currentIndex)
     }
-
     window.addEventListener('scroll', handleScrollToc)
     return () => {}
   }, [headList])
