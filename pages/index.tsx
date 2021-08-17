@@ -9,7 +9,18 @@ import { TimestampDiff } from '../lib/utils'
 export async function getStaticProps() {
   const allPostsData = await getSortedPostsData()
   const tagInfos: any = {}
-  const tags = ['JavaScript', '函数式编程', 'webpack', 'vue']
+  // const tags = ['JavaScript', '函数式编程', 'webpack', 'vue', 'git', 'vim']
+  // 收集现在有的tag
+  const tags = Array<string>()
+  for (const i in allPostsData) {
+    allPostsData[i].tags.forEach((tag: string) => {
+      if (!tags.includes(tag)) {
+        tags.push(tag)
+      }
+    })
+  }
+  // console.log(tags)
+
   tags.forEach((tag) => {
     tagInfos[tag] = []
   })
