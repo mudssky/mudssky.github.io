@@ -83,7 +83,7 @@ export async function getSortedPostsData() {
   return allPostsData.sort((a: any, b: any) => {
     if (a.lastUpdated < b.lastUpdated) {
       return 1
-    } else if (a.date === b.date) {
+    } else if (a.lastUpdated === b.lastUpdated) {
       return 0
     } else {
       return -1
