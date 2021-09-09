@@ -1,6 +1,6 @@
 import head from 'next/head'
 import { useEffect, useRef, useState } from 'react'
-
+import _ from 'lodash'
 function isMobile() {
   let info = navigator.userAgent
   let agents = [
@@ -118,7 +118,7 @@ export default function Toc() {
           }
           moveAt(tocPosition)
         }
-        document.addEventListener('mousemove', onMouseMove)
+        document.addEventListener('mousemove', _.throttle(onMouseMove, 500))
         function onMouseUp(event: MouseEvent) {
           // 放下后移除事件
           document.removeEventListener('mousemove', onMouseMove)
