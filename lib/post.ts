@@ -116,8 +116,18 @@ export async function getAllPostIds() {
 }
 
 export async function getPostData(id: string): Promise<PostData> {
+  // 修复特殊字符的问题,把特殊字符替换成.也就是任意字符的正则表示就可以了。
+  // 二维码(QR code)的解码原理 这样原来括号造成的无法识别就解决了。
+  const fixedId = id.replace(/[()]/g, '.')
+  // console.log(fixedId)
+
   // 匹配所有后缀是md的文件
-  const fileList = await getFileList(postsDirectory, new RegExp(`${id}\.md$`))
+  const fileList = await getFileList(
+    postsDirectory,
+    new RegExp(`${fixedId}\.md$`)
+  )
+  // console.log('match list ', fileList)
+
   if (!fileList || fileList.length < 1) {
     throw new Error(`id:${id},post not found`)
   }
