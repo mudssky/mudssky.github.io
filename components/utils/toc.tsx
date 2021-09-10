@@ -1,6 +1,6 @@
 import head from 'next/head'
 import { useEffect, useRef, useState } from 'react'
-import _ from 'lodash'
+import _, { throttle } from 'lodash'
 function isMobile() {
   let info = navigator.userAgent
   let agents = [
@@ -79,7 +79,8 @@ export default function Toc() {
         }
       }
     }
-    window.addEventListener('scroll', handleScrollToc)
+    // 节流操作，减少滚动事件的执行次数
+    window.addEventListener('scroll', _.throttle(handleScrollToc, 500))
     return () => {}
   }, [headList])
   // 添加拖拽组件位置的监听
@@ -118,10 +119,13 @@ export default function Toc() {
           }
           moveAt(tocPosition)
         }
-        document.addEventListener('mousemove', _.throttle(onMouseMove, 500))
+        // const throttledOnMove = _.throttle(onMouseMove, 10)
+        document.addEventListener('mousemove', onMouseMove)
+        // document.addEventListener('mousemove', throttledOnMove)
         function onMouseUp(event: MouseEvent) {
           // 放下后移除事件
           document.removeEventListener('mousemove', onMouseMove)
+          // document.removeEventListener('mousemove', throttledOnMove)
           document.removeEventListener('mouseup', onMouseUp)
           localStorage.setItem('tocposition', JSON.stringify(tocPosition))
         }
@@ -137,6 +141,46 @@ export default function Toc() {
       //   cleanup
     }
   }, [])
+  // 使用拖拽事件添加拖动监听
+  // useEffect(() => {
+  //   function moveAt(tocPosition: { left: number; top: number }) {
+  //     tocEl.current!.style.left = tocPosition.left + 'px'
+  //     tocEl.current!.style.top = tocPosition.top + 'px'
+  //   }
+  //   if (isMobile()) {
+  //     setHideToc(true)
+  //   }
+  //   //   组件生成时，从localStorage获取过去使用的位置
+  //   const jsonstr = localStorage.getItem('tocposition')
+  //   let tocPosition = { left: 10, top: 50 }
+  //   if (jsonstr) {
+  //     tocPosition = JSON.parse(jsonstr)
+  //     moveAt(tocPosition)
+  //   }
+
+  //   if (tocEl.current) {
+  //     // console.log(tocEl)
+
+  //     const handledragstart = function (event: DragEvent) {
+  //       const shiftX =
+  //         event.clientX - (tocEl.current?.getBoundingClientRect().left || 0)
+  //       const shiftY =
+  //         event.clientY - (tocEl.current?.getBoundingClientRect().top || 0)
+  //       function handleDrag(event: DragEvent) {
+  //         tocPosition = {
+  //           left: event.clientX - shiftX,
+  //           top: event.clientY - shiftY,
+  //         }
+  //         moveAt(tocPosition)
+  //       }
+  //       // tocEl.current!.addEventListener('drag', handleDrag)
+  //     }
+  //     tocEl.current.addEventListener('dragstart', handledragstart)
+  //   }
+  //   return () => {
+  //     //   cleanup
+  //   }
+  // }, [])
   // 设置各级标题的样式
   const headStyle: { [key: string]: any } = {
     H1: 'text-md',
