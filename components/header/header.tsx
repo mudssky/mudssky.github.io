@@ -1,6 +1,5 @@
 import Link from 'next/link'
-// import Image from 'next/image'
-
+import { List, ListItem, MenuItem, Menu } from '@mui/material'
 export default function Header(props: any) {
   return (
     <div>
@@ -18,6 +17,14 @@ export default function Header(props: any) {
             <a>Blog</a>
           </Link>
         </div>
+        <List>
+          <ListItem>
+            <Link href="/tools/txtformat">txtformat</Link>
+          </ListItem>
+          <ListItem>
+            <Link href="/tools/txtformat">txtformat2</Link>
+          </ListItem>
+        </List>
         <div className="flex w-3/4 justify-end space-x-6">
           <div className="flex items-center text-2xl font-mono  border-b-2 border-opacity-0 border-green-500 hover:border-opacity-100">
             <Link href="/posts/test">
