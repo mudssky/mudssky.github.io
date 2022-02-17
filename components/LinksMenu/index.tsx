@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import useHook, { Props } from './hooks'
-import { Button, List, ListItem, MenuItem, Menu } from '@mui/material'
+import { Button, MenuItem, Menu } from '@mui/material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 export default function LinksMenu(props: Props) {
   const {
