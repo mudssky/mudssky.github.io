@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { List, ListItem, MenuItem, Menu } from '@mui/material'
+import LinksMenu from '../LinksMenu'
 export default function Header(props: any) {
   return (
     <div>
@@ -17,15 +18,17 @@ export default function Header(props: any) {
             <a>Blog</a>
           </Link>
         </div>
-        <List>
-          <ListItem>
-            <Link href="/tools/txtformat">txtformat</Link>
-          </ListItem>
-          <ListItem>
-            <Link href="/tools/txtformat">txtformat2</Link>
-          </ListItem>
-        </List>
         <div className="flex w-3/4 justify-end space-x-6">
+          <LinksMenu
+            className="flex items-center"
+            menuList={[
+              {
+                title: 'txtformat',
+                link: '/tools/txtformat',
+              },
+            ]}
+            menuTitle={'工具箱'}
+          ></LinksMenu>
           <div className="flex items-center text-2xl font-mono  border-b-2 border-opacity-0 border-green-500 hover:border-opacity-100">
             <Link href="/posts/test">
               <a>test</a>

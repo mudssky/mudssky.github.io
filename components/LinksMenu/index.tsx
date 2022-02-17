@@ -1,11 +1,42 @@
+import Link from 'next/link'
 import useHook, { Props } from './hooks'
 import { Button, List, ListItem, MenuItem, Menu } from '@mui/material'
-export default function LinkMenu(props: Props) {
-  const { menuList } = useHook(props)
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+export default function LinksMenu(props: Props) {
+  const {
+    buttonDom,
+    isMenuOpen,
+    menuList,
+    menuTitle,
+    handleMenuOpen,
+    handleMenuClose,
+  } = useHook(props)
+  const { className } = props
   return (
-    <div>
-      {/* <Button onMouseEnter={}></Button> */}
-      <Menu open={false}>{}</Menu>
+    <div className={className}>
+      <Button
+        ref={buttonDom}
+        endIcon={<KeyboardArrowDownIcon />}
+        onClick={handleMenuOpen}
+      >
+        {menuTitle}
+      </Button>
+      <Menu
+        anchorEl={buttonDom.current}
+        open={isMenuOpen}
+        onClose={handleMenuClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        {menuList.map((item) => {
+          return (
+            <MenuItem key={item.link}>
+              <Link href={item.link}>{item.title}</Link>
+            </MenuItem>
+          )
+        })}
+      </Menu>
     </div>
   )
 }
