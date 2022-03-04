@@ -33,6 +33,10 @@ const reducer = (state: State, action: Action): State => {
       throw new Error('not match actions')
   }
 }
-export default function useHook() {
+export default function useHook(props: Props) {
   const [state, dispatch] = useReducer(reducer, initialState)
+  const { txtConent } = state
+  return {
+    txtConent,
+  }
 }

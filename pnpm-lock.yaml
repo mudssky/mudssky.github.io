@@ -10,7 +10,7 @@ specifiers:
   '@types/react': 17.0.15
   autoprefixer: ^10.3.1
   caniuse-lite: ^1.0.30001312
-  codemirror: ^5.65.1
+  codemirror: ^5.65.2
   eslint: 7.31.0
   eslint-config-next: 11.0.1
   gray-matter: ^4.0.3
@@ -19,6 +19,7 @@ specifiers:
   next: 11.0.1
   postcss: ^8.3.6
   react: 17.0.2
+  react-codemirror2: ^7.2.1
   react-dom: 17.0.2
   react-markdown: ^6.0.3
   remark-gfm: ^1.0.0
@@ -34,12 +35,13 @@ dependencies:
   '@mui/material': registry.npmmirror.com/@mui/material/5.4.2_6ef753c7fe929c1549734722ab72a47e
   '@tailwindcss/typography': registry.nlark.com/@tailwindcss/typography/0.4.1_tailwindcss@2.2.7
   caniuse-lite: registry.npmmirror.com/caniuse-lite/1.0.30001312
-  codemirror: registry.npmmirror.com/codemirror/5.65.1
+  codemirror: registry.npmmirror.com/codemirror/5.65.2
   gray-matter: registry.nlark.com/gray-matter/4.0.3
   highlight.js: registry.nlark.com/highlight.js/11.2.0
   lodash: 4.17.21
   next: registry.nlark.com/next/11.0.1_d2369a9d533a7b460cd972304cbe579f
   react: registry.nlark.com/react/17.0.2
+  react-codemirror2: registry.npmmirror.com/react-codemirror2/7.2.1_codemirror@5.65.2+react@17.0.2
   react-dom: registry.nlark.com/react-dom/17.0.2_react@17.0.2
   react-markdown: registry.nlark.com/react-markdown/6.0.3_5801e6465414ef85acbf5710ce4c0dcf
   remark-gfm: registry.nlark.com/remark-gfm/1.0.0
@@ -5035,10 +5037,10 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  registry.npmmirror.com/codemirror/5.65.1:
-    resolution: {integrity: sha512-s6aac+DD+4O2u1aBmdxhB7yz2XU7tG3snOyQ05Kxifahz7hoxnfxIRHxiCSEv3TUC38dIVH8G+lZH9UWSfGQxA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/codemirror/-/codemirror-5.65.1.tgz}
+  registry.npmmirror.com/codemirror/5.65.2:
+    resolution: {integrity: sha512-SZM4Zq7XEC8Fhroqe3LxbEEX1zUPWH1wMr5zxiBuiUF64iYOUH/JI88v4tBag8MiBS8B8gRv8O1pPXGYXQ4ErA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/codemirror/-/codemirror-5.65.2.tgz}
     name: codemirror
-    version: 5.65.1
+    version: 5.65.2
     dev: false
 
   registry.npmmirror.com/color-convert/1.9.3:
@@ -5360,6 +5362,19 @@ packages:
       loose-envify: registry.npmmirror.com/loose-envify/1.4.0
       object-assign: registry.npmmirror.com/object-assign/4.1.1
       react-is: registry.npmmirror.com/react-is/16.13.1
+    dev: false
+
+  registry.npmmirror.com/react-codemirror2/7.2.1_codemirror@5.65.2+react@17.0.2:
+    resolution: {integrity: sha512-t7YFmz1AXdlImgHXA9Ja0T6AWuopilub24jRaQdPVbzUJVNKIYuy3uCFZYa7CE5S3UW6SrSa5nAqVQvtzRF9gw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-codemirror2/-/react-codemirror2-7.2.1.tgz}
+    id: registry.npmmirror.com/react-codemirror2/7.2.1
+    name: react-codemirror2
+    version: 7.2.1
+    peerDependencies:
+      codemirror: 5.x
+      react: '>=15.5 <=16.x'
+    dependencies:
+      codemirror: registry.npmmirror.com/codemirror/5.65.2
+      react: registry.nlark.com/react/17.0.2
     dev: false
 
   registry.npmmirror.com/react-is/16.13.1:
