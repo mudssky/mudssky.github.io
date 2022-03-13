@@ -2,7 +2,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* 引入code mirror css文件 */
+@import 'codemirror/lib/codemirror.css';
+@import 'codemirror/theme/material.css';
 .w-800 {
   width: 800px;
 }

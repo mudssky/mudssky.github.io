@@ -29,6 +29,7 @@
     "remark-gfm": "^1.0.0"
   },
   "devDependencies": {
+    "@types/codemirror": "^5.60.5",
     "@types/lodash": "^4.14.172",
     "@types/react": "17.0.15",
     "autoprefixer": "^10.3.1",

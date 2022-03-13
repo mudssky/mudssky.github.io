@@ -1,5 +1,9 @@
 import { useReducer } from 'react'
-
+import {
+  codemirrorReducer,
+  initialState,
+  setTxtConent,
+} from './codemirrorReducer'
 interface Action {
   type: string
   payload: any
@@ -9,34 +13,26 @@ interface MenuItem {
   link: string
 }
 export interface Props {
-  menuList: MenuItem[]
-  menuTitle: string
+  // menuList: MenuItem[]
+  // menuTitle: string
   className?: string
 }
 
-interface State {
-  txtConent: string
-}
-const initialState: State = {
-  txtConent: '',
-}
-const ACTION_TYPE = {
-  setTxtConent: 'setTxtConent',
-}
-const reducer = (state: State, action: Action): State => {
-  const newstate = { ...state }
-  switch (action.type) {
-    case ACTION_TYPE.setTxtConent:
-      newstate.txtConent = action.payload
-      return newstate
-    default:
-      throw new Error('not match actions')
-  }
-}
 export default function useHook(props: Props) {
-  const [state, dispatch] = useReducer(reducer, initialState)
-  const { txtConent } = state
+  const [codemirrorState, codemirrorDispatch] = useReducer(
+    codemirrorReducer,
+    initialState
+  )
+  const { txtConent } = codemirrorState
+  const handleCodeMirrorContentChange = (
+    editor: any,
+    data: any,
+    value: any
+  ) => {
+    codemirrorDispatch(setTxtConent(value))
+  }
   return {
     txtConent,
+    handleCodeMirrorContentChange,
   }
 }

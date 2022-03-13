@@ -3,7 +3,9 @@ import TxtFormat from '../../components/TxtFormat'
 export default function TxtFormatPage() {
   return (
     <Layout>
-      <TxtFormat></TxtFormat>
+      <div>
+        <TxtFormat></TxtFormat>
+      </div>
     </Layout>
   )
 }
