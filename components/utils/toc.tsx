@@ -1,21 +1,7 @@
 import head from 'next/head'
 import { useEffect, useRef, useState } from 'react'
 import _, { throttle } from 'lodash'
-function isMobile() {
-  let info = navigator.userAgent
-  let agents = [
-    'Android',
-    'iPhone',
-    'SymbianOS',
-    'Windows Phone',
-    'iPod',
-    'iPad',
-  ]
-  for (let i = 0; i < agents.length; i++) {
-    if (info.indexOf(agents[i]) >= 0) return true
-  }
-  return false
-}
+import { isMobile } from '../../common/util'
 
 export default function Toc() {
   const [headList, setHeadList] = useState(Array<any>())
@@ -92,6 +78,7 @@ export default function Toc() {
     if (isMobile()) {
       setHideToc(true)
     }
+    ;``
     //   组件生成时，从localStorage获取过去使用的位置
     const jsonstr = localStorage.getItem('tocposition')
     let tocPosition = { left: 10, top: 50 }
@@ -99,88 +86,47 @@ export default function Toc() {
       tocPosition = JSON.parse(jsonstr)
       moveAt(tocPosition)
     }
+    const onMouseDown = function (event: MouseEvent) {
+      // 按下鼠标时,我们可以记住鼠标按下的位置相对于拖动地节点左上角的距离
+      const shiftX =
+        event.clientX - (tocEl.current?.getBoundingClientRect().left || 0)
+      const shiftY =
+        event.clientY - (tocEl.current?.getBoundingClientRect().top || 0)
 
-    if (tocEl.current) {
-      // console.log(tocEl)
-
-      const onMouseDown = function (event: MouseEvent) {
-        // 按下鼠标时,我们可以记住鼠标按下的位置相对于拖动地节点左上角的距离
-        const shiftX =
-          event.clientX - (tocEl.current?.getBoundingClientRect().left || 0)
-        const shiftY =
-          event.clientY - (tocEl.current?.getBoundingClientRect().top || 0)
-
-        // 按下鼠标后,添加移动事件和鼠标放下的事件
-        function onMouseMove(event: MouseEvent) {
-          // console.log(event.pageX, event.pageY, event.clientX, event.clientY)
-          tocPosition = {
-            left: event.clientX - shiftX,
-            top: event.clientY - shiftY,
-          }
-          moveAt(tocPosition)
+      // 按下鼠标后,添加移动事件和鼠标放下的事件
+      function onMouseMove(event: MouseEvent) {
+        // console.log(event.pageX, event.pageY, event.clientX, event.clientY)
+        tocPosition = {
+          left: event.clientX - shiftX,
+          top: event.clientY - shiftY,
         }
-        // const throttledOnMove = _.throttle(onMouseMove, 10)
-        document.addEventListener('mousemove', onMouseMove)
-        // document.addEventListener('mousemove', throttledOnMove)
-        function onMouseUp(event: MouseEvent) {
-          // 放下后移除事件
-          document.removeEventListener('mousemove', onMouseMove)
-          // document.removeEventListener('mousemove', throttledOnMove)
-          document.removeEventListener('mouseup', onMouseUp)
-          localStorage.setItem('tocposition', JSON.stringify(tocPosition))
-        }
-        document.addEventListener('mouseup', onMouseUp)
+        moveAt(tocPosition)
       }
-      tocEl.current.addEventListener('mousedown', onMouseDown)
+      // const throttledOnMove = _.throttle(onMouseMove, 10)
+      document.addEventListener('mousemove', onMouseMove)
+      // document.addEventListener('mousemove', throttledOnMove)
+      function onMouseUp(event: MouseEvent) {
+        // 放下后移除事件
+        document.removeEventListener('mousemove', onMouseMove)
+        // document.removeEventListener('mousemove', throttledOnMove)
+        document.removeEventListener('mouseup', onMouseUp)
+        localStorage.setItem('tocposition', JSON.stringify(tocPosition))
+      }
+      document.addEventListener('mouseup', onMouseUp)
+    }
+    const tocDom = tocEl.current
+    if (tocDom) {
+      tocDom.addEventListener('mousedown', onMouseDown)
 
-      tocEl.current.ondragstart = function () {
+      tocDom.ondragstart = function () {
         return false
       }
     }
     return () => {
       //   cleanup
+      tocDom?.removeEventListener('mousedown', onMouseDown)
     }
   }, [])
-  // 使用拖拽事件添加拖动监听
-  // useEffect(() => {
-  //   function moveAt(tocPosition: { left: number; top: number }) {
-  //     tocEl.current!.style.left = tocPosition.left + 'px'
-  //     tocEl.current!.style.top = tocPosition.top + 'px'
-  //   }
-  //   if (isMobile()) {
-  //     setHideToc(true)
-  //   }
-  //   //   组件生成时，从localStorage获取过去使用的位置
-  //   const jsonstr = localStorage.getItem('tocposition')
-  //   let tocPosition = { left: 10, top: 50 }
-  //   if (jsonstr) {
-  //     tocPosition = JSON.parse(jsonstr)
-  //     moveAt(tocPosition)
-  //   }
-
-  //   if (tocEl.current) {
-  //     // console.log(tocEl)
-
-  //     const handledragstart = function (event: DragEvent) {
-  //       const shiftX =
-  //         event.clientX - (tocEl.current?.getBoundingClientRect().left || 0)
-  //       const shiftY =
-  //         event.clientY - (tocEl.current?.getBoundingClientRect().top || 0)
-  //       function handleDrag(event: DragEvent) {
-  //         tocPosition = {
-  //           left: event.clientX - shiftX,
-  //           top: event.clientY - shiftY,
-  //         }
-  //         moveAt(tocPosition)
-  //       }
-  //       // tocEl.current!.addEventListener('drag', handleDrag)
-  //     }
-  //     tocEl.current.addEventListener('dragstart', handledragstart)
-  //   }
-  //   return () => {
-  //     //   cleanup
-  //   }
-  // }, [])
   // 设置各级标题的样式
   const headStyle: { [key: string]: any } = {
     H1: 'text-md',

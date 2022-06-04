@@ -12,28 +12,19 @@ import 'highlight.js/styles/github-dark.css'
 import Toc from '../../components/utils/toc'
 import { dateFormat } from '../../lib/utils'
 
-export default function Post({ postData }: { postData: PostData }) {
+interface Props {
+  postData: PostData
+}
+export default function Post(props: Props) {
+  const { postData } = props
   // 使用highlight.js
   useEffect(() => {
     hljs.highlightAll()
-    // const script = document.createElement('script')
-    // // script.defer = true
-    // script.innerHTML = `
-    //   hljs.highlightAll()`
-    // document.body.appendChild(script)
-    // return () => {
-    //   document.body.removeChild(script)
-    // }
   }, [])
   return (
     <Layout className="lg:w-full flex justify-center">
       <Head>
         <title>{postData.title}</title>
-        {/*  eslint-disable-next-line @next/next/no-css-tags */}
-        {/* <link
-          rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css"
-        /> */}
       </Head>
       {/* <div
         className="w-1/2 m-auto prose"
@@ -56,7 +47,7 @@ export default function Post({ postData }: { postData: PostData }) {
             return src
           }}
           remarkPlugins={[gfm]}
-          className="m-auto prose prose-indigo"
+          className="m-auto prose sm:prose-sm md:prose-base  2xl:prose-xl prose-indigo"
         >
           {postData.content}
         </ReactMarkdown>
