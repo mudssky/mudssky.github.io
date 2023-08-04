@@ -26,6 +26,10 @@ export default function Header(props: any) {
                 title: 'txtformat',
                 link: '/tools/txtformat',
               },
+              {
+                title: '电费计算器',
+                link: '/tools/electricCostCalc',
+              },
             ]}
             menuTitle={'工具箱'}
           ></LinksMenu>
