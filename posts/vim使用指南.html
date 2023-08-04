@@ -1,401 +1,401 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="description" content="Learn how to build a personal website using Next.js"/><meta name="og:title" content="Next.js Sample Website"/><meta name="twitter:card" content="summary_large_image"/><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><title>vim使用指南</title><meta name="next-head-count" content="7"/><link rel="preload" href="/_next/static/css/d8e81796332d9902.css" as="style"/><link rel="stylesheet" href="/_next/static/css/d8e81796332d9902.css" data-n-g=""/><link rel="preload" href="/_next/static/css/83b7f8e18c18b5e5.css" as="style"/><link rel="stylesheet" href="/_next/static/css/83b7f8e18c18b5e5.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-42cdea76c8170223.js" defer=""></script><script src="/_next/static/chunks/framework-fc97f3f1282ce3ed.js" defer=""></script><script src="/_next/static/chunks/main-f4ae3437c92c1efc.js" defer=""></script><script src="/_next/static/chunks/pages/_app-85d7488a393e293e.js" defer=""></script><script src="/_next/static/chunks/29107295-fbcfe2172188e46f.js" defer=""></script><script src="/_next/static/chunks/207-dad3f608848cbb21.js" defer=""></script><script src="/_next/static/chunks/915-40d4cbcae9c77d9f.js" defer=""></script><script src="/_next/static/chunks/pages/posts/%5Bid%5D-2df3ef5a8b4a9ed9.js" defer=""></script><script src="/_next/static/iJCIc7U3FF7gqUKpSm2O0/_buildManifest.js" defer=""></script><script src="/_next/static/iJCIc7U3FF7gqUKpSm2O0/_ssgManifest.js" defer=""></script><script src="/_next/static/iJCIc7U3FF7gqUKpSm2O0/_middlewareManifest.js" defer=""></script></head><body><div id="__next"><div><div style="max-width:1920px" class="m-auto"><div><div class="m-auto flex justify-between border-b-2 border-gray-50 h-12" style="max-width:1200px"><div class="w-16 flex items-center justify-center text-2xl text-blue-500"><a href="/">Blog</a></div><div class="flex w-3/4 justify-end space-x-6"><div class="flex items-center"><style data-emotion="css 11qrfta">.css-11qrfta{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:6px 8px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;color:#1976d2;}.css-11qrfta:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);}@media (hover: none){.css-11qrfta:hover{background-color:transparent;}}.css-11qrfta.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style><style data-emotion="css 1ujsas3">.css-1ujsas3{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:6px 8px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;color:#1976d2;}.css-1ujsas3::-moz-focus-inner{border-style:none;}.css-1ujsas3.Mui-disabled{pointer-events:none;cursor:default;}@media print{.css-1ujsas3{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-1ujsas3:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);}@media (hover: none){.css-1ujsas3:hover{background-color:transparent;}}.css-1ujsas3.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style><button class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1ujsas3" tabindex="0" type="button">工具箱<!-- --><style data-emotion="css 1n4a93h">.css-1n4a93h{display:inherit;margin-right:-4px;margin-left:8px;}.css-1n4a93h>*:nth-of-type(1){font-size:20px;}</style><span class="MuiButton-endIcon MuiButton-iconSizeMedium css-1n4a93h"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="KeyboardArrowDownIcon"><path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path></svg></span></button></div><div class="flex items-center text-2xl font-mono border-b-2 border-opacity-0 border-green-500 hover:border-opacity-100"><a href="/posts/test">test</a></div><a href="https://github.com/mudssky" target="_blank" rel="noreferrer" class="flex text-lg items-center text-gray-600 font-sans font-semibold">GitHub<!-- --><span class="ml-1 mt-1"><svg class="fill-current text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15"><path fill="none" d="M0 0h24v24H0z"></path><path d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3h8z"></path></svg></span></a></div></div></div><main class="lg:w-full flex justify-center"><div class="w-full lg:w-auto p-10 mt-5 ring-1 ring-gray-100 shadow-sm"><div class="text-xs text-gray-400 space-x-4 border-b-2 mb-2 shadow-xs"><span>2021.04.17 07:54:52</span><span>字数: <!-- -->25986<!-- --></span></div><div class="m-auto prose sm:prose-sm md:prose-base 2xl:prose-xl prose-indigo"><h1>vim使用指南<!-- --></h1>
-<!-- --><p>下面主要是针对vscode-vim的使用指南，1-9节的内容是通用的，但是后面的内容是vscode-vim特有的功能。<!-- --></p>
-<!-- --><h2>01.最基本操作<!-- --></h2>
-<!-- --><p>vim有三种模式：<!-- --></p>
-<!-- --><ol>
-<!-- --><li>按<!-- --><code>ESC<!-- --></code>进入正常模式（normal）<!-- --></li>
-<!-- --><li>在正常模式下按i，进入插入模式（insert）<!-- --></li>
-<!-- --><li>在正常模式下按<!-- --><code>:<!-- --></code>键进入命令模式<!-- --></li>
-<!-- --></ol>
-<!-- --><p>三个模式里面只有插入模式是用于输入文本的,正常模式是用于编辑文本的，包括移动光标，复制粘贴删除等
-命令模式可以用来执行搜索，批量替换等<!-- --></p>
-<!-- --><p>在正常模式下，移动光标可以用以下几个字幕或者方向键<!-- --></p>
-<!-- --><pre><code>           ↑
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="description" content="Learn how to build a personal website using Next.js"/><meta name="og:title" content="Next.js Sample Website"/><meta name="twitter:card" content="summary_large_image"/><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><title>vim使用指南</title><meta name="next-head-count" content="7"/><link rel="preload" href="/_next/static/css/eb78c9a89c1f2031.css" as="style"/><link rel="stylesheet" href="/_next/static/css/eb78c9a89c1f2031.css" data-n-g=""/><link rel="preload" href="/_next/static/css/83b7f8e18c18b5e5.css" as="style"/><link rel="stylesheet" href="/_next/static/css/83b7f8e18c18b5e5.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js"></script><script src="/_next/static/chunks/webpack-36d12a75f0098f30.js" defer=""></script><script src="/_next/static/chunks/framework-a336eba791abf541.js" defer=""></script><script src="/_next/static/chunks/main-ff9d19239deb8ede.js" defer=""></script><script src="/_next/static/chunks/pages/_app-836eb749952ecab6.js" defer=""></script><script src="/_next/static/chunks/7a7c95a0-0bd1e6700e4ea4da.js" defer=""></script><script src="/_next/static/chunks/735-4c2fceeb74aaeec2.js" defer=""></script><script src="/_next/static/chunks/836-d95870fdb324c322.js" defer=""></script><script src="/_next/static/chunks/150-41d20bdb694363a9.js" defer=""></script><script src="/_next/static/chunks/pages/posts/%5Bid%5D-20884f1852d7a577.js" defer=""></script><script src="/_next/static/ubgcf7xen3-XUfsSthoK7/_buildManifest.js" defer=""></script><script src="/_next/static/ubgcf7xen3-XUfsSthoK7/_ssgManifest.js" defer=""></script></head><body><div id="__next"><div><div style="max-width:1920px" class="m-auto"><div><div class="m-auto flex justify-between border-b-2 border-gray-50 h-12" style="max-width:1200px"><div class="w-16 flex items-center justify-center text-2xl text-blue-500"><a href="/">Blog</a></div><div class="flex w-3/4 justify-end space-x-6"><div class="flex items-center"><style data-emotion="css 11qrfta">.css-11qrfta{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:6px 8px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;color:#1976d2;}.css-11qrfta:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);}@media (hover: none){.css-11qrfta:hover{background-color:transparent;}}.css-11qrfta.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style><style data-emotion="css 1ujsas3">.css-1ujsas3{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:6px 8px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;color:#1976d2;}.css-1ujsas3::-moz-focus-inner{border-style:none;}.css-1ujsas3.Mui-disabled{pointer-events:none;cursor:default;}@media print{.css-1ujsas3{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-1ujsas3:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);}@media (hover: none){.css-1ujsas3:hover{background-color:transparent;}}.css-1ujsas3.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style><button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1ujsas3" tabindex="0" type="button">工具箱<style data-emotion="css 1n4a93h">.css-1n4a93h{display:inherit;margin-right:-4px;margin-left:8px;}.css-1n4a93h>*:nth-of-type(1){font-size:20px;}</style><span class="MuiButton-endIcon MuiButton-iconSizeMedium css-1n4a93h"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="KeyboardArrowDownIcon"><path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path></svg></span></button></div><div class="flex items-center text-2xl font-mono  border-b-2 border-opacity-0 border-green-500 hover:border-opacity-100"><a href="/posts/test">test</a></div><a href="https://github.com/mudssky" target="_blank" rel="noreferrer" class="flex text-lg items-center text-gray-600 font-sans font-semibold">GitHub<span class="ml-1 mt-1"><svg class="fill-current text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15"><path fill="none" d="M0 0h24v24H0z"></path><path d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3h8z"></path></svg></span></a></div></div></div><main class="lg:w-full flex justify-center"><div class="w-full lg:w-auto  p-10 mt-5 ring-1 ring-gray-100 shadow-sm"><div class="text-xs text-gray-400 space-x-4 border-b-2 mb-2 shadow-xs"><span>2021.04.17 07:54:52</span><span>字数: <!-- -->25986</span></div><div class="m-auto prose sm:prose-sm md:prose-base  2xl:prose-xl prose-indigo"><h1>vim使用指南</h1>
+<p>下面主要是针对vscode-vim的使用指南，1-9节的内容是通用的，但是后面的内容是vscode-vim特有的功能。</p>
+<h2>01.最基本操作</h2>
+<p>vim有三种模式：</p>
+<ol>
+<li>按<code>ESC</code>进入正常模式（normal）</li>
+<li>在正常模式下按i，进入插入模式（insert）</li>
+<li>在正常模式下按<code>:</code>键进入命令模式</li>
+</ol>
+<p>三个模式里面只有插入模式是用于输入文本的,正常模式是用于编辑文本的，包括移动光标，复制粘贴删除等
+命令模式可以用来执行搜索，批量替换等</p>
+<p>在正常模式下，移动光标可以用以下几个字幕或者方向键</p>
+<pre><code>           ↑
      ← h j k l →
          ↓
-<!-- --></code></pre>
-<!-- --><p>在插入模式下，按 <!-- --><code>&lt;ESC&gt;<!-- --></code>, <!-- --><code>&lt;CTRL-[&gt;<!-- --></code> or <!-- --><code>&lt;CTRL-C&gt;<!-- --></code> 返回正常模式<!-- --></p>
-<!-- --><h3>在vim中打开文件<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>:e &lt;filename&gt;<!-- --></code> 打开名为 filename 的文件，若文件不存在则创建之<!-- --></li>
-<!-- --><li><code>:Ex<!-- --></code> 在 Vim 中打开目录树，光标选中后回车打开对应文件（提示：<!-- --><code>-<!-- --></code> 进入上级目录）<!-- --></li>
-<!-- --></ul>
-<!-- --><h3>显示buffer列表<!-- --></h3>
-<!-- --><p>你可以用 <!-- --><code>:buffers<!-- --></code> 或 <!-- --><code>:ls<!-- --></code> 命令查看<!-- --></p>
-<!-- --><blockquote>
-<!-- --><ul>
-<!-- --><li><code>:bn<!-- --></code> 打开缓存中下一个文件<!-- --></li>
-<!-- --><li><code>:bp<!-- --></code> 打开缓存中上一个文件<!-- --></li>
-<!-- --><li><code>:b&lt;N&gt;<!-- --></code> 打开缓存中第 N 个文件<!-- --></li>
-<!-- --><li>你也可以使用 <!-- --><code>:bdelete&lt;N&gt;<!-- --></code> 来删除所要关闭的缓冲区，缩写 <!-- --><code>:bd&lt;N&gt;<!-- --></code>。<!-- --></li>
-<!-- --></ul>
-<!-- --></blockquote>
-<!-- --><h3>保存文件<!-- --></h3>
-<!-- --><ul>
-<!-- --><li>
-<!-- --><p><code>:w<!-- --></code> 保存当前文件<!-- --></p>
-<!-- --></li>
-<!-- --><li>
-<!-- --><p><code>:wa<!-- --></code> 保存全部文件<!-- --></p>
-<!-- --></li>
-<!-- --><li>
-<!-- --><p><code>:wq<!-- --></code> or <!-- --><code>ZZ<!-- --></code> 保存并退出,或者<!-- --><code>:x<!-- --></code>也是保存并退出<!-- --></p>
-<!-- --></li>
-<!-- --><li>
-<!-- --><p><code>:q!<!-- --></code> or <!-- --><code>ZQ<!-- --></code> 强制退出，不保存<!-- --></p>
-<!-- --></li>
-<!-- --><li>
-<!-- --><p><code>:saveas &lt;new filename&gt;<!-- --></code> 文件另存为<!-- --></p>
-<!-- --></li>
-<!-- --><li>
-<!-- --><p><code>:w &lt;new filename&gt;<!-- --></code> 文件另存一份名为 <!-- --><code>&lt;new filename&gt;<!-- --></code> 的副本并继续编辑原文件<!-- --></p>
-<!-- --></li>
-<!-- --></ul>
-<!-- --><h3>简单设置vim<!-- --></h3>
-<!-- --><p>“工欲善其事，必先利其器”。尽管 Vim 非常强大，但默认配置的 Vim 看起来还是比较朴素的，为了适合
-我们的开发需求，要对 Vim 进行一些简单的配置。<!-- --></p>
-<!-- --><ul>
-<!-- --><li><code>:set number<!-- --></code> 显示行号<!-- --></li>
-<!-- --><li><code>:set relativenumber<!-- --></code> 显示相对行号（这个非常重要，慢慢体会）<!-- --></li>
-<!-- --><li><code>:set hlsearch<!-- --></code> 搜索结果高亮<!-- --></li>
-<!-- --><li><code>:set autoindent<!-- --></code> 自动缩进<!-- --></li>
-<!-- --><li><code>:set smartindent<!-- --></code> 智能缩进<!-- --></li>
-<!-- --><li><code>:set tabstop=4<!-- --></code> 设置 tab 制表符所占宽度为 4<!-- --></li>
-<!-- --><li><code>:set softtabstop=4<!-- --></code> 设置按 <!-- --><code>tab<!-- --></code> 时缩进的宽度为 4<!-- --></li>
-<!-- --><li><code>:set shiftwidth=4<!-- --></code> 设置自动缩进宽度为 4<!-- --></li>
-<!-- --><li><code>:set expandtab<!-- --></code> 缩进时将 tab 制表符转换为空格<!-- --></li>
-<!-- --><li><code>:filetype on<!-- --></code> 开启文件类型检测<!-- --></li>
-<!-- --><li><code>:syntax on<!-- --></code> 开启语法高亮<!-- --></li>
-<!-- --></ul>
-<!-- --><p>这里列出的是命令，你可以通过在 Vim 中输入进行设置，但这种方式设置的参数只在本次关闭 Vim 前生效，
-如果你退出 Vim 再打开，之前的设置就失效了。<!-- --></p>
-<!-- --><p>若要永久生效，需要修改 Vim 的一个自动配置文件，一般文件路径是 <!-- --><code>/home/&lt;user&gt;/.vimrc<!-- --></code>（Linux
-系统）或 <!-- --><code>/Users/&lt;user&gt;/.vimrc<!-- --></code>（Mac OS 系统）<!-- --></p>
-<!-- --><p>如果没有就新建一个，以 Mac OS 系统为例：<!-- --></p>
-<!-- --><blockquote>
-<!-- --><p>在控制台执行如下命令，每行结尾记得回车<!-- --></p>
-<!-- --></blockquote>
-<!-- --><pre><code class="language-bash">cd ~
+</code></pre>
+<p>在插入模式下，按 <code>&lt;ESC&gt;</code>, <code>&lt;CTRL-[&gt;</code> or <code>&lt;CTRL-C&gt;</code> 返回正常模式</p>
+<h3>在vim中打开文件</h3>
+<ul>
+<li><code>:e &lt;filename&gt;</code> 打开名为 filename 的文件，若文件不存在则创建之</li>
+<li><code>:Ex</code> 在 Vim 中打开目录树，光标选中后回车打开对应文件（提示：<code>-</code> 进入上级目录）</li>
+</ul>
+<h3>显示buffer列表</h3>
+<p>你可以用 <code>:buffers</code> 或 <code>:ls</code> 命令查看</p>
+<blockquote>
+<ul>
+<li><code>:bn</code> 打开缓存中下一个文件</li>
+<li><code>:bp</code> 打开缓存中上一个文件</li>
+<li><code>:b&lt;N&gt;</code> 打开缓存中第 N 个文件</li>
+<li>你也可以使用 <code>:bdelete&lt;N&gt;</code> 来删除所要关闭的缓冲区，缩写 <code>:bd&lt;N&gt;</code>。</li>
+</ul>
+</blockquote>
+<h3>保存文件</h3>
+<ul>
+<li>
+<p><code>:w</code> 保存当前文件</p>
+</li>
+<li>
+<p><code>:wa</code> 保存全部文件</p>
+</li>
+<li>
+<p><code>:wq</code> or <code>ZZ</code> 保存并退出,或者<code>:x</code>也是保存并退出</p>
+</li>
+<li>
+<p><code>:q!</code> or <code>ZQ</code> 强制退出，不保存</p>
+</li>
+<li>
+<p><code>:saveas &lt;new filename&gt;</code> 文件另存为</p>
+</li>
+<li>
+<p><code>:w &lt;new filename&gt;</code> 文件另存一份名为 <code>&lt;new filename&gt;</code> 的副本并继续编辑原文件</p>
+</li>
+</ul>
+<h3>简单设置vim</h3>
+<p>“工欲善其事，必先利其器”。尽管 Vim 非常强大，但默认配置的 Vim 看起来还是比较朴素的，为了适合
+我们的开发需求，要对 Vim 进行一些简单的配置。</p>
+<ul>
+<li><code>:set number</code> 显示行号</li>
+<li><code>:set relativenumber</code> 显示相对行号（这个非常重要，慢慢体会）</li>
+<li><code>:set hlsearch</code> 搜索结果高亮</li>
+<li><code>:set autoindent</code> 自动缩进</li>
+<li><code>:set smartindent</code> 智能缩进</li>
+<li><code>:set tabstop=4</code> 设置 tab 制表符所占宽度为 4</li>
+<li><code>:set softtabstop=4</code> 设置按 <code>tab</code> 时缩进的宽度为 4</li>
+<li><code>:set shiftwidth=4</code> 设置自动缩进宽度为 4</li>
+<li><code>:set expandtab</code> 缩进时将 tab 制表符转换为空格</li>
+<li><code>:filetype on</code> 开启文件类型检测</li>
+<li><code>:syntax on</code> 开启语法高亮</li>
+</ul>
+<p>这里列出的是命令，你可以通过在 Vim 中输入进行设置，但这种方式设置的参数只在本次关闭 Vim 前生效，
+如果你退出 Vim 再打开，之前的设置就失效了。</p>
+<p>若要永久生效，需要修改 Vim 的一个自动配置文件，一般文件路径是 <code>/home/&lt;user&gt;/.vimrc</code>（Linux
+系统）或 <code>/Users/&lt;user&gt;/.vimrc</code>（Mac OS 系统）</p>
+<p>如果没有就新建一个，以 Mac OS 系统为例：</p>
+<blockquote>
+<p>在控制台执行如下命令，每行结尾记得回车</p>
+</blockquote>
+<pre><code class="language-bash">cd ~
 vim .vimrc
-<!-- --></code></pre>
-<!-- --><blockquote>
-<!-- --><p>现在你已经在 Vim 中打开了你的 Vim 专属配置文件，将上面提到的配置复制到你的文件中，记得要删除
-每行开头的 <!-- --><code>:<!-- --></code></p>
-<!-- --><p>修改完成执行 <!-- --><code>:wq<!-- --></code> 或者 <!-- --><code>ZZ<!-- --></code> 保存退出，再次进入 Vim 时，你的这些配置就已经生效了<!-- --></p>
-<!-- --><p>当然，机智如我也为你准备好了一份 <!-- --><a href="vimrc.vim" target="_blank">vimrc<!-- --></a> 样本文件，你可以在控制台执行
-<!-- --><code>cp vimrc.vim ~/.vimrc<!-- --></code> 直接使用，再次启动 Vim 或在 Vim 中执行  <!-- --><code>:source ~/.vimrc<!-- --></code>你的配置就
-应该生效了。<!-- --></p>
-<!-- --></blockquote>
-<!-- --><p><em><strong>[ AD ]<!-- --></strong> 当然你也可以在我维护的另外一个项目 <!-- --><a href="https://github.com/dofy/7th-vim" target="_blank">The 7th Vim<!-- --></a> 中找到一个更为完整的配置方案。<!-- --></em></p>
-<!-- --><h4>清除搜索高亮<!-- --></h4>
-<!-- --><p>前面提到的配置中，有一项是高亮全部搜索结果 <!-- --><code>:set hlsearch<!-- --></code>，其作用是当你执行 <!-- --><code>/<!-- --></code>
-、<!-- --><code>?<!-- --></code>、<!-- --><code>*<!-- --></code> 或 <!-- --><code>#<!-- --></code> 搜索后高亮所有匹配结果。<!-- --></p>
-<!-- --><blockquote>
-<!-- --><p>如果你已经设置了这个选项，尝试执行 <!-- --><code>/set<!-- --></code></p>
-<!-- --></blockquote>
-<!-- --><p>看到效果了吧，搜索结果一目了然，但这有时候也是一种困扰，因为知道搜索结果后高亮就没用了，但高亮
-本人并不这样认为，它会一直高亮下去，直到你用 <!-- --><code>:set nohlsearch<!-- --></code> 将其关闭。<!-- --></p>
-<!-- --><p>但这样需要就打开，不需要就关闭也不是个办法，有没有更好的解决方案呢？当然！请看下面的终极答案：<!-- --></p>
-<!-- --><blockquote>
-<!-- --><p><strong>再搜一个不存在的字符串<!-- --></strong></p>
-<!-- --></blockquote>
-<!-- --><p>通常我用来清除搜索高亮的命令是 <!-- --><code>/lfw<!-- --></code>，一是因为 <!-- --><code>lfw<!-- --></code> 这个组合一般不会出现（不适用于
-本文档...），二是这三个字母的组合按起来比较舒服，手指基本不需要怎么移动（你感受一下）。<!-- --></p>
-<!-- --><h4>重复上一次命令<!-- --></h4>
-<!-- --><p>Vim 有一个特殊的命令 <!-- --><code>.<!-- --></code>，你可以用它重复执行上一个命令。<!-- --></p>
-<!-- --><h4>缩进<!-- --></h4>
-<!-- --><ul>
-<!-- --><li><code>&gt;&gt;<!-- --></code> 向右缩进当前行<!-- --></li>
-<!-- --><li><code>&lt;&lt;<!-- --></code> 向左缩进当前行<!-- --></li>
-<!-- --></ul>
-<!-- --><h4>自动排版<!-- --></h4>
-<!-- --><ul>
-<!-- --><li><code>==<!-- --></code> 自动排版当前行<!-- --></li>
-<!-- --><li><code>gg=G<!-- --></code> 当前文档全文自动排版<!-- --></li>
-<!-- --><li><code>&lt;N&gt;==<!-- --></code> 对从当前行开始的 N 行进行自动排版<!-- --></li>
-<!-- --><li><code>=&lt;N&gt;j<!-- --></code> 对当前行以及向下 N 行进行自动排版<!-- --></li>
-<!-- --><li><code>=&lt;N&gt;k<!-- --></code> 对当前行以及向上 N 行进行自动排版<!-- --></li>
-<!-- --></ul>
-<!-- --><h3>窗口分屏<!-- --></h3>
-<!-- --><p>工作中经常会遇到这种情况，就是需要参照其他文档编辑当前文档（场景：翻译），或者从另外一个文档
-copy 代码到当前文档（场景：复制 html 元素类名到 css 文档），这时候就是你最需要分屏的时候。<!-- --></p>
-<!-- --><h4>分屏方式<!-- --></h4>
-<!-- --><ul>
-<!-- --><li><code>:split<!-- --></code> 缩写 <!-- --><code>:sp<!-- --></code> or <!-- --><code>Ctrl-w s<!-- --></code> 上下分屏<!-- --></li>
-<!-- --><li><code>:vsplit<!-- --></code> 缩写 <!-- --><code>:vs<!-- --></code> or <!-- --><code>Ctrl-w v<!-- --></code> 左右分屏<!-- --></li>
-<!-- --><li><code>:diffsplit<!-- --></code> 缩写 <!-- --><code>:diffs<!-- --></code> diff 模式打开一个分屏，后面可以加上 {filename}<!-- --></li>
-<!-- --></ul>
-<!-- --><h4>窗口跳转<!-- --></h4>
-<!-- --><ul>
-<!-- --><li><code>Ctrl-w w<!-- --></code> 激活下一个窗口<!-- --></li>
-<!-- --><li><code>Ctrl-w j<!-- --></code> 激活下方窗口<!-- --></li>
-<!-- --><li><code>Ctrl-w k<!-- --></code> 激活上方窗口<!-- --></li>
-<!-- --><li><code>Ctrl-w h<!-- --></code> 激活左侧窗口<!-- --></li>
-<!-- --><li><code>Ctrl-w l<!-- --></code> 激活右侧窗口<!-- --></li>
-<!-- --></ul>
-<!-- --><h4>移动分屏<!-- --></h4>
-<!-- --><ul>
-<!-- --><li><code>Ctrl-w L<!-- --></code> 移动到最右侧<!-- --></li>
-<!-- --><li><code>Ctrl-w H<!-- --></code> 移动到最左侧<!-- --></li>
-<!-- --><li><code>Ctrl-w K<!-- --></code> 移动到顶部<!-- --></li>
-<!-- --><li><code>Ctrl-w J<!-- --></code> 移动到底部<!-- --></li>
-<!-- --></ul>
-<!-- --><p><em>注意：区分大小写。另外，可以将底部的屏幕移动到右侧，实现上下分屏到左右分屏的转换。<!-- --></em></p>
-<!-- --><h4>屏幕缩放<!-- --></h4>
-<!-- --><ul>
-<!-- --><li><code>Ctrl-w =<!-- --></code> 平均窗口尺寸<!-- --></li>
-<!-- --><li><code>Ctrl-w +<!-- --></code> 增加高度<!-- --></li>
-<!-- --><li><code>Ctrl-w -<!-- --></code> 缩减高度<!-- --></li>
-<!-- --><li><code>Ctrl-w _<!-- --></code> 最大高度<!-- --></li>
-<!-- --><li><code>Ctrl-w &gt;<!-- --></code> 增加宽度<!-- --></li>
-<!-- --><li><code>Ctrl-w &lt;<!-- --></code> 缩减宽度<!-- --></li>
-<!-- --><li><code>Ctrl-w |<!-- --></code> 最大宽度<!-- --></li>
-<!-- --></ul>
-<!-- --><h4>标签页<!-- --></h4>
-<!-- --><h4>创建标签页<!-- --></h4>
-<!-- --><ul>
-<!-- --><li><code>:tabnew<!-- --></code> or <!-- --><code>:tabedit<!-- --></code> 缩写 <!-- --><code>:tabe<!-- --></code> 打开新标签页<!-- --></li>
-<!-- --><li><code>Ctrl-w gf<!-- --></code> 在新标签页中打开当前光标所在位置的文件名<!-- --></li>
-<!-- --></ul>
-<!-- --><p><em>注意：<!-- --><code>:tabnew<!-- --></code> 和 <!-- --><code>:tabedit<!-- --></code> 后面都可以跟一个 &lt;空格&gt;&lt;文件名&gt; 用以在新标签页中
-打开指定文件，还可以在 <!-- --><code>:<!-- --></code> 后面加一个数字，指出新标签页在列表中的位置（从 0 开始）。<!-- --></em></p>
-<!-- --><h4>切换标签页<!-- --></h4>
-<!-- --><ul>
-<!-- --><li><code>gt<!-- --></code> or <!-- --><code>:tabnext<!-- --></code> 缩写 <!-- --><code>:tabn<!-- --></code> 下一个标签页（最后一个会循环到第一个）<!-- --></li>
-<!-- --><li><code>gT<!-- --></code> or <!-- --><code>:tabprevious<!-- --></code> 缩写 <!-- --><code>:tabp<!-- --></code> 上一个标签页（第一个会循环到最后一个）<!-- --></li>
-<!-- --><li><code>:tabrewind<!-- --></code> 缩写 <!-- --><code>:tabr<!-- --></code> or <!-- --><code>:tabfirst<!-- --></code> 缩写 <!-- --><code>:tabfir<!-- --></code> 到第一个<!-- --></li>
-<!-- --><li><code>:tablast<!-- --></code> 缩写 <!-- --><code>:tabl<!-- --></code> 到最后一个标签页<!-- --></li>
-<!-- --></ul>
-<!-- --><h4>关闭标签页<!-- --></h4>
-<!-- --><ul>
-<!-- --><li><code>:tabclose<!-- --></code> 缩写 <!-- --><code>:tabc<!-- --></code> 关闭当前标签页<!-- --></li>
-<!-- --><li><code>:-tabc<!-- --></code> 关闭上一个标签页<!-- --></li>
-<!-- --><li><code>:+tabc<!-- --></code> 关闭下一个标签页<!-- --></li>
-<!-- --><li><code>:tabonly<!-- --></code> 缩写 <!-- --><code>:tabo<!-- --></code> 关闭其他标签<!-- --></li>
-<!-- --></ul>
-<!-- --><h2>02.更快地移动光标 motion<!-- --></h2>
-<!-- --><h3><code>w<!-- --></code> ,<!-- --><code>b <!-- --></code>,<!-- --><code>W<!-- --></code>,<!-- --><code> B<!-- --></code>,<!-- --><code> e<!-- --></code>,<!-- --><code> g<!-- --></code>,<!-- --><code>e<!-- --></code> 以单词为间隔移动光标<!-- --></h3>
-<!-- --><ul>
-<!-- --><li>w是后移<!-- --></li>
-<!-- --><li>b是向前<!-- --></li>
-<!-- --><li>W是后移包含符号的单词<!-- --></li>
-<!-- --><li>B是前移包含符号的单词<!-- --></li>
-<!-- --><li>e 移动到单词的尾部<!-- --></li>
-<!-- --><li>ge 移动到上一个单词的尾部<!-- --></li>
-<!-- --></ul>
-<!-- --><p>w和W的区别是word和words的区别，word只包括<!-- --><code>a-zA-Z0-9<!-- --></code>，words还包含空字符，空格，EOL等<!-- --></p>
-<!-- --><h3>使用查找来跳转<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>f <!-- --></code>移动到本行下一个特定的字母和符号，<!-- --><code>F <!-- --></code>移动到本行前一个特定的字母<!-- --></li>
-<!-- --><li>你也可以使用<!-- --><code>t<!-- --></code>和<!-- --><code>T<!-- --></code>，他的光标在搜索的字母之前<!-- --></li>
-<!-- --></ul>
-<!-- --><p>当你使用了<!-- --><code>f{character}<!-- --></code>之后，你可以用<!-- --><code>;<!-- --></code>向后重复查找，或者使用<!-- --><code>,<!-- --></code>向前重复查找<!-- --></p>
-<!-- --><ul>
-<!-- --><li>
-<!-- --><p><code>f<!-- --></code>   在同一行向后搜索第一个匹配<!-- --></p>
-<!-- --></li>
-<!-- --><li>
-<!-- --><p><code>F<!-- --></code>   在同一行向前搜索第一个匹配<!-- --></p>
-<!-- --></li>
-<!-- --><li>
-<!-- --><p><code>t<!-- --></code>   在同一行向后搜索第一个匹配，并停在匹配前<!-- --></p>
-<!-- --></li>
-<!-- --><li>
-<!-- --><p><code>T<!-- --></code>   在同一行向前搜索第一个匹配，并停在匹配前<!-- --></p>
-<!-- --></li>
-<!-- --><li>
-<!-- --><p><code>;<!-- --></code>   在同一行重复最近一次搜索<!-- --></p>
-<!-- --></li>
-<!-- --><li>
-<!-- --><p><code>,<!-- --></code>   在同一行向相反方向重复最近一次搜索<!-- --></p>
-<!-- --></li>
-<!-- --><li>
-<!-- --><p><code>/{pattern}<!-- --></code> 向下搜索<!-- --></p>
-<!-- --></li>
-<!-- --><li>
-<!-- --><p><code>?{pattern}<!-- --></code> 向上搜索<!-- --></p>
-<!-- --></li>
-<!-- --><li>
-<!-- --><p><code>*<!-- --></code>向后查找当前光标所在的单词<!-- --></p>
-<!-- --></li>
-<!-- --><li>
-<!-- --><p><code>#<!-- --></code>向前查找当前光标所在的单词<!-- --></p>
-<!-- --><p>输入上面的按回车就进入搜索模式，可以用<!-- --><code>n<!-- --></code>（向下）和<!-- --><code>N<!-- --></code>在搜索到的词之间移动<!-- --></p>
-<!-- --><p>注意n的方向性和你之前查找的方向是一致的<!-- --></p>
-<!-- --><p>查找会高亮词汇,<!-- --><code>:nohl<!-- --></code>命令可以取消高亮<!-- --></p>
-<!-- --></li>
-<!-- --></ul>
-<!-- --><h3>匹配查找<!-- --></h3>
-<!-- --><p>Vim 中可以使用 <!-- --><code>%<!-- --></code> 对 <!-- --><code>(<!-- --></code> 和 <!-- --><code>)<!-- --></code>，<!-- --><code>[<!-- --></code> 和 <!-- --><code>]<!-- --></code>，<!-- --><code>{<!-- --></code> 和 <!-- --><code>}<!-- --></code> 进行匹配查找，当光标位于其中一个
-符号上时，按下 <!-- --><code>%<!-- --></code>，光标会跳到与之匹配的另外一个符号上<!-- --></p>
-<!-- --><h3><code>0<!-- --></code> <!-- --><code>^<!-- --></code> <!-- --><code>$<!-- --></code> <!-- --><code>g_<!-- --></code> 移动到行末或行尾<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>0 <!-- --></code>移动到这行的最开头字母<!-- --></li>
-<!-- --><li><code>^<!-- --></code> 移动到本行最开头的非空字母<!-- --></li>
-<!-- --><li><code>$<!-- --></code> 移动到本行最尾部<!-- --></li>
-<!-- --><li><code>g_<!-- --></code>移动到本行最尾部的非空字母<!-- --></li>
-<!-- --><li><code>n|<!-- --></code>跳转到本行第n列<!-- --></li>
-<!-- --></ul>
-<!-- --><h3><code>｛<!-- --></code> <!-- --><code>｝<!-- --></code> <!-- --><code>(<!-- --></code> <!-- --><code>)<!-- --></code>以句子或段落为间隔移动<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>(<!-- --></code>   跳到前一个句子<!-- --></li>
-<!-- --><li><code>)<!-- --></code>   跳到下一个句子<!-- --></li>
-<!-- --><li><code>{  <!-- --></code> 跳转到上一个段落<!-- --></li>
-<!-- --><li><code>}<!-- --></code>  跳转到下一个段落<!-- --></li>
-<!-- --></ul>
-<!-- --><h3>滚动页面，翻页 CTRL+D  CTRL+U<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>Ctrl-y<!-- --></code>    向上滚动一行<!-- --></li>
-<!-- --><li><code>Ctrl-e<!-- --></code>    向下滚动一行<!-- --></li>
-<!-- --><li><code>Ctrl-u<!-- --></code>    向上滚动半屏<!-- --></li>
-<!-- --><li><code>Ctrl-d<!-- --></code>    向下滚动半屏<!-- --></li>
-<!-- --><li><code>Ctrl-b<!-- --></code>    向上滚动一屏<!-- --></li>
-<!-- --><li><code>Ctrl-f<!-- --></code>    向下滚动一屏<!-- --></li>
-<!-- --></ul>
-<!-- --><p>也可以相对于当前行进行滚动<!-- --></p>
-<!-- --><ul>
-<!-- --><li><code>zt <!-- --></code>   将当前行置于屏幕顶部附近<!-- --></li>
-<!-- --><li><code>zz<!-- --></code>   将当前行置于屏幕中央<!-- --></li>
-<!-- --><li><code>zb<!-- --></code>    将当前行置于屏幕底部<!-- --></li>
-<!-- --></ul>
-<!-- --><h3>按照数字移动<!-- --></h3>
-<!-- --><p>数字在通常模式里，可以重复执行一个命令多次。<!-- --></p>
-<!-- --><p>{count}{command}<!-- --></p>
-<!-- --><p>比如<!-- --><code>2w<!-- --></code>就是向下移动两个单词<!-- --></p>
-<!-- --><p><code>5j<!-- --></code>，就是向下移动5行<!-- --></p>
-<!-- --><p><code>2/count<!-- --></code>就是跳转到第二个搜索到的count位置<!-- --></p>
-<!-- --><h3>使用命令跳转<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>:&lt;line number&gt;<!-- --></code>跳转到第几行 ，相当于<!-- --><code> &lt;line number&gt;gg<!-- --></code></li>
-<!-- --><li><code>:+&lt;line number&gt;<!-- --></code>向下跳转几行 ，相当于<!-- --><code> &lt;line number&gt;j<!-- --></code></li>
-<!-- --><li><code>:-&lt;line number&gt;<!-- --></code>向上跳转到第几行 ，相当于<!-- --><code> &lt;line number&gt;k<!-- --></code></li>
-<!-- --></ul>
-<!-- --><h3><code>gd<!-- --></code>跳转到定义，<!-- --><code>gf<!-- --></code>跳转到文件名所指向的文件<!-- --></h3>
-<!-- --><h3><code>｛line｝gg<!-- --></code> 跳转到指定行<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>gg<!-- --></code> 跳转到文件开头<!-- --></li>
-<!-- --><li><code>G<!-- --></code> 跳转到文件结尾<!-- --></li>
-<!-- --><li><code>｛line｝gg<!-- --></code> 跳转到文件指定行，或者也可以用<!-- --><code>{line}G<!-- --></code></li>
-<!-- --><li><code>%<!-- --></code>，跳转到 匹配括号的开始和结尾<!-- --><code>({[]})<!-- --></code></li>
-<!-- --><li><code>n%<!-- --></code>,文件百分比跳转<!-- --></li>
-<!-- --></ul>
-<!-- --><h3><code>m<!-- --></code>标记位置<!-- --></h3>
-<!-- --><p>比如<!-- --><code>ma<!-- --></code>就是用a标签标记一个位置，你之后就可以用``a`来跳转到你标记的a位置<!-- --></p>
-<!-- --><p>其中<!-- --></p>
-<!-- --><ul>
-<!-- --><li>``a`是精确回到a标签的位置(行和列)<!-- --></li>
-<!-- --><li><code>&#x27;a<!-- --></code>    跳转到a标签的行<!-- --></li>
-<!-- --></ul>
-<!-- --><p>语法是<!-- --></p>
-<!-- --><pre><code>m{a-zA-Z}
-<!-- --></code></pre>
-<!-- --><p>其中小写字母是局部标签，大写字母是全局标签<!-- --></p>
-<!-- --><p>使用<!-- --><code>:marks<!-- --></code>查看所有标签<!-- --></p>
-<!-- --><h3>窗格间跳转<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>H<!-- --></code>   跳转到屏幕的顶部<!-- --></li>
-<!-- --><li><code>M<!-- --></code>   跳转到屏幕的中间<!-- --></li>
-<!-- --><li><code>L<!-- --></code>   跳转到屏幕的底部<!-- --></li>
-<!-- --><li><code>nH<!-- --></code>  跳转到距离顶部n行的位置<!-- --></li>
-<!-- --><li><code>nL<!-- --></code>  跳转到距离底部n行的位置<!-- --></li>
-<!-- --></ul>
-<!-- --><h3>代码跳转<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>ctrl+]<!-- --></code>跳转到函数或者变量定义处<!-- --></li>
-<!-- --><li><code>ctrl+o<!-- --></code>或<!-- --><code>ctrl+T<!-- --></code>返回跳转前位置<!-- --></li>
-<!-- --><li><code>gi<!-- --></code>跳转到之前离开normal模式的位置(也就是上次编辑的位置了)<!-- --></li>
-<!-- --><li><code>gI<!-- --></code>跳转到之前离开normal模式的那一行开头并进入normal模式<!-- --></li>
-<!-- --><li><code>gd<!-- --></code> 跳转到函数或者变量定义处<!-- --></li>
-<!-- --><li><code>gf<!-- --></code> 跳转到文件<!-- --></li>
-<!-- --></ul>
-<!-- --><h2>03.编辑相关操作<!-- --></h2>
-<!-- --><p>关于编辑操作的语法是这样的<!-- --></p>
-<!-- --><pre><code>{operator}{count}{motion}
-<!-- --></code></pre>
-<!-- --><ul>
-<!-- --><li>operator是具体的操作，比如delete，change，<!-- --></li>
-<!-- --><li>count 是操作执行的次数<!-- --></li>
-<!-- --><li>motion是操作执行的位置<!-- --></li>
-<!-- --></ul>
-<!-- --><p>举个例子,<!-- --><code>d2w<!-- --></code>是向下删除两个单词<!-- --></p>
-<!-- --><p>这些操作可以用一些英语首字母帮助记忆<!-- --></p>
-<!-- --><blockquote>
-<!-- --><ul>
-<!-- --><li>d for delete<!-- --></li>
-<!-- --><li>f for find<!-- --></li>
-<!-- --><li>c for change<!-- --></li>
-<!-- --><li>t for until<!-- --></li>
-<!-- --></ul>
-<!-- --></blockquote>
-<!-- --><h3><code>d<!-- --></code> 剪切（删除）操作<!-- --></h3>
-<!-- --><p><code>d<!-- --></code>其实是剪切的功能，只不过剪切之后不粘贴回去相当于删除。<!-- --></p>
-<!-- --><ul>
-<!-- --><li>删除当前行 <!-- --><code>dd<!-- --></code></li>
-<!-- --><li><code>dw<!-- --></code>删除下一个单词<!-- --></li>
-<!-- --><li><code>ggdG<!-- --></code>删除整个文件，拆解一下就好理解，gg跳到文件开头，然后执行删除，删到文件末尾。<!-- --></li>
-<!-- --><li><code>D<!-- --></code>删除当前行光标之后的内容，等价于<!-- --><code>d$<!-- --></code></li>
-<!-- --></ul>
-<!-- --><ul>
-<!-- --><li><code>s<!-- --></code> 删除当前字符，并进入 <!-- --><code>INSERT<!-- --></code> 模式<!-- --></li>
-<!-- --><li><code>S<!-- --></code> 删除当前行并保存到 Vim 剪贴板，同时进入 <!-- --><code>INSERT<!-- --></code> 模式（等同于 <!-- --><code>cc<!-- --></code>）<!-- --></li>
-<!-- --><li><code>x<!-- --></code> 删除当前字符，相当于 insert 模式下的 <!-- --><code>Delete<!-- --></code></li>
-<!-- --><li><code>X<!-- --></code> 删除前一个字符，相当于 insert 模式下的 `Backspace<!-- --></li>
-<!-- --><li><code>cc<!-- --></code> 删除当前行并保存到 Vim 剪贴板，同时进入 <!-- --><code>INSERT<!-- --></code> 模式<!-- --></li>
-<!-- --><li><code>c&lt;X&gt;<!-- --></code> 删除指定内容并保存到 Vim 剪贴板，同时进入 <!-- --><code>INSERT<!-- --></code> 模<!-- --></li>
-<!-- --></ul>
-<!-- --><h3><code>u<!-- --></code> 撤销前一步操作 <!-- --><code>CTRL+R<!-- --></code>重做前一步<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>U<!-- --></code>撤销所有操作，使文件回到原样<!-- --></li>
-<!-- --><li>在插入模式下可以使用 <!-- --><code>Ctrl-G u<!-- --></code> 会生成一个断点，之后你就可以用u还原到这个断点<!-- --></li>
-<!-- --><li><code>:wundo<!-- --></code> 保存一份撤销历史记录，它会创建一个**.undo**文件，里面存放的是你的历史记录。这样当你打开一个新文件的时候，可以通过 <!-- --><code>:rundo<!-- --></code> 来加载 undo 历史。<!-- --></li>
-<!-- --><li>Vim 可以通过变量 <!-- --><code>undolevels<!-- --></code> 来选择最多可执行 undo 的次数。你可以通过 <!-- --><code>:echo &amp;undolevels<!-- --></code> 来查看当前的配置。<!-- --></li>
-<!-- --></ul>
-<!-- --><p>时间旅行<!-- --></p>
-<!-- --><p>你可以使用 <!-- --><code>:undolist<!-- --></code> 去查看之前所做的修改。 <!-- --><code>:earlier<!-- --></code> 可以加上分钟 (<!-- --><code>m<!-- --></code>), 小时 (<!-- --><code>h<!-- --></code>), and 天 (<!-- --><code>d<!-- --></code>) 作为参数。<!-- --></p>
-<!-- --><pre><code>:earlier 10s    恢复到10秒前的状态
+</code></pre>
+<blockquote>
+<p>现在你已经在 Vim 中打开了你的 Vim 专属配置文件，将上面提到的配置复制到你的文件中，记得要删除
+每行开头的 <code>:</code></p>
+<p>修改完成执行 <code>:wq</code> 或者 <code>ZZ</code> 保存退出，再次进入 Vim 时，你的这些配置就已经生效了</p>
+<p>当然，机智如我也为你准备好了一份 <a href="vimrc.vim" target="_blank">vimrc</a> 样本文件，你可以在控制台执行
+<code>cp vimrc.vim ~/.vimrc</code> 直接使用，再次启动 Vim 或在 Vim 中执行  <code>:source ~/.vimrc</code>你的配置就
+应该生效了。</p>
+</blockquote>
+<p><em><strong>[ AD ]</strong> 当然你也可以在我维护的另外一个项目 <a href="https://github.com/dofy/7th-vim" target="_blank">The 7th Vim</a> 中找到一个更为完整的配置方案。</em></p>
+<h4>清除搜索高亮</h4>
+<p>前面提到的配置中，有一项是高亮全部搜索结果 <code>:set hlsearch</code>，其作用是当你执行 <code>/</code>
+、<code>?</code>、<code>*</code> 或 <code>#</code> 搜索后高亮所有匹配结果。</p>
+<blockquote>
+<p>如果你已经设置了这个选项，尝试执行 <code>/set</code></p>
+</blockquote>
+<p>看到效果了吧，搜索结果一目了然，但这有时候也是一种困扰，因为知道搜索结果后高亮就没用了，但高亮
+本人并不这样认为，它会一直高亮下去，直到你用 <code>:set nohlsearch</code> 将其关闭。</p>
+<p>但这样需要就打开，不需要就关闭也不是个办法，有没有更好的解决方案呢？当然！请看下面的终极答案：</p>
+<blockquote>
+<p><strong>再搜一个不存在的字符串</strong></p>
+</blockquote>
+<p>通常我用来清除搜索高亮的命令是 <code>/lfw</code>，一是因为 <code>lfw</code> 这个组合一般不会出现（不适用于
+本文档...），二是这三个字母的组合按起来比较舒服，手指基本不需要怎么移动（你感受一下）。</p>
+<h4>重复上一次命令</h4>
+<p>Vim 有一个特殊的命令 <code>.</code>，你可以用它重复执行上一个命令。</p>
+<h4>缩进</h4>
+<ul>
+<li><code>&gt;&gt;</code> 向右缩进当前行</li>
+<li><code>&lt;&lt;</code> 向左缩进当前行</li>
+</ul>
+<h4>自动排版</h4>
+<ul>
+<li><code>==</code> 自动排版当前行</li>
+<li><code>gg=G</code> 当前文档全文自动排版</li>
+<li><code>&lt;N&gt;==</code> 对从当前行开始的 N 行进行自动排版</li>
+<li><code>=&lt;N&gt;j</code> 对当前行以及向下 N 行进行自动排版</li>
+<li><code>=&lt;N&gt;k</code> 对当前行以及向上 N 行进行自动排版</li>
+</ul>
+<h3>窗口分屏</h3>
+<p>工作中经常会遇到这种情况，就是需要参照其他文档编辑当前文档（场景：翻译），或者从另外一个文档
+copy 代码到当前文档（场景：复制 html 元素类名到 css 文档），这时候就是你最需要分屏的时候。</p>
+<h4>分屏方式</h4>
+<ul>
+<li><code>:split</code> 缩写 <code>:sp</code> or <code>Ctrl-w s</code> 上下分屏</li>
+<li><code>:vsplit</code> 缩写 <code>:vs</code> or <code>Ctrl-w v</code> 左右分屏</li>
+<li><code>:diffsplit</code> 缩写 <code>:diffs</code> diff 模式打开一个分屏，后面可以加上 {filename}</li>
+</ul>
+<h4>窗口跳转</h4>
+<ul>
+<li><code>Ctrl-w w</code> 激活下一个窗口</li>
+<li><code>Ctrl-w j</code> 激活下方窗口</li>
+<li><code>Ctrl-w k</code> 激活上方窗口</li>
+<li><code>Ctrl-w h</code> 激活左侧窗口</li>
+<li><code>Ctrl-w l</code> 激活右侧窗口</li>
+</ul>
+<h4>移动分屏</h4>
+<ul>
+<li><code>Ctrl-w L</code> 移动到最右侧</li>
+<li><code>Ctrl-w H</code> 移动到最左侧</li>
+<li><code>Ctrl-w K</code> 移动到顶部</li>
+<li><code>Ctrl-w J</code> 移动到底部</li>
+</ul>
+<p><em>注意：区分大小写。另外，可以将底部的屏幕移动到右侧，实现上下分屏到左右分屏的转换。</em></p>
+<h4>屏幕缩放</h4>
+<ul>
+<li><code>Ctrl-w =</code> 平均窗口尺寸</li>
+<li><code>Ctrl-w +</code> 增加高度</li>
+<li><code>Ctrl-w -</code> 缩减高度</li>
+<li><code>Ctrl-w _</code> 最大高度</li>
+<li><code>Ctrl-w &gt;</code> 增加宽度</li>
+<li><code>Ctrl-w &lt;</code> 缩减宽度</li>
+<li><code>Ctrl-w |</code> 最大宽度</li>
+</ul>
+<h4>标签页</h4>
+<h4>创建标签页</h4>
+<ul>
+<li><code>:tabnew</code> or <code>:tabedit</code> 缩写 <code>:tabe</code> 打开新标签页</li>
+<li><code>Ctrl-w gf</code> 在新标签页中打开当前光标所在位置的文件名</li>
+</ul>
+<p><em>注意：<code>:tabnew</code> 和 <code>:tabedit</code> 后面都可以跟一个 &lt;空格&gt;&lt;文件名&gt; 用以在新标签页中
+打开指定文件，还可以在 <code>:</code> 后面加一个数字，指出新标签页在列表中的位置（从 0 开始）。</em></p>
+<h4>切换标签页</h4>
+<ul>
+<li><code>gt</code> or <code>:tabnext</code> 缩写 <code>:tabn</code> 下一个标签页（最后一个会循环到第一个）</li>
+<li><code>gT</code> or <code>:tabprevious</code> 缩写 <code>:tabp</code> 上一个标签页（第一个会循环到最后一个）</li>
+<li><code>:tabrewind</code> 缩写 <code>:tabr</code> or <code>:tabfirst</code> 缩写 <code>:tabfir</code> 到第一个</li>
+<li><code>:tablast</code> 缩写 <code>:tabl</code> 到最后一个标签页</li>
+</ul>
+<h4>关闭标签页</h4>
+<ul>
+<li><code>:tabclose</code> 缩写 <code>:tabc</code> 关闭当前标签页</li>
+<li><code>:-tabc</code> 关闭上一个标签页</li>
+<li><code>:+tabc</code> 关闭下一个标签页</li>
+<li><code>:tabonly</code> 缩写 <code>:tabo</code> 关闭其他标签</li>
+</ul>
+<h2>02.更快地移动光标 motion</h2>
+<h3><code>w</code> ,<code>b </code>,<code>W</code>,<code> B</code>,<code> e</code>,<code> g</code>,<code>e</code> 以单词为间隔移动光标</h3>
+<ul>
+<li>w是后移</li>
+<li>b是向前</li>
+<li>W是后移包含符号的单词</li>
+<li>B是前移包含符号的单词</li>
+<li>e 移动到单词的尾部</li>
+<li>ge 移动到上一个单词的尾部</li>
+</ul>
+<p>w和W的区别是word和words的区别，word只包括<code>a-zA-Z0-9</code>，words还包含空字符，空格，EOL等</p>
+<h3>使用查找来跳转</h3>
+<ul>
+<li><code>f </code>移动到本行下一个特定的字母和符号，<code>F </code>移动到本行前一个特定的字母</li>
+<li>你也可以使用<code>t</code>和<code>T</code>，他的光标在搜索的字母之前</li>
+</ul>
+<p>当你使用了<code>f{character}</code>之后，你可以用<code>;</code>向后重复查找，或者使用<code>,</code>向前重复查找</p>
+<ul>
+<li>
+<p><code>f</code>   在同一行向后搜索第一个匹配</p>
+</li>
+<li>
+<p><code>F</code>   在同一行向前搜索第一个匹配</p>
+</li>
+<li>
+<p><code>t</code>   在同一行向后搜索第一个匹配，并停在匹配前</p>
+</li>
+<li>
+<p><code>T</code>   在同一行向前搜索第一个匹配，并停在匹配前</p>
+</li>
+<li>
+<p><code>;</code>   在同一行重复最近一次搜索</p>
+</li>
+<li>
+<p><code>,</code>   在同一行向相反方向重复最近一次搜索</p>
+</li>
+<li>
+<p><code>/{pattern}</code> 向下搜索</p>
+</li>
+<li>
+<p><code>?{pattern}</code> 向上搜索</p>
+</li>
+<li>
+<p><code>*</code>向后查找当前光标所在的单词</p>
+</li>
+<li>
+<p><code>#</code>向前查找当前光标所在的单词</p>
+<p>输入上面的按回车就进入搜索模式，可以用<code>n</code>（向下）和<code>N</code>在搜索到的词之间移动</p>
+<p>注意n的方向性和你之前查找的方向是一致的</p>
+<p>查找会高亮词汇,<code>:nohl</code>命令可以取消高亮</p>
+</li>
+</ul>
+<h3>匹配查找</h3>
+<p>Vim 中可以使用 <code>%</code> 对 <code>(</code> 和 <code>)</code>，<code>[</code> 和 <code>]</code>，<code>{</code> 和 <code>}</code> 进行匹配查找，当光标位于其中一个
+符号上时，按下 <code>%</code>，光标会跳到与之匹配的另外一个符号上</p>
+<h3><code>0</code> <code>^</code> <code>$</code> <code>g_</code> 移动到行末或行尾</h3>
+<ul>
+<li><code>0 </code>移动到这行的最开头字母</li>
+<li><code>^</code> 移动到本行最开头的非空字母</li>
+<li><code>$</code> 移动到本行最尾部</li>
+<li><code>g_</code>移动到本行最尾部的非空字母</li>
+<li><code>n|</code>跳转到本行第n列</li>
+</ul>
+<h3><code>｛</code> <code>｝</code> <code>(</code> <code>)</code>以句子或段落为间隔移动</h3>
+<ul>
+<li><code>(</code>   跳到前一个句子</li>
+<li><code>)</code>   跳到下一个句子</li>
+<li><code>{  </code> 跳转到上一个段落</li>
+<li><code>}</code>  跳转到下一个段落</li>
+</ul>
+<h3>滚动页面，翻页 CTRL+D  CTRL+U</h3>
+<ul>
+<li><code>Ctrl-y</code>    向上滚动一行</li>
+<li><code>Ctrl-e</code>    向下滚动一行</li>
+<li><code>Ctrl-u</code>    向上滚动半屏</li>
+<li><code>Ctrl-d</code>    向下滚动半屏</li>
+<li><code>Ctrl-b</code>    向上滚动一屏</li>
+<li><code>Ctrl-f</code>    向下滚动一屏</li>
+</ul>
+<p>也可以相对于当前行进行滚动</p>
+<ul>
+<li><code>zt </code>   将当前行置于屏幕顶部附近</li>
+<li><code>zz</code>   将当前行置于屏幕中央</li>
+<li><code>zb</code>    将当前行置于屏幕底部</li>
+</ul>
+<h3>按照数字移动</h3>
+<p>数字在通常模式里，可以重复执行一个命令多次。</p>
+<p>{count}{command}</p>
+<p>比如<code>2w</code>就是向下移动两个单词</p>
+<p><code>5j</code>，就是向下移动5行</p>
+<p><code>2/count</code>就是跳转到第二个搜索到的count位置</p>
+<h3>使用命令跳转</h3>
+<ul>
+<li><code>:&lt;line number&gt;</code>跳转到第几行 ，相当于<code> &lt;line number&gt;gg</code></li>
+<li><code>:+&lt;line number&gt;</code>向下跳转几行 ，相当于<code> &lt;line number&gt;j</code></li>
+<li><code>:-&lt;line number&gt;</code>向上跳转到第几行 ，相当于<code> &lt;line number&gt;k</code></li>
+</ul>
+<h3><code>gd</code>跳转到定义，<code>gf</code>跳转到文件名所指向的文件</h3>
+<h3><code>｛line｝gg</code> 跳转到指定行</h3>
+<ul>
+<li><code>gg</code> 跳转到文件开头</li>
+<li><code>G</code> 跳转到文件结尾</li>
+<li><code>｛line｝gg</code> 跳转到文件指定行，或者也可以用<code>{line}G</code></li>
+<li><code>%</code>，跳转到 匹配括号的开始和结尾<code>({[]})</code></li>
+<li><code>n%</code>,文件百分比跳转</li>
+</ul>
+<h3><code>m</code>标记位置</h3>
+<p>比如<code>ma</code>就是用a标签标记一个位置，你之后就可以用``a`来跳转到你标记的a位置</p>
+<p>其中</p>
+<ul>
+<li>``a`是精确回到a标签的位置(行和列)</li>
+<li><code>&#x27;a</code>    跳转到a标签的行</li>
+</ul>
+<p>语法是</p>
+<pre><code>m{a-zA-Z}
+</code></pre>
+<p>其中小写字母是局部标签，大写字母是全局标签</p>
+<p>使用<code>:marks</code>查看所有标签</p>
+<h3>窗格间跳转</h3>
+<ul>
+<li><code>H</code>   跳转到屏幕的顶部</li>
+<li><code>M</code>   跳转到屏幕的中间</li>
+<li><code>L</code>   跳转到屏幕的底部</li>
+<li><code>nH</code>  跳转到距离顶部n行的位置</li>
+<li><code>nL</code>  跳转到距离底部n行的位置</li>
+</ul>
+<h3>代码跳转</h3>
+<ul>
+<li><code>ctrl+]</code>跳转到函数或者变量定义处</li>
+<li><code>ctrl+o</code>或<code>ctrl+T</code>返回跳转前位置</li>
+<li><code>gi</code>跳转到之前离开normal模式的位置(也就是上次编辑的位置了)</li>
+<li><code>gI</code>跳转到之前离开normal模式的那一行开头并进入normal模式</li>
+<li><code>gd</code> 跳转到函数或者变量定义处</li>
+<li><code>gf</code> 跳转到文件</li>
+</ul>
+<h2>03.编辑相关操作</h2>
+<p>关于编辑操作的语法是这样的</p>
+<pre><code>{operator}{count}{motion}
+</code></pre>
+<ul>
+<li>operator是具体的操作，比如delete，change，</li>
+<li>count 是操作执行的次数</li>
+<li>motion是操作执行的位置</li>
+</ul>
+<p>举个例子,<code>d2w</code>是向下删除两个单词</p>
+<p>这些操作可以用一些英语首字母帮助记忆</p>
+<blockquote>
+<ul>
+<li>d for delete</li>
+<li>f for find</li>
+<li>c for change</li>
+<li>t for until</li>
+</ul>
+</blockquote>
+<h3><code>d</code> 剪切（删除）操作</h3>
+<p><code>d</code>其实是剪切的功能，只不过剪切之后不粘贴回去相当于删除。</p>
+<ul>
+<li>删除当前行 <code>dd</code></li>
+<li><code>dw</code>删除下一个单词</li>
+<li><code>ggdG</code>删除整个文件，拆解一下就好理解，gg跳到文件开头，然后执行删除，删到文件末尾。</li>
+<li><code>D</code>删除当前行光标之后的内容，等价于<code>d$</code></li>
+</ul>
+<ul>
+<li><code>s</code> 删除当前字符，并进入 <code>INSERT</code> 模式</li>
+<li><code>S</code> 删除当前行并保存到 Vim 剪贴板，同时进入 <code>INSERT</code> 模式（等同于 <code>cc</code>）</li>
+<li><code>x</code> 删除当前字符，相当于 insert 模式下的 <code>Delete</code></li>
+<li><code>X</code> 删除前一个字符，相当于 insert 模式下的 `Backspace</li>
+<li><code>cc</code> 删除当前行并保存到 Vim 剪贴板，同时进入 <code>INSERT</code> 模式</li>
+<li><code>c&lt;X&gt;</code> 删除指定内容并保存到 Vim 剪贴板，同时进入 <code>INSERT</code> 模</li>
+</ul>
+<h3><code>u</code> 撤销前一步操作 <code>CTRL+R</code>重做前一步</h3>
+<ul>
+<li><code>U</code>撤销所有操作，使文件回到原样</li>
+<li>在插入模式下可以使用 <code>Ctrl-G u</code> 会生成一个断点，之后你就可以用u还原到这个断点</li>
+<li><code>:wundo</code> 保存一份撤销历史记录，它会创建一个**.undo**文件，里面存放的是你的历史记录。这样当你打开一个新文件的时候，可以通过 <code>:rundo</code> 来加载 undo 历史。</li>
+<li>Vim 可以通过变量 <code>undolevels</code> 来选择最多可执行 undo 的次数。你可以通过 <code>:echo &amp;undolevels</code> 来查看当前的配置。</li>
+</ul>
+<p>时间旅行</p>
+<p>你可以使用 <code>:undolist</code> 去查看之前所做的修改。 <code>:earlier</code> 可以加上分钟 (<code>m</code>), 小时 (<code>h</code>), and 天 (<code>d</code>) 作为参数。</p>
+<pre><code>:earlier 10s    恢复到10秒前的状态
 :earlier 10m    恢复到10分钟前的状态
 :earlier 10h    恢复到10小时前的状态
 :earlier 10d    恢复到10天前的状态
-<!-- --></code></pre>
-<!-- --><h3><code>c<!-- --></code> 删除并进入插入模式<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>cc<!-- --></code>删除一整行并进入插入模式<!-- --></li>
-<!-- --><li><code>C<!-- --></code>删除本行光标后的内容并进入插入模式<!-- --></li>
-<!-- --><li><code>cw<!-- --></code>删除下一个单词并进入插入模式<!-- --></li>
-<!-- --></ul>
-<!-- --><h3><code>.<!-- --></code> 重复上次产生改变的操作<!-- --></h3>
-<!-- --><p>以下几种类型会被视为一个可以重复的改变<!-- --></p>
-<!-- --><ul>
-<!-- --><li>
-<!-- --><p><code>d{motion}<!-- --></code></p>
-<!-- --></li>
-<!-- --><li>
-<!-- --><p><code>i{typeSomething}&lt;ESC&gt;<!-- --></code></p>
-<!-- --></li>
-<!-- --><li>
-<!-- --><p><code>c{typeSomething}&lt;ESC&gt;<!-- --></code></p>
-<!-- --></li>
-<!-- --></ul>
-<!-- --><p>使用c带来的可重复性比d会高很多<!-- --></p>
-<!-- --><p>举个例子,当我们想修改下面这句话的<!-- --><code>courteously<!-- --></code>为<!-- --><code>polite<!-- --></code>,我们移动到单词开头执行<!-- --><code>cwpoliteESC<!-- --></code>，就可以完成替换的工作，然后我们就可以用<!-- --><code>.<!-- --></code>操作符重复这个替换操作<!-- --></p>
-<!-- --><pre><code class="language-javascript">const courteousSalute = &quot;I courteously salute you good person.&quot;
-<!-- --></code></pre>
-<!-- --><p>效率更高的是我们搜索和操作符，这样省去了我们移动光标找单词的时间<!-- --></p>
-<!-- --><h3>合并<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>J<!-- --></code> 将当前行与下一行合并<!-- --></li>
-<!-- --></ul>
-<!-- --><h3>替换操作<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>r&lt;X&gt;<!-- --></code> 将当前字符替换为 X<!-- --></li>
-<!-- --><li><code>gu&lt;X&gt;<!-- --></code> 将指定的文本转换为小写<!-- --></li>
-<!-- --><li><code>gU&lt;X&gt;<!-- --></code> 将指定的文本转换为大写<!-- --></li>
-<!-- --><li><code>:%s/&lt;search&gt;/&lt;replace&gt;/<!-- --></code> 查找 search 内容并替换为 replace 内容<!-- --></li>
-<!-- --><li><code>g~&lt;X&gt;<!-- --></code>，小写变成大写，大写变成小写。<!-- --></li>
-<!-- --></ul>
-<!-- --><h3>文本对象<!-- --></h3>
-<!-- --><p>文本对象就是结构化的文本，它描述一个文档中的单词，句子，段落，被引号的文本，html的tags等，你可以用这个和操作符结合来改变一个单词，句子，段落等等<!-- --></p>
-<!-- --><pre><code>            |- `a` means around
+</code></pre>
+<h3><code>c</code> 删除并进入插入模式</h3>
+<ul>
+<li><code>cc</code>删除一整行并进入插入模式</li>
+<li><code>C</code>删除本行光标后的内容并进入插入模式</li>
+<li><code>cw</code>删除下一个单词并进入插入模式</li>
+</ul>
+<h3><code>.</code> 重复上次产生改变的操作</h3>
+<p>以下几种类型会被视为一个可以重复的改变</p>
+<ul>
+<li>
+<p><code>d{motion}</code></p>
+</li>
+<li>
+<p><code>i{typeSomething}&lt;ESC&gt;</code></p>
+</li>
+<li>
+<p><code>c{typeSomething}&lt;ESC&gt;</code></p>
+</li>
+</ul>
+<p>使用c带来的可重复性比d会高很多</p>
+<p>举个例子,当我们想修改下面这句话的<code>courteously</code>为<code>polite</code>,我们移动到单词开头执行<code>cwpoliteESC</code>，就可以完成替换的工作，然后我们就可以用<code>.</code>操作符重复这个替换操作</p>
+<pre><code class="language-javascript">const courteousSalute = &quot;I courteously salute you good person.&quot;
+</code></pre>
+<p>效率更高的是我们搜索和操作符，这样省去了我们移动光标找单词的时间</p>
+<h3>合并</h3>
+<ul>
+<li><code>J</code> 将当前行与下一行合并</li>
+</ul>
+<h3>替换操作</h3>
+<ul>
+<li><code>r&lt;X&gt;</code> 将当前字符替换为 X</li>
+<li><code>gu&lt;X&gt;</code> 将指定的文本转换为小写</li>
+<li><code>gU&lt;X&gt;</code> 将指定的文本转换为大写</li>
+<li><code>:%s/&lt;search&gt;/&lt;replace&gt;/</code> 查找 search 内容并替换为 replace 内容</li>
+<li><code>g~&lt;X&gt;</code>，小写变成大写，大写变成小写。</li>
+</ul>
+<h3>文本对象</h3>
+<p>文本对象就是结构化的文本，它描述一个文档中的单词，句子，段落，被引号的文本，html的tags等，你可以用这个和操作符结合来改变一个单词，句子，段落等等</p>
+<pre><code>            |- `a` means around
             |- `i` means inner
            /
           /
@@ -408,113 +408,113 @@ copy 代码到当前文档（场景：复制 html 元素类名到 css 文档）�
                 | p - paragraph
                 | &quot; - quotes
                 | t - html tags
-<!-- --></code></pre>
-<!-- --><p>和操作符结合就是这样：<!-- --></p>
-<!-- --><pre><code>{operator}{a|i}{text-object}
-<!-- --></code></pre>
-<!-- --><p>举个例子，假设你要修改下面的字符串，只要<!-- --><code>fR<!-- --></code>移动到R字母，然后执行<!-- --><code>ci&quot;<!-- --></code>,就可以输入你想输入的内容了。也就是修改引号内的内容。<!-- --></p>
-<!-- --><pre><code>const poem = &quot;Roses are red&quot;;
-<!-- --></code></pre>
-<!-- --><p>实际上上述操作还可以优化，因为文本对象，是自动应用的和你光标的位置无关，所以第一步的移动操作不需要。所以这个操作的可重复性，会比单纯的c要高。<!-- --></p>
-<!-- --><p><code>&quot;<!-- --></code>,<!-- --><code>&#x27;&#x27;<!-- --></code>,和反引号操作符比较特殊，一般的wsp只有光标在文本对象上才会自动查找，而引号在同一行的前面和后面都没问题。<!-- --></p>
-<!-- --><p>关于around的作用是，用a代替i会影响到分隔符和空格比如引号，大括号，小括号作为文本对象的时候会把分隔符和空格一起删除，而用i不会删除分割符和空格<!-- --></p>
-<!-- --><h3>其他操作<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>y<!-- --></code> （yank）复制<!-- -->
-<!-- --><ul>
-<!-- --><li>yy 复制一行，和d，c这些键的逻辑是一样的<!-- --></li>
-<!-- --><li>Y 复制光标到行尾的内容<!-- --></li>
-<!-- --></ul>
-<!-- --></li>
-<!-- --><li><code>p<!-- --></code> (put)粘贴<!-- --></li>
-<!-- --></ul>
-<!-- --><ul>
-<!-- --><li><code>g~<!-- --></code> (switch case): 把字母从小写变成大写<!-- --></li>
-<!-- --></ul>
-<!-- --><ul>
-<!-- --><li><code>&gt;<!-- --></code> (shift right): 添加缩进<!-- --></li>
-<!-- --><li><code>&lt;<!-- --></code> (shift left): 移除缩进<!-- --></li>
-<!-- --><li><code>=<!-- --></code> (format code): 格式化代码<!-- --></li>
-<!-- --></ul>
-<!-- --><h3>更多简写<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>x<!-- --></code> 相当于 <!-- --><code>dl<!-- --></code>  删除光标下的字母<!-- --></li>
-<!-- --><li><code>X<!-- --></code> 相当于 to <!-- --><code>dh<!-- --></code> 删除光标前的字母<!-- --></li>
-<!-- --><li><code>s<!-- --></code> 相当于 <!-- --><code>ch<!-- --></code>, deletes 删除光标前的字母并且进入插入模式<!-- --></li>
-<!-- --><li><code>r<!-- --></code> 将一个字母替换为另一个<!-- --></li>
-<!-- --><li><code>~<!-- --></code>切换一个字母的大小写<!-- --></li>
-<!-- --></ul>
-<!-- --><p>A nice way use case for <!-- --><code>x<!-- --></code> is to swap a couple of characters when you make a typo. You remove (and cut) a character with <!-- --><code>x<!-- --></code> and immediately paste it after the cursor with <!-- --><code>p<!-- --></code>. Try it!<!-- --></p>
-<!-- --><h2>04.输入模式操作(insert)<!-- --></h2>
-<!-- --><h3><code>i<!-- --></code>,<!-- --><code>a<!-- --></code>,<!-- --><code>I<!-- --></code>,<!-- --><code>A<!-- --></code>四种插入：<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>i<!-- --></code> 插入到光标所在字母<!-- --></li>
-<!-- --><li><code>a<!-- --></code> 插入到光标后<!-- --></li>
-<!-- --><li><code>I<!-- --></code> 插入到行首<!-- --></li>
-<!-- --><li><code>A<!-- --></code> 插入到行尾<!-- --></li>
-<!-- --></ul>
-<!-- --><h3><code>o<!-- --></code> ,<!-- --><code>O<!-- --></code>开启新一行<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>o<!-- --></code>  在当前行下方开新行<!-- --></li>
-<!-- --><li><code>O<!-- --></code>   在当前行上方开新行<!-- --></li>
-<!-- --></ul>
-<!-- --><h4><code>gi<!-- --></code> 回到上次离开插入模式的地方开始输入<!-- --></h4>
-<!-- --><p>我们发现g这个字母，通常用作其他操作的修饰符，比如e和ge，e是到单词的结尾，ge是到上一个单词结尾。<!-- --></p>
-<!-- --><p>还有一些命令<!-- --></p>
-<!-- --><ul>
-<!-- --><li><code>s<!-- --></code> 删除当前光标位置的字符并开始输入文本<!-- --></li>
-<!-- --><li><code>S<!-- --></code>    删除当前行并开始输入文本<!-- --></li>
-<!-- --><li><code>gI<!-- --></code>   在当前行的第一列的位置开始输入文本<!-- --></li>
-<!-- --></ul>
-<!-- --><h3>插入模式的删除快捷键<!-- --></h3>
-<!-- --><p>这个快捷键小写也是生效的<!-- --></p>
-<!-- --><ul>
-<!-- --><li><code>CTRL-H<!-- --></code> 删除上次输入的字符并向左移动光标<!-- --></li>
-<!-- --><li><code>CTRL-W<!-- --></code>  清楚上一个word<!-- --></li>
-<!-- --><li><code>CTRL-U<!-- --></code>  删除上次输入的行<!-- --></li>
-<!-- --></ul>
-<!-- --><h3>退出插入模式<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>&lt;ESC&gt;<!-- --></code></li>
-<!-- --><li><code>CTRL-C<!-- --></code></li>
-<!-- --><li><code>CTRL-[<!-- --></code></li>
-<!-- --></ul>
-<!-- --><p>很多vim用户会习惯会在输入模式中把<!-- --><code>ESC<!-- --></code>映射到<!-- --><code>jj<!-- --></code>或者<!-- --><code>jk<!-- --></code></p>
-<!-- --><h3>重复输入模式<!-- --></h3>
-<!-- --><p>在进入输入模式之前传递一个数字参数，比如<!-- --></p>
-<!-- --><pre><code>10i
-<!-- --></code></pre>
-<!-- --><p>你输入的文本将被重复10次。这个方法对任意一种进入输入模式的方式都有效<!-- --></p>
-<!-- --><h3>在输入模式中使用寄存器<!-- --></h3>
-<!-- --><p>举例：<!-- --><code>Ctrl-r a<!-- --></code></p>
-<!-- --><pre><code>Ctrl-r {register}
-<!-- --></code></pre>
-<!-- --><h3>在输入模式下执行普通模式的命令<!-- --></h3>
-<!-- --><p>在输入模式下， 如果你按下<!-- --><code>Ctrl-o<!-- --></code>，你就会进入到<!-- --><code>insert-normal<!-- --></code>（输入-普通）子模式。如果你关注一下左下角的模式指示器，通常你将看到<!-- --><code>-- INSERT --<!-- --></code> ，但是按下<!-- --><code>Ctrl-o<!-- --></code>后就会变为<!-- --><code>-- (insert) --<!-- --></code>。 在这一模式下，你可以执行一条普通模式的命令，比如你可以做以下这些事：<!-- --></p>
-<!-- --><p><strong>设置居中以及跳转<!-- --></strong></p>
-<!-- --><pre><code>Ctrl-o zz       居中窗口
+</code></pre>
+<p>和操作符结合就是这样：</p>
+<pre><code>{operator}{a|i}{text-object}
+</code></pre>
+<p>举个例子，假设你要修改下面的字符串，只要<code>fR</code>移动到R字母，然后执行<code>ci&quot;</code>,就可以输入你想输入的内容了。也就是修改引号内的内容。</p>
+<pre><code>const poem = &quot;Roses are red&quot;;
+</code></pre>
+<p>实际上上述操作还可以优化，因为文本对象，是自动应用的和你光标的位置无关，所以第一步的移动操作不需要。所以这个操作的可重复性，会比单纯的c要高。</p>
+<p><code>&quot;</code>,<code>&#x27;&#x27;</code>,和反引号操作符比较特殊，一般的wsp只有光标在文本对象上才会自动查找，而引号在同一行的前面和后面都没问题。</p>
+<p>关于around的作用是，用a代替i会影响到分隔符和空格比如引号，大括号，小括号作为文本对象的时候会把分隔符和空格一起删除，而用i不会删除分割符和空格</p>
+<h3>其他操作</h3>
+<ul>
+<li><code>y</code> （yank）复制<!-- -->
+<ul>
+<li>yy 复制一行，和d，c这些键的逻辑是一样的</li>
+<li>Y 复制光标到行尾的内容</li>
+</ul>
+</li>
+<li><code>p</code> (put)粘贴</li>
+</ul>
+<ul>
+<li><code>g~</code> (switch case): 把字母从小写变成大写</li>
+</ul>
+<ul>
+<li><code>&gt;</code> (shift right): 添加缩进</li>
+<li><code>&lt;</code> (shift left): 移除缩进</li>
+<li><code>=</code> (format code): 格式化代码</li>
+</ul>
+<h3>更多简写</h3>
+<ul>
+<li><code>x</code> 相当于 <code>dl</code>  删除光标下的字母</li>
+<li><code>X</code> 相当于 to <code>dh</code> 删除光标前的字母</li>
+<li><code>s</code> 相当于 <code>ch</code>, deletes 删除光标前的字母并且进入插入模式</li>
+<li><code>r</code> 将一个字母替换为另一个</li>
+<li><code>~</code>切换一个字母的大小写</li>
+</ul>
+<p>A nice way use case for <code>x</code> is to swap a couple of characters when you make a typo. You remove (and cut) a character with <code>x</code> and immediately paste it after the cursor with <code>p</code>. Try it!</p>
+<h2>04.输入模式操作(insert)</h2>
+<h3><code>i</code>,<code>a</code>,<code>I</code>,<code>A</code>四种插入：</h3>
+<ul>
+<li><code>i</code> 插入到光标所在字母</li>
+<li><code>a</code> 插入到光标后</li>
+<li><code>I</code> 插入到行首</li>
+<li><code>A</code> 插入到行尾</li>
+</ul>
+<h3><code>o</code> ,<code>O</code>开启新一行</h3>
+<ul>
+<li><code>o</code>  在当前行下方开新行</li>
+<li><code>O</code>   在当前行上方开新行</li>
+</ul>
+<h4><code>gi</code> 回到上次离开插入模式的地方开始输入</h4>
+<p>我们发现g这个字母，通常用作其他操作的修饰符，比如e和ge，e是到单词的结尾，ge是到上一个单词结尾。</p>
+<p>还有一些命令</p>
+<ul>
+<li><code>s</code> 删除当前光标位置的字符并开始输入文本</li>
+<li><code>S</code>    删除当前行并开始输入文本</li>
+<li><code>gI</code>   在当前行的第一列的位置开始输入文本</li>
+</ul>
+<h3>插入模式的删除快捷键</h3>
+<p>这个快捷键小写也是生效的</p>
+<ul>
+<li><code>CTRL-H</code> 删除上次输入的字符并向左移动光标</li>
+<li><code>CTRL-W</code>  清楚上一个word</li>
+<li><code>CTRL-U</code>  删除上次输入的行</li>
+</ul>
+<h3>退出插入模式</h3>
+<ul>
+<li><code>&lt;ESC&gt;</code></li>
+<li><code>CTRL-C</code></li>
+<li><code>CTRL-[</code></li>
+</ul>
+<p>很多vim用户会习惯会在输入模式中把<code>ESC</code>映射到<code>jj</code>或者<code>jk</code></p>
+<h3>重复输入模式</h3>
+<p>在进入输入模式之前传递一个数字参数，比如</p>
+<pre><code>10i
+</code></pre>
+<p>你输入的文本将被重复10次。这个方法对任意一种进入输入模式的方式都有效</p>
+<h3>在输入模式中使用寄存器</h3>
+<p>举例：<code>Ctrl-r a</code></p>
+<pre><code>Ctrl-r {register}
+</code></pre>
+<h3>在输入模式下执行普通模式的命令</h3>
+<p>在输入模式下， 如果你按下<code>Ctrl-o</code>，你就会进入到<code>insert-normal</code>（输入-普通）子模式。如果你关注一下左下角的模式指示器，通常你将看到<code>-- INSERT --</code> ，但是按下<code>Ctrl-o</code>后就会变为<code>-- (insert) --</code>。 在这一模式下，你可以执行一条普通模式的命令，比如你可以做以下这些事：</p>
+<p><strong>设置居中以及跳转</strong></p>
+<pre><code>Ctrl-o zz       居中窗口
 Ctrl-o H/M/L    跳转到窗口的顶部/中部/底部
 Ctrl-o &#x27;a       跳转到标志&#x27;a处
-<!-- --></code></pre>
-<!-- --><p><strong>重复文本<!-- --></strong></p>
-<!-- --><pre><code>Ctrl-o 100ihello    输入 &quot;hello&quot; 100 次
-<!-- --></code></pre>
-<!-- --><p><strong>执行终端命令<!-- --></strong></p>
-<!-- --><pre><code>Ctrl-o !! curl https://google.com    运行curl命令
+</code></pre>
+<p><strong>重复文本</strong></p>
+<pre><code>Ctrl-o 100ihello    输入 &quot;hello&quot; 100 次
+</code></pre>
+<p><strong>执行终端命令</strong></p>
+<pre><code>Ctrl-o !! curl https://google.com    运行curl命令
 Ctrl-o !! pwd                        运行pwd命令
-<!-- --></code></pre>
-<!-- --><p><strong>快速删除<!-- --></strong></p>
-<!-- --><pre><code>Ctrl-o dtz    从当前位置开始删除文本，直到遇到字母&quot;z&quot;
+</code></pre>
+<p><strong>快速删除</strong></p>
+<pre><code>Ctrl-o dtz    从当前位置开始删除文本，直到遇到字母&quot;z&quot;
 Ctrl-o D      从当前位置开始删除文本，直到行末
-<!-- --></code></pre>
-<!-- --><h2>05.视觉模式选中文本(visual mode)<!-- --></h2>
-<!-- --><ul>
-<!-- --><li><code>v<!-- --></code>  字母长度的选择<!-- --></li>
-<!-- --><li><code>V<!-- --></code>  选择行<!-- --></li>
-<!-- --><li><code>Ctrl-V<!-- --></code> 块选择模式<!-- --></li>
-<!-- --></ul>
-<!-- --><p>选择的语法如下<!-- --></p>
-<!-- --><pre><code>get into Visual Mode
+</code></pre>
+<h2>05.视觉模式选中文本(visual mode)</h2>
+<ul>
+<li><code>v</code>  字母长度的选择</li>
+<li><code>V</code>  选择行</li>
+<li><code>Ctrl-V</code> 块选择模式</li>
+</ul>
+<p>选择的语法如下</p>
+<pre><code>get into Visual Mode
     /
    /                  action to apply
   /                         /
@@ -525,422 +525,422 @@ Ctrl-o D      从当前位置开始删除文本，直到行末
           /
    bit of text over which
    to apply an action
-<!-- --></code></pre>
-<!-- --><p>在视觉模式中，可以用 <!-- --><code>o<!-- --></code>或<!-- --><code>O<!-- --></code>切换光标的位置<!-- --></p>
-<!-- --><h3><code>ctrl+v<!-- --></code>块选择模式<!-- --></h3>
-<!-- --><p>块选择模式比较特殊，适合批量在前方或尾部插入的场景。<!-- --></p>
-<!-- --><p>如果需要在每行末尾添加分号：<!-- --></p>
-<!-- --><pre><code>const one = &quot;one&quot;
+</code></pre>
+<p>在视觉模式中，可以用 <code>o</code>或<code>O</code>切换光标的位置</p>
+<h3><code>ctrl+v</code>块选择模式</h3>
+<p>块选择模式比较特殊，适合批量在前方或尾部插入的场景。</p>
+<p>如果需要在每行末尾添加分号：</p>
+<pre><code>const one = &quot;one&quot;
 const two = &quot;two&quot;
 const three = &quot;three&quot;
-<!-- --></code></pre>
-<!-- --><p>将光标放在第一行上： -运行逐块可视模式，并向下两行(<!-- --><code>Ctrl-V jj<!-- --></code>)。 -高亮显示到行尾(<!-- --><code>$<!-- --></code>)。 -附加(<!-- --><code>A<!-- --></code>) ，然后键入&quot;;&quot;。 -退出可视模式(<!-- --><code>esc<!-- --></code>)。<!-- --></p>
-<!-- --><p>总体来说在视觉模式下的操作会更加直观，相比于normal模式能清晰地看到自己想要编辑的区域。<!-- --></p>
-<!-- --><p>Vim有<!-- --><code>Ctrl-X<!-- --></code>和<!-- --><code>Ctrl-A<!-- --></code>命令来减少和增加数字。与可视模式一起使用时，可以跨多行递增数字。<!-- --></p>
-<!-- --><pre><code>`&lt;    转到上一个可视模式高亮显示的最后一个位置
+</code></pre>
+<p>将光标放在第一行上： -运行逐块可视模式，并向下两行(<code>Ctrl-V jj</code>)。 -高亮显示到行尾(<code>$</code>)。 -附加(<code>A</code>) ，然后键入&quot;;&quot;。 -退出可视模式(<code>esc</code>)。</p>
+<p>总体来说在视觉模式下的操作会更加直观，相比于normal模式能清晰地看到自己想要编辑的区域。</p>
+<p>Vim有<code>Ctrl-X</code>和<code>Ctrl-A</code>命令来减少和增加数字。与可视模式一起使用时，可以跨多行递增数字。</p>
+<pre><code>`&lt;    转到上一个可视模式高亮显示的最后一个位置
 `&gt;    转到上一个可视模式高亮显示的第一位
-<!-- --></code></pre>
-<!-- --><p>您也可以从插入模式进入可视模式。在插入模式下进入字符可视模式：<!-- --></p>
-<!-- --><pre><code>Ctrl-O v
-<!-- --></code></pre>
-<!-- --><h3>常用操作<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>ggvG<!-- --></code>全选<!-- --></li>
-<!-- --></ul>
-<!-- --><h2>06.更迅速地执行搜索操作<!-- --></h2>
-<!-- --><p>之前我们已经学到了用<!-- --><code>/<!-- --></code>进入搜索，按下回车后，可以用<!-- --><code>n<!-- --></code>在搜索的关键词之间移动。此时我们可以执行一个修改操作，然后n到下一个用<!-- --><code>.<!-- --></code>操作复现。下面有一种更便捷的方式<!-- --></p>
-<!-- --><h3><code>gn<!-- --></code>  选中下一个搜索块<!-- --></h3>
-<!-- --><p>有了gn以后，我们就不需要按一下n在复现删除<!-- --></p>
-<!-- --><p>我们直接搜索，然后gn选中第一个搜索关键词，在删除，之后用<!-- --><code>.<!-- --></code>就可以复现选择关键词然后删除的操作。<!-- --></p>
-<!-- --><p>可以dgn也可以gnd，效果是一样的，然后 <!-- --><code>4.<!-- --></code>可以重复这个操作4词<!-- --></p>
-<!-- --><h2>07.复制和粘贴<!-- --></h2>
-<!-- --><ul>
-<!-- --><li>
-<!-- --><p><code>y<!-- --></code>复制<!-- --></p>
-<!-- --></li>
-<!-- --><li>
-<!-- --><p><code>p<!-- --></code>和<!-- --><code>P<!-- --></code>分别是向下拷贝和向上拷贝<!-- --></p>
-<!-- --></li>
-<!-- --></ul>
-<!-- --><p><code>gp<!-- --></code> 和 <!-- --><code>gP<!-- --></code>粘贴的时候光标位置不同，光标会在粘贴的内容往后一个字符的位置，也就是会包含换行符<!-- --></p>
-<!-- --><p><code>d<!-- --></code>，<!-- --><code>c<!-- --></code>和<!-- --><code>p<!-- --></code>实现剪切和粘贴<!-- --></p>
-<!-- --><h3>vim寄存器 Vim Registers<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><strong>unnamed register<!-- --></strong> <!-- --><code>&quot;<!-- --></code> 是拷贝或者剪切的内容不指定寄存器时默认存放的位置<!-- --></li>
-<!-- --><li><strong>named registers<!-- --></strong> <!-- --><code>a-z<!-- --></code> ，命名寄存器，你可以为接下来剪切或者复制的内容指定特定的a-z的字符的寄存器<!-- --></li>
-<!-- --><li><strong>yank register<!-- --></strong> <!-- --><code>0<!-- --></code> 存储了你上次复制的东西<!-- --></li>
-<!-- --><li><strong>cut registers<!-- --></strong> <!-- --><code>1-9<!-- --></code> 存储了你之前9次剪切操作的内容，包括d和c操作<!-- --></li>
-<!-- --></ul>
-<!-- --><p>举个例子 <!-- --><code>&quot;ayas<!-- --></code>会复制一个句子，然后存储在寄存器<!-- --><code>a<!-- --></code>，也就是说语法是<!-- --><code>&quot;{register}<!-- --></code>后面跟你的复制剪切操作就会把东西存到指定的寄存器里，当你想粘贴的时候，<!-- --><code>&quot;ap<!-- --></code>,也是同样的<!-- --></p>
-<!-- --><p>使用寄存器的大写字母，表示继续往那个寄存器添加复制或剪切的内容。<!-- --></p>
-<!-- --><h3>查看寄存器的内容<!-- --></h3>
-<!-- --><p><code>:reg<!-- --></code>命令可以查看你的所有寄存器，是<!-- --><code>:register<!-- --></code>的缩写   ，你也可以查看指定寄存器的内容<!-- --><code>:reg {register}<!-- --></code></p>
-<!-- --><h3>更多寄存器相关的内容<!-- --></h3>
-<!-- --><p>实际上vim一共有下面10种寄存器<!-- --></p>
-<!-- --><ol>
-<!-- --><li>匿名寄存器（<!-- --><code>&quot;&quot;<!-- --></code>）<!-- --></li>
-<!-- --><li>编号寄存器(<!-- --><code>&quot;0-9<!-- --></code>).<!-- --></li>
-<!-- --><li>小删除寄存器 (<!-- --><code>&quot;-<!-- --></code>).<!-- --></li>
-<!-- --><li>命名寄存器 (<!-- --><code>&quot;a-z<!-- --></code>).<!-- --></li>
-<!-- --><li>只读寄存器 (<!-- --><code>&quot;:<!-- --></code>, <!-- --><code>&quot;.<!-- --></code>,and <!-- --><code>&quot;%<!-- --></code>).<!-- --></li>
-<!-- --><li>Buffer交替文件寄存器 (<!-- --><code>&quot;#<!-- --></code>).<!-- --></li>
-<!-- --><li>表达式寄存器 (<!-- --><code>&quot;=<!-- --></code>).<!-- --></li>
-<!-- --><li>选取和拖放寄存器(<!-- --><code>&quot;*<!-- --></code> and <!-- --><code>&quot;+<!-- --></code>).<!-- --></li>
-<!-- --><li>黑洞寄存器 (<!-- --><code>&quot;_<!-- --></code>).<!-- --></li>
-<!-- --><li>搜索模式寄存器 (<!-- --><code>&quot;/<!-- --></code>).<!-- --></li>
-<!-- --></ol>
-<!-- --><p><strong>匿名寄存器<!-- --></strong></p>
-<!-- --><p>匿名寄存器默认存储着你最近一次复制，修改或删除的文本。直接使用<!-- --><code>p<!-- --></code>，就是粘贴匿名寄存器的内容。相当于<!-- --><code>&quot;&quot;p<!-- --></code></p>
-<!-- --><p><strong>编号寄存器<!-- --></strong></p>
-<!-- --><p>编号寄存器1-9是自动以升序来填充的，也就是说存放你的上9次剪切操作，<!-- --><code>0<!-- --></code>标号的寄存器只会存上次复制的内容<!-- --></p>
-<!-- --><p><strong>小删除寄存器<!-- --></strong></p>
-<!-- --><p>不足一行的修改或者删除都不会被存储在0-9号编号寄存器中，而是会被存储在小删除寄存器 (<!-- --><code>&quot;-<!-- --></code>)中。
-<!-- --><strong>命名寄存器 (<!-- --><code>&quot;a-z<!-- --></code>)<!-- --></strong></p>
-<!-- --><p>命名寄存器是Vim中用法最丰富的寄存器。a-z命名寄存器可以存储复制的，修改的和被删除的文本。不像之前介绍的3种寄存器一样，它们会自动将文本存储到寄存器中，你需要显式地告诉Vim你要使用命名寄存器，你拥有完整的控制权。<!-- --></p>
-<!-- --><p><strong>只读寄存器(&quot;:, &quot;., &quot;%)<!-- --></strong></p>
-<!-- --><ul>
-<!-- --><li><code>·<!-- --></code>    存储上一个输入的文本<!-- --></li>
-<!-- --><li><code>:    <!-- --></code>  存储上一次执行的命令<!-- --></li>
-<!-- --><li><code>%<!-- --></code>    存储当前文件的文件名<!-- --></li>
-<!-- --></ul>
-<!-- --><p><strong>Buffer交替文件寄存器 (&quot;#)<!-- --></strong></p>
-<!-- --><p>在Vim中，<!-- --><code>#<!-- --></code>通常代表交替文件。交替文件指的是你上一个打开的文件，想要插入交替文件的名字的话，可以使用命令<!-- --><code>&quot;#p<!-- --></code>。<!-- --></p>
-<!-- --><p><strong>表达式寄存器 (<!-- --><code>&quot;=<!-- --></code>)<!-- --></strong></p>
-<!-- --><p>Vim有一个表达式寄存器，<!-- --><code>&quot;=<!-- --></code>,用于计算表达式的结果。表达式是Vim中非常宏大的一个话题，所以我只会在这里介绍一些基础知识，我将会在之后的章节中进一步讲解更多关于表达式的细节。<!-- --></p>
-<!-- --><p>你可以使用以下命令计算数学表达式<!-- --><code>1+1<!-- --></code>的值：<!-- --></p>
-<!-- --><pre><code>&quot;=1+1&lt;Enter&gt;p
-<!-- --></code></pre>
-<!-- --><p>在这里，你在告诉Vim你正在使用表达式寄存器<!-- --><code>&quot;=<!-- --></code>，你的表达式是（<!-- --><code>1+1<!-- --></code>），你还需要输入<!-- --><code>p<!-- --></code>来的到结果。正如之前所提到的，你也可以在输入模式中访问寄存器。想要在输入模式中计算数学表达式的值，你可以使用：<!-- --></p>
-<!-- --><pre><code>Ctrl-r =1+1
-<!-- --></code></pre>
-<!-- --><p>你可以使用<!-- --><code>@<!-- --></code>来从任何寄存器中获取表达式并用表达式寄存器计算其值。如果你希望从寄存器&quot;a&quot;中获取文本：<!-- --></p>
-<!-- --><pre><code>&quot;=@a
-<!-- --></code></pre>
-<!-- --><p>之后输入<!-- --><code>&lt;enter&gt;<!-- --></code>，再输入<!-- --><code>p<!-- --></code>。类似地，想在输入模式中得到寄存器&quot;a&quot;中的值可以使用：<!-- --></p>
-<!-- --><pre><code>Ctrl-r =@a
-<!-- --></code></pre>
-<!-- --><p>你也能使用表达式寄存器来计算Vim脚本的值。如果你使用<!-- --><code>:let i = 1<!-- --></code>定义一个变量<!-- --><code>i<!-- --></code>,你可以用<!-- --><code>&quot;=i<!-- --></code>获取到它的值，按下回车，再按下<!-- --><code>p<!-- --></code>。想在输入模式中获取到这个值的话可以运行命令<!-- --><code>Ctrl-r=i<!-- --></code>。<!-- --></p>
-<!-- --><p>假设你有一个方程：<!-- --></p>
-<!-- --><pre><code>function! HelloFunc()
+</code></pre>
+<p>您也可以从插入模式进入可视模式。在插入模式下进入字符可视模式：</p>
+<pre><code>Ctrl-O v
+</code></pre>
+<h3>常用操作</h3>
+<ul>
+<li><code>ggvG</code>全选</li>
+</ul>
+<h2>06.更迅速地执行搜索操作</h2>
+<p>之前我们已经学到了用<code>/</code>进入搜索，按下回车后，可以用<code>n</code>在搜索的关键词之间移动。此时我们可以执行一个修改操作，然后n到下一个用<code>.</code>操作复现。下面有一种更便捷的方式</p>
+<h3><code>gn</code>  选中下一个搜索块</h3>
+<p>有了gn以后，我们就不需要按一下n在复现删除</p>
+<p>我们直接搜索，然后gn选中第一个搜索关键词，在删除，之后用<code>.</code>就可以复现选择关键词然后删除的操作。</p>
+<p>可以dgn也可以gnd，效果是一样的，然后 <code>4.</code>可以重复这个操作4词</p>
+<h2>07.复制和粘贴</h2>
+<ul>
+<li>
+<p><code>y</code>复制</p>
+</li>
+<li>
+<p><code>p</code>和<code>P</code>分别是向下拷贝和向上拷贝</p>
+</li>
+</ul>
+<p><code>gp</code> 和 <code>gP</code>粘贴的时候光标位置不同，光标会在粘贴的内容往后一个字符的位置，也就是会包含换行符</p>
+<p><code>d</code>，<code>c</code>和<code>p</code>实现剪切和粘贴</p>
+<h3>vim寄存器 Vim Registers</h3>
+<ul>
+<li><strong>unnamed register</strong> <code>&quot;</code> 是拷贝或者剪切的内容不指定寄存器时默认存放的位置</li>
+<li><strong>named registers</strong> <code>a-z</code> ，命名寄存器，你可以为接下来剪切或者复制的内容指定特定的a-z的字符的寄存器</li>
+<li><strong>yank register</strong> <code>0</code> 存储了你上次复制的东西</li>
+<li><strong>cut registers</strong> <code>1-9</code> 存储了你之前9次剪切操作的内容，包括d和c操作</li>
+</ul>
+<p>举个例子 <code>&quot;ayas</code>会复制一个句子，然后存储在寄存器<code>a</code>，也就是说语法是<code>&quot;{register}</code>后面跟你的复制剪切操作就会把东西存到指定的寄存器里，当你想粘贴的时候，<code>&quot;ap</code>,也是同样的</p>
+<p>使用寄存器的大写字母，表示继续往那个寄存器添加复制或剪切的内容。</p>
+<h3>查看寄存器的内容</h3>
+<p><code>:reg</code>命令可以查看你的所有寄存器，是<code>:register</code>的缩写   ，你也可以查看指定寄存器的内容<code>:reg {register}</code></p>
+<h3>更多寄存器相关的内容</h3>
+<p>实际上vim一共有下面10种寄存器</p>
+<ol>
+<li>匿名寄存器（<code>&quot;&quot;</code>）</li>
+<li>编号寄存器(<code>&quot;0-9</code>).</li>
+<li>小删除寄存器 (<code>&quot;-</code>).</li>
+<li>命名寄存器 (<code>&quot;a-z</code>).</li>
+<li>只读寄存器 (<code>&quot;:</code>, <code>&quot;.</code>,and <code>&quot;%</code>).</li>
+<li>Buffer交替文件寄存器 (<code>&quot;#</code>).</li>
+<li>表达式寄存器 (<code>&quot;=</code>).</li>
+<li>选取和拖放寄存器(<code>&quot;*</code> and <code>&quot;+</code>).</li>
+<li>黑洞寄存器 (<code>&quot;_</code>).</li>
+<li>搜索模式寄存器 (<code>&quot;/</code>).</li>
+</ol>
+<p><strong>匿名寄存器</strong></p>
+<p>匿名寄存器默认存储着你最近一次复制，修改或删除的文本。直接使用<code>p</code>，就是粘贴匿名寄存器的内容。相当于<code>&quot;&quot;p</code></p>
+<p><strong>编号寄存器</strong></p>
+<p>编号寄存器1-9是自动以升序来填充的，也就是说存放你的上9次剪切操作，<code>0</code>标号的寄存器只会存上次复制的内容</p>
+<p><strong>小删除寄存器</strong></p>
+<p>不足一行的修改或者删除都不会被存储在0-9号编号寄存器中，而是会被存储在小删除寄存器 (<code>&quot;-</code>)中。
+<strong>命名寄存器 (<code>&quot;a-z</code>)</strong></p>
+<p>命名寄存器是Vim中用法最丰富的寄存器。a-z命名寄存器可以存储复制的，修改的和被删除的文本。不像之前介绍的3种寄存器一样，它们会自动将文本存储到寄存器中，你需要显式地告诉Vim你要使用命名寄存器，你拥有完整的控制权。</p>
+<p><strong>只读寄存器(&quot;:, &quot;., &quot;%)</strong></p>
+<ul>
+<li><code>·</code>    存储上一个输入的文本</li>
+<li><code>:    </code>  存储上一次执行的命令</li>
+<li><code>%</code>    存储当前文件的文件名</li>
+</ul>
+<p><strong>Buffer交替文件寄存器 (&quot;#)</strong></p>
+<p>在Vim中，<code>#</code>通常代表交替文件。交替文件指的是你上一个打开的文件，想要插入交替文件的名字的话，可以使用命令<code>&quot;#p</code>。</p>
+<p><strong>表达式寄存器 (<code>&quot;=</code>)</strong></p>
+<p>Vim有一个表达式寄存器，<code>&quot;=</code>,用于计算表达式的结果。表达式是Vim中非常宏大的一个话题，所以我只会在这里介绍一些基础知识，我将会在之后的章节中进一步讲解更多关于表达式的细节。</p>
+<p>你可以使用以下命令计算数学表达式<code>1+1</code>的值：</p>
+<pre><code>&quot;=1+1&lt;Enter&gt;p
+</code></pre>
+<p>在这里，你在告诉Vim你正在使用表达式寄存器<code>&quot;=</code>，你的表达式是（<code>1+1</code>），你还需要输入<code>p</code>来的到结果。正如之前所提到的，你也可以在输入模式中访问寄存器。想要在输入模式中计算数学表达式的值，你可以使用：</p>
+<pre><code>Ctrl-r =1+1
+</code></pre>
+<p>你可以使用<code>@</code>来从任何寄存器中获取表达式并用表达式寄存器计算其值。如果你希望从寄存器&quot;a&quot;中获取文本：</p>
+<pre><code>&quot;=@a
+</code></pre>
+<p>之后输入<code>&lt;enter&gt;</code>，再输入<code>p</code>。类似地，想在输入模式中得到寄存器&quot;a&quot;中的值可以使用：</p>
+<pre><code>Ctrl-r =@a
+</code></pre>
+<p>你也能使用表达式寄存器来计算Vim脚本的值。如果你使用<code>:let i = 1</code>定义一个变量<code>i</code>,你可以用<code>&quot;=i</code>获取到它的值，按下回车，再按下<code>p</code>。想在输入模式中获取到这个值的话可以运行命令<code>Ctrl-r=i</code>。</p>
+<p>假设你有一个方程：</p>
+<pre><code>function! HelloFunc()
 	return &quot;Hello Vim Script!&quot;
 endfunction
-<!-- --></code></pre>
-<!-- --><p>你可以通过调用这个方程获取它的值。想要在普通模式中调用这个方程，你可以使用：<!-- --><code>&quot;=HelloFunc()<!-- --></code>, 按下回车再按下<!-- --><code>p<!-- --></code>。而在输入模式下可以使用<!-- --><code>Ctrl-r =HelloFunc()<!-- --></code>。<!-- --></p>
-<!-- --><p><strong>选取和拖放寄存器 (<!-- --><code>&quot;*<!-- --></code>, <!-- --><code>&quot;+<!-- --></code>)<!-- --></strong></p>
-<!-- --><p>当你向从外部程序复制粘贴一些文本到vim中是，可以使用这两个寄存器，但是你的vim需要开启<!-- --><code>+clipboard<!-- --></code>才有用<!-- --></p>
-<!-- --><p>如果你觉得这个操作比较麻烦，你也可以配置vim使得只用p也能粘贴外部程序复制的文本，在vimrc中加入下面一行就可以了：<!-- --></p>
-<!-- --><pre><code>set clipboard=unnamed
-<!-- --></code></pre>
-<!-- --><p>这样你从外部程序中复制文本时，就可以使用匿名寄存器p来进行粘贴<!-- --></p>
-<!-- --><p><strong>黑洞寄存器 (<!-- --><code>&quot;_<!-- --></code>)<!-- --></strong></p>
-<!-- --><p>如果你删除和修改文本的时候，不希望这次修改的内容被存到寄存器里，可以用黑洞寄存器<!-- --></p>
-<!-- --><p>想要删除一行并且不将其存储在任何寄存器中时，可以使用<!-- --><code>&quot;_dd<!-- --></code>命令，它是和 <!-- --><code>/dev/null<!-- --></code> 类似的寄存器。<!-- --></p>
-<!-- --><p><strong>搜索模式寄存器 (<!-- --><code>&quot;/<!-- --></code>)<!-- --></strong></p>
-<!-- --><p>这个寄存器里保存了你上一次搜索的内容<!-- --></p>
-<!-- --><p><strong>执行寄存器中存储的命令<!-- --></strong>，命名寄存器中存放的内容可以当作宏命令来执行，使用<!-- --><code>@<!-- --></code>来执行<!-- --></p>
-<!-- --><p><strong>清除寄存器<!-- --></strong></p>
-<!-- --><p>从技术上来说，我们没有必要来清除任何寄存器，因为你下一个使用来存储文本的寄存器会自动覆盖该寄存器中之前的内容。然而，你可以通过记录一个空的宏命令来快速地清除任何命名寄存器。比如，如果你运行<!-- --><code>qaq<!-- --></code>，Vim就会在寄存器&quot;a&quot;中记录一个空的宏命令。还有一种方法就是运行命令<!-- --><code>:call setreg(&#x27;a&#x27;,&#x27;&#x27;)<!-- --></code>,其中&#x27;a&#x27;代表的就是寄存器&quot;a&quot;。还有一种清除寄存器的方法就是使用表达式<!-- --><code>:let @a = &#x27;&#x27;<!-- --></code>来将寄存器的值设为空的字符串。<!-- --></p>
-<!-- --><p><strong>获取寄存器中的内容<!-- --></strong></p>
-<!-- --><p>你可以使用<!-- --><code>:put<!-- --></code>命令来粘贴任何寄存器的内容。比如，如果你运行命令<!-- --><code>:put a<!-- --></code>,Vim就会打印出寄存器&quot;a&quot;的内容，这和<!-- --><code>&quot;ap<!-- --></code>非常像，唯一的区别在于在普通模式下命令<!-- --><code>p<!-- --></code>在当前光标位置之后打印寄存器的内容，而<!-- --><code>:put<!-- --></code>新起一行来打印寄存器的内容。<!-- --></p>
-<!-- --><h2>08.命令行模式<!-- --></h2>
-<!-- --><p>命令行模式支持使用扩展命令(ex commands)的特性(<!-- --><code>:<!-- --></code>开启)<!-- --></p>
-<!-- --><p>举例一些常用的扩展命令<!-- --></p>
-<!-- --><ul>
-<!-- --><li><code>:colorscheme<!-- --></code> 查看vim当前使用的主题<!-- --></li>
-<!-- --><li><code>edit<!-- --></code> 编辑文件，后面跟上文件路径就可以打开一个新的buffer来编辑文件<!-- --></li>
-<!-- --></ul>
-<!-- --><h3>编辑文件扩展命令<!-- --></h3>
-<!-- --><pre><code>:edit {relative-path-to-file} 
-<!-- --></code></pre>
-<!-- --><p>执行这个命令后如果不存在文件那么就会新建一个再打开，这个命令的简写是<!-- --><code>:e<!-- --></code></p>
-<!-- --><h3>保存文件和关闭文件命令<!-- --></h3>
-<!-- --><ul>
-<!-- --><li><code>:write<!-- --></code>简写是<!-- --><code>:w<!-- --></code>，用于保存文件<!-- --></li>
-<!-- --><li><code>:quit<!-- --></code>简写是<!-- --><code>:q<!-- --></code>,用于关闭文件<!-- --></li>
-<!-- --><li><code>:wall<!-- --></code>简写是<!-- --><code>:wa<!-- --></code>，用于保存所有文件<!-- --></li>
-<!-- --><li><code>:qall<!-- --></code>简写是<!-- --><code>:qa<!-- --></code>，用于关闭所有文件<!-- --></li>
-<!-- --><li><code>:wqall<!-- --></code>  <!-- --><code>:wqa<!-- --></code>，用于保存并关闭所有文件<!-- --></li>
-<!-- --><li><code>:qall!<!-- --></code>  <!-- --><code>:qa!<!-- --></code>，强制退出所有文件不保存<!-- --></li>
-<!-- --></ul>
-<!-- --><p>如果你想强制执行忽略错误，那么就在前面或后面加上<!-- --><code>!<!-- --></code>，比如<!-- --><code>!q<!-- --></code>就是强制退出
-你也可以组合两个命令，比如 <!-- --><code>wq<!-- --></code>就是保存后关闭<!-- --></p>
-<!-- --><h3>同时删除多行<!-- --></h3>
-<!-- --><p>文本扩展命令的形式如下：<!-- --></p>
-<!-- --><pre><code>:[range]command[options]
+</code></pre>
+<p>你可以通过调用这个方程获取它的值。想要在普通模式中调用这个方程，你可以使用：<code>&quot;=HelloFunc()</code>, 按下回车再按下<code>p</code>。而在输入模式下可以使用<code>Ctrl-r =HelloFunc()</code>。</p>
+<p><strong>选取和拖放寄存器 (<code>&quot;*</code>, <code>&quot;+</code>)</strong></p>
+<p>当你向从外部程序复制粘贴一些文本到vim中是，可以使用这两个寄存器，但是你的vim需要开启<code>+clipboard</code>才有用</p>
+<p>如果你觉得这个操作比较麻烦，你也可以配置vim使得只用p也能粘贴外部程序复制的文本，在vimrc中加入下面一行就可以了：</p>
+<pre><code>set clipboard=unnamed
+</code></pre>
+<p>这样你从外部程序中复制文本时，就可以使用匿名寄存器p来进行粘贴</p>
+<p><strong>黑洞寄存器 (<code>&quot;_</code>)</strong></p>
+<p>如果你删除和修改文本的时候，不希望这次修改的内容被存到寄存器里，可以用黑洞寄存器</p>
+<p>想要删除一行并且不将其存储在任何寄存器中时，可以使用<code>&quot;_dd</code>命令，它是和 <code>/dev/null</code> 类似的寄存器。</p>
+<p><strong>搜索模式寄存器 (<code>&quot;/</code>)</strong></p>
+<p>这个寄存器里保存了你上一次搜索的内容</p>
+<p><strong>执行寄存器中存储的命令</strong>，命名寄存器中存放的内容可以当作宏命令来执行，使用<code>@</code>来执行</p>
+<p><strong>清除寄存器</strong></p>
+<p>从技术上来说，我们没有必要来清除任何寄存器，因为你下一个使用来存储文本的寄存器会自动覆盖该寄存器中之前的内容。然而，你可以通过记录一个空的宏命令来快速地清除任何命名寄存器。比如，如果你运行<code>qaq</code>，Vim就会在寄存器&quot;a&quot;中记录一个空的宏命令。还有一种方法就是运行命令<code>:call setreg(&#x27;a&#x27;,&#x27;&#x27;)</code>,其中&#x27;a&#x27;代表的就是寄存器&quot;a&quot;。还有一种清除寄存器的方法就是使用表达式<code>:let @a = &#x27;&#x27;</code>来将寄存器的值设为空的字符串。</p>
+<p><strong>获取寄存器中的内容</strong></p>
+<p>你可以使用<code>:put</code>命令来粘贴任何寄存器的内容。比如，如果你运行命令<code>:put a</code>,Vim就会打印出寄存器&quot;a&quot;的内容，这和<code>&quot;ap</code>非常像，唯一的区别在于在普通模式下命令<code>p</code>在当前光标位置之后打印寄存器的内容，而<code>:put</code>新起一行来打印寄存器的内容。</p>
+<h2>08.命令行模式</h2>
+<p>命令行模式支持使用扩展命令(ex commands)的特性(<code>:</code>开启)</p>
+<p>举例一些常用的扩展命令</p>
+<ul>
+<li><code>:colorscheme</code> 查看vim当前使用的主题</li>
+<li><code>edit</code> 编辑文件，后面跟上文件路径就可以打开一个新的buffer来编辑文件</li>
+</ul>
+<h3>编辑文件扩展命令</h3>
+<pre><code>:edit {relative-path-to-file} 
+</code></pre>
+<p>执行这个命令后如果不存在文件那么就会新建一个再打开，这个命令的简写是<code>:e</code></p>
+<h3>保存文件和关闭文件命令</h3>
+<ul>
+<li><code>:write</code>简写是<code>:w</code>，用于保存文件</li>
+<li><code>:quit</code>简写是<code>:q</code>,用于关闭文件</li>
+<li><code>:wall</code>简写是<code>:wa</code>，用于保存所有文件</li>
+<li><code>:qall</code>简写是<code>:qa</code>，用于关闭所有文件</li>
+<li><code>:wqall</code>  <code>:wqa</code>，用于保存并关闭所有文件</li>
+<li><code>:qall!</code>  <code>:qa!</code>，强制退出所有文件不保存</li>
+</ul>
+<p>如果你想强制执行忽略错误，那么就在前面或后面加上<code>!</code>，比如<code>!q</code>就是强制退出
+你也可以组合两个命令，比如 <code>wq</code>就是保存后关闭</p>
+<h3>同时删除多行</h3>
+<p>文本扩展命令的形式如下：</p>
+<pre><code>:[range]command[options]
 
-<!-- --></code></pre>
-<!-- --><p>其中，我们要执行删除操作的时候，命令的形式会变成如下：<!-- --></p>
-<!-- --><pre><code>:[range]d [register]
-<!-- --></code></pre>
-<!-- --><p>其中寄存器是存放我们剪切的内容的
-举个例子,执行<!-- --><code>:10,12d a<!-- --></code>，那么10-12行的内容就会被删除，剪切的内容存放在a寄存器，可以使用<!-- --><code>&quot;ap<!-- --></code>粘贴就还原了。<!-- --></p>
-<!-- --><p>具体还有如下的使用方式<!-- --></p>
-<!-- --><ul>
-<!-- --><li>使用数字(e.g. <!-- --><strong><code>:10,12d<!-- --></code></strong> 会删除行 10, 11 , 12)<!-- --></li>
-<!-- --><li>使用偏移值 (e.g. <!-- --><strong><code>:10,+2d<!-- --></code></strong> 会删除行 10, 11 , 12)<!-- --></li>
-<!-- --><li>使用 **<!-- --><code>.<!-- --></code>**表示当前行 (e.g. <!-- --><strong><code>:.,+2d<!-- --></code></strong> 会删除当前行和接下来的两行)<!-- --></li>
-<!-- --><li>使用 **<!-- --><code>%<!-- --></code>**表示整个文件  (e.g. <!-- --><strong><code>:%d<!-- --></code></strong> 会删除整个文件)<!-- --></li>
-<!-- --><li>使用**<!-- --><code>0<!-- --></code>**表示整个文件的开始  (e.g. <!-- --><strong><code>:0,+10d<!-- --></code></strong> 会删除前十行)<!-- --></li>
-<!-- --><li>使用**<!-- --><code>$<!-- --></code>**表示文件的结尾  (e.g. <!-- --><strong><code>:.,$d<!-- --></code></strong> 会删除从当前行到文件结尾的内容)<!-- --></li>
-<!-- --><li>当使用visual mode选中文本后再输入 <!-- --><strong><code>:<!-- --></code></strong>  <!-- --><strong><code>:&#x27;&lt;,&#x27;&gt;<!-- --></code></strong> 表示你选中的范围， 执行 <!-- --><strong><code>:&#x27;&lt;,&#x27;&gt;d<!-- --></code></strong> 就可以删除当前选中的内容<!-- --></li>
-<!-- --></ul>
-<!-- --><p>其他也有一些有用的命令包括 <!-- --><code>:yank<!-- --></code>, <!-- --><code>:put<!-- --></code>, <!-- --><code>:copy<!-- --></code> and <!-- --><code>:move<!-- --></code>等<!-- --></p>
-<!-- --><h3>重复执行命令<!-- --></h3>
-<!-- --><p>使用 <!-- --><strong><code>@:<!-- --></code></strong> 可以重复执行你上一个命令，之后你可以用<!-- --><code>@@<!-- --></code>再次重复执行<!-- --></p>
-<!-- --><h3>替换文本<!-- --></h3>
-<!-- --><p>语法如下<!-- --></p>
-<!-- --><pre><code>:[range]s/{pattern}/{substitute}/{flags}
-<!-- --></code></pre>
-<!-- --><ul>
-<!-- --><li>range定义了执行替换的范围<!-- --></li>
-<!-- --><li>pattern 匹配替换内容的正则表达式<!-- --></li>
-<!-- --><li>substitute 是我们想要替换的文本<!-- --></li>
-<!-- --><li>flags 是用于配置替换文本的选项<!-- --></li>
-<!-- --></ul>
-<!-- --><p>举个例子<!-- --></p>
-<!-- --><p><code>:s/led/gold<!-- --></code> 会替换当前行第一个匹配到的led为gold<!-- --></p>
-<!-- --><p>如果你想要替换当前行所有的匹配，那么加一个g flag执行 <!-- --><code>:s/led/gold/g<!-- --></code></p>
-<!-- --><p>如果你想替换整个文件的所有匹配，用<!-- --><code>%<!-- --></code>表示整个文件的范围，执行<!-- --><code>:%s/led/gold/g<!-- --></code></p>
-<!-- --><p>出了g以外，还有其他flag：<!-- --></p>
-<!-- --><ul>
-<!-- --><li><code>i<!-- --></code>,忽略大小写<!-- --></li>
-<!-- --><li><code>c<!-- --></code>，每次替换需要确认<!-- --></li>
-<!-- --></ul>
-<!-- --><h2>09.宏命令<!-- --></h2>
-<!-- --><p>在编辑文件的时候，你会发现有时候你在反复地做一些相同的动作。如果你仅做一次，并在需要的时候调用这些动作岂不是会更好吗。通过 Vim 的宏命令，你可以将一些动作记录到 Vim 寄存器。<!-- --></p>
-<!-- --><h3>基本宏命令<!-- --></h3>
-<!-- --><p>宏命令的基本语法如下：<!-- --></p>
-<!-- --><pre><code>`qa`                     开始记录动作到寄存器 a
+</code></pre>
+<p>其中，我们要执行删除操作的时候，命令的形式会变成如下：</p>
+<pre><code>:[range]d [register]
+</code></pre>
+<p>其中寄存器是存放我们剪切的内容的
+举个例子,执行<code>:10,12d a</code>，那么10-12行的内容就会被删除，剪切的内容存放在a寄存器，可以使用<code>&quot;ap</code>粘贴就还原了。</p>
+<p>具体还有如下的使用方式</p>
+<ul>
+<li>使用数字(e.g. <strong><code>:10,12d</code></strong> 会删除行 10, 11 , 12)</li>
+<li>使用偏移值 (e.g. <strong><code>:10,+2d</code></strong> 会删除行 10, 11 , 12)</li>
+<li>使用 **<code>.</code>**表示当前行 (e.g. <strong><code>:.,+2d</code></strong> 会删除当前行和接下来的两行)</li>
+<li>使用 **<code>%</code>**表示整个文件  (e.g. <strong><code>:%d</code></strong> 会删除整个文件)</li>
+<li>使用**<code>0</code>**表示整个文件的开始  (e.g. <strong><code>:0,+10d</code></strong> 会删除前十行)</li>
+<li>使用**<code>$</code>**表示文件的结尾  (e.g. <strong><code>:.,$d</code></strong> 会删除从当前行到文件结尾的内容)</li>
+<li>当使用visual mode选中文本后再输入 <strong><code>:</code></strong>  <strong><code>:&#x27;&lt;,&#x27;&gt;</code></strong> 表示你选中的范围， 执行 <strong><code>:&#x27;&lt;,&#x27;&gt;d</code></strong> 就可以删除当前选中的内容</li>
+</ul>
+<p>其他也有一些有用的命令包括 <code>:yank</code>, <code>:put</code>, <code>:copy</code> and <code>:move</code>等</p>
+<h3>重复执行命令</h3>
+<p>使用 <strong><code>@:</code></strong> 可以重复执行你上一个命令，之后你可以用<code>@@</code>再次重复执行</p>
+<h3>替换文本</h3>
+<p>语法如下</p>
+<pre><code>:[range]s/{pattern}/{substitute}/{flags}
+</code></pre>
+<ul>
+<li>range定义了执行替换的范围</li>
+<li>pattern 匹配替换内容的正则表达式</li>
+<li>substitute 是我们想要替换的文本</li>
+<li>flags 是用于配置替换文本的选项</li>
+</ul>
+<p>举个例子</p>
+<p><code>:s/led/gold</code> 会替换当前行第一个匹配到的led为gold</p>
+<p>如果你想要替换当前行所有的匹配，那么加一个g flag执行 <code>:s/led/gold/g</code></p>
+<p>如果你想替换整个文件的所有匹配，用<code>%</code>表示整个文件的范围，执行<code>:%s/led/gold/g</code></p>
+<p>出了g以外，还有其他flag：</p>
+<ul>
+<li><code>i</code>,忽略大小写</li>
+<li><code>c</code>，每次替换需要确认</li>
+</ul>
+<h2>09.宏命令</h2>
+<p>在编辑文件的时候，你会发现有时候你在反复地做一些相同的动作。如果你仅做一次，并在需要的时候调用这些动作岂不是会更好吗。通过 Vim 的宏命令，你可以将一些动作记录到 Vim 寄存器。</p>
+<h3>基本宏命令</h3>
+<p>宏命令的基本语法如下：</p>
+<pre><code>`qa`                     开始记录动作到寄存器 a
 `q` (while recording)    停止记录
-<!-- --></code></pre>
-<!-- --><p>你可以使用小写字母 （a-z）去存储宏命令。并通过如下的命令去调用：<!-- --></p>
-<!-- --><pre><code>`@a`    Execute macro from register a
+</code></pre>
+<p>你可以使用小写字母 （a-z）去存储宏命令。并通过如下的命令去调用：</p>
+<pre><code>`@a`    Execute macro from register a
 `@@`    Execute the last executed macros
-<!-- --></code></pre>
-<!-- --><p>假设你有如下的文本，你打算将每一行中的所有字母都变为大写。<!-- --></p>
-<!-- --><pre><code>hello
+</code></pre>
+<p>假设你有如下的文本，你打算将每一行中的所有字母都变为大写。</p>
+<pre><code>hello
 vim
 macros
 are
 awesome
-<!-- --></code></pre>
-<!-- --><p>将你的光标移动到 “hello” 栏的行首，并执行：<!-- --></p>
-<!-- --><pre><code>qa0gU$jq
-<!-- --></code></pre>
-<!-- --><p>上面命令的分解如下：<!-- --></p>
-<!-- --><ul>
-<!-- --><li><code>qa<!-- --></code> 开始记录一个宏定义并存储在 a 寄存器。<!-- --></li>
-<!-- --><li><code>0<!-- --></code> 移动到行首。<!-- --></li>
-<!-- --><li><code>gU$<!-- --></code> 将从光标到行尾的字母变为大写。<!-- --></li>
-<!-- --><li><code>j<!-- --></code> 移动到下一行。<!-- --></li>
-<!-- --><li><code>q<!-- --></code> 停止记录。<!-- --></li>
-<!-- --></ul>
-<!-- --><p>调用 <!-- --><code>@a<!-- --></code> 去执行该宏命令。就像其他的宏命令一样，你也可以为该命令加一个计数。例如，你可以通过 <!-- --><code>3@a<!-- --></code> 去执行 <!-- --><code>a<!-- --></code> 命令3次。你也可以执行 <!-- --><code>3@@<!-- --></code> 去执行上一次执行过的宏命令3次。<!-- --></p>
-<!-- --><h3>安全保护<!-- --></h3>
-<!-- --><p>在执行遇到错误的时候，宏命令会自动停止。假如你有如下文本：<!-- --></p>
-<!-- --><pre><code>a. chocolate donut
+</code></pre>
+<p>将你的光标移动到 “hello” 栏的行首，并执行：</p>
+<pre><code>qa0gU$jq
+</code></pre>
+<p>上面命令的分解如下：</p>
+<ul>
+<li><code>qa</code> 开始记录一个宏定义并存储在 a 寄存器。</li>
+<li><code>0</code> 移动到行首。</li>
+<li><code>gU$</code> 将从光标到行尾的字母变为大写。</li>
+<li><code>j</code> 移动到下一行。</li>
+<li><code>q</code> 停止记录。</li>
+</ul>
+<p>调用 <code>@a</code> 去执行该宏命令。就像其他的宏命令一样，你也可以为该命令加一个计数。例如，你可以通过 <code>3@a</code> 去执行 <code>a</code> 命令3次。你也可以执行 <code>3@@</code> 去执行上一次执行过的宏命令3次。</p>
+<h3>安全保护</h3>
+<p>在执行遇到错误的时候，宏命令会自动停止。假如你有如下文本：</p>
+<pre><code>a. chocolate donut
 b. mochi donut
 c. powdered sugar donut
 d. plain donut
-<!-- --></code></pre>
-<!-- --><p>你想将每一行的第一个词变为大写，你可以使用如下的宏命令：<!-- --></p>
-<!-- --><pre><code>qa0W~jq
-<!-- --></code></pre>
-<!-- --><p>上面命令的分解如下：<!-- --></p>
-<!-- --><ul>
-<!-- --><li><code>qa<!-- --></code> 开始记录一个宏定义并存储在 a 寄存器。<!-- --></li>
-<!-- --><li><code>0<!-- --></code> 移动到行首。<!-- --></li>
-<!-- --><li><code>W<!-- --></code> 移动到下一个单词。<!-- --></li>
-<!-- --><li><code>~<!-- --></code> 将光标选中的单词变为大写。<!-- --></li>
-<!-- --><li><code>j<!-- --></code> 移动到下一行。<!-- --></li>
-<!-- --><li><code>q<!-- --></code> 停止记录。<!-- --></li>
-<!-- --></ul>
-<!-- --><p>我喜欢对宏命令进行很多次的调用，所以我通常使用 <!-- --><code>99@a<!-- --></code> 命令去执行该宏命令99次。当 Vim 在最后一行执行 <!-- --><code>j<!-- --></code> 命令的时候，会发现已经没有下一行可以继续，遇到执行的错误，因此宏命令会停止。<!-- --></p>
-<!-- --><p>实际上，遇到错误自动停止运行是一个很好的特性。否则，Vim 会继续执行该命令99次，尽管它已经执行到最后一行了。<!-- --></p>
-<!-- --><h3>命令行执行宏<!-- --></h3>
-<!-- --><p>在正常模式执行 <!-- --><code>@a<!-- --></code> 并不是宏命令调用的唯一方式。你也可以在命令行执行 <!-- --><code>：normal @a<!-- --></code> 。<!-- --><code>：normal<!-- --></code> 会将任何用户添加的参数作为命令去执行。例如添加 <!-- --><code>@a<!-- --></code>，和在 normal mode 执行 <!-- --><code>@a<!-- --></code> 的效果是一样的。<!-- --></p>
-<!-- --><p><code>:normal<!-- --></code> 命令也支持范围参数。你可以在选择的范围内去执行宏命令。如果你只想在第二行和第三行执行宏命令，你可以执行 <!-- --><code>：2,3 normal @a<!-- --></code>。我会在后续的章节中介绍更多关于在命令行中执行的命令。<!-- --></p>
-<!-- --><h3>在多个文件中执行宏命令<!-- --></h3>
-<!-- --><p>假如你有很多的 <!-- --><code>.txt<!-- --></code> 文件，每一个文件包含不同的内容。并且你只想将包含有 “donut” 单词的行的第一个单词变为大写。那么，该如何在很多文件中特定的行执行执行变该操作呢？<!-- --></p>
-<!-- --><p>第一个文件:<!-- --></p>
-<!-- --><pre><code># savory.txt
+</code></pre>
+<p>你想将每一行的第一个词变为大写，你可以使用如下的宏命令：</p>
+<pre><code>qa0W~jq
+</code></pre>
+<p>上面命令的分解如下：</p>
+<ul>
+<li><code>qa</code> 开始记录一个宏定义并存储在 a 寄存器。</li>
+<li><code>0</code> 移动到行首。</li>
+<li><code>W</code> 移动到下一个单词。</li>
+<li><code>~</code> 将光标选中的单词变为大写。</li>
+<li><code>j</code> 移动到下一行。</li>
+<li><code>q</code> 停止记录。</li>
+</ul>
+<p>我喜欢对宏命令进行很多次的调用，所以我通常使用 <code>99@a</code> 命令去执行该宏命令99次。当 Vim 在最后一行执行 <code>j</code> 命令的时候，会发现已经没有下一行可以继续，遇到执行的错误，因此宏命令会停止。</p>
+<p>实际上，遇到错误自动停止运行是一个很好的特性。否则，Vim 会继续执行该命令99次，尽管它已经执行到最后一行了。</p>
+<h3>命令行执行宏</h3>
+<p>在正常模式执行 <code>@a</code> 并不是宏命令调用的唯一方式。你也可以在命令行执行 <code>：normal @a</code> 。<code>：normal</code> 会将任何用户添加的参数作为命令去执行。例如添加 <code>@a</code>，和在 normal mode 执行 <code>@a</code> 的效果是一样的。</p>
+<p><code>:normal</code> 命令也支持范围参数。你可以在选择的范围内去执行宏命令。如果你只想在第二行和第三行执行宏命令，你可以执行 <code>：2,3 normal @a</code>。我会在后续的章节中介绍更多关于在命令行中执行的命令。</p>
+<h3>在多个文件中执行宏命令</h3>
+<p>假如你有很多的 <code>.txt</code> 文件，每一个文件包含不同的内容。并且你只想将包含有 “donut” 单词的行的第一个单词变为大写。那么，该如何在很多文件中特定的行执行执行变该操作呢？</p>
+<p>第一个文件:</p>
+<pre><code># savory.txt
 a. cheddar jalapeno donut
 b. mac n cheese donut
 c. fried dumpling
-<!-- --></code></pre>
-<!-- --><p>第二个文件:<!-- --></p>
-<!-- --><pre><code># sweet.txt
+</code></pre>
+<p>第二个文件:</p>
+<pre><code># sweet.txt
 a. chocolate donut
 b. chocolate pancake
 c. powdered sugar donut
-<!-- --></code></pre>
-<!-- --><p>第三个文件:<!-- --></p>
-<!-- --><pre><code># plain.txt
+</code></pre>
+<p>第三个文件:</p>
+<pre><code># plain.txt
 a. wheat bread
 b. plain donut
-<!-- --></code></pre>
-<!-- --><p>你可以这么做:<!-- --></p>
-<!-- --><ul>
-<!-- --><li><code>:args *.txt<!-- --></code> 查找当前目录下的所有 <!-- --><code>.txt<!-- --></code> 文件。<!-- --></li>
-<!-- --><li><code>:argdo g/donut/normal @a<!-- --></code> 在所有 <!-- --><code>:args<!-- --></code> 中包含的文件里执行一个全局命令 <!-- --><code>g/donut/normal @a<!-- --></code>。<!-- --></li>
-<!-- --><li><code>:argdo update<!-- --></code> 在所有 <!-- --><code>:args<!-- --></code> 中包含的文件里执行 <!-- --><code>update<!-- --></code> 命令会将修改后的内容保存下来。<!-- --></li>
-<!-- --></ul>
-<!-- --><p>如果你对全局命令 <!-- --><code>:g/donut/normal @a<!-- --></code> 不是很了解的话，该命令会在包含有 <!-- --><code>/donut/<!-- --></code> 中的所有行执行<!-- --><code>normal @a<!-- --></code> 命令。我会在后面的章节中介绍全局命令。<!-- --></p>
-<!-- --><h3>递归执行宏命令<!-- --></h3>
-<!-- --><p>你可以递归地执行宏命令，通过在记录宏命令时调用相同的宏来实现。假如你有如下文本，你希望改变第一个单词的大小写：<!-- --></p>
-<!-- --><pre><code>a. chocolate donut
+</code></pre>
+<p>你可以这么做:</p>
+<ul>
+<li><code>:args *.txt</code> 查找当前目录下的所有 <code>.txt</code> 文件。</li>
+<li><code>:argdo g/donut/normal @a</code> 在所有 <code>:args</code> 中包含的文件里执行一个全局命令 <code>g/donut/normal @a</code>。</li>
+<li><code>:argdo update</code> 在所有 <code>:args</code> 中包含的文件里执行 <code>update</code> 命令会将修改后的内容保存下来。</li>
+</ul>
+<p>如果你对全局命令 <code>:g/donut/normal @a</code> 不是很了解的话，该命令会在包含有 <code>/donut/</code> 中的所有行执行<code>normal @a</code> 命令。我会在后面的章节中介绍全局命令。</p>
+<h3>递归执行宏命令</h3>
+<p>你可以递归地执行宏命令，通过在记录宏命令时调用相同的宏来实现。假如你有如下文本，你希望改变第一个单词的大小写：</p>
+<pre><code>a. chocolate donut
 b. mochi donut
 c. powdered sugar donut
 d. plain donut
-<!-- --></code></pre>
-<!-- --><p>如下命令会递归地执行:<!-- --></p>
-<!-- --><pre><code>qaqqa0W~j@aq
-<!-- --></code></pre>
-<!-- --><p>上面命令的分解如下：<!-- --></p>
-<!-- --><ul>
-<!-- --><li><code>qaq<!-- --></code> 记录一个空白的宏命令到 “a” 。把宏命令记录在一个空白的命令中是必须的，因为你不会想将该命令包含有任何其他的东西。<!-- --></li>
-<!-- --><li><code>qa<!-- --></code> 开始录入宏命令到寄存器 “a”。<!-- --></li>
-<!-- --><li><code>0<!-- --></code> 移动到行首。<!-- --></li>
-<!-- --><li><code>W<!-- --></code> 移动到下一个单词。<!-- --></li>
-<!-- --><li><code>~<!-- --></code> 改变光标选中的单词的大小写。<!-- --></li>
-<!-- --><li><code>j<!-- --></code> 移动到下一行。<!-- --></li>
-<!-- --><li><code>@a<!-- --></code> 执行宏命令 “a”。当你记录该宏命令时，<!-- --><code>@a<!-- --></code> 应该是空白的，因为你刚刚调用了 <!-- --><code>qaq<!-- --></code>。<!-- --></li>
-<!-- --><li><code>q<!-- --></code> 停止记录。<!-- --></li>
-<!-- --></ul>
-<!-- --><p>现在，让我们调用 <!-- --><code>@a<!-- --></code> 来查看 Vim 如何递归的调用该宏命令。<!-- --></p>
-<!-- --><p>宏命令是如何知道何时停止呢？当宏执行到最后一行并尝试 <!-- --><code>j<!-- --></code> 命令时，发现已经没有下一行了，就会停止执行。<!-- --></p>
-<!-- --><h3>增添一个已知宏<!-- --></h3>
-<!-- --><p>如果你想在一个已经录制好的宏定义中添加更多的操作，与其重新录入它，不如选择修改它。假设你不仅希望将第一个单词变为大写，也希望在每一行末尾添加一个句点。<!-- --></p>
-<!-- --><p>假设当前寄存器“a”中有如下的命令：<!-- --></p>
-<!-- --><pre><code>0W~
-<!-- --></code></pre>
-<!-- --><p>你可以这样做:<!-- --></p>
-<!-- --><pre><code>qAA.&lt;esc&gt;q
-<!-- --></code></pre>
-<!-- --><p>分解如下:<!-- --></p>
-<!-- --><ul>
-<!-- --><li><code>qA<!-- --></code> 开始在寄存器 “A” 中记录宏命令。<!-- --></li>
-<!-- --><li><code>A.&lt;esc&gt;<!-- --></code> 在行的末尾（<!-- --><code>A<!-- --></code>）假如一个句点，并且退出插入模式。<!-- --></li>
-<!-- --><li><code>q<!-- --></code> 停止记录宏命令。<!-- --></li>
-<!-- --></ul>
-<!-- --><p>现在，当你执行 <!-- --><code>@a<!-- --></code> 时，它会跳到行的第一个字符（<!-- --><code>0<!-- --></code>），跳到下一个单词（<!-- --><code>W<!-- --></code>），改变光标选中的字母的大小写（<!-- --><code>~<!-- --></code>），移动到最后一行并且转到插入模式（<!-- --><code>A<!-- --></code>），写入一个句点（<!-- --><code>.<!-- --></code>），退出插入模式（<!-- --><code>&lt;esc&gt;<!-- --></code>）。<!-- --></p>
-<!-- --><h3>修改一个已知宏<!-- --></h3>
-<!-- --><p>在已存在的宏定义的末尾添加新的动作是一个很好的功能，但假如你希望在一个宏命令的中间添加动作该怎么做呢？<!-- --></p>
-<!-- --><p>假设，在改变第一个单词的大小写和在末尾加入一个句点之间，你想要在单词 “donut” 之前加入 “deep fried”（因为唯一比甜甜圈好的东西就是炸甜甜圈）。<!-- --></p>
-<!-- --><p>我会重新使用上一节使用过的文本:<!-- --></p>
-<!-- --><pre><code>a. chocolate donut
+</code></pre>
+<p>如下命令会递归地执行:</p>
+<pre><code>qaqqa0W~j@aq
+</code></pre>
+<p>上面命令的分解如下：</p>
+<ul>
+<li><code>qaq</code> 记录一个空白的宏命令到 “a” 。把宏命令记录在一个空白的命令中是必须的，因为你不会想将该命令包含有任何其他的东西。</li>
+<li><code>qa</code> 开始录入宏命令到寄存器 “a”。</li>
+<li><code>0</code> 移动到行首。</li>
+<li><code>W</code> 移动到下一个单词。</li>
+<li><code>~</code> 改变光标选中的单词的大小写。</li>
+<li><code>j</code> 移动到下一行。</li>
+<li><code>@a</code> 执行宏命令 “a”。当你记录该宏命令时，<code>@a</code> 应该是空白的，因为你刚刚调用了 <code>qaq</code>。</li>
+<li><code>q</code> 停止记录。</li>
+</ul>
+<p>现在，让我们调用 <code>@a</code> 来查看 Vim 如何递归的调用该宏命令。</p>
+<p>宏命令是如何知道何时停止呢？当宏执行到最后一行并尝试 <code>j</code> 命令时，发现已经没有下一行了，就会停止执行。</p>
+<h3>增添一个已知宏</h3>
+<p>如果你想在一个已经录制好的宏定义中添加更多的操作，与其重新录入它，不如选择修改它。假设你不仅希望将第一个单词变为大写，也希望在每一行末尾添加一个句点。</p>
+<p>假设当前寄存器“a”中有如下的命令：</p>
+<pre><code>0W~
+</code></pre>
+<p>你可以这样做:</p>
+<pre><code>qAA.&lt;esc&gt;q
+</code></pre>
+<p>分解如下:</p>
+<ul>
+<li><code>qA</code> 开始在寄存器 “A” 中记录宏命令。</li>
+<li><code>A.&lt;esc&gt;</code> 在行的末尾（<code>A</code>）假如一个句点，并且退出插入模式。</li>
+<li><code>q</code> 停止记录宏命令。</li>
+</ul>
+<p>现在，当你执行 <code>@a</code> 时，它会跳到行的第一个字符（<code>0</code>），跳到下一个单词（<code>W</code>），改变光标选中的字母的大小写（<code>~</code>），移动到最后一行并且转到插入模式（<code>A</code>），写入一个句点（<code>.</code>），退出插入模式（<code>&lt;esc&gt;</code>）。</p>
+<h3>修改一个已知宏</h3>
+<p>在已存在的宏定义的末尾添加新的动作是一个很好的功能，但假如你希望在一个宏命令的中间添加动作该怎么做呢？</p>
+<p>假设，在改变第一个单词的大小写和在末尾加入一个句点之间，你想要在单词 “donut” 之前加入 “deep fried”（因为唯一比甜甜圈好的东西就是炸甜甜圈）。</p>
+<p>我会重新使用上一节使用过的文本:</p>
+<pre><code>a. chocolate donut
 b. mochi donut
 c. powdered sugar donut
 d. plain donut
-<!-- --></code></pre>
-<!-- --><p>首先，让我们通过 <!-- --><code>:put a<!-- --></code> 调用一个已经录制好的宏命令（假设你已经有了上一节中使用过的宏命令）：<!-- --></p>
-<!-- --><pre><code>0W~A.^[
-<!-- --></code></pre>
-<!-- --><p><code>^[<!-- --></code> 是什么意思呢？不记得了吗，你之前执行过 <!-- --><code>0W~A.&lt;esc&gt;<!-- --></code>。 <!-- --><code>^[<!-- --></code> 是 Vim 的内部指令，表示 <!-- --><code>&lt;esc&gt;<!-- --></code>。通过这些指定的键值组合，Vim 知道这些是内部代码的一些替代。一些常见的内部指令具有类似的替代，例如 <!-- --><code>&lt;esc&gt;<!-- --></code>，<!-- --><code>&lt;backspace&gt;<!-- --></code>，<!-- --><code>&lt;enter&gt;<!-- --></code>。还有一些其他的键值组合，但这不是本章的内容。<!-- --></p>
-<!-- --><p>回到宏命令，在改变大小写之后的键后面（<!-- --><code>~<!-- --></code>），让我们添加（<!-- --><code>$<!-- --></code>）来移动光标到行末，回退一个单词（<!-- --><code>b<!-- --></code>），进入插入模式（<!-- --><code>i<!-- --></code>），输入“deep fried ”（别忽略“fried ” 后面的这个空格），之后退出插入模式（<!-- --><code>&lt;esc&gt;<!-- --></code>）。<!-- --></p>
-<!-- --><p>完整的命令如下:<!-- --></p>
-<!-- --><pre><code>0W~$bideep fried &lt;esc&gt;A.^[
-<!-- --></code></pre>
-<!-- --><p>这里有一个问题，Vim 不能理解 <!-- --><code>&lt;esc&gt;<!-- --></code>。所以你需要将其替换为内部代码的形式。在插入模式，在按下<!-- --><code>&lt;esc&gt;<!-- --></code>后按下 <!-- --><code>Ctrl-v<!-- --></code>，Vim 会打印 <!-- --><code>^[<!-- --></code>。 <!-- --><code>Ctrl-v<!-- --></code> 是一个插入模式的操作符，可以逐字地插入一个非数字字符。你的宏命令应该如下:<!-- --></p>
-<!-- --><pre><code>0W~$bideep fried ^[A.^[
-<!-- --></code></pre>
-<!-- --><p>为了在寄存器“a”中添加修改后的指令，你可以通过在一个已知寄存器中添加一个新入口的方式来实现。在一行的行首，执行 <!-- --><code>&quot;ay$<!-- --></code>。这将会告诉 Vim 你打算使用寄存器 “a” （<!-- --><code>&quot;a<!-- --></code>） 来存储从当前位置到行末的文本（<!-- --><code>y$<!-- --></code>）。<!-- --></p>
-<!-- --><p>现在，但你执行 <!-- --><code>@a<!-- --></code> 时，你的宏命令会自动改变第一个单词的大小写，在“donut”前面添加“deep fried”，之后在行末添加“.”。<!-- --></p>
-<!-- --><p>另一个修改宏命令的方式是通过命令行解析。执行 <!-- --><code>:let @a=&quot;<!-- --></code>，之后执行 <!-- --><code>Ctrl-r Ctrl-r a<!-- --></code>，这会将寄存器“a”的命令逐字打印出来。最后，别忘记在闭合的引号（<!-- --><code>&quot;<!-- --></code>）。如果你希望在编辑命令行表达式时插入内部码来使用特定的字符，你可以使用 <!-- --><code>Ctrl-v<!-- --></code>。<!-- --></p>
-<!-- --><h3>拷贝宏<!-- --></h3>
-<!-- --><p>你可以很轻松的将一个寄存器的内容拷贝到另一个寄存器。例如，你可以使用 <!-- --><code>:let @z = @a<!-- --></code> 将寄存器“a” 中的命令拷贝到寄存器“z”。 <!-- --><code>@a<!-- --></code> 表示寄存器“a”中存储的内容，你现在执行 <!-- --><code>@z<!-- --></code>，将会执行和 <!-- --><code>@a<!-- --></code> 一样的指令。<!-- --></p>
-<!-- --><p>我发现对常用的宏命令创建冗余是很有用的。在我的工作流程中，我通常在前7个字母（a-g）上创建宏命令，并且我经常不加思索地把它们替换了。因此，如果我将很有用的宏命令移动到了字母表的末尾，就不用担心我在无意间把他们替换了。<!-- --></p>
-<!-- --><h3>连续执行宏命令<!-- --></h3>
-<!-- --><p>Vim 可以连续和同时运行宏命令，假设你有如下的文本：<!-- --></p>
-<!-- --><pre><code>import { FUNC1 } from &quot;library1&quot;;
+</code></pre>
+<p>首先，让我们通过 <code>:put a</code> 调用一个已经录制好的宏命令（假设你已经有了上一节中使用过的宏命令）：</p>
+<pre><code>0W~A.^[
+</code></pre>
+<p><code>^[</code> 是什么意思呢？不记得了吗，你之前执行过 <code>0W~A.&lt;esc&gt;</code>。 <code>^[</code> 是 Vim 的内部指令，表示 <code>&lt;esc&gt;</code>。通过这些指定的键值组合，Vim 知道这些是内部代码的一些替代。一些常见的内部指令具有类似的替代，例如 <code>&lt;esc&gt;</code>，<code>&lt;backspace&gt;</code>，<code>&lt;enter&gt;</code>。还有一些其他的键值组合，但这不是本章的内容。</p>
+<p>回到宏命令，在改变大小写之后的键后面（<code>~</code>），让我们添加（<code>$</code>）来移动光标到行末，回退一个单词（<code>b</code>），进入插入模式（<code>i</code>），输入“deep fried ”（别忽略“fried ” 后面的这个空格），之后退出插入模式（<code>&lt;esc&gt;</code>）。</p>
+<p>完整的命令如下:</p>
+<pre><code>0W~$bideep fried &lt;esc&gt;A.^[
+</code></pre>
+<p>这里有一个问题，Vim 不能理解 <code>&lt;esc&gt;</code>。所以你需要将其替换为内部代码的形式。在插入模式，在按下<code>&lt;esc&gt;</code>后按下 <code>Ctrl-v</code>，Vim 会打印 <code>^[</code>。 <code>Ctrl-v</code> 是一个插入模式的操作符，可以逐字地插入一个非数字字符。你的宏命令应该如下:</p>
+<pre><code>0W~$bideep fried ^[A.^[
+</code></pre>
+<p>为了在寄存器“a”中添加修改后的指令，你可以通过在一个已知寄存器中添加一个新入口的方式来实现。在一行的行首，执行 <code>&quot;ay$</code>。这将会告诉 Vim 你打算使用寄存器 “a” （<code>&quot;a</code>） 来存储从当前位置到行末的文本（<code>y$</code>）。</p>
+<p>现在，但你执行 <code>@a</code> 时，你的宏命令会自动改变第一个单词的大小写，在“donut”前面添加“deep fried”，之后在行末添加“.”。</p>
+<p>另一个修改宏命令的方式是通过命令行解析。执行 <code>:let @a=&quot;</code>，之后执行 <code>Ctrl-r Ctrl-r a</code>，这会将寄存器“a”的命令逐字打印出来。最后，别忘记在闭合的引号（<code>&quot;</code>）。如果你希望在编辑命令行表达式时插入内部码来使用特定的字符，你可以使用 <code>Ctrl-v</code>。</p>
+<h3>拷贝宏</h3>
+<p>你可以很轻松的将一个寄存器的内容拷贝到另一个寄存器。例如，你可以使用 <code>:let @z = @a</code> 将寄存器“a” 中的命令拷贝到寄存器“z”。 <code>@a</code> 表示寄存器“a”中存储的内容，你现在执行 <code>@z</code>，将会执行和 <code>@a</code> 一样的指令。</p>
+<p>我发现对常用的宏命令创建冗余是很有用的。在我的工作流程中，我通常在前7个字母（a-g）上创建宏命令，并且我经常不加思索地把它们替换了。因此，如果我将很有用的宏命令移动到了字母表的末尾，就不用担心我在无意间把他们替换了。</p>
+<h3>连续执行宏命令</h3>
+<p>Vim 可以连续和同时运行宏命令，假设你有如下的文本：</p>
+<pre><code>import { FUNC1 } from &quot;library1&quot;;
 import { FUNC2 } from &quot;library2&quot;;
 import { FUNC3 } from &quot;library3&quot;;
 import { FUNC4 } from &quot;library4&quot;;
 import { FUNC5 } from &quot;library5&quot;;
-<!-- --></code></pre>
-<!-- --><p>假如你希望把所有的 “FUNC” 字符变为小写，那么宏命令为如下：<!-- --></p>
-<!-- --><pre><code>qa0f{gui{jq
-<!-- --></code></pre>
-<!-- --><p>分解如下：<!-- --></p>
-<!-- --><ul>
-<!-- --><li><code>qa<!-- --></code> 开始记录宏命令到 “a” 寄存器。<!-- --></li>
-<!-- --><li><code>0<!-- --></code>移动到第一行。<!-- --></li>
-<!-- --><li><code>f{<!-- --></code> 查找第一个 “{” 字符。<!-- --></li>
-<!-- --><li><code>gui{<!-- --></code> 把括号内的文本（<!-- --><code>i{<!-- --></code>）变为小写（<!-- --><code>gu<!-- --></code>）。<!-- --></li>
-<!-- --><li><code>j<!-- --></code> 移动到下一行。<!-- --></li>
-<!-- --><li><code>q<!-- --></code> 停止记录宏命令。<!-- --></li>
-<!-- --></ul>
-<!-- --><p>现在，执行 <!-- --><code>99@a<!-- --></code> 在剩余的行修改。然而，假如在你的文本里有如下 import 语句会怎么样呢？<!-- --></p>
-<!-- --><pre><code>import { FUNC1 } from &quot;library1&quot;;
+</code></pre>
+<p>假如你希望把所有的 “FUNC” 字符变为小写，那么宏命令为如下：</p>
+<pre><code>qa0f{gui{jq
+</code></pre>
+<p>分解如下：</p>
+<ul>
+<li><code>qa</code> 开始记录宏命令到 “a” 寄存器。</li>
+<li><code>0</code>移动到第一行。</li>
+<li><code>f{</code> 查找第一个 “{” 字符。</li>
+<li><code>gui{</code> 把括号内的文本（<code>i{</code>）变为小写（<code>gu</code>）。</li>
+<li><code>j</code> 移动到下一行。</li>
+<li><code>q</code> 停止记录宏命令。</li>
+</ul>
+<p>现在，执行 <code>99@a</code> 在剩余的行修改。然而，假如在你的文本里有如下 import 语句会怎么样呢？</p>
+<pre><code>import { FUNC1 } from &quot;library1&quot;;
 import { FUNC2 } from &quot;library2&quot;;
 import { FUNC3 } from &quot;library3&quot;;
 import foo from &quot;bar&quot;;
 import { FUNC4 } from &quot;library4&quot;;
 import { FUNC5 } from &quot;library5&quot;;
-<!-- --></code></pre>
-<!-- --><p>执行 <!-- --><code>99@a<!-- --></code>，会只在前三行执行。而最后两行不会被执行，因为在执行第四行（包含“foo”）时会遇到错误而停止。然而这种情况你希望继续向下执行。你可以移动到包含（“FUNC4”）的一行，并重新调用该命令。但是假如你希望仅调用一次命令就完成所有操作呢？你可以并行地执行宏命令。<!-- --></p>
-<!-- --><p>如本章前面所说，可以使用 <!-- --><code>:normal<!-- --></code> 去执行宏命令，（例如： <!-- --><code>:3,5 normal @a<!-- --></code> 会在 3-5行执行 a 寄存器中的宏命令）。如果执行 <!-- --><code>:1,$ normal @a<!-- --></code>，会在所有除了包含有 “foo” 的行执行，而且它不会出错。<!-- --></p>
-<!-- --><p>尽管本质上来说，Vim 并不是在并行地执行宏命令，但表面上看，它是并行运行的。 Vim 会独立地在从第一行开始（<!-- --><code>1,$<!-- --></code>）每一行执行 <!-- --><code>@a<!-- --></code> 。由于 Vim 独立地在每一行执行命令，每一行都不会知道有一行（包含“foo”）会遇到执行错误。<!-- --></p>
-<!-- --><h2>10.切换分屏(splits)和标签(tabs)<!-- --></h2>
-<!-- --><h3>分屏(splits)<!-- --></h3>
-<!-- --><p>执行下面的命令可以实现分屏显示<!-- --></p>
-<!-- --><ul>
-<!-- --><li><strong><code>:sp {relative-path-to-file}<!-- --></code></strong> 水平分屏打开一个文件<!-- --></li>
-<!-- --><li><strong><code>:vsp {relative-path-to-file}<!-- --></code></strong> 垂直分屏打开一个文件<!-- --></li>
-<!-- --></ul>
-<!-- --><p>除了命令的方式，你也可以使用快捷键<!-- --></p>
-<!-- --><ul>
-<!-- --><li><strong><code>&lt;CTRL-W&gt; S<!-- --></code></strong> 打开一个水平分屏(上下分屏)的窗口<!-- --></li>
-<!-- --><li><strong><code>&lt;CTRL-W&gt; V<!-- --></code></strong> 打开一个垂直分屏(所有分屏)的窗口<!-- --></li>
-<!-- --></ul>
-<!-- --><p>在vscde的vim插件里面可以用 **<!-- --><code>CTRL-P<!-- --></code>*在分屏里打开新文件<!-- --></p>
-<!-- --><p>使用 <!-- --><strong><code>CTRL-W<!-- --></code></strong> + **<!-- --><code>hjkl<!-- --></code>**在分屏见移动<!-- --></p>
-<!-- --><h3>标签(tabs)<!-- --></h3>
-<!-- --><p>在分屏里面也可以打开标签<!-- --></p>
-<!-- --><p>使用命令打开标签的方式是<!-- --></p>
-<!-- --><ul>
-<!-- --><li><strong><code>:tabnew {file}<!-- --></code></strong> 在新标签中打开文件<!-- --></li>
-<!-- --><li><strong><code>:tabn<!-- --></code></strong> (<!-- --><strong><code>:tabnext<!-- --></code></strong>) 切换到下一个标签<!-- --></li>
-<!-- --><li><strong><code>:tabp<!-- --></code></strong> (<!-- --><strong><code>:tabprevious<!-- --></code></strong>) 切换到前一个标签<!-- --></li>
-<!-- --><li><strong><code>:tabo<!-- --></code></strong> (<!-- --><strong><code>:tabonly<!-- --></code></strong>) 关闭所有其他标签<!-- --></li>
-<!-- --></ul>
-<!-- --><h2>11.vim-surround插件的使用<!-- --></h2>
-<!-- --><p>VSCodeVim自带了这个插件，这个插件带来了一个新操作符s，surroundings值得是包裹单词句子的符号，比如引号，花括号还有html标签(quotes, parenthesis, braces, tags, etc…)等<!-- --></p>
-<!-- --><ul>
-<!-- --><li><strong><code>ds<!-- --></code></strong> 删除surroundings<!-- --></li>
-<!-- --><li><strong><code>cs<!-- --></code></strong> 修改 surroundings<!-- --></li>
-<!-- --><li><strong><code>ys<!-- --></code></strong> 添加 surroundings<!-- --></li>
-<!-- --></ul>
-<!-- --><p>具体的语法如下<!-- --></p>
-<!-- --><pre><code>ds{count}{motion}
+</code></pre>
+<p>执行 <code>99@a</code>，会只在前三行执行。而最后两行不会被执行，因为在执行第四行（包含“foo”）时会遇到错误而停止。然而这种情况你希望继续向下执行。你可以移动到包含（“FUNC4”）的一行，并重新调用该命令。但是假如你希望仅调用一次命令就完成所有操作呢？你可以并行地执行宏命令。</p>
+<p>如本章前面所说，可以使用 <code>:normal</code> 去执行宏命令，（例如： <code>:3,5 normal @a</code> 会在 3-5行执行 a 寄存器中的宏命令）。如果执行 <code>:1,$ normal @a</code>，会在所有除了包含有 “foo” 的行执行，而且它不会出错。</p>
+<p>尽管本质上来说，Vim 并不是在并行地执行宏命令，但表面上看，它是并行运行的。 Vim 会独立地在从第一行开始（<code>1,$</code>）每一行执行 <code>@a</code> 。由于 Vim 独立地在每一行执行命令，每一行都不会知道有一行（包含“foo”）会遇到执行错误。</p>
+<h2>10.切换分屏(splits)和标签(tabs)</h2>
+<h3>分屏(splits)</h3>
+<p>执行下面的命令可以实现分屏显示</p>
+<ul>
+<li><strong><code>:sp {relative-path-to-file}</code></strong> 水平分屏打开一个文件</li>
+<li><strong><code>:vsp {relative-path-to-file}</code></strong> 垂直分屏打开一个文件</li>
+</ul>
+<p>除了命令的方式，你也可以使用快捷键</p>
+<ul>
+<li><strong><code>&lt;CTRL-W&gt; S</code></strong> 打开一个水平分屏(上下分屏)的窗口</li>
+<li><strong><code>&lt;CTRL-W&gt; V</code></strong> 打开一个垂直分屏(所有分屏)的窗口</li>
+</ul>
+<p>在vscde的vim插件里面可以用 **<code>CTRL-P</code>*在分屏里打开新文件</p>
+<p>使用 <strong><code>CTRL-W</code></strong> + **<code>hjkl</code>**在分屏见移动</p>
+<h3>标签(tabs)</h3>
+<p>在分屏里面也可以打开标签</p>
+<p>使用命令打开标签的方式是</p>
+<ul>
+<li><strong><code>:tabnew {file}</code></strong> 在新标签中打开文件</li>
+<li><strong><code>:tabn</code></strong> (<strong><code>:tabnext</code></strong>) 切换到下一个标签</li>
+<li><strong><code>:tabp</code></strong> (<strong><code>:tabprevious</code></strong>) 切换到前一个标签</li>
+<li><strong><code>:tabo</code></strong> (<strong><code>:tabonly</code></strong>) 关闭所有其他标签</li>
+</ul>
+<h2>11.vim-surround插件的使用</h2>
+<p>VSCodeVim自带了这个插件，这个插件带来了一个新操作符s，surroundings值得是包裹单词句子的符号，比如引号，花括号还有html标签(quotes, parenthesis, braces, tags, etc…)等</p>
+<ul>
+<li><strong><code>ds</code></strong> 删除surroundings</li>
+<li><strong><code>cs</code></strong> 修改 surroundings</li>
+<li><strong><code>ys</code></strong> 添加 surroundings</li>
+</ul>
+<p>具体的语法如下</p>
+<pre><code>ds{count}{motion}
 cs{count}{motion}
 ys{count}{motion}
-<!-- --></code></pre>
-<!-- --><p>举个例子<!-- --></p>
-<!-- --><ul>
-<!-- --><li><strong><code>ds&#x27;<!-- --></code></strong> 删除包围的 <!-- --><strong><code>&#x27;<!-- --></code></strong> (<!-- --><code>ds{char}<!-- --></code>)<!-- --></li>
-<!-- --><li><strong><code>cs&#x27;&quot;<!-- --></code></strong> 替换包围的 <!-- --><strong><code>&#x27;<!-- --></code></strong> 为 <!-- --><strong><code>&quot;<!-- --></code></strong> (<!-- --><code>cs{old}{new}<!-- --></code>)<!-- --></li>
-<!-- --><li><strong><code>ysaptli&gt;<!-- --></code></strong> 包围一段话用 <!-- --><strong><code>&lt;li&gt;<!-- --></code></strong> 标签 (<!-- --><code>ys{motion}{char}<!-- --></code>)<!-- --></li>
-<!-- --></ul>
-<!-- --><p>也可以在v视觉模式下选中然后 <!-- --><code>S{desired character}<!-- --></code>，就可以用你喜欢的符号包围了。<!-- --></p>
-<!-- --><h2>12.自定义按键映射<!-- --></h2>
-<!-- --><p>自定义映射可以把按键调整到你更舒服的位置<!-- --></p>
-<!-- --><p>在vscode里面的编辑步骤如下<!-- --></p>
-<!-- --><p>首先找到设置<!-- --></p>
-<!-- --><ol>
-<!-- --><li>打开命令面板 <!-- --><strong><code>CMD-SHIFT-P<!-- --></code></strong> 或者 <!-- --><strong><code>CTRL-SHIFT-P<!-- --></code></strong></li>
-<!-- --><li>输入preferences（或者在菜单栏也可以打开）<!-- --></li>
-<!-- --><li>选择 Open User Settings Options<!-- --></li>
-<!-- --><li>输入  <!-- --><strong><code>vim<!-- --></code></strong></li>
-<!-- --></ol>
-<!-- --><p>可以 编辑三种模式的自定义映射：<!-- --></p>
-<!-- --><ul>
-<!-- --><li><em>Normal Mode Key Bindings Non Recursive<!-- --></em> for normal mode<!-- --></li>
-<!-- --><li><em>Visual Mode Key Bindings Non Recursive<!-- --></em> for visual mode<!-- --></li>
-<!-- --><li><em>Insert Mode Key Bindings Non Recursive<!-- --></em> for insert mode<!-- --></li>
-<!-- --></ul>
-<!-- --><p>举个例子，自定义normal模式的映射<!-- --></p>
-<!-- --><pre><code class="language-json">{
+</code></pre>
+<p>举个例子</p>
+<ul>
+<li><strong><code>ds&#x27;</code></strong> 删除包围的 <strong><code>&#x27;</code></strong> (<code>ds{char}</code>)</li>
+<li><strong><code>cs&#x27;&quot;</code></strong> 替换包围的 <strong><code>&#x27;</code></strong> 为 <strong><code>&quot;</code></strong> (<code>cs{old}{new}</code>)</li>
+<li><strong><code>ysaptli&gt;</code></strong> 包围一段话用 <strong><code>&lt;li&gt;</code></strong> 标签 (<code>ys{motion}{char}</code>)</li>
+</ul>
+<p>也可以在v视觉模式下选中然后 <code>S{desired character}</code>，就可以用你喜欢的符号包围了。</p>
+<h2>12.自定义按键映射</h2>
+<p>自定义映射可以把按键调整到你更舒服的位置</p>
+<p>在vscode里面的编辑步骤如下</p>
+<p>首先找到设置</p>
+<ol>
+<li>打开命令面板 <strong><code>CMD-SHIFT-P</code></strong> 或者 <strong><code>CTRL-SHIFT-P</code></strong></li>
+<li>输入preferences（或者在菜单栏也可以打开）</li>
+<li>选择 Open User Settings Options</li>
+<li>输入  <strong><code>vim</code></strong></li>
+</ol>
+<p>可以 编辑三种模式的自定义映射：</p>
+<ul>
+<li><em>Normal Mode Key Bindings Non Recursive</em> for normal mode</li>
+<li><em>Visual Mode Key Bindings Non Recursive</em> for visual mode</li>
+<li><em>Insert Mode Key Bindings Non Recursive</em> for insert mode</li>
+</ul>
+<p>举个例子，自定义normal模式的映射</p>
+<pre><code class="language-json">{
   &quot;vim.insertModeKeyBindingsNonRecursive&quot;: [
     {
       &quot;before&quot;: [&quot;j&quot;, &quot;k&quot;],
@@ -948,34 +948,34 @@ ys{count}{motion}
     }
   ],
 }
-<!-- --></code></pre>
-<!-- --><ul>
-<!-- --><li><strong>before<!-- --></strong>  就是你输入的命令<!-- --></li>
-<!-- --><li><strong>after<!-- --></strong> 就是你映射的值，当你输入before里的值后就会执行after中映射的键<!-- --></li>
-<!-- --></ul>
-<!-- --><p>在这个例子里，你可以在插入模式里把j和k当作ESC使用，不过这个设置就不是很实用，因为在插入模式里面j和k的输入需求也不少<!-- --></p>
-<!-- --><h3>关于创建自定义映射的指导方针<!-- --></h3>
-<!-- --><p>自定义映射比较灵活自由，但是不好的设置可能会给自己带来麻烦。<!-- --></p>
-<!-- --><p>一般来说，遵循以下3个原则会比较好：<!-- --></p>
-<!-- --><ul>
-<!-- --><li>自定义映射用leader key打头来触发，一般是反斜杠<!-- --><code>\<!-- --></code>，这样就不会和已有的键位发生冲突了<!-- --></li>
-<!-- --><li>如果你的工作流程中有经常使用的按键，那么映射替换vim默认的按键也是可以的。<!-- --></li>
-<!-- --><li>尽量使用更容易记忆的映射，比如vim的 c表示change，d表示delete<!-- --></li>
-<!-- --></ul>
-<!-- --><h3>自定义前导键(leader key)<!-- --></h3>
-<!-- --><p>你也可以把leader key改成比反斜杠更容易输入的键。<!-- --></p>
-<!-- --><p>比如说你想把leader key改成空格键<!-- --></p>
-<!-- --><pre><code class="language-json">{
+</code></pre>
+<ul>
+<li><strong>before</strong>  就是你输入的命令</li>
+<li><strong>after</strong> 就是你映射的值，当你输入before里的值后就会执行after中映射的键</li>
+</ul>
+<p>在这个例子里，你可以在插入模式里把j和k当作ESC使用，不过这个设置就不是很实用，因为在插入模式里面j和k的输入需求也不少</p>
+<h3>关于创建自定义映射的指导方针</h3>
+<p>自定义映射比较灵活自由，但是不好的设置可能会给自己带来麻烦。</p>
+<p>一般来说，遵循以下3个原则会比较好：</p>
+<ul>
+<li>自定义映射用leader key打头来触发，一般是反斜杠<code>\</code>，这样就不会和已有的键位发生冲突了</li>
+<li>如果你的工作流程中有经常使用的按键，那么映射替换vim默认的按键也是可以的。</li>
+<li>尽量使用更容易记忆的映射，比如vim的 c表示change，d表示delete</li>
+</ul>
+<h3>自定义前导键(leader key)</h3>
+<p>你也可以把leader key改成比反斜杠更容易输入的键。</p>
+<p>比如说你想把leader key改成空格键</p>
+<pre><code class="language-json">{
 &quot;vim.leader&quot;: &quot;&lt;Space&gt;&quot;,
 }
-<!-- --></code></pre>
-<!-- --><h3>下面比较好的映射的例子<!-- --></h3>
-<!-- --><h4>让正常模式的上下移动更快<!-- --></h4>
-<!-- --><p>这个改动遵循了一个vim的一个理念，就是大写字母命令会比小写版本的更强。<!-- --></p>
-<!-- --><p>所以大写的J会比小写的移动更快。<!-- --></p>
-<!-- --><p>但是我们在这里覆盖了一个比较有用的vim默认按键J，这个按键的作用是合并当前行和下一行。但是这个键的使用频率其实不高<!-- --></p>
-<!-- --><p>K键是用作关键词搜索，不过在VSCodeVim中还没有实现这个功能<!-- --></p>
-<!-- --><pre><code class="language-json">{
+</code></pre>
+<h3>下面比较好的映射的例子</h3>
+<h4>让正常模式的上下移动更快</h4>
+<p>这个改动遵循了一个vim的一个理念，就是大写字母命令会比小写版本的更强。</p>
+<p>所以大写的J会比小写的移动更快。</p>
+<p>但是我们在这里覆盖了一个比较有用的vim默认按键J，这个按键的作用是合并当前行和下一行。但是这个键的使用频率其实不高</p>
+<p>K键是用作关键词搜索，不过在VSCodeVim中还没有实现这个功能</p>
+<pre><code class="language-json">{
   &quot;vim.normalModeKeyBindingsNonRecursive&quot;: [
     {
       &quot;before&quot;: [&quot;J&quot;],
@@ -987,9 +987,9 @@ ys{count}{motion}
     },
   ]
 }
-<!-- --></code></pre>
-<!-- --><p>为了保持合并行功能，我们把它加到leader key里<!-- --></p>
-<!-- --><pre><code class="language-json">{
+</code></pre>
+<p>为了保持合并行功能，我们把它加到leader key里</p>
+<pre><code class="language-json">{
   &quot;vim.normalModeKeyBindingsNonRecursive&quot;: [
     {
       &quot;before&quot;: [&quot;&lt;Leader&gt;&quot;, &quot;j&quot;],
@@ -997,9 +997,9 @@ ys{count}{motion}
     },
   ]
 }
-<!-- --></code></pre>
-<!-- --><h4>在分屏间快速切换<!-- --></h4>
-<!-- --><pre><code class="language-json">{
+</code></pre>
+<h4>在分屏间快速切换</h4>
+<pre><code class="language-json">{
   &quot;vim.normalModeKeyBindingsNonRecursive&quot;: [
     {
       &quot;before&quot;: [&quot;&lt;C-h&gt;&quot;],
@@ -1018,11 +1018,11 @@ ys{count}{motion}
       &quot;after&quot;: [&quot;&lt;C-w&gt;&quot;, &quot;l&quot;]
     }]
 }
-<!-- --></code></pre>
-<!-- --><h4>处理标签更方便<!-- --></h4>
-<!-- --><p>因为VSCodeVim中处理标签唯一的方式是命令模式输入命令，所以你可以用按键映射来代替这一点<!-- --></p>
-<!-- --><p>commands键就是用来替换命令模式的扩展命令的<!-- --></p>
-<!-- --><pre><code class="language-json">{
+</code></pre>
+<h4>处理标签更方便</h4>
+<p>因为VSCodeVim中处理标签唯一的方式是命令模式输入命令，所以你可以用按键映射来代替这一点</p>
+<p>commands键就是用来替换命令模式的扩展命令的</p>
+<pre><code class="language-json">{
   &quot;vim.normalModeKeyBindingsNonRecursive&quot;: [
     {
       &quot;before&quot;: [&quot;&lt;Leader&gt;&quot;, &quot;t&quot;, &quot;t&quot;],
@@ -1041,22 +1041,22 @@ ys{count}{motion}
       &quot;commands&quot;: [&quot;:tabo&quot;]
     }]
 }
-<!-- --></code></pre>
-<!-- --><h4>清除文本高亮<!-- --></h4>
-<!-- --><p>当你使用搜索命令的时候（<!-- --><code>/<!-- --></code>和<!-- --><code>?<!-- --></code>），匹配项会被高亮，为了清除高亮你需要扩展命令<!-- --><code>:noh<!-- --></code>(no higlighting)<!-- --></p>
-<!-- --><p>这个任务很常见，我们可以创建下面的按键映射<!-- --></p>
-<!-- --><pre><code class="language-json">{
+</code></pre>
+<h4>清除文本高亮</h4>
+<p>当你使用搜索命令的时候（<code>/</code>和<code>?</code>），匹配项会被高亮，为了清除高亮你需要扩展命令<code>:noh</code>(no higlighting)</p>
+<p>这个任务很常见，我们可以创建下面的按键映射</p>
+<pre><code class="language-json">{
   &quot;vim.normalModeKeyBindingsNonRecursive&quot;: [
     {
       &quot;before&quot;: [&quot;&lt;Leader&gt;&quot;, &quot;/&quot;],
       &quot;commands&quot;: [&quot;:noh&quot;]
     }]
 }
-<!-- --></code></pre>
-<!-- --><p>这里的助记法是，斜杠是被用来搜索的，所以前导键加斜杠就是和搜索最相关的撤销高亮<!-- --></p>
-<!-- --><h3>使用自定义映射影响vscode的action<!-- --></h3>
-<!-- --><p>下面的例子就是用 leader+w来触发保存文件<!-- --></p>
-<!-- --><pre><code class="language-json">{
+</code></pre>
+<p>这里的助记法是，斜杠是被用来搜索的，所以前导键加斜杠就是和搜索最相关的撤销高亮</p>
+<h3>使用自定义映射影响vscode的action</h3>
+<p>下面的例子就是用 leader+w来触发保存文件</p>
+<pre><code class="language-json">{
   &quot;vim.normalModeKeyBindingsNonRecursive&quot;: [
     {
       &quot;before&quot;: [&quot;leader&quot;, &quot;w&quot;],
@@ -1065,12 +1065,12 @@ ys{count}{motion}
       ]
     }
 }
-<!-- --></code></pre>
-<!-- --><p>找到设置<!-- --><strong>Preferences: Open Keyboard Shortcuts<!-- --></strong>，你就可以看到vscode里面命令的全名，然后你就可以替换你想替换的命令了。<!-- --></p>
-<!-- --><p>下面是例子<!-- --></p>
-<!-- --><p><code>CTRL-SHIFT-P<!-- --></code>是打开命令面板，我们替换成前导键+p<!-- --></p>
-<!-- --><p><code>CTRL-T<!-- --></code>  是<!-- --><strong>Go To Symbol in Workspace<!-- --></strong>，我们替换成前导键+t<!-- --></p>
-<!-- --><pre><code class="language-json">{
+</code></pre>
+<p>找到设置<strong>Preferences: Open Keyboard Shortcuts</strong>，你就可以看到vscode里面命令的全名，然后你就可以替换你想替换的命令了。</p>
+<p>下面是例子</p>
+<p><code>CTRL-SHIFT-P</code>是打开命令面板，我们替换成前导键+p</p>
+<p><code>CTRL-T</code>  是<strong>Go To Symbol in Workspace</strong>，我们替换成前导键+t</p>
+<pre><code class="language-json">{
   &quot;vim.normalModeKeyBindingsNonRecursive&quot;: [
     {
       &quot;before&quot;: [&quot;&lt;Leader&gt;&quot;, &quot;p&quot;],
@@ -1086,23 +1086,23 @@ ys{count}{motion}
     }
   ]
 }
-<!-- --></code></pre>
-<!-- --><h2>13.使用vim插件更快的移动<!-- --></h2>
-<!-- --><p><a href="https://github.com/justinmk/vim-sneak" target="_blank">Vim-sneak<!-- --></a> 和<!-- --><a href="https://github.com/easymotion/vim-easymotion" target="_blank">vim-EasyMotion<!-- --></a> 是能够帮助你在vim里快速移动的插件<!-- --></p>
-<!-- --><p>VSCodeVim 内置了这两个插件，不过需要你在设置里开启才能使用。<!-- --></p>
-<!-- --><h2>14.增强vscode的文件浏览器<!-- --></h2>
-<!-- --><p><strong><code>&lt;CTRL-W&gt; h<!-- --></code></strong>  切换到vscode的文件浏览器<!-- --></p>
-<!-- --><ul>
-<!-- --><li><strong><code>k<!-- --></code></strong> 和 <!-- --><strong><code>j<!-- --></code></strong> 在文件浏览器的条目中上下移动<!-- --></li>
-<!-- --><li>Expand directories with<!-- --></li>
-<!-- --><li><strong><code>l<!-- --></code></strong> (right) 用于展开文件夹<!-- --></li>
-<!-- --><li><strong><code>h<!-- --></code></strong> (left) 用于折叠文件夹<!-- --></li>
-<!-- --><li>使用 <!-- --><strong><code>l<!-- --></code></strong> (right)打开光标下的文件<!-- --></li>
-<!-- --></ul>
-<!-- --><p>记住vscode的其他快捷键会很有用<!-- --></p>
-<!-- --><ul>
-<!-- --><li><strong>Go To File<!-- --></strong> with <!-- --><code>CMD-P<!-- --></code> in Mac (or <!-- --><code>CTRL-P<!-- --></code> in Windows/Linux)<!-- --></li>
-<!-- --><li><strong>Go To Symbol in File<!-- --></strong> with <!-- --><code>CMD-SHIFT-O<!-- --></code> in Mac (or <!-- --><code>CTRL-SHIFT-O<!-- --></code> in Windows/Linux)<!-- --></li>
-<!-- --><li><strong>Go To Symbol in Workspace<!-- --></strong> with with <!-- --><code>CMD-T<!-- --></code> in Mac (or <!-- --><code>CTRL-T<!-- --></code> in Windows/Linux)<!-- --></li>
-<!-- --></ul>
-<!-- --><p>你在弹出的面板里面也可以用k和j或者tab选择，enter进入<!-- --></p></div></div><div draggable="true" class="bg-pink-50 left-2 top-14 fixed shadow rounded w-1/5" style="min-width:10rem"><div class="absolute"><svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3262" width="22" height="22"><path d="M91.89 238.457c-29.899 0-54.133 24.239-54.133 54.134 0 29.899 24.234 54.137 54.133 54.137s54.138-24.238 54.138-54.137c0-29.896-24.239-54.134-54.138-54.134z" fill="#E5594F" p-id="3263"></path><path d="M91.89 462.463c-29.899 0-54.133 24.239-54.133 54.139 0 29.895 24.234 54.133 54.133 54.133s54.138-24.238 54.138-54.133c0-29.9-24.239-54.139-54.138-54.139z" fill="#C45FA0" p-id="3264"></path><path d="M91.89 686.475c-29.899 0-54.133 24.237-54.133 54.133 0 29.899 24.234 54.138 54.133 54.138s54.138-24.238 54.138-54.138c0-29.896-24.239-54.133-54.138-54.133z" fill="#F39A2B" p-id="3265"></path><path d="M941.26 234.723H328.964c-28.867 0-52.263 23.4-52.263 52.268v3.734c0 28.868 23.396 52.269 52.263 52.269H941.26c28.869 0 52.269-23.401 52.269-52.269v-3.734c-0.001-28.868-23.4-52.268-52.269-52.268z" fill="#F0D043" p-id="3266"></path><path d="M941.26 682.74H328.964c-28.867 0-52.263 23.399-52.263 52.268v3.734c0 28.863 23.396 52.269 52.263 52.269H941.26c28.869 0 52.269-23.405 52.269-52.269v-3.734c-0.001-28.868-23.4-52.268-52.269-52.268z" fill="#4A5699" p-id="3267"></path><path d="M709.781 458.729H328.964c-28.867 0-52.263 23.4-52.263 52.269v3.734c0 28.873 23.396 52.269 52.263 52.269h380.817c28.866 0 52.271-23.396 52.271-52.269v-3.734c0.001-28.869-23.405-52.269-52.271-52.269z" fill="#E5594F" p-id="3268"></path></svg></div><div class="absolute right-0  transition duration-500 transform rotate-180"><svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1196" width="22" height="22"><path d="M432.2304 103.2192c-9.216-6.5536-22.016-4.3008-28.5696 4.9152-6.5536 9.216-4.3008 22.016 4.9152 28.5696l59.0848 41.7792 3.2768 2.2528c-71.8848 9.9328-138.3424 42.8032-190.5664 95.0272-63.3856 63.3856-98.2016 147.5584-98.2016 237.1584 0 45.568 9.0112 89.7024 26.7264 131.3792 17.1008 40.1408 41.5744 76.1856 72.704 107.008 3.9936 3.9936 9.216 5.9392 14.4384 5.9392 5.3248 0 10.5472-2.048 14.5408-6.0416 7.9872-7.9872 7.8848-20.992-0.1024-28.9792-56.32-55.7056-87.2448-130.048-87.2448-209.2032 0-78.6432 30.6176-152.576 86.2208-208.1792 46.4896-46.4896 105.8816-75.5712 169.984-83.7632l-2.9696 3.072-52.4288 52.9408c-7.9872 7.9872-7.8848 20.992 0.1024 28.9792 3.9936 3.9936 9.216 5.9392 14.4384 5.9392 5.3248 0 10.5472-2.048 14.5408-6.0416l109.4656-110.4896-130.3552-92.2624zM841.9328 511.0784c0-45.568-9.0112-89.7024-26.7264-131.3792-17.1008-40.1408-41.5744-76.1856-72.704-107.008-3.9936-3.9936-9.216-5.9392-14.4384-5.9392-5.3248 0-10.5472 2.048-14.5408 6.0416-7.9872 7.9872-7.8848 20.992 0.1024 28.9792 56.32 55.7056 87.2448 130.048 87.2448 209.2032 0 78.6432-30.6176 152.576-86.2208 208.1792-46.4896 46.4896-105.8816 75.5712-169.984 83.7632l2.9696-3.072 52.4288-52.9408c7.9872-7.9872 7.8848-20.992-0.1024-28.9792-3.9936-3.9936-9.216-5.9392-14.4384-5.9392-5.3248 0-10.5472 2.048-14.5408 6.0416L461.6192 828.7232l130.1504 92.0576c9.216 6.5536 22.016 4.3008 28.5696-4.9152 6.5536-9.216 4.3008-22.016-4.9152-28.5696l-59.0848-41.7792-3.2768-2.2528c71.8848-9.9328 138.3424-42.8032 190.5664-95.0272 63.3856-63.3856 98.304-147.5584 98.304-237.1584z" p-id="1197"></path></svg></div><div class="font-bold pl-7 select-none cursor-move">目录</div><div class="overflow-auto" style="max-height:70vh"><ul class="flex flex-col"></ul></div></div></main></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"id":"vim使用指南","title":"vim使用指南","lastUpdated":1618646092,"content":"# vim使用指南\n\n下面主要是针对vscode-vim的使用指南，1-9节的内容是通用的，但是后面的内容是vscode-vim特有的功能。\n\n## 01.最基本操作\n  vim有三种模式：\n  1. 按`ESC`进入正常模式（normal）\n  2. 在正常模式下按i，进入插入模式（insert）\n  3. 在正常模式下按`:`键进入命令模式\n\n  三个模式里面只有插入模式是用于输入文本的,正常模式是用于编辑文本的，包括移动光标，复制粘贴删除等\n  命令模式可以用来执行搜索，批量替换等\n\n在正常模式下，移动光标可以用以下几个字幕或者方向键\n\n```\n           ↑\n     ← h j k l →\n         ↓\n```\n\n在插入模式下，按 `\u003cESC\u003e`, `\u003cCTRL-[\u003e` or `\u003cCTRL-C\u003e` 返回正常模式\n\n### 在vim中打开文件\n\n- `:e \u003cfilename\u003e` 打开名为 filename 的文件，若文件不存在则创建之\n- `:Ex` 在 Vim 中打开目录树，光标选中后回车打开对应文件（提示：`-` 进入上级目录）\n\n### 显示buffer列表\n\n你可以用 `:buffers` 或 `:ls` 命令查看\n\n\u003e - `:bn` 打开缓存中下一个文件\n\u003e - `:bp` 打开缓存中上一个文件\n\u003e - `:b\u003cN\u003e` 打开缓存中第 N 个文件\n\u003e - 你也可以使用 `:bdelete\u003cN\u003e` 来删除所要关闭的缓冲区，缩写 `:bd\u003cN\u003e`。\n\n### 保存文件\n\n- `:w` 保存当前文件\n\n- `:wa` 保存全部文件\n\n- `:wq` or `ZZ` 保存并退出,或者`:x`也是保存并退出\n\n- `:q!` or `ZQ` 强制退出，不保存\n\n- `:saveas \u003cnew filename\u003e` 文件另存为\n\n- `:w \u003cnew filename\u003e` 文件另存一份名为 `\u003cnew filename\u003e` 的副本并继续编辑原文件\n\n  \n\n### 简单设置vim\n\n“工欲善其事，必先利其器”。尽管 Vim 非常强大，但默认配置的 Vim 看起来还是比较朴素的，为了适合\n我们的开发需求，要对 Vim 进行一些简单的配置。\n\n- `:set number` 显示行号\n- `:set relativenumber` 显示相对行号（这个非常重要，慢慢体会）\n- `:set hlsearch` 搜索结果高亮\n- `:set autoindent` 自动缩进\n- `:set smartindent` 智能缩进\n- `:set tabstop=4` 设置 tab 制表符所占宽度为 4\n- `:set softtabstop=4` 设置按 `tab` 时缩进的宽度为 4\n- `:set shiftwidth=4` 设置自动缩进宽度为 4\n- `:set expandtab` 缩进时将 tab 制表符转换为空格\n- `:filetype on` 开启文件类型检测\n- `:syntax on` 开启语法高亮\n\n这里列出的是命令，你可以通过在 Vim 中输入进行设置，但这种方式设置的参数只在本次关闭 Vim 前生效，\n如果你退出 Vim 再打开，之前的设置就失效了。\n\n若要永久生效，需要修改 Vim 的一个自动配置文件，一般文件路径是 `/home/\u003cuser\u003e/.vimrc`（Linux\n系统）或 `/Users/\u003cuser\u003e/.vimrc`（Mac OS 系统）\n\n如果没有就新建一个，以 Mac OS 系统为例：\n\n\u003e 在控制台执行如下命令，每行结尾记得回车\n\n```bash\ncd ~\nvim .vimrc\n```\n\n\u003e 现在你已经在 Vim 中打开了你的 Vim 专属配置文件，将上面提到的配置复制到你的文件中，记得要删除\n\u003e 每行开头的 `:`\n\u003e\n\u003e 修改完成执行 `:wq` 或者 `ZZ` 保存退出，再次进入 Vim 时，你的这些配置就已经生效了\n\u003e\n\u003e 当然，机智如我也为你准备好了一份 [vimrc](vimrc.vim) 样本文件，你可以在控制台执行\n\u003e `cp vimrc.vim ~/.vimrc` 直接使用，再次启动 Vim 或在 Vim 中执行  `:source ~/.vimrc`你的配置就\n\u003e 应该生效了。\n\n_**[ AD ]** 当然你也可以在我维护的另外一个项目 [The 7th Vim](https://github.com/dofy/7th-vim) 中找到一个更为完整的配置方案。_\n\n#### 清除搜索高亮\n\n前面提到的配置中，有一项是高亮全部搜索结果 `:set hlsearch`，其作用是当你执行 `/`\n、`?`、`*` 或 `#` 搜索后高亮所有匹配结果。\n\n\u003e 如果你已经设置了这个选项，尝试执行 `/set`\n\n看到效果了吧，搜索结果一目了然，但这有时候也是一种困扰，因为知道搜索结果后高亮就没用了，但高亮\n本人并不这样认为，它会一直高亮下去，直到你用 `:set nohlsearch` 将其关闭。\n\n但这样需要就打开，不需要就关闭也不是个办法，有没有更好的解决方案呢？当然！请看下面的终极答案：\n\n\u003e **再搜一个不存在的字符串**\n\n通常我用来清除搜索高亮的命令是 `/lfw`，一是因为 `lfw` 这个组合一般不会出现（不适用于\n本文档...），二是这三个字母的组合按起来比较舒服，手指基本不需要怎么移动（你感受一下）。\n\n#### 重复上一次命令\n\nVim 有一个特殊的命令 `.`，你可以用它重复执行上一个命令。\n\n#### 缩进\n\n- `\u003e\u003e` 向右缩进当前行\n- `\u003c\u003c` 向左缩进当前行\n\n#### 自动排版\n\n- `==` 自动排版当前行\n- `gg=G` 当前文档全文自动排版\n- `\u003cN\u003e==` 对从当前行开始的 N 行进行自动排版\n- `=\u003cN\u003ej` 对当前行以及向下 N 行进行自动排版\n- `=\u003cN\u003ek` 对当前行以及向上 N 行进行自动排版\n\n### 窗口分屏\n\n工作中经常会遇到这种情况，就是需要参照其他文档编辑当前文档（场景：翻译），或者从另外一个文档\ncopy 代码到当前文档（场景：复制 html 元素类名到 css 文档），这时候就是你最需要分屏的时候。\n\n#### 分屏方式\n\n- `:split` 缩写 `:sp` or `Ctrl-w s` 上下分屏\n- `:vsplit` 缩写 `:vs` or `Ctrl-w v` 左右分屏\n- `:diffsplit` 缩写 `:diffs` diff 模式打开一个分屏，后面可以加上 {filename}\n\n#### 窗口跳转\n\n- `Ctrl-w w` 激活下一个窗口\n- `Ctrl-w j` 激活下方窗口\n- `Ctrl-w k` 激活上方窗口\n- `Ctrl-w h` 激活左侧窗口\n- `Ctrl-w l` 激活右侧窗口\n\n#### 移动分屏\n\n- `Ctrl-w L` 移动到最右侧\n- `Ctrl-w H` 移动到最左侧\n- `Ctrl-w K` 移动到顶部\n- `Ctrl-w J` 移动到底部\n\n_注意：区分大小写。另外，可以将底部的屏幕移动到右侧，实现上下分屏到左右分屏的转换。_\n\n#### 屏幕缩放\n\n- `Ctrl-w =` 平均窗口尺寸\n- `Ctrl-w +` 增加高度\n- `Ctrl-w -` 缩减高度\n- `Ctrl-w _` 最大高度\n- `Ctrl-w \u003e` 增加宽度\n- `Ctrl-w \u003c` 缩减宽度\n- `Ctrl-w |` 最大宽度\n\n#### 标签页\n\n#### 创建标签页\n\n- `:tabnew` or `:tabedit` 缩写 `:tabe` 打开新标签页\n- `Ctrl-w gf` 在新标签页中打开当前光标所在位置的文件名\n\n_注意：`:tabnew` 和 `:tabedit` 后面都可以跟一个 \u003c空格\u003e\u003c文件名\u003e 用以在新标签页中\n打开指定文件，还可以在 `:` 后面加一个数字，指出新标签页在列表中的位置（从 0 开始）。_\n\n#### 切换标签页\n\n- `gt` or `:tabnext` 缩写 `:tabn` 下一个标签页（最后一个会循环到第一个）\n- `gT` or `:tabprevious` 缩写 `:tabp` 上一个标签页（第一个会循环到最后一个）\n- `:tabrewind` 缩写 `:tabr` or `:tabfirst` 缩写 `:tabfir` 到第一个\n- `:tablast` 缩写 `:tabl` 到最后一个标签页\n\n#### 关闭标签页\n\n- `:tabclose` 缩写 `:tabc` 关闭当前标签页\n- `:-tabc` 关闭上一个标签页\n- `:+tabc` 关闭下一个标签页\n- `:tabonly` 缩写 `:tabo` 关闭其他标签\n\n## 02.更快地移动光标 motion\n\n### `w` ,`b `,`W`,` B`,` e`,` g`,`e` 以单词为间隔移动光标\n\n* w是后移\n* b是向前\n* W是后移包含符号的单词\n* B是前移包含符号的单词\n* e 移动到单词的尾部\n* ge 移动到上一个单词的尾部\n\nw和W的区别是word和words的区别，word只包括`a-zA-Z0-9`，words还包含空字符，空格，EOL等\n\n### 使用查找来跳转\n\n- `f `移动到本行下一个特定的字母和符号，`F `移动到本行前一个特定的字母\n- 你也可以使用`t`和`T`，他的光标在搜索的字母之前\n\n当你使用了`f{character}`之后，你可以用`;`向后重复查找，或者使用`,`向前重复查找\n\n* `f`   在同一行向后搜索第一个匹配\n\n* `F`   在同一行向前搜索第一个匹配\n\n* `t`   在同一行向后搜索第一个匹配，并停在匹配前\n\n* `T`   在同一行向前搜索第一个匹配，并停在匹配前\n\n* `;`   在同一行重复最近一次搜索\n\n* `,`   在同一行向相反方向重复最近一次搜索\n\n  \n\n  \n\n* `/{pattern}` 向下搜索\n\n* `?{pattern}` 向上搜索\n\n* `*`向后查找当前光标所在的单词\n\n* `#`向前查找当前光标所在的单词\n\n  输入上面的按回车就进入搜索模式，可以用`n`（向下）和`N`在搜索到的词之间移动\n\n  注意n的方向性和你之前查找的方向是一致的\n\n  查找会高亮词汇,`:nohl`命令可以取消高亮\n\n### 匹配查找\n\nVim 中可以使用 `%` 对 `(` 和 `)`，`[` 和 `]`，`{` 和 `}` 进行匹配查找，当光标位于其中一个\n符号上时，按下 `%`，光标会跳到与之匹配的另外一个符号上\n\n### `0` `^` `$` `g_` 移动到行末或行尾\n\n* `0 `移动到这行的最开头字母\n* `^` 移动到本行最开头的非空字母\n* `$` 移动到本行最尾部\n* `g_`移动到本行最尾部的非空字母\n* `n|`跳转到本行第n列\n\n### `｛` `｝` `(` `)`以句子或段落为间隔移动\n\n- `(`   跳到前一个句子\n- `)`   跳到下一个句子\n- `{  ` 跳转到上一个段落\n- `}`  跳转到下一个段落\n\n\n\n### 滚动页面，翻页 CTRL+D  CTRL+U\n\n- `Ctrl-y`    向上滚动一行\n- `Ctrl-e`    向下滚动一行\n- `Ctrl-u`    向上滚动半屏\n- `Ctrl-d`    向下滚动半屏\n- `Ctrl-b`    向上滚动一屏\n- `Ctrl-f`    向下滚动一屏\n\n也可以相对于当前行进行滚动\n\n- `zt `   将当前行置于屏幕顶部附近\n- `zz`   将当前行置于屏幕中央\n- `zb`    将当前行置于屏幕底部\n\n\n\n\n\n### 按照数字移动\n\n数字在通常模式里，可以重复执行一个命令多次。\n\n{count}{command}\n\n比如`2w`就是向下移动两个单词\n\n`5j`，就是向下移动5行\n\n`2/count`就是跳转到第二个搜索到的count位置\n\n### 使用命令跳转\n\n* `:\u003cline number\u003e`跳转到第几行 ，相当于` \u003cline number\u003egg` \n* `:+\u003cline number\u003e`向下跳转几行 ，相当于` \u003cline number\u003ej`\n* `:-\u003cline number\u003e`向上跳转到第几行 ，相当于` \u003cline number\u003ek`  \n\n### `gd`跳转到定义，`gf`跳转到文件名所指向的文件\n\n\n\n### `｛line｝gg` 跳转到指定行\n\n* `gg` 跳转到文件开头\n* `G` 跳转到文件结尾\n* `｛line｝gg` 跳转到文件指定行，或者也可以用`{line}G`\n* `%`，跳转到 匹配括号的开始和结尾`({[]})`\n* `n%`,文件百分比跳转\n\n### `m`标记位置\n\n比如`ma`就是用a标签标记一个位置，你之后就可以用``a`来跳转到你标记的a位置\n\n其中\n\n- ``a`是精确回到a标签的位置(行和列)\n- `'a`    跳转到a标签的行\n\n语法是 \n\n```\nm{a-zA-Z}\n```\n\n其中小写字母是局部标签，大写字母是全局标签\n\n使用`:marks`查看所有标签\n\n### 窗格间跳转\n\n- `H`   跳转到屏幕的顶部\n- `M`   跳转到屏幕的中间\n- `L`   跳转到屏幕的底部\n- `nH`  跳转到距离顶部n行的位置\n- `nL`  跳转到距离底部n行的位置\n\n### 代码跳转\n\n- `ctrl+]`跳转到函数或者变量定义处\n- `ctrl+o`或`ctrl+T`返回跳转前位置\n- `gi`跳转到之前离开normal模式的位置(也就是上次编辑的位置了)\n- `gI`跳转到之前离开normal模式的那一行开头并进入normal模式\n- `gd` 跳转到函数或者变量定义处\n- `gf` 跳转到文件\n\n## 03.编辑相关操作\n\n关于编辑操作的语法是这样的\n\n```\n{operator}{count}{motion}\n```\n\n* operator是具体的操作，比如delete，change，\n* count 是操作执行的次数\n* motion是操作执行的位置\n\n举个例子,`d2w`是向下删除两个单词\n\n\n\n这些操作可以用一些英语首字母帮助记忆\n\n\u003e - d for delete\n\u003e - f for find\n\u003e - c for change\n\u003e - t for until\n\n\n\n### `d` 剪切（删除）操作\n\n`d`其实是剪切的功能，只不过剪切之后不粘贴回去相当于删除。\n\n* 删除当前行 `dd`\n* `dw`删除下一个单词\n* `ggdG`删除整个文件，拆解一下就好理解，gg跳到文件开头，然后执行删除，删到文件末尾。\n* `D`删除当前行光标之后的内容，等价于`d$`\n\n- `s` 删除当前字符，并进入 `INSERT` 模式\n- `S` 删除当前行并保存到 Vim 剪贴板，同时进入 `INSERT` 模式（等同于 `cc`）\n- `x` 删除当前字符，相当于 insert 模式下的 `Delete`\n- `X` 删除前一个字符，相当于 insert 模式下的 `Backspace\n- `cc` 删除当前行并保存到 Vim 剪贴板，同时进入 `INSERT` 模式\n- `c\u003cX\u003e` 删除指定内容并保存到 Vim 剪贴板，同时进入 `INSERT` 模\n\n### `u` 撤销前一步操作 `CTRL+R`重做前一步\n\n- `U`撤销所有操作，使文件回到原样\n- 在插入模式下可以使用 `Ctrl-G u` 会生成一个断点，之后你就可以用u还原到这个断点\n-  `:wundo` 保存一份撤销历史记录，它会创建一个**.undo**文件，里面存放的是你的历史记录。这样当你打开一个新文件的时候，可以通过 `:rundo` 来加载 undo 历史。\n- Vim 可以通过变量 `undolevels` 来选择最多可执行 undo 的次数。你可以通过 `:echo \u0026undolevels` 来查看当前的配置。\n\n时间旅行\n\n你可以使用 `:undolist` 去查看之前所做的修改。 `:earlier` 可以加上分钟 (`m`), 小时 (`h`), and 天 (`d`) 作为参数。\n\n```\n:earlier 10s    恢复到10秒前的状态\n:earlier 10m    恢复到10分钟前的状态\n:earlier 10h    恢复到10小时前的状态\n:earlier 10d    恢复到10天前的状态\n```\n\n### `c` 删除并进入插入模式\n\n* `cc`删除一整行并进入插入模式\n* `C`删除本行光标后的内容并进入插入模式\n* `cw`删除下一个单词并进入插入模式\n\n### `.` 重复上次产生改变的操作\n\n以下几种类型会被视为一个可以重复的改变\n\n- `d{motion}` \n\n- `i{typeSomething}\u003cESC\u003e` \n\n-  `c{typeSomething}\u003cESC\u003e` \n\n  \n\n使用c带来的可重复性比d会高很多\n\n举个例子,当我们想修改下面这句话的`courteously`为`polite`,我们移动到单词开头执行`cwpoliteESC`，就可以完成替换的工作，然后我们就可以用`.`操作符重复这个替换操作\n\n```javascript\nconst courteousSalute = \"I courteously salute you good person.\"\n```\n\n效率更高的是我们搜索和操作符，这样省去了我们移动光标找单词的时间\n\n### 合并\n\n- `J` 将当前行与下一行合并\n\n### 替换操作\n\n- `r\u003cX\u003e` 将当前字符替换为 X\n- `gu\u003cX\u003e` 将指定的文本转换为小写\n- `gU\u003cX\u003e` 将指定的文本转换为大写\n- `:%s/\u003csearch\u003e/\u003creplace\u003e/` 查找 search 内容并替换为 replace 内容\n- `g~\u003cX\u003e`，小写变成大写，大写变成小写。\n\n### 文本对象\n\n文本对象就是结构化的文本，它描述一个文档中的单词，句子，段落，被引号的文本，html的tags等，你可以用这个和操作符结合来改变一个单词，句子，段落等等\n\n```\n            |- `a` means around\n            |- `i` means inner\n           /\n          /\n         /\n        {a|i}{text-object}\n                  /\n                 /\n                | w - word\n                | s - sentence\n                | p - paragraph\n                | \" - quotes\n                | t - html tags\n```\n\n和操作符结合就是这样：\n\n```\n{operator}{a|i}{text-object}\n```\n\n举个例子，假设你要修改下面的字符串，只要`fR`移动到R字母，然后执行`ci\"`,就可以输入你想输入的内容了。也就是修改引号内的内容。\n\n```\nconst poem = \"Roses are red\";\n```\n\n实际上上述操作还可以优化，因为文本对象，是自动应用的和你光标的位置无关，所以第一步的移动操作不需要。所以这个操作的可重复性，会比单纯的c要高。\n\n`\"`,`''`,和反引号操作符比较特殊，一般的wsp只有光标在文本对象上才会自动查找，而引号在同一行的前面和后面都没问题。\n\n\n\n关于around的作用是，用a代替i会影响到分隔符和空格比如引号，大括号，小括号作为文本对象的时候会把分隔符和空格一起删除，而用i不会删除分割符和空格\n\n\n\n### 其他操作\n\n* `y` （yank）复制\n  * yy 复制一行，和d，c这些键的逻辑是一样的\n  * Y 复制光标到行尾的内容\n* `p` (put)粘贴\n- `g~` (switch case): 把字母从小写变成大写\n* `\u003e` (shift right): 添加缩进\n* `\u003c` (shift left): 移除缩进\n* `=` (format code): 格式化代码\n\n\n\n### 更多简写\n\n- `x` 相当于 `dl`  删除光标下的字母\n- `X` 相当于 to `dh` 删除光标前的字母\n- `s` 相当于 `ch`, deletes 删除光标前的字母并且进入插入模式\n- `r` 将一个字母替换为另一个\n- `~`切换一个字母的大小写\n\nA nice way use case for `x` is to swap a couple of characters when you make a typo. You remove (and cut) a character with `x` and immediately paste it after the cursor with `p`. Try it!\n\n\n\n## 04.输入模式操作(insert)\n\n### `i`,`a`,`I`,`A`四种插入：\n\n- `i` 插入到光标所在字母\n- `a` 插入到光标后\n- `I` 插入到行首\n- `A` 插入到行尾\n\n### `o` ,`O`开启新一行\n\n* `o`  在当前行下方开新行\n* `O`   在当前行上方开新行\n\n\n\n#### `gi` 回到上次离开插入模式的地方开始输入\n\n我们发现g这个字母，通常用作其他操作的修饰符，比如e和ge，e是到单词的结尾，ge是到上一个单词结尾。\n\n还有一些命令\n\n- `s` 删除当前光标位置的字符并开始输入文本\n- `S`    删除当前行并开始输入文本\n- `gI`   在当前行的第一列的位置开始输入文本\n\n\n\n### 插入模式的删除快捷键\n\n这个快捷键小写也是生效的\n\n- `CTRL-H` 删除上次输入的字符并向左移动光标\n- `CTRL-W`  清楚上一个word\n- `CTRL-U`  删除上次输入的行\n\n### 退出插入模式\n\n- `\u003cESC\u003e`\n- `CTRL-C`\n- `CTRL-[`\n\n很多vim用户会习惯会在输入模式中把`ESC`映射到`jj`或者`jk`\n\n### 重复输入模式\n\n在进入输入模式之前传递一个数字参数，比如\n\n```\n10i\n```\n\n你输入的文本将被重复10次。这个方法对任意一种进入输入模式的方式都有效\n\n### 在输入模式中使用寄存器\n\n举例：`Ctrl-r a`\n\n```\nCtrl-r {register}\n```\n\n### 在输入模式下执行普通模式的命令\n\n在输入模式下， 如果你按下`Ctrl-o`，你就会进入到`insert-normal`（输入-普通）子模式。如果你关注一下左下角的模式指示器，通常你将看到`-- INSERT --` ，但是按下`Ctrl-o`后就会变为`-- (insert) --`。 在这一模式下，你可以执行一条普通模式的命令，比如你可以做以下这些事：\n\n**设置居中以及跳转**\n\n```\nCtrl-o zz       居中窗口\nCtrl-o H/M/L    跳转到窗口的顶部/中部/底部\nCtrl-o 'a       跳转到标志'a处\n```\n\n**重复文本**\n\n```\nCtrl-o 100ihello    输入 \"hello\" 100 次\n```\n\n**执行终端命令**\n\n```\nCtrl-o !! curl https://google.com    运行curl命令\nCtrl-o !! pwd                        运行pwd命令\n```\n\n**快速删除**\n\n```\nCtrl-o dtz    从当前位置开始删除文本，直到遇到字母\"z\"\nCtrl-o D      从当前位置开始删除文本，直到行末\n```\n\n## 05.视觉模式选中文本(visual mode)\n\n- `v`  字母长度的选择\n- `V`  选择行\n- `Ctrl-V` 块选择模式\n\n\n\n选择的语法如下\n\n```\nget into Visual Mode\n    /\n   /                  action to apply\n  /                         /\n---------                  /\n{v|V|C-V}{count}{motion}{operator}\n         ---------------\n           /\n          /\n   bit of text over which\n   to apply an action\n```\n\n在视觉模式中，可以用 `o`或`O`切换光标的位置\n\n### `ctrl+v`块选择模式\n\n块选择模式比较特殊，适合批量在前方或尾部插入的场景。\n\n如果需要在每行末尾添加分号：\n\n```\nconst one = \"one\"\nconst two = \"two\"\nconst three = \"three\"\n```\n\n将光标放在第一行上： -运行逐块可视模式，并向下两行(`Ctrl-V jj`)。 -高亮显示到行尾(`$`)。 -附加(`A`) ，然后键入\";\"。 -退出可视模式(`esc`)。\n\n\n\n总体来说在视觉模式下的操作会更加直观，相比于normal模式能清晰地看到自己想要编辑的区域。\n\nVim有`Ctrl-X`和`Ctrl-A`命令来减少和增加数字。与可视模式一起使用时，可以跨多行递增数字。\n\n```\n`\u003c    转到上一个可视模式高亮显示的最后一个位置\n`\u003e    转到上一个可视模式高亮显示的第一位\n```\n\n您也可以从插入模式进入可视模式。在插入模式下进入字符可视模式：\n\n```\nCtrl-O v\n```\n\n### 常用操作\n\n* `ggvG`全选  \n\n\n\n## 06.更迅速地执行搜索操作\n\n之前我们已经学到了用`/`进入搜索，按下回车后，可以用`n`在搜索的关键词之间移动。此时我们可以执行一个修改操作，然后n到下一个用`.`操作复现。下面有一种更便捷的方式\n\n### `gn`  选中下一个搜索块\n\n有了gn以后，我们就不需要按一下n在复现删除\n\n我们直接搜索，然后gn选中第一个搜索关键词，在删除，之后用`.`就可以复现选择关键词然后删除的操作。\n\n可以dgn也可以gnd，效果是一样的，然后 `4.`可以重复这个操作4词\n\n## 07.复制和粘贴\n\n* `y`复制\n\n* `p`和`P`分别是向下拷贝和向上拷贝\n\n`gp` 和 `gP`粘贴的时候光标位置不同，光标会在粘贴的内容往后一个字符的位置，也就是会包含换行符\n\n\n\n`d`，`c`和`p`实现剪切和粘贴\n\n\n\n### vim寄存器 Vim Registers\n\n-  **unnamed register** `\"` 是拷贝或者剪切的内容不指定寄存器时默认存放的位置\n- **named registers** `a-z` ，命名寄存器，你可以为接下来剪切或者复制的内容指定特定的a-z的字符的寄存器\n- **yank register** `0` 存储了你上次复制的东西\n- **cut registers** `1-9` 存储了你之前9次剪切操作的内容，包括d和c操作\n\n举个例子 `\"ayas`会复制一个句子，然后存储在寄存器`a`，也就是说语法是`\"{register}`后面跟你的复制剪切操作就会把东西存到指定的寄存器里，当你想粘贴的时候，`\"ap`,也是同样的\n\n使用寄存器的大写字母，表示继续往那个寄存器添加复制或剪切的内容。\n\n\n\n### 查看寄存器的内容\n\n`:reg`命令可以查看你的所有寄存器，是`:register`的缩写   ，你也可以查看指定寄存器的内容`:reg {register}`\n\n### 更多寄存器相关的内容\n\n实际上vim一共有下面10种寄存器\n\n1. 匿名寄存器（`\"\"`）\n2. 编号寄存器(`\"0-9`).\n3. 小删除寄存器 (`\"-`).\n4. 命名寄存器 (`\"a-z`).\n5. 只读寄存器 (`\":`, `\".`,and `\"%`).\n6. Buffer交替文件寄存器 (`\"#`).\n7. 表达式寄存器 (`\"=`).\n8. 选取和拖放寄存器(`\"*` and `\"+`).\n9. 黑洞寄存器 (`\"_`).\n10. 搜索模式寄存器 (`\"/`).\n\n**匿名寄存器**\n\n匿名寄存器默认存储着你最近一次复制，修改或删除的文本。直接使用`p`，就是粘贴匿名寄存器的内容。相当于`\"\"p`\n\n**编号寄存器**\n\n编号寄存器1-9是自动以升序来填充的，也就是说存放你的上9次剪切操作，`0`标号的寄存器只会存上次复制的内容\n\n**小删除寄存器**\n\n不足一行的修改或者删除都不会被存储在0-9号编号寄存器中，而是会被存储在小删除寄存器 (`\"-`)中。\n**命名寄存器 (`\"a-z`)**\n\n命名寄存器是Vim中用法最丰富的寄存器。a-z命名寄存器可以存储复制的，修改的和被删除的文本。不像之前介绍的3种寄存器一样，它们会自动将文本存储到寄存器中，你需要显式地告诉Vim你要使用命名寄存器，你拥有完整的控制权。\n\n**只读寄存器(\":, \"., \"%)**\n\n- `·`    存储上一个输入的文本\n- `:    `  存储上一次执行的命令\n- `%`    存储当前文件的文件名\n\n**Buffer交替文件寄存器 (\"#)**\n\n在Vim中，`#`通常代表交替文件。交替文件指的是你上一个打开的文件，想要插入交替文件的名字的话，可以使用命令`\"#p`。\n\n**表达式寄存器 (`\"=`)**\n\nVim有一个表达式寄存器，`\"=`,用于计算表达式的结果。表达式是Vim中非常宏大的一个话题，所以我只会在这里介绍一些基础知识，我将会在之后的章节中进一步讲解更多关于表达式的细节。\n\n你可以使用以下命令计算数学表达式`1+1`的值：\n\n```\n\"=1+1\u003cEnter\u003ep\n```\n\n在这里，你在告诉Vim你正在使用表达式寄存器`\"=`，你的表达式是（`1+1`），你还需要输入`p`来的到结果。正如之前所提到的，你也可以在输入模式中访问寄存器。想要在输入模式中计算数学表达式的值，你可以使用：\n\n```\nCtrl-r =1+1\n```\n\n你可以使用`@`来从任何寄存器中获取表达式并用表达式寄存器计算其值。如果你希望从寄存器\"a\"中获取文本：\n\n```\n\"=@a\n```\n\n之后输入`\u003center\u003e`，再输入`p`。类似地，想在输入模式中得到寄存器\"a\"中的值可以使用：\n\n```\nCtrl-r =@a\n```\n\n你也能使用表达式寄存器来计算Vim脚本的值。如果你使用`:let i = 1`定义一个变量`i`,你可以用`\"=i`获取到它的值，按下回车，再按下`p`。想在输入模式中获取到这个值的话可以运行命令`Ctrl-r=i`。\n\n假设你有一个方程：\n\n```\nfunction! HelloFunc()\n\treturn \"Hello Vim Script!\"\nendfunction\n```\n\n你可以通过调用这个方程获取它的值。想要在普通模式中调用这个方程，你可以使用：`\"=HelloFunc()`, 按下回车再按下`p`。而在输入模式下可以使用`Ctrl-r =HelloFunc()`。\n\n**选取和拖放寄存器 (`\"*`, `\"+`)**\n\n当你向从外部程序复制粘贴一些文本到vim中是，可以使用这两个寄存器，但是你的vim需要开启`+clipboard`才有用\n\n如果你觉得这个操作比较麻烦，你也可以配置vim使得只用p也能粘贴外部程序复制的文本，在vimrc中加入下面一行就可以了：\n\n```\nset clipboard=unnamed\n```\n\n这样你从外部程序中复制文本时，就可以使用匿名寄存器p来进行粘贴\n\n**黑洞寄存器 (`\"_`)**\n\n如果你删除和修改文本的时候，不希望这次修改的内容被存到寄存器里，可以用黑洞寄存器\n\n想要删除一行并且不将其存储在任何寄存器中时，可以使用`\"_dd`命令，它是和 `/dev/null` 类似的寄存器。\n\n**搜索模式寄存器 (`\"/`)**\n\n这个寄存器里保存了你上一次搜索的内容\n\n\n\n\n\n**执行寄存器中存储的命令**，命名寄存器中存放的内容可以当作宏命令来执行，使用`@`来执行\n\n**清除寄存器**\n\n从技术上来说，我们没有必要来清除任何寄存器，因为你下一个使用来存储文本的寄存器会自动覆盖该寄存器中之前的内容。然而，你可以通过记录一个空的宏命令来快速地清除任何命名寄存器。比如，如果你运行`qaq`，Vim就会在寄存器\"a\"中记录一个空的宏命令。还有一种方法就是运行命令`:call setreg('a','')`,其中'a'代表的就是寄存器\"a\"。还有一种清除寄存器的方法就是使用表达式`:let @a = ''`来将寄存器的值设为空的字符串。\n\n**获取寄存器中的内容**\n\n你可以使用`:put`命令来粘贴任何寄存器的内容。比如，如果你运行命令`:put a`,Vim就会打印出寄存器\"a\"的内容，这和`\"ap`非常像，唯一的区别在于在普通模式下命令`p`在当前光标位置之后打印寄存器的内容，而`:put`新起一行来打印寄存器的内容。\n\n\n\n## 08.命令行模式\n\n  命令行模式支持使用扩展命令(ex commands)的特性(`:`开启)\n\n  举例一些常用的扩展命令\n  - `:colorscheme` 查看vim当前使用的主题\n  - `edit` 编辑文件，后面跟上文件路径就可以打开一个新的buffer来编辑文件\n\n  ### 编辑文件扩展命令\n  ```\n :edit {relative-path-to-file} \n  ```\n执行这个命令后如果不存在文件那么就会新建一个再打开，这个命令的简写是`:e`\n### 保存文件和关闭文件命令\n- `:write`简写是`:w`，用于保存文件\n- `:quit`简写是`:q`,用于关闭文件\n- `:wall`简写是`:wa`，用于保存所有文件\n- `:qall`简写是`:qa`，用于关闭所有文件\n- `:wqall`  `:wqa`，用于保存并关闭所有文件\n- `:qall!`  `:qa!`，强制退出所有文件不保存\n\n 如果你想强制执行忽略错误，那么就在前面或后面加上`!`，比如`!q`就是强制退出\n 你也可以组合两个命令，比如 `wq`就是保存后关闭\n\n### 同时删除多行\n\n文本扩展命令的形式如下：\n```\n:[range]command[options]\n\n```\n其中，我们要执行删除操作的时候，命令的形式会变成如下：\n```\n:[range]d [register]\n```\n其中寄存器是存放我们剪切的内容的\n举个例子,执行`:10,12d a`，那么10-12行的内容就会被删除，剪切的内容存放在a寄存器，可以使用`\"ap`粘贴就还原了。\n\n具体还有如下的使用方式\n- 使用数字(e.g. **`:10,12d`** 会删除行 10, 11 , 12)\n- 使用偏移值 (e.g. **`:10,+2d`** 会删除行 10, 11 , 12)\n- 使用 **`.`**表示当前行 (e.g. **`:.,+2d`** 会删除当前行和接下来的两行)\n- 使用 **`%`**表示整个文件  (e.g. **`:%d`** 会删除整个文件)\n- 使用**`0`**表示整个文件的开始  (e.g. **`:0,+10d`** 会删除前十行)\n- 使用**`$`**表示文件的结尾  (e.g. **`:.,$d`** 会删除从当前行到文件结尾的内容)\n- 当使用visual mode选中文本后再输入 **`:`**  **`:'\u003c,'\u003e`** 表示你选中的范围， 执行 **`:'\u003c,'\u003ed`** 就可以删除当前选中的内容\n\n其他也有一些有用的命令包括 `:yank`, `:put`, `:copy` and `:move`等\n\n### 重复执行命令\n\n使用 **`@:`** 可以重复执行你上一个命令，之后你可以用`@@`再次重复执行\n\n### 替换文本\n\n语法如下\n\n```\n:[range]s/{pattern}/{substitute}/{flags}\n```\n\n* range定义了执行替换的范围\n* pattern 匹配替换内容的正则表达式\n* substitute 是我们想要替换的文本\n* flags 是用于配置替换文本的选项\n\n举个例子\n\n`:s/led/gold` 会替换当前行第一个匹配到的led为gold\n\n如果你想要替换当前行所有的匹配，那么加一个g flag执行 `:s/led/gold/g`\n\n如果你想替换整个文件的所有匹配，用`%`表示整个文件的范围，执行`:%s/led/gold/g`\n\n出了g以外，还有其他flag：\n\n- `i`,忽略大小写\n- `c`，每次替换需要确认\n\n## 09.宏命令\n\n在编辑文件的时候，你会发现有时候你在反复地做一些相同的动作。如果你仅做一次，并在需要的时候调用这些动作岂不是会更好吗。通过 Vim 的宏命令，你可以将一些动作记录到 Vim 寄存器。\n\n### 基本宏命令\n\n宏命令的基本语法如下：\n\n```\n`qa`                     开始记录动作到寄存器 a\n`q` (while recording)    停止记录\n```\n\n你可以使用小写字母 （a-z）去存储宏命令。并通过如下的命令去调用：\n\n```\n`@a`    Execute macro from register a\n`@@`    Execute the last executed macros\n```\n\n假设你有如下的文本，你打算将每一行中的所有字母都变为大写。\n\n```\nhello\nvim\nmacros\nare\nawesome\n```\n\n将你的光标移动到 “hello” 栏的行首，并执行：\n\n```\nqa0gU$jq\n```\n\n上面命令的分解如下：\n\n- `qa` 开始记录一个宏定义并存储在 a 寄存器。\n- `0` 移动到行首。\n- `gU$` 将从光标到行尾的字母变为大写。\n- `j` 移动到下一行。\n- `q` 停止记录。\n\n调用 `@a` 去执行该宏命令。就像其他的宏命令一样，你也可以为该命令加一个计数。例如，你可以通过 `3@a` 去执行 `a` 命令3次。你也可以执行 `3@@` 去执行上一次执行过的宏命令3次。\n\n### 安全保护\n\n在执行遇到错误的时候，宏命令会自动停止。假如你有如下文本：\n\n```\na. chocolate donut\nb. mochi donut\nc. powdered sugar donut\nd. plain donut\n```\n\n你想将每一行的第一个词变为大写，你可以使用如下的宏命令：\n\n```\nqa0W~jq\n```\n\n上面命令的分解如下：\n\n- `qa` 开始记录一个宏定义并存储在 a 寄存器。\n- `0` 移动到行首。\n- `W` 移动到下一个单词。\n- `~` 将光标选中的单词变为大写。\n- `j` 移动到下一行。\n- `q` 停止记录。\n\n我喜欢对宏命令进行很多次的调用，所以我通常使用 `99@a` 命令去执行该宏命令99次。当 Vim 在最后一行执行 `j` 命令的时候，会发现已经没有下一行可以继续，遇到执行的错误，因此宏命令会停止。\n\n实际上，遇到错误自动停止运行是一个很好的特性。否则，Vim 会继续执行该命令99次，尽管它已经执行到最后一行了。\n\n### 命令行执行宏\n\n在正常模式执行 `@a` 并不是宏命令调用的唯一方式。你也可以在命令行执行 `：normal @a` 。`：normal` 会将任何用户添加的参数作为命令去执行。例如添加 `@a`，和在 normal mode 执行 `@a` 的效果是一样的。\n\n`:normal` 命令也支持范围参数。你可以在选择的范围内去执行宏命令。如果你只想在第二行和第三行执行宏命令，你可以执行 `：2,3 normal @a`。我会在后续的章节中介绍更多关于在命令行中执行的命令。\n\n### 在多个文件中执行宏命令\n\n假如你有很多的 `.txt` 文件，每一个文件包含不同的内容。并且你只想将包含有 “donut” 单词的行的第一个单词变为大写。那么，该如何在很多文件中特定的行执行执行变该操作呢？\n\n第一个文件:\n\n```\n# savory.txt\na. cheddar jalapeno donut\nb. mac n cheese donut\nc. fried dumpling\n```\n\n第二个文件:\n\n```\n# sweet.txt\na. chocolate donut\nb. chocolate pancake\nc. powdered sugar donut\n```\n\n第三个文件:\n\n```\n# plain.txt\na. wheat bread\nb. plain donut\n```\n\n你可以这么做:\n\n- `:args *.txt` 查找当前目录下的所有 `.txt` 文件。\n- `:argdo g/donut/normal @a` 在所有 `:args` 中包含的文件里执行一个全局命令 `g/donut/normal @a`。\n- `:argdo update` 在所有 `:args` 中包含的文件里执行 `update` 命令会将修改后的内容保存下来。\n\n如果你对全局命令 `:g/donut/normal @a` 不是很了解的话，该命令会在包含有 `/donut/` 中的所有行执行`normal @a` 命令。我会在后面的章节中介绍全局命令。\n\n### 递归执行宏命令\n\n你可以递归地执行宏命令，通过在记录宏命令时调用相同的宏来实现。假如你有如下文本，你希望改变第一个单词的大小写：\n\n```\na. chocolate donut\nb. mochi donut\nc. powdered sugar donut\nd. plain donut\n```\n\n如下命令会递归地执行:\n\n```\nqaqqa0W~j@aq\n```\n\n上面命令的分解如下：\n\n- `qaq` 记录一个空白的宏命令到 “a” 。把宏命令记录在一个空白的命令中是必须的，因为你不会想将该命令包含有任何其他的东西。\n- `qa` 开始录入宏命令到寄存器 “a”。\n- `0` 移动到行首。\n- `W` 移动到下一个单词。\n- `~` 改变光标选中的单词的大小写。\n- `j` 移动到下一行。\n- `@a` 执行宏命令 “a”。当你记录该宏命令时，`@a` 应该是空白的，因为你刚刚调用了 `qaq`。\n- `q` 停止记录。\n\n现在，让我们调用 `@a` 来查看 Vim 如何递归的调用该宏命令。\n\n宏命令是如何知道何时停止呢？当宏执行到最后一行并尝试 `j` 命令时，发现已经没有下一行了，就会停止执行。\n\n### 增添一个已知宏\n\n如果你想在一个已经录制好的宏定义中添加更多的操作，与其重新录入它，不如选择修改它。假设你不仅希望将第一个单词变为大写，也希望在每一行末尾添加一个句点。\n\n假设当前寄存器“a”中有如下的命令：\n\n```\n0W~\n```\n\n你可以这样做:\n\n```\nqAA.\u003cesc\u003eq\n```\n\n分解如下:\n\n- `qA` 开始在寄存器 “A” 中记录宏命令。\n- `A.\u003cesc\u003e` 在行的末尾（`A`）假如一个句点，并且退出插入模式。\n- `q` 停止记录宏命令。\n\n现在，当你执行 `@a` 时，它会跳到行的第一个字符（`0`），跳到下一个单词（`W`），改变光标选中的字母的大小写（`~`），移动到最后一行并且转到插入模式（`A`），写入一个句点（`.`），退出插入模式（`\u003cesc\u003e`）。\n\n### 修改一个已知宏\n\n在已存在的宏定义的末尾添加新的动作是一个很好的功能，但假如你希望在一个宏命令的中间添加动作该怎么做呢？\n\n假设，在改变第一个单词的大小写和在末尾加入一个句点之间，你想要在单词 “donut” 之前加入 “deep fried”（因为唯一比甜甜圈好的东西就是炸甜甜圈）。\n\n我会重新使用上一节使用过的文本:\n\n```\na. chocolate donut\nb. mochi donut\nc. powdered sugar donut\nd. plain donut\n```\n\n首先，让我们通过 `:put a` 调用一个已经录制好的宏命令（假设你已经有了上一节中使用过的宏命令）：\n\n```\n0W~A.^[\n```\n\n`^[` 是什么意思呢？不记得了吗，你之前执行过 `0W~A.\u003cesc\u003e`。 `^[` 是 Vim 的内部指令，表示 `\u003cesc\u003e`。通过这些指定的键值组合，Vim 知道这些是内部代码的一些替代。一些常见的内部指令具有类似的替代，例如 `\u003cesc\u003e`，`\u003cbackspace\u003e`，`\u003center\u003e`。还有一些其他的键值组合，但这不是本章的内容。\n\n回到宏命令，在改变大小写之后的键后面（`~`），让我们添加（`$`）来移动光标到行末，回退一个单词（`b`），进入插入模式（`i`），输入“deep fried ”（别忽略“fried ” 后面的这个空格），之后退出插入模式（`\u003cesc\u003e`）。\n\n完整的命令如下:\n\n```\n0W~$bideep fried \u003cesc\u003eA.^[\n```\n\n这里有一个问题，Vim 不能理解 `\u003cesc\u003e`。所以你需要将其替换为内部代码的形式。在插入模式，在按下`\u003cesc\u003e`后按下 `Ctrl-v`，Vim 会打印 `^[`。 `Ctrl-v` 是一个插入模式的操作符，可以逐字地插入一个非数字字符。你的宏命令应该如下:\n\n```\n0W~$bideep fried ^[A.^[\n```\n\n为了在寄存器“a”中添加修改后的指令，你可以通过在一个已知寄存器中添加一个新入口的方式来实现。在一行的行首，执行 `\"ay$`。这将会告诉 Vim 你打算使用寄存器 “a” （`\"a`） 来存储从当前位置到行末的文本（`y$`）。\n\n现在，但你执行 `@a` 时，你的宏命令会自动改变第一个单词的大小写，在“donut”前面添加“deep fried”，之后在行末添加“.”。\n\n另一个修改宏命令的方式是通过命令行解析。执行 `:let @a=\"`，之后执行 `Ctrl-r Ctrl-r a`，这会将寄存器“a”的命令逐字打印出来。最后，别忘记在闭合的引号（`\"`）。如果你希望在编辑命令行表达式时插入内部码来使用特定的字符，你可以使用 `Ctrl-v`。\n\n### 拷贝宏\n\n你可以很轻松的将一个寄存器的内容拷贝到另一个寄存器。例如，你可以使用 `:let @z = @a` 将寄存器“a” 中的命令拷贝到寄存器“z”。 `@a` 表示寄存器“a”中存储的内容，你现在执行 `@z`，将会执行和 `@a` 一样的指令。\n\n我发现对常用的宏命令创建冗余是很有用的。在我的工作流程中，我通常在前7个字母（a-g）上创建宏命令，并且我经常不加思索地把它们替换了。因此，如果我将很有用的宏命令移动到了字母表的末尾，就不用担心我在无意间把他们替换了。\n\n### 连续执行宏命令\n\nVim 可以连续和同时运行宏命令，假设你有如下的文本：\n\n```\nimport { FUNC1 } from \"library1\";\nimport { FUNC2 } from \"library2\";\nimport { FUNC3 } from \"library3\";\nimport { FUNC4 } from \"library4\";\nimport { FUNC5 } from \"library5\";\n```\n\n假如你希望把所有的 “FUNC” 字符变为小写，那么宏命令为如下：\n\n```\nqa0f{gui{jq\n```\n\n分解如下：\n\n- `qa` 开始记录宏命令到 “a” 寄存器。\n- `0`移动到第一行。\n- `f{` 查找第一个 “{” 字符。\n- `gui{` 把括号内的文本（`i{`）变为小写（`gu`）。\n- `j` 移动到下一行。\n- `q` 停止记录宏命令。\n\n现在，执行 `99@a` 在剩余的行修改。然而，假如在你的文本里有如下 import 语句会怎么样呢？\n\n```\nimport { FUNC1 } from \"library1\";\nimport { FUNC2 } from \"library2\";\nimport { FUNC3 } from \"library3\";\nimport foo from \"bar\";\nimport { FUNC4 } from \"library4\";\nimport { FUNC5 } from \"library5\";\n```\n\n执行 `99@a`，会只在前三行执行。而最后两行不会被执行，因为在执行第四行（包含“foo”）时会遇到错误而停止。然而这种情况你希望继续向下执行。你可以移动到包含（“FUNC4”）的一行，并重新调用该命令。但是假如你希望仅调用一次命令就完成所有操作呢？你可以并行地执行宏命令。\n\n如本章前面所说，可以使用 `:normal` 去执行宏命令，（例如： `:3,5 normal @a` 会在 3-5行执行 a 寄存器中的宏命令）。如果执行 `:1,$ normal @a`，会在所有除了包含有 “foo” 的行执行，而且它不会出错。\n\n尽管本质上来说，Vim 并不是在并行地执行宏命令，但表面上看，它是并行运行的。 Vim 会独立地在从第一行开始（`1,$`）每一行执行 `@a` 。由于 Vim 独立地在每一行执行命令，每一行都不会知道有一行（包含“foo”）会遇到执行错误。\n\n\n\n## 10.切换分屏(splits)和标签(tabs)\n\n### 分屏(splits)\n\n执行下面的命令可以实现分屏显示\n\n- **`:sp {relative-path-to-file}`** 水平分屏打开一个文件\n- **`:vsp {relative-path-to-file}`** 垂直分屏打开一个文件\n\n除了命令的方式，你也可以使用快捷键\n\n- **`\u003cCTRL-W\u003e S`** 打开一个水平分屏(上下分屏)的窗口\n- **`\u003cCTRL-W\u003e V`** 打开一个垂直分屏(所有分屏)的窗口\n\n在vscde的vim插件里面可以用 **`CTRL-P`*在分屏里打开新文件\n\n使用 **`CTRL-W`** + **`hjkl`**在分屏见移动\n\n### 标签(tabs)\n\n在分屏里面也可以打开标签\n\n使用命令打开标签的方式是\n\n-  **`:tabnew {file}`** 在新标签中打开文件\n-  **`:tabn`** (**`:tabnext`**) 切换到下一个标签\n-  **`:tabp`** (**`:tabprevious`**) 切换到前一个标签\n-  **`:tabo`** (**`:tabonly`**) 关闭所有其他标签\n\n\n\n\n\n\n\n\n\n## 11.vim-surround插件的使用\n\nVSCodeVim自带了这个插件，这个插件带来了一个新操作符s，surroundings值得是包裹单词句子的符号，比如引号，花括号还有html标签(quotes, parenthesis, braces, tags, etc…)等\n\n- **`ds`** 删除surroundings\n- **`cs`** 修改 surroundings\n- **`ys`** 添加 surroundings\n\n具体的语法如下\n\n```\nds{count}{motion}\ncs{count}{motion}\nys{count}{motion}\n```\n\n举个例子\n\n- **`ds'`** 删除包围的 **`'`** (`ds{char}`)\n- **`cs'\"`** 替换包围的 **`'`** 为 **`\"`** (`cs{old}{new}`)\n- **`ysaptli\u003e`** 包围一段话用 **`\u003cli\u003e`** 标签 (`ys{motion}{char}`)\n\n也可以在v视觉模式下选中然后 `S{desired character}`，就可以用你喜欢的符号包围了。\n\n## 12.自定义按键映射\n\n自定义映射可以把按键调整到你更舒服的位置\n\n在vscode里面的编辑步骤如下\n\n首先找到设置\n\n1. 打开命令面板 **`CMD-SHIFT-P`** 或者 **`CTRL-SHIFT-P`**\n2. 输入preferences（或者在菜单栏也可以打开）\n3. 选择 Open User Settings Options\n4. 输入  **`vim`**\n\n可以 编辑三种模式的自定义映射：\n\n- *Normal Mode Key Bindings Non Recursive* for normal mode\n- *Visual Mode Key Bindings Non Recursive* for visual mode\n- *Insert Mode Key Bindings Non Recursive* for insert mode\n\n举个例子，自定义normal模式的映射\n\n```json\n{\n  \"vim.insertModeKeyBindingsNonRecursive\": [\n    {\n      \"before\": [\"j\", \"k\"],\n      \"after\": [\"\u003cESC\u003e\"]\n    }\n  ],\n}\n```\n\n- **before**  就是你输入的命令\n- **after** 就是你映射的值，当你输入before里的值后就会执行after中映射的键\n\n在这个例子里，你可以在插入模式里把j和k当作ESC使用，不过这个设置就不是很实用，因为在插入模式里面j和k的输入需求也不少\n\n### 关于创建自定义映射的指导方针\n\n自定义映射比较灵活自由，但是不好的设置可能会给自己带来麻烦。\n\n一般来说，遵循以下3个原则会比较好：\n\n- 自定义映射用leader key打头来触发，一般是反斜杠`\\`，这样就不会和已有的键位发生冲突了\n- 如果你的工作流程中有经常使用的按键，那么映射替换vim默认的按键也是可以的。\n- 尽量使用更容易记忆的映射，比如vim的 c表示change，d表示delete\n\n### 自定义前导键(leader key)\n\n你也可以把leader key改成比反斜杠更容易输入的键。\n\n比如说你想把leader key改成空格键\n\n```json\n{\n\"vim.leader\": \"\u003cSpace\u003e\",\n}\n```\n\n### 下面比较好的映射的例子\n\n#### 让正常模式的上下移动更快\n\n这个改动遵循了一个vim的一个理念，就是大写字母命令会比小写版本的更强。\n\n所以大写的J会比小写的移动更快。\n\n但是我们在这里覆盖了一个比较有用的vim默认按键J，这个按键的作用是合并当前行和下一行。但是这个键的使用频率其实不高\n\nK键是用作关键词搜索，不过在VSCodeVim中还没有实现这个功能\n\n```json\n{\n  \"vim.normalModeKeyBindingsNonRecursive\": [\n    {\n      \"before\": [\"J\"],\n      \"after\": [\"5\", \"j\"]\n    },\n    {\n      \"before\": [\"K\"],\n      \"after\": [\"5\", \"k\"]\n    },\n  ]\n}\n```\n\n为了保持合并行功能，我们把它加到leader key里\n\n```json\n{\n  \"vim.normalModeKeyBindingsNonRecursive\": [\n    {\n      \"before\": [\"\u003cLeader\u003e\", \"j\"],\n      \"after\": [\"J\"]\n    },\n  ]\n}\n```\n\n#### 在分屏间快速切换\n\n```json\n{\n  \"vim.normalModeKeyBindingsNonRecursive\": [\n    {\n      \"before\": [\"\u003cC-h\u003e\"],\n      \"after\": [\"\u003cC-w\u003e\", \"h\"]\n    },\n    {\n      \"before\": [\"\u003cC-j\u003e\"],\n      \"after\": [\"\u003cC-w\u003e\", \"j\"]\n    },\n    {\n      \"before\": [\"\u003cC-k\u003e\"],\n      \"after\": [\"\u003cC-w\u003e\", \"k\"]\n    },\n    {\n      \"before\": [\"\u003cC-l\u003e\"],\n      \"after\": [\"\u003cC-w\u003e\", \"l\"]\n    }]\n}\n```\n\n#### 处理标签更方便\n\n因为VSCodeVim中处理标签唯一的方式是命令模式输入命令，所以你可以用按键映射来代替这一点\n\ncommands键就是用来替换命令模式的扩展命令的\n\n```json\n{\n  \"vim.normalModeKeyBindingsNonRecursive\": [\n    {\n      \"before\": [\"\u003cLeader\u003e\", \"t\", \"t\"],\n      \"commands\": [\":tabnew\"]\n    },\n    {\n      \"before\": [\"\u003cLeader\u003e\", \"t\", \"n\"],\n      \"commands\": [\":tabnext\"]\n    },\n    {\n      \"before\": [\"\u003cLeader\u003e\", \"t\", \"p\"],\n      \"commands\": [\":tabprev\"]\n    },\n    {\n      \"before\": [\"\u003cLeader\u003e\", \"t\", \"o\"],\n      \"commands\": [\":tabo\"]\n    }]\n}\n```\n\n#### 清除文本高亮\n\n当你使用搜索命令的时候（`/`和`?`），匹配项会被高亮，为了清除高亮你需要扩展命令`:noh`(no higlighting)\n\n这个任务很常见，我们可以创建下面的按键映射\n\n```json\n{\n  \"vim.normalModeKeyBindingsNonRecursive\": [\n    {\n      \"before\": [\"\u003cLeader\u003e\", \"/\"],\n      \"commands\": [\":noh\"]\n    }]\n}\n```\n\n这里的助记法是，斜杠是被用来搜索的，所以前导键加斜杠就是和搜索最相关的撤销高亮\n\n### 使用自定义映射影响vscode的action\n\n下面的例子就是用 leader+w来触发保存文件\n\n\n\n```json\n{\n  \"vim.normalModeKeyBindingsNonRecursive\": [\n    {\n      \"before\": [\"leader\", \"w\"],\n      \"commands\": [\n          \"workbench.action.files.save\",\n      ]\n    }\n}\n```\n\n找到设置**Preferences: Open Keyboard Shortcuts**，你就可以看到vscode里面命令的全名，然后你就可以替换你想替换的命令了。\n\n\n\n下面是例子\n\n`CTRL-SHIFT-P`是打开命令面板，我们替换成前导键+p\n\n`CTRL-T`  是**Go To Symbol in Workspace**，我们替换成前导键+t\n\n```json\n{\n  \"vim.normalModeKeyBindingsNonRecursive\": [\n    {\n      \"before\": [\"\u003cLeader\u003e\", \"p\"],\n      \"commands\": [\n          \"workbench.action.showCommands\",\n      ]\n    },\n    {\n      \"before\": [\"\u003cLeader\u003e\", \"t\"],\n      \"commands\": [\n          \"workbench.action.gotoSymbol\",\n      ]\n    }\n  ]\n}\n```\n\n## 13.使用vim插件更快的移动\n\n[Vim-sneak](https://github.com/justinmk/vim-sneak) 和[vim-EasyMotion](https://github.com/easymotion/vim-easymotion) 是能够帮助你在vim里快速移动的插件\n\nVSCodeVim 内置了这两个插件，不过需要你在设置里开启才能使用。\n\n## 14.增强vscode的文件浏览器\n\n **`\u003cCTRL-W\u003e h`**  切换到vscode的文件浏览器\n\n- **`k`** 和 **`j`** 在文件浏览器的条目中上下移动\n- Expand directories with\n-  **`l`** (right) 用于展开文件夹\n-  **`h`** (left) 用于折叠文件夹\n- 使用 **`l`** (right)打开光标下的文件\n\n记住vscode的其他快捷键会很有用\n\n- **Go To File** with `CMD-P` in Mac (or `CTRL-P` in Windows/Linux)\n- **Go To Symbol in File** with `CMD-SHIFT-O` in Mac (or `CTRL-SHIFT-O` in Windows/Linux)\n- **Go To Symbol in Workspace** with with `CMD-T` in Mac (or `CTRL-T` in Windows/Linux)\n\n你在弹出的面板里面也可以用k和j或者tab选择，enter进入"}},"__N_SSG":true},"page":"/posts/[id]","query":{"id":"vim使用指南"},"buildId":"iJCIc7U3FF7gqUKpSm2O0","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
+</code></pre>
+<h2>13.使用vim插件更快的移动</h2>
+<p><a href="https://github.com/justinmk/vim-sneak" target="_blank">Vim-sneak</a> 和<a href="https://github.com/easymotion/vim-easymotion" target="_blank">vim-EasyMotion</a> 是能够帮助你在vim里快速移动的插件</p>
+<p>VSCodeVim 内置了这两个插件，不过需要你在设置里开启才能使用。</p>
+<h2>14.增强vscode的文件浏览器</h2>
+<p><strong><code>&lt;CTRL-W&gt; h</code></strong>  切换到vscode的文件浏览器</p>
+<ul>
+<li><strong><code>k</code></strong> 和 <strong><code>j</code></strong> 在文件浏览器的条目中上下移动</li>
+<li>Expand directories with</li>
+<li><strong><code>l</code></strong> (right) 用于展开文件夹</li>
+<li><strong><code>h</code></strong> (left) 用于折叠文件夹</li>
+<li>使用 <strong><code>l</code></strong> (right)打开光标下的文件</li>
+</ul>
+<p>记住vscode的其他快捷键会很有用</p>
+<ul>
+<li><strong>Go To File</strong> with <code>CMD-P</code> in Mac (or <code>CTRL-P</code> in Windows/Linux)</li>
+<li><strong>Go To Symbol in File</strong> with <code>CMD-SHIFT-O</code> in Mac (or <code>CTRL-SHIFT-O</code> in Windows/Linux)</li>
+<li><strong>Go To Symbol in Workspace</strong> with with <code>CMD-T</code> in Mac (or <code>CTRL-T</code> in Windows/Linux)</li>
+</ul>
+<p>你在弹出的面板里面也可以用k和j或者tab选择，enter进入</p></div></div><div draggable="true" class="bg-pink-50 left-2 top-14 fixed shadow rounded w-1/5" style="min-width:10rem"><div class="absolute"><svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3262" width="22" height="22"><path d="M91.89 238.457c-29.899 0-54.133 24.239-54.133 54.134 0 29.899 24.234 54.137 54.133 54.137s54.138-24.238 54.138-54.137c0-29.896-24.239-54.134-54.138-54.134z" fill="#E5594F" p-id="3263"></path><path d="M91.89 462.463c-29.899 0-54.133 24.239-54.133 54.139 0 29.895 24.234 54.133 54.133 54.133s54.138-24.238 54.138-54.133c0-29.9-24.239-54.139-54.138-54.139z" fill="#C45FA0" p-id="3264"></path><path d="M91.89 686.475c-29.899 0-54.133 24.237-54.133 54.133 0 29.899 24.234 54.138 54.133 54.138s54.138-24.238 54.138-54.138c0-29.896-24.239-54.133-54.138-54.133z" fill="#F39A2B" p-id="3265"></path><path d="M941.26 234.723H328.964c-28.867 0-52.263 23.4-52.263 52.268v3.734c0 28.868 23.396 52.269 52.263 52.269H941.26c28.869 0 52.269-23.401 52.269-52.269v-3.734c-0.001-28.868-23.4-52.268-52.269-52.268z" fill="#F0D043" p-id="3266"></path><path d="M941.26 682.74H328.964c-28.867 0-52.263 23.399-52.263 52.268v3.734c0 28.863 23.396 52.269 52.263 52.269H941.26c28.869 0 52.269-23.405 52.269-52.269v-3.734c-0.001-28.868-23.4-52.268-52.269-52.268z" fill="#4A5699" p-id="3267"></path><path d="M709.781 458.729H328.964c-28.867 0-52.263 23.4-52.263 52.269v3.734c0 28.873 23.396 52.269 52.263 52.269h380.817c28.866 0 52.271-23.396 52.271-52.269v-3.734c0.001-28.869-23.405-52.269-52.271-52.269z" fill="#E5594F" p-id="3268"></path></svg></div><div class="absolute right-0  transition duration-500 transform rotate-180"><svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1196" width="22" height="22"><path d="M432.2304 103.2192c-9.216-6.5536-22.016-4.3008-28.5696 4.9152-6.5536 9.216-4.3008 22.016 4.9152 28.5696l59.0848 41.7792 3.2768 2.2528c-71.8848 9.9328-138.3424 42.8032-190.5664 95.0272-63.3856 63.3856-98.2016 147.5584-98.2016 237.1584 0 45.568 9.0112 89.7024 26.7264 131.3792 17.1008 40.1408 41.5744 76.1856 72.704 107.008 3.9936 3.9936 9.216 5.9392 14.4384 5.9392 5.3248 0 10.5472-2.048 14.5408-6.0416 7.9872-7.9872 7.8848-20.992-0.1024-28.9792-56.32-55.7056-87.2448-130.048-87.2448-209.2032 0-78.6432 30.6176-152.576 86.2208-208.1792 46.4896-46.4896 105.8816-75.5712 169.984-83.7632l-2.9696 3.072-52.4288 52.9408c-7.9872 7.9872-7.8848 20.992 0.1024 28.9792 3.9936 3.9936 9.216 5.9392 14.4384 5.9392 5.3248 0 10.5472-2.048 14.5408-6.0416l109.4656-110.4896-130.3552-92.2624zM841.9328 511.0784c0-45.568-9.0112-89.7024-26.7264-131.3792-17.1008-40.1408-41.5744-76.1856-72.704-107.008-3.9936-3.9936-9.216-5.9392-14.4384-5.9392-5.3248 0-10.5472 2.048-14.5408 6.0416-7.9872 7.9872-7.8848 20.992 0.1024 28.9792 56.32 55.7056 87.2448 130.048 87.2448 209.2032 0 78.6432-30.6176 152.576-86.2208 208.1792-46.4896 46.4896-105.8816 75.5712-169.984 83.7632l2.9696-3.072 52.4288-52.9408c7.9872-7.9872 7.8848-20.992-0.1024-28.9792-3.9936-3.9936-9.216-5.9392-14.4384-5.9392-5.3248 0-10.5472 2.048-14.5408 6.0416L461.6192 828.7232l130.1504 92.0576c9.216 6.5536 22.016 4.3008 28.5696-4.9152 6.5536-9.216 4.3008-22.016-4.9152-28.5696l-59.0848-41.7792-3.2768-2.2528c71.8848-9.9328 138.3424-42.8032 190.5664-95.0272 63.3856-63.3856 98.304-147.5584 98.304-237.1584z" p-id="1197"></path></svg></div><div class="font-bold   pl-7 select-none cursor-move">目录</div><div class="overflow-auto" style="max-height:70vh"><ul class="flex flex-col"></ul></div></div></main></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"id":"vim使用指南","title":"vim使用指南","lastUpdated":1618646092,"content":"# vim使用指南\n\n下面主要是针对vscode-vim的使用指南，1-9节的内容是通用的，但是后面的内容是vscode-vim特有的功能。\n\n## 01.最基本操作\n  vim有三种模式：\n  1. 按`ESC`进入正常模式（normal）\n  2. 在正常模式下按i，进入插入模式（insert）\n  3. 在正常模式下按`:`键进入命令模式\n\n  三个模式里面只有插入模式是用于输入文本的,正常模式是用于编辑文本的，包括移动光标，复制粘贴删除等\n  命令模式可以用来执行搜索，批量替换等\n\n在正常模式下，移动光标可以用以下几个字幕或者方向键\n\n```\n           ↑\n     ← h j k l →\n         ↓\n```\n\n在插入模式下，按 `\u003cESC\u003e`, `\u003cCTRL-[\u003e` or `\u003cCTRL-C\u003e` 返回正常模式\n\n### 在vim中打开文件\n\n- `:e \u003cfilename\u003e` 打开名为 filename 的文件，若文件不存在则创建之\n- `:Ex` 在 Vim 中打开目录树，光标选中后回车打开对应文件（提示：`-` 进入上级目录）\n\n### 显示buffer列表\n\n你可以用 `:buffers` 或 `:ls` 命令查看\n\n\u003e - `:bn` 打开缓存中下一个文件\n\u003e - `:bp` 打开缓存中上一个文件\n\u003e - `:b\u003cN\u003e` 打开缓存中第 N 个文件\n\u003e - 你也可以使用 `:bdelete\u003cN\u003e` 来删除所要关闭的缓冲区，缩写 `:bd\u003cN\u003e`。\n\n### 保存文件\n\n- `:w` 保存当前文件\n\n- `:wa` 保存全部文件\n\n- `:wq` or `ZZ` 保存并退出,或者`:x`也是保存并退出\n\n- `:q!` or `ZQ` 强制退出，不保存\n\n- `:saveas \u003cnew filename\u003e` 文件另存为\n\n- `:w \u003cnew filename\u003e` 文件另存一份名为 `\u003cnew filename\u003e` 的副本并继续编辑原文件\n\n  \n\n### 简单设置vim\n\n“工欲善其事，必先利其器”。尽管 Vim 非常强大，但默认配置的 Vim 看起来还是比较朴素的，为了适合\n我们的开发需求，要对 Vim 进行一些简单的配置。\n\n- `:set number` 显示行号\n- `:set relativenumber` 显示相对行号（这个非常重要，慢慢体会）\n- `:set hlsearch` 搜索结果高亮\n- `:set autoindent` 自动缩进\n- `:set smartindent` 智能缩进\n- `:set tabstop=4` 设置 tab 制表符所占宽度为 4\n- `:set softtabstop=4` 设置按 `tab` 时缩进的宽度为 4\n- `:set shiftwidth=4` 设置自动缩进宽度为 4\n- `:set expandtab` 缩进时将 tab 制表符转换为空格\n- `:filetype on` 开启文件类型检测\n- `:syntax on` 开启语法高亮\n\n这里列出的是命令，你可以通过在 Vim 中输入进行设置，但这种方式设置的参数只在本次关闭 Vim 前生效，\n如果你退出 Vim 再打开，之前的设置就失效了。\n\n若要永久生效，需要修改 Vim 的一个自动配置文件，一般文件路径是 `/home/\u003cuser\u003e/.vimrc`（Linux\n系统）或 `/Users/\u003cuser\u003e/.vimrc`（Mac OS 系统）\n\n如果没有就新建一个，以 Mac OS 系统为例：\n\n\u003e 在控制台执行如下命令，每行结尾记得回车\n\n```bash\ncd ~\nvim .vimrc\n```\n\n\u003e 现在你已经在 Vim 中打开了你的 Vim 专属配置文件，将上面提到的配置复制到你的文件中，记得要删除\n\u003e 每行开头的 `:`\n\u003e\n\u003e 修改完成执行 `:wq` 或者 `ZZ` 保存退出，再次进入 Vim 时，你的这些配置就已经生效了\n\u003e\n\u003e 当然，机智如我也为你准备好了一份 [vimrc](vimrc.vim) 样本文件，你可以在控制台执行\n\u003e `cp vimrc.vim ~/.vimrc` 直接使用，再次启动 Vim 或在 Vim 中执行  `:source ~/.vimrc`你的配置就\n\u003e 应该生效了。\n\n_**[ AD ]** 当然你也可以在我维护的另外一个项目 [The 7th Vim](https://github.com/dofy/7th-vim) 中找到一个更为完整的配置方案。_\n\n#### 清除搜索高亮\n\n前面提到的配置中，有一项是高亮全部搜索结果 `:set hlsearch`，其作用是当你执行 `/`\n、`?`、`*` 或 `#` 搜索后高亮所有匹配结果。\n\n\u003e 如果你已经设置了这个选项，尝试执行 `/set`\n\n看到效果了吧，搜索结果一目了然，但这有时候也是一种困扰，因为知道搜索结果后高亮就没用了，但高亮\n本人并不这样认为，它会一直高亮下去，直到你用 `:set nohlsearch` 将其关闭。\n\n但这样需要就打开，不需要就关闭也不是个办法，有没有更好的解决方案呢？当然！请看下面的终极答案：\n\n\u003e **再搜一个不存在的字符串**\n\n通常我用来清除搜索高亮的命令是 `/lfw`，一是因为 `lfw` 这个组合一般不会出现（不适用于\n本文档...），二是这三个字母的组合按起来比较舒服，手指基本不需要怎么移动（你感受一下）。\n\n#### 重复上一次命令\n\nVim 有一个特殊的命令 `.`，你可以用它重复执行上一个命令。\n\n#### 缩进\n\n- `\u003e\u003e` 向右缩进当前行\n- `\u003c\u003c` 向左缩进当前行\n\n#### 自动排版\n\n- `==` 自动排版当前行\n- `gg=G` 当前文档全文自动排版\n- `\u003cN\u003e==` 对从当前行开始的 N 行进行自动排版\n- `=\u003cN\u003ej` 对当前行以及向下 N 行进行自动排版\n- `=\u003cN\u003ek` 对当前行以及向上 N 行进行自动排版\n\n### 窗口分屏\n\n工作中经常会遇到这种情况，就是需要参照其他文档编辑当前文档（场景：翻译），或者从另外一个文档\ncopy 代码到当前文档（场景：复制 html 元素类名到 css 文档），这时候就是你最需要分屏的时候。\n\n#### 分屏方式\n\n- `:split` 缩写 `:sp` or `Ctrl-w s` 上下分屏\n- `:vsplit` 缩写 `:vs` or `Ctrl-w v` 左右分屏\n- `:diffsplit` 缩写 `:diffs` diff 模式打开一个分屏，后面可以加上 {filename}\n\n#### 窗口跳转\n\n- `Ctrl-w w` 激活下一个窗口\n- `Ctrl-w j` 激活下方窗口\n- `Ctrl-w k` 激活上方窗口\n- `Ctrl-w h` 激活左侧窗口\n- `Ctrl-w l` 激活右侧窗口\n\n#### 移动分屏\n\n- `Ctrl-w L` 移动到最右侧\n- `Ctrl-w H` 移动到最左侧\n- `Ctrl-w K` 移动到顶部\n- `Ctrl-w J` 移动到底部\n\n_注意：区分大小写。另外，可以将底部的屏幕移动到右侧，实现上下分屏到左右分屏的转换。_\n\n#### 屏幕缩放\n\n- `Ctrl-w =` 平均窗口尺寸\n- `Ctrl-w +` 增加高度\n- `Ctrl-w -` 缩减高度\n- `Ctrl-w _` 最大高度\n- `Ctrl-w \u003e` 增加宽度\n- `Ctrl-w \u003c` 缩减宽度\n- `Ctrl-w |` 最大宽度\n\n#### 标签页\n\n#### 创建标签页\n\n- `:tabnew` or `:tabedit` 缩写 `:tabe` 打开新标签页\n- `Ctrl-w gf` 在新标签页中打开当前光标所在位置的文件名\n\n_注意：`:tabnew` 和 `:tabedit` 后面都可以跟一个 \u003c空格\u003e\u003c文件名\u003e 用以在新标签页中\n打开指定文件，还可以在 `:` 后面加一个数字，指出新标签页在列表中的位置（从 0 开始）。_\n\n#### 切换标签页\n\n- `gt` or `:tabnext` 缩写 `:tabn` 下一个标签页（最后一个会循环到第一个）\n- `gT` or `:tabprevious` 缩写 `:tabp` 上一个标签页（第一个会循环到最后一个）\n- `:tabrewind` 缩写 `:tabr` or `:tabfirst` 缩写 `:tabfir` 到第一个\n- `:tablast` 缩写 `:tabl` 到最后一个标签页\n\n#### 关闭标签页\n\n- `:tabclose` 缩写 `:tabc` 关闭当前标签页\n- `:-tabc` 关闭上一个标签页\n- `:+tabc` 关闭下一个标签页\n- `:tabonly` 缩写 `:tabo` 关闭其他标签\n\n## 02.更快地移动光标 motion\n\n### `w` ,`b `,`W`,` B`,` e`,` g`,`e` 以单词为间隔移动光标\n\n* w是后移\n* b是向前\n* W是后移包含符号的单词\n* B是前移包含符号的单词\n* e 移动到单词的尾部\n* ge 移动到上一个单词的尾部\n\nw和W的区别是word和words的区别，word只包括`a-zA-Z0-9`，words还包含空字符，空格，EOL等\n\n### 使用查找来跳转\n\n- `f `移动到本行下一个特定的字母和符号，`F `移动到本行前一个特定的字母\n- 你也可以使用`t`和`T`，他的光标在搜索的字母之前\n\n当你使用了`f{character}`之后，你可以用`;`向后重复查找，或者使用`,`向前重复查找\n\n* `f`   在同一行向后搜索第一个匹配\n\n* `F`   在同一行向前搜索第一个匹配\n\n* `t`   在同一行向后搜索第一个匹配，并停在匹配前\n\n* `T`   在同一行向前搜索第一个匹配，并停在匹配前\n\n* `;`   在同一行重复最近一次搜索\n\n* `,`   在同一行向相反方向重复最近一次搜索\n\n  \n\n  \n\n* `/{pattern}` 向下搜索\n\n* `?{pattern}` 向上搜索\n\n* `*`向后查找当前光标所在的单词\n\n* `#`向前查找当前光标所在的单词\n\n  输入上面的按回车就进入搜索模式，可以用`n`（向下）和`N`在搜索到的词之间移动\n\n  注意n的方向性和你之前查找的方向是一致的\n\n  查找会高亮词汇,`:nohl`命令可以取消高亮\n\n### 匹配查找\n\nVim 中可以使用 `%` 对 `(` 和 `)`，`[` 和 `]`，`{` 和 `}` 进行匹配查找，当光标位于其中一个\n符号上时，按下 `%`，光标会跳到与之匹配的另外一个符号上\n\n### `0` `^` `$` `g_` 移动到行末或行尾\n\n* `0 `移动到这行的最开头字母\n* `^` 移动到本行最开头的非空字母\n* `$` 移动到本行最尾部\n* `g_`移动到本行最尾部的非空字母\n* `n|`跳转到本行第n列\n\n### `｛` `｝` `(` `)`以句子或段落为间隔移动\n\n- `(`   跳到前一个句子\n- `)`   跳到下一个句子\n- `{  ` 跳转到上一个段落\n- `}`  跳转到下一个段落\n\n\n\n### 滚动页面，翻页 CTRL+D  CTRL+U\n\n- `Ctrl-y`    向上滚动一行\n- `Ctrl-e`    向下滚动一行\n- `Ctrl-u`    向上滚动半屏\n- `Ctrl-d`    向下滚动半屏\n- `Ctrl-b`    向上滚动一屏\n- `Ctrl-f`    向下滚动一屏\n\n也可以相对于当前行进行滚动\n\n- `zt `   将当前行置于屏幕顶部附近\n- `zz`   将当前行置于屏幕中央\n- `zb`    将当前行置于屏幕底部\n\n\n\n\n\n### 按照数字移动\n\n数字在通常模式里，可以重复执行一个命令多次。\n\n{count}{command}\n\n比如`2w`就是向下移动两个单词\n\n`5j`，就是向下移动5行\n\n`2/count`就是跳转到第二个搜索到的count位置\n\n### 使用命令跳转\n\n* `:\u003cline number\u003e`跳转到第几行 ，相当于` \u003cline number\u003egg` \n* `:+\u003cline number\u003e`向下跳转几行 ，相当于` \u003cline number\u003ej`\n* `:-\u003cline number\u003e`向上跳转到第几行 ，相当于` \u003cline number\u003ek`  \n\n### `gd`跳转到定义，`gf`跳转到文件名所指向的文件\n\n\n\n### `｛line｝gg` 跳转到指定行\n\n* `gg` 跳转到文件开头\n* `G` 跳转到文件结尾\n* `｛line｝gg` 跳转到文件指定行，或者也可以用`{line}G`\n* `%`，跳转到 匹配括号的开始和结尾`({[]})`\n* `n%`,文件百分比跳转\n\n### `m`标记位置\n\n比如`ma`就是用a标签标记一个位置，你之后就可以用``a`来跳转到你标记的a位置\n\n其中\n\n- ``a`是精确回到a标签的位置(行和列)\n- `'a`    跳转到a标签的行\n\n语法是 \n\n```\nm{a-zA-Z}\n```\n\n其中小写字母是局部标签，大写字母是全局标签\n\n使用`:marks`查看所有标签\n\n### 窗格间跳转\n\n- `H`   跳转到屏幕的顶部\n- `M`   跳转到屏幕的中间\n- `L`   跳转到屏幕的底部\n- `nH`  跳转到距离顶部n行的位置\n- `nL`  跳转到距离底部n行的位置\n\n### 代码跳转\n\n- `ctrl+]`跳转到函数或者变量定义处\n- `ctrl+o`或`ctrl+T`返回跳转前位置\n- `gi`跳转到之前离开normal模式的位置(也就是上次编辑的位置了)\n- `gI`跳转到之前离开normal模式的那一行开头并进入normal模式\n- `gd` 跳转到函数或者变量定义处\n- `gf` 跳转到文件\n\n## 03.编辑相关操作\n\n关于编辑操作的语法是这样的\n\n```\n{operator}{count}{motion}\n```\n\n* operator是具体的操作，比如delete，change，\n* count 是操作执行的次数\n* motion是操作执行的位置\n\n举个例子,`d2w`是向下删除两个单词\n\n\n\n这些操作可以用一些英语首字母帮助记忆\n\n\u003e - d for delete\n\u003e - f for find\n\u003e - c for change\n\u003e - t for until\n\n\n\n### `d` 剪切（删除）操作\n\n`d`其实是剪切的功能，只不过剪切之后不粘贴回去相当于删除。\n\n* 删除当前行 `dd`\n* `dw`删除下一个单词\n* `ggdG`删除整个文件，拆解一下就好理解，gg跳到文件开头，然后执行删除，删到文件末尾。\n* `D`删除当前行光标之后的内容，等价于`d$`\n\n- `s` 删除当前字符，并进入 `INSERT` 模式\n- `S` 删除当前行并保存到 Vim 剪贴板，同时进入 `INSERT` 模式（等同于 `cc`）\n- `x` 删除当前字符，相当于 insert 模式下的 `Delete`\n- `X` 删除前一个字符，相当于 insert 模式下的 `Backspace\n- `cc` 删除当前行并保存到 Vim 剪贴板，同时进入 `INSERT` 模式\n- `c\u003cX\u003e` 删除指定内容并保存到 Vim 剪贴板，同时进入 `INSERT` 模\n\n### `u` 撤销前一步操作 `CTRL+R`重做前一步\n\n- `U`撤销所有操作，使文件回到原样\n- 在插入模式下可以使用 `Ctrl-G u` 会生成一个断点，之后你就可以用u还原到这个断点\n-  `:wundo` 保存一份撤销历史记录，它会创建一个**.undo**文件，里面存放的是你的历史记录。这样当你打开一个新文件的时候，可以通过 `:rundo` 来加载 undo 历史。\n- Vim 可以通过变量 `undolevels` 来选择最多可执行 undo 的次数。你可以通过 `:echo \u0026undolevels` 来查看当前的配置。\n\n时间旅行\n\n你可以使用 `:undolist` 去查看之前所做的修改。 `:earlier` 可以加上分钟 (`m`), 小时 (`h`), and 天 (`d`) 作为参数。\n\n```\n:earlier 10s    恢复到10秒前的状态\n:earlier 10m    恢复到10分钟前的状态\n:earlier 10h    恢复到10小时前的状态\n:earlier 10d    恢复到10天前的状态\n```\n\n### `c` 删除并进入插入模式\n\n* `cc`删除一整行并进入插入模式\n* `C`删除本行光标后的内容并进入插入模式\n* `cw`删除下一个单词并进入插入模式\n\n### `.` 重复上次产生改变的操作\n\n以下几种类型会被视为一个可以重复的改变\n\n- `d{motion}` \n\n- `i{typeSomething}\u003cESC\u003e` \n\n-  `c{typeSomething}\u003cESC\u003e` \n\n  \n\n使用c带来的可重复性比d会高很多\n\n举个例子,当我们想修改下面这句话的`courteously`为`polite`,我们移动到单词开头执行`cwpoliteESC`，就可以完成替换的工作，然后我们就可以用`.`操作符重复这个替换操作\n\n```javascript\nconst courteousSalute = \"I courteously salute you good person.\"\n```\n\n效率更高的是我们搜索和操作符，这样省去了我们移动光标找单词的时间\n\n### 合并\n\n- `J` 将当前行与下一行合并\n\n### 替换操作\n\n- `r\u003cX\u003e` 将当前字符替换为 X\n- `gu\u003cX\u003e` 将指定的文本转换为小写\n- `gU\u003cX\u003e` 将指定的文本转换为大写\n- `:%s/\u003csearch\u003e/\u003creplace\u003e/` 查找 search 内容并替换为 replace 内容\n- `g~\u003cX\u003e`，小写变成大写，大写变成小写。\n\n### 文本对象\n\n文本对象就是结构化的文本，它描述一个文档中的单词，句子，段落，被引号的文本，html的tags等，你可以用这个和操作符结合来改变一个单词，句子，段落等等\n\n```\n            |- `a` means around\n            |- `i` means inner\n           /\n          /\n         /\n        {a|i}{text-object}\n                  /\n                 /\n                | w - word\n                | s - sentence\n                | p - paragraph\n                | \" - quotes\n                | t - html tags\n```\n\n和操作符结合就是这样：\n\n```\n{operator}{a|i}{text-object}\n```\n\n举个例子，假设你要修改下面的字符串，只要`fR`移动到R字母，然后执行`ci\"`,就可以输入你想输入的内容了。也就是修改引号内的内容。\n\n```\nconst poem = \"Roses are red\";\n```\n\n实际上上述操作还可以优化，因为文本对象，是自动应用的和你光标的位置无关，所以第一步的移动操作不需要。所以这个操作的可重复性，会比单纯的c要高。\n\n`\"`,`''`,和反引号操作符比较特殊，一般的wsp只有光标在文本对象上才会自动查找，而引号在同一行的前面和后面都没问题。\n\n\n\n关于around的作用是，用a代替i会影响到分隔符和空格比如引号，大括号，小括号作为文本对象的时候会把分隔符和空格一起删除，而用i不会删除分割符和空格\n\n\n\n### 其他操作\n\n* `y` （yank）复制\n  * yy 复制一行，和d，c这些键的逻辑是一样的\n  * Y 复制光标到行尾的内容\n* `p` (put)粘贴\n- `g~` (switch case): 把字母从小写变成大写\n* `\u003e` (shift right): 添加缩进\n* `\u003c` (shift left): 移除缩进\n* `=` (format code): 格式化代码\n\n\n\n### 更多简写\n\n- `x` 相当于 `dl`  删除光标下的字母\n- `X` 相当于 to `dh` 删除光标前的字母\n- `s` 相当于 `ch`, deletes 删除光标前的字母并且进入插入模式\n- `r` 将一个字母替换为另一个\n- `~`切换一个字母的大小写\n\nA nice way use case for `x` is to swap a couple of characters when you make a typo. You remove (and cut) a character with `x` and immediately paste it after the cursor with `p`. Try it!\n\n\n\n## 04.输入模式操作(insert)\n\n### `i`,`a`,`I`,`A`四种插入：\n\n- `i` 插入到光标所在字母\n- `a` 插入到光标后\n- `I` 插入到行首\n- `A` 插入到行尾\n\n### `o` ,`O`开启新一行\n\n* `o`  在当前行下方开新行\n* `O`   在当前行上方开新行\n\n\n\n#### `gi` 回到上次离开插入模式的地方开始输入\n\n我们发现g这个字母，通常用作其他操作的修饰符，比如e和ge，e是到单词的结尾，ge是到上一个单词结尾。\n\n还有一些命令\n\n- `s` 删除当前光标位置的字符并开始输入文本\n- `S`    删除当前行并开始输入文本\n- `gI`   在当前行的第一列的位置开始输入文本\n\n\n\n### 插入模式的删除快捷键\n\n这个快捷键小写也是生效的\n\n- `CTRL-H` 删除上次输入的字符并向左移动光标\n- `CTRL-W`  清楚上一个word\n- `CTRL-U`  删除上次输入的行\n\n### 退出插入模式\n\n- `\u003cESC\u003e`\n- `CTRL-C`\n- `CTRL-[`\n\n很多vim用户会习惯会在输入模式中把`ESC`映射到`jj`或者`jk`\n\n### 重复输入模式\n\n在进入输入模式之前传递一个数字参数，比如\n\n```\n10i\n```\n\n你输入的文本将被重复10次。这个方法对任意一种进入输入模式的方式都有效\n\n### 在输入模式中使用寄存器\n\n举例：`Ctrl-r a`\n\n```\nCtrl-r {register}\n```\n\n### 在输入模式下执行普通模式的命令\n\n在输入模式下， 如果你按下`Ctrl-o`，你就会进入到`insert-normal`（输入-普通）子模式。如果你关注一下左下角的模式指示器，通常你将看到`-- INSERT --` ，但是按下`Ctrl-o`后就会变为`-- (insert) --`。 在这一模式下，你可以执行一条普通模式的命令，比如你可以做以下这些事：\n\n**设置居中以及跳转**\n\n```\nCtrl-o zz       居中窗口\nCtrl-o H/M/L    跳转到窗口的顶部/中部/底部\nCtrl-o 'a       跳转到标志'a处\n```\n\n**重复文本**\n\n```\nCtrl-o 100ihello    输入 \"hello\" 100 次\n```\n\n**执行终端命令**\n\n```\nCtrl-o !! curl https://google.com    运行curl命令\nCtrl-o !! pwd                        运行pwd命令\n```\n\n**快速删除**\n\n```\nCtrl-o dtz    从当前位置开始删除文本，直到遇到字母\"z\"\nCtrl-o D      从当前位置开始删除文本，直到行末\n```\n\n## 05.视觉模式选中文本(visual mode)\n\n- `v`  字母长度的选择\n- `V`  选择行\n- `Ctrl-V` 块选择模式\n\n\n\n选择的语法如下\n\n```\nget into Visual Mode\n    /\n   /                  action to apply\n  /                         /\n---------                  /\n{v|V|C-V}{count}{motion}{operator}\n         ---------------\n           /\n          /\n   bit of text over which\n   to apply an action\n```\n\n在视觉模式中，可以用 `o`或`O`切换光标的位置\n\n### `ctrl+v`块选择模式\n\n块选择模式比较特殊，适合批量在前方或尾部插入的场景。\n\n如果需要在每行末尾添加分号：\n\n```\nconst one = \"one\"\nconst two = \"two\"\nconst three = \"three\"\n```\n\n将光标放在第一行上： -运行逐块可视模式，并向下两行(`Ctrl-V jj`)。 -高亮显示到行尾(`$`)。 -附加(`A`) ，然后键入\";\"。 -退出可视模式(`esc`)。\n\n\n\n总体来说在视觉模式下的操作会更加直观，相比于normal模式能清晰地看到自己想要编辑的区域。\n\nVim有`Ctrl-X`和`Ctrl-A`命令来减少和增加数字。与可视模式一起使用时，可以跨多行递增数字。\n\n```\n`\u003c    转到上一个可视模式高亮显示的最后一个位置\n`\u003e    转到上一个可视模式高亮显示的第一位\n```\n\n您也可以从插入模式进入可视模式。在插入模式下进入字符可视模式：\n\n```\nCtrl-O v\n```\n\n### 常用操作\n\n* `ggvG`全选  \n\n\n\n## 06.更迅速地执行搜索操作\n\n之前我们已经学到了用`/`进入搜索，按下回车后，可以用`n`在搜索的关键词之间移动。此时我们可以执行一个修改操作，然后n到下一个用`.`操作复现。下面有一种更便捷的方式\n\n### `gn`  选中下一个搜索块\n\n有了gn以后，我们就不需要按一下n在复现删除\n\n我们直接搜索，然后gn选中第一个搜索关键词，在删除，之后用`.`就可以复现选择关键词然后删除的操作。\n\n可以dgn也可以gnd，效果是一样的，然后 `4.`可以重复这个操作4词\n\n## 07.复制和粘贴\n\n* `y`复制\n\n* `p`和`P`分别是向下拷贝和向上拷贝\n\n`gp` 和 `gP`粘贴的时候光标位置不同，光标会在粘贴的内容往后一个字符的位置，也就是会包含换行符\n\n\n\n`d`，`c`和`p`实现剪切和粘贴\n\n\n\n### vim寄存器 Vim Registers\n\n-  **unnamed register** `\"` 是拷贝或者剪切的内容不指定寄存器时默认存放的位置\n- **named registers** `a-z` ，命名寄存器，你可以为接下来剪切或者复制的内容指定特定的a-z的字符的寄存器\n- **yank register** `0` 存储了你上次复制的东西\n- **cut registers** `1-9` 存储了你之前9次剪切操作的内容，包括d和c操作\n\n举个例子 `\"ayas`会复制一个句子，然后存储在寄存器`a`，也就是说语法是`\"{register}`后面跟你的复制剪切操作就会把东西存到指定的寄存器里，当你想粘贴的时候，`\"ap`,也是同样的\n\n使用寄存器的大写字母，表示继续往那个寄存器添加复制或剪切的内容。\n\n\n\n### 查看寄存器的内容\n\n`:reg`命令可以查看你的所有寄存器，是`:register`的缩写   ，你也可以查看指定寄存器的内容`:reg {register}`\n\n### 更多寄存器相关的内容\n\n实际上vim一共有下面10种寄存器\n\n1. 匿名寄存器（`\"\"`）\n2. 编号寄存器(`\"0-9`).\n3. 小删除寄存器 (`\"-`).\n4. 命名寄存器 (`\"a-z`).\n5. 只读寄存器 (`\":`, `\".`,and `\"%`).\n6. Buffer交替文件寄存器 (`\"#`).\n7. 表达式寄存器 (`\"=`).\n8. 选取和拖放寄存器(`\"*` and `\"+`).\n9. 黑洞寄存器 (`\"_`).\n10. 搜索模式寄存器 (`\"/`).\n\n**匿名寄存器**\n\n匿名寄存器默认存储着你最近一次复制，修改或删除的文本。直接使用`p`，就是粘贴匿名寄存器的内容。相当于`\"\"p`\n\n**编号寄存器**\n\n编号寄存器1-9是自动以升序来填充的，也就是说存放你的上9次剪切操作，`0`标号的寄存器只会存上次复制的内容\n\n**小删除寄存器**\n\n不足一行的修改或者删除都不会被存储在0-9号编号寄存器中，而是会被存储在小删除寄存器 (`\"-`)中。\n**命名寄存器 (`\"a-z`)**\n\n命名寄存器是Vim中用法最丰富的寄存器。a-z命名寄存器可以存储复制的，修改的和被删除的文本。不像之前介绍的3种寄存器一样，它们会自动将文本存储到寄存器中，你需要显式地告诉Vim你要使用命名寄存器，你拥有完整的控制权。\n\n**只读寄存器(\":, \"., \"%)**\n\n- `·`    存储上一个输入的文本\n- `:    `  存储上一次执行的命令\n- `%`    存储当前文件的文件名\n\n**Buffer交替文件寄存器 (\"#)**\n\n在Vim中，`#`通常代表交替文件。交替文件指的是你上一个打开的文件，想要插入交替文件的名字的话，可以使用命令`\"#p`。\n\n**表达式寄存器 (`\"=`)**\n\nVim有一个表达式寄存器，`\"=`,用于计算表达式的结果。表达式是Vim中非常宏大的一个话题，所以我只会在这里介绍一些基础知识，我将会在之后的章节中进一步讲解更多关于表达式的细节。\n\n你可以使用以下命令计算数学表达式`1+1`的值：\n\n```\n\"=1+1\u003cEnter\u003ep\n```\n\n在这里，你在告诉Vim你正在使用表达式寄存器`\"=`，你的表达式是（`1+1`），你还需要输入`p`来的到结果。正如之前所提到的，你也可以在输入模式中访问寄存器。想要在输入模式中计算数学表达式的值，你可以使用：\n\n```\nCtrl-r =1+1\n```\n\n你可以使用`@`来从任何寄存器中获取表达式并用表达式寄存器计算其值。如果你希望从寄存器\"a\"中获取文本：\n\n```\n\"=@a\n```\n\n之后输入`\u003center\u003e`，再输入`p`。类似地，想在输入模式中得到寄存器\"a\"中的值可以使用：\n\n```\nCtrl-r =@a\n```\n\n你也能使用表达式寄存器来计算Vim脚本的值。如果你使用`:let i = 1`定义一个变量`i`,你可以用`\"=i`获取到它的值，按下回车，再按下`p`。想在输入模式中获取到这个值的话可以运行命令`Ctrl-r=i`。\n\n假设你有一个方程：\n\n```\nfunction! HelloFunc()\n\treturn \"Hello Vim Script!\"\nendfunction\n```\n\n你可以通过调用这个方程获取它的值。想要在普通模式中调用这个方程，你可以使用：`\"=HelloFunc()`, 按下回车再按下`p`。而在输入模式下可以使用`Ctrl-r =HelloFunc()`。\n\n**选取和拖放寄存器 (`\"*`, `\"+`)**\n\n当你向从外部程序复制粘贴一些文本到vim中是，可以使用这两个寄存器，但是你的vim需要开启`+clipboard`才有用\n\n如果你觉得这个操作比较麻烦，你也可以配置vim使得只用p也能粘贴外部程序复制的文本，在vimrc中加入下面一行就可以了：\n\n```\nset clipboard=unnamed\n```\n\n这样你从外部程序中复制文本时，就可以使用匿名寄存器p来进行粘贴\n\n**黑洞寄存器 (`\"_`)**\n\n如果你删除和修改文本的时候，不希望这次修改的内容被存到寄存器里，可以用黑洞寄存器\n\n想要删除一行并且不将其存储在任何寄存器中时，可以使用`\"_dd`命令，它是和 `/dev/null` 类似的寄存器。\n\n**搜索模式寄存器 (`\"/`)**\n\n这个寄存器里保存了你上一次搜索的内容\n\n\n\n\n\n**执行寄存器中存储的命令**，命名寄存器中存放的内容可以当作宏命令来执行，使用`@`来执行\n\n**清除寄存器**\n\n从技术上来说，我们没有必要来清除任何寄存器，因为你下一个使用来存储文本的寄存器会自动覆盖该寄存器中之前的内容。然而，你可以通过记录一个空的宏命令来快速地清除任何命名寄存器。比如，如果你运行`qaq`，Vim就会在寄存器\"a\"中记录一个空的宏命令。还有一种方法就是运行命令`:call setreg('a','')`,其中'a'代表的就是寄存器\"a\"。还有一种清除寄存器的方法就是使用表达式`:let @a = ''`来将寄存器的值设为空的字符串。\n\n**获取寄存器中的内容**\n\n你可以使用`:put`命令来粘贴任何寄存器的内容。比如，如果你运行命令`:put a`,Vim就会打印出寄存器\"a\"的内容，这和`\"ap`非常像，唯一的区别在于在普通模式下命令`p`在当前光标位置之后打印寄存器的内容，而`:put`新起一行来打印寄存器的内容。\n\n\n\n## 08.命令行模式\n\n  命令行模式支持使用扩展命令(ex commands)的特性(`:`开启)\n\n  举例一些常用的扩展命令\n  - `:colorscheme` 查看vim当前使用的主题\n  - `edit` 编辑文件，后面跟上文件路径就可以打开一个新的buffer来编辑文件\n\n  ### 编辑文件扩展命令\n  ```\n :edit {relative-path-to-file} \n  ```\n执行这个命令后如果不存在文件那么就会新建一个再打开，这个命令的简写是`:e`\n### 保存文件和关闭文件命令\n- `:write`简写是`:w`，用于保存文件\n- `:quit`简写是`:q`,用于关闭文件\n- `:wall`简写是`:wa`，用于保存所有文件\n- `:qall`简写是`:qa`，用于关闭所有文件\n- `:wqall`  `:wqa`，用于保存并关闭所有文件\n- `:qall!`  `:qa!`，强制退出所有文件不保存\n\n 如果你想强制执行忽略错误，那么就在前面或后面加上`!`，比如`!q`就是强制退出\n 你也可以组合两个命令，比如 `wq`就是保存后关闭\n\n### 同时删除多行\n\n文本扩展命令的形式如下：\n```\n:[range]command[options]\n\n```\n其中，我们要执行删除操作的时候，命令的形式会变成如下：\n```\n:[range]d [register]\n```\n其中寄存器是存放我们剪切的内容的\n举个例子,执行`:10,12d a`，那么10-12行的内容就会被删除，剪切的内容存放在a寄存器，可以使用`\"ap`粘贴就还原了。\n\n具体还有如下的使用方式\n- 使用数字(e.g. **`:10,12d`** 会删除行 10, 11 , 12)\n- 使用偏移值 (e.g. **`:10,+2d`** 会删除行 10, 11 , 12)\n- 使用 **`.`**表示当前行 (e.g. **`:.,+2d`** 会删除当前行和接下来的两行)\n- 使用 **`%`**表示整个文件  (e.g. **`:%d`** 会删除整个文件)\n- 使用**`0`**表示整个文件的开始  (e.g. **`:0,+10d`** 会删除前十行)\n- 使用**`$`**表示文件的结尾  (e.g. **`:.,$d`** 会删除从当前行到文件结尾的内容)\n- 当使用visual mode选中文本后再输入 **`:`**  **`:'\u003c,'\u003e`** 表示你选中的范围， 执行 **`:'\u003c,'\u003ed`** 就可以删除当前选中的内容\n\n其他也有一些有用的命令包括 `:yank`, `:put`, `:copy` and `:move`等\n\n### 重复执行命令\n\n使用 **`@:`** 可以重复执行你上一个命令，之后你可以用`@@`再次重复执行\n\n### 替换文本\n\n语法如下\n\n```\n:[range]s/{pattern}/{substitute}/{flags}\n```\n\n* range定义了执行替换的范围\n* pattern 匹配替换内容的正则表达式\n* substitute 是我们想要替换的文本\n* flags 是用于配置替换文本的选项\n\n举个例子\n\n`:s/led/gold` 会替换当前行第一个匹配到的led为gold\n\n如果你想要替换当前行所有的匹配，那么加一个g flag执行 `:s/led/gold/g`\n\n如果你想替换整个文件的所有匹配，用`%`表示整个文件的范围，执行`:%s/led/gold/g`\n\n出了g以外，还有其他flag：\n\n- `i`,忽略大小写\n- `c`，每次替换需要确认\n\n## 09.宏命令\n\n在编辑文件的时候，你会发现有时候你在反复地做一些相同的动作。如果你仅做一次，并在需要的时候调用这些动作岂不是会更好吗。通过 Vim 的宏命令，你可以将一些动作记录到 Vim 寄存器。\n\n### 基本宏命令\n\n宏命令的基本语法如下：\n\n```\n`qa`                     开始记录动作到寄存器 a\n`q` (while recording)    停止记录\n```\n\n你可以使用小写字母 （a-z）去存储宏命令。并通过如下的命令去调用：\n\n```\n`@a`    Execute macro from register a\n`@@`    Execute the last executed macros\n```\n\n假设你有如下的文本，你打算将每一行中的所有字母都变为大写。\n\n```\nhello\nvim\nmacros\nare\nawesome\n```\n\n将你的光标移动到 “hello” 栏的行首，并执行：\n\n```\nqa0gU$jq\n```\n\n上面命令的分解如下：\n\n- `qa` 开始记录一个宏定义并存储在 a 寄存器。\n- `0` 移动到行首。\n- `gU$` 将从光标到行尾的字母变为大写。\n- `j` 移动到下一行。\n- `q` 停止记录。\n\n调用 `@a` 去执行该宏命令。就像其他的宏命令一样，你也可以为该命令加一个计数。例如，你可以通过 `3@a` 去执行 `a` 命令3次。你也可以执行 `3@@` 去执行上一次执行过的宏命令3次。\n\n### 安全保护\n\n在执行遇到错误的时候，宏命令会自动停止。假如你有如下文本：\n\n```\na. chocolate donut\nb. mochi donut\nc. powdered sugar donut\nd. plain donut\n```\n\n你想将每一行的第一个词变为大写，你可以使用如下的宏命令：\n\n```\nqa0W~jq\n```\n\n上面命令的分解如下：\n\n- `qa` 开始记录一个宏定义并存储在 a 寄存器。\n- `0` 移动到行首。\n- `W` 移动到下一个单词。\n- `~` 将光标选中的单词变为大写。\n- `j` 移动到下一行。\n- `q` 停止记录。\n\n我喜欢对宏命令进行很多次的调用，所以我通常使用 `99@a` 命令去执行该宏命令99次。当 Vim 在最后一行执行 `j` 命令的时候，会发现已经没有下一行可以继续，遇到执行的错误，因此宏命令会停止。\n\n实际上，遇到错误自动停止运行是一个很好的特性。否则，Vim 会继续执行该命令99次，尽管它已经执行到最后一行了。\n\n### 命令行执行宏\n\n在正常模式执行 `@a` 并不是宏命令调用的唯一方式。你也可以在命令行执行 `：normal @a` 。`：normal` 会将任何用户添加的参数作为命令去执行。例如添加 `@a`，和在 normal mode 执行 `@a` 的效果是一样的。\n\n`:normal` 命令也支持范围参数。你可以在选择的范围内去执行宏命令。如果你只想在第二行和第三行执行宏命令，你可以执行 `：2,3 normal @a`。我会在后续的章节中介绍更多关于在命令行中执行的命令。\n\n### 在多个文件中执行宏命令\n\n假如你有很多的 `.txt` 文件，每一个文件包含不同的内容。并且你只想将包含有 “donut” 单词的行的第一个单词变为大写。那么，该如何在很多文件中特定的行执行执行变该操作呢？\n\n第一个文件:\n\n```\n# savory.txt\na. cheddar jalapeno donut\nb. mac n cheese donut\nc. fried dumpling\n```\n\n第二个文件:\n\n```\n# sweet.txt\na. chocolate donut\nb. chocolate pancake\nc. powdered sugar donut\n```\n\n第三个文件:\n\n```\n# plain.txt\na. wheat bread\nb. plain donut\n```\n\n你可以这么做:\n\n- `:args *.txt` 查找当前目录下的所有 `.txt` 文件。\n- `:argdo g/donut/normal @a` 在所有 `:args` 中包含的文件里执行一个全局命令 `g/donut/normal @a`。\n- `:argdo update` 在所有 `:args` 中包含的文件里执行 `update` 命令会将修改后的内容保存下来。\n\n如果你对全局命令 `:g/donut/normal @a` 不是很了解的话，该命令会在包含有 `/donut/` 中的所有行执行`normal @a` 命令。我会在后面的章节中介绍全局命令。\n\n### 递归执行宏命令\n\n你可以递归地执行宏命令，通过在记录宏命令时调用相同的宏来实现。假如你有如下文本，你希望改变第一个单词的大小写：\n\n```\na. chocolate donut\nb. mochi donut\nc. powdered sugar donut\nd. plain donut\n```\n\n如下命令会递归地执行:\n\n```\nqaqqa0W~j@aq\n```\n\n上面命令的分解如下：\n\n- `qaq` 记录一个空白的宏命令到 “a” 。把宏命令记录在一个空白的命令中是必须的，因为你不会想将该命令包含有任何其他的东西。\n- `qa` 开始录入宏命令到寄存器 “a”。\n- `0` 移动到行首。\n- `W` 移动到下一个单词。\n- `~` 改变光标选中的单词的大小写。\n- `j` 移动到下一行。\n- `@a` 执行宏命令 “a”。当你记录该宏命令时，`@a` 应该是空白的，因为你刚刚调用了 `qaq`。\n- `q` 停止记录。\n\n现在，让我们调用 `@a` 来查看 Vim 如何递归的调用该宏命令。\n\n宏命令是如何知道何时停止呢？当宏执行到最后一行并尝试 `j` 命令时，发现已经没有下一行了，就会停止执行。\n\n### 增添一个已知宏\n\n如果你想在一个已经录制好的宏定义中添加更多的操作，与其重新录入它，不如选择修改它。假设你不仅希望将第一个单词变为大写，也希望在每一行末尾添加一个句点。\n\n假设当前寄存器“a”中有如下的命令：\n\n```\n0W~\n```\n\n你可以这样做:\n\n```\nqAA.\u003cesc\u003eq\n```\n\n分解如下:\n\n- `qA` 开始在寄存器 “A” 中记录宏命令。\n- `A.\u003cesc\u003e` 在行的末尾（`A`）假如一个句点，并且退出插入模式。\n- `q` 停止记录宏命令。\n\n现在，当你执行 `@a` 时，它会跳到行的第一个字符（`0`），跳到下一个单词（`W`），改变光标选中的字母的大小写（`~`），移动到最后一行并且转到插入模式（`A`），写入一个句点（`.`），退出插入模式（`\u003cesc\u003e`）。\n\n### 修改一个已知宏\n\n在已存在的宏定义的末尾添加新的动作是一个很好的功能，但假如你希望在一个宏命令的中间添加动作该怎么做呢？\n\n假设，在改变第一个单词的大小写和在末尾加入一个句点之间，你想要在单词 “donut” 之前加入 “deep fried”（因为唯一比甜甜圈好的东西就是炸甜甜圈）。\n\n我会重新使用上一节使用过的文本:\n\n```\na. chocolate donut\nb. mochi donut\nc. powdered sugar donut\nd. plain donut\n```\n\n首先，让我们通过 `:put a` 调用一个已经录制好的宏命令（假设你已经有了上一节中使用过的宏命令）：\n\n```\n0W~A.^[\n```\n\n`^[` 是什么意思呢？不记得了吗，你之前执行过 `0W~A.\u003cesc\u003e`。 `^[` 是 Vim 的内部指令，表示 `\u003cesc\u003e`。通过这些指定的键值组合，Vim 知道这些是内部代码的一些替代。一些常见的内部指令具有类似的替代，例如 `\u003cesc\u003e`，`\u003cbackspace\u003e`，`\u003center\u003e`。还有一些其他的键值组合，但这不是本章的内容。\n\n回到宏命令，在改变大小写之后的键后面（`~`），让我们添加（`$`）来移动光标到行末，回退一个单词（`b`），进入插入模式（`i`），输入“deep fried ”（别忽略“fried ” 后面的这个空格），之后退出插入模式（`\u003cesc\u003e`）。\n\n完整的命令如下:\n\n```\n0W~$bideep fried \u003cesc\u003eA.^[\n```\n\n这里有一个问题，Vim 不能理解 `\u003cesc\u003e`。所以你需要将其替换为内部代码的形式。在插入模式，在按下`\u003cesc\u003e`后按下 `Ctrl-v`，Vim 会打印 `^[`。 `Ctrl-v` 是一个插入模式的操作符，可以逐字地插入一个非数字字符。你的宏命令应该如下:\n\n```\n0W~$bideep fried ^[A.^[\n```\n\n为了在寄存器“a”中添加修改后的指令，你可以通过在一个已知寄存器中添加一个新入口的方式来实现。在一行的行首，执行 `\"ay$`。这将会告诉 Vim 你打算使用寄存器 “a” （`\"a`） 来存储从当前位置到行末的文本（`y$`）。\n\n现在，但你执行 `@a` 时，你的宏命令会自动改变第一个单词的大小写，在“donut”前面添加“deep fried”，之后在行末添加“.”。\n\n另一个修改宏命令的方式是通过命令行解析。执行 `:let @a=\"`，之后执行 `Ctrl-r Ctrl-r a`，这会将寄存器“a”的命令逐字打印出来。最后，别忘记在闭合的引号（`\"`）。如果你希望在编辑命令行表达式时插入内部码来使用特定的字符，你可以使用 `Ctrl-v`。\n\n### 拷贝宏\n\n你可以很轻松的将一个寄存器的内容拷贝到另一个寄存器。例如，你可以使用 `:let @z = @a` 将寄存器“a” 中的命令拷贝到寄存器“z”。 `@a` 表示寄存器“a”中存储的内容，你现在执行 `@z`，将会执行和 `@a` 一样的指令。\n\n我发现对常用的宏命令创建冗余是很有用的。在我的工作流程中，我通常在前7个字母（a-g）上创建宏命令，并且我经常不加思索地把它们替换了。因此，如果我将很有用的宏命令移动到了字母表的末尾，就不用担心我在无意间把他们替换了。\n\n### 连续执行宏命令\n\nVim 可以连续和同时运行宏命令，假设你有如下的文本：\n\n```\nimport { FUNC1 } from \"library1\";\nimport { FUNC2 } from \"library2\";\nimport { FUNC3 } from \"library3\";\nimport { FUNC4 } from \"library4\";\nimport { FUNC5 } from \"library5\";\n```\n\n假如你希望把所有的 “FUNC” 字符变为小写，那么宏命令为如下：\n\n```\nqa0f{gui{jq\n```\n\n分解如下：\n\n- `qa` 开始记录宏命令到 “a” 寄存器。\n- `0`移动到第一行。\n- `f{` 查找第一个 “{” 字符。\n- `gui{` 把括号内的文本（`i{`）变为小写（`gu`）。\n- `j` 移动到下一行。\n- `q` 停止记录宏命令。\n\n现在，执行 `99@a` 在剩余的行修改。然而，假如在你的文本里有如下 import 语句会怎么样呢？\n\n```\nimport { FUNC1 } from \"library1\";\nimport { FUNC2 } from \"library2\";\nimport { FUNC3 } from \"library3\";\nimport foo from \"bar\";\nimport { FUNC4 } from \"library4\";\nimport { FUNC5 } from \"library5\";\n```\n\n执行 `99@a`，会只在前三行执行。而最后两行不会被执行，因为在执行第四行（包含“foo”）时会遇到错误而停止。然而这种情况你希望继续向下执行。你可以移动到包含（“FUNC4”）的一行，并重新调用该命令。但是假如你希望仅调用一次命令就完成所有操作呢？你可以并行地执行宏命令。\n\n如本章前面所说，可以使用 `:normal` 去执行宏命令，（例如： `:3,5 normal @a` 会在 3-5行执行 a 寄存器中的宏命令）。如果执行 `:1,$ normal @a`，会在所有除了包含有 “foo” 的行执行，而且它不会出错。\n\n尽管本质上来说，Vim 并不是在并行地执行宏命令，但表面上看，它是并行运行的。 Vim 会独立地在从第一行开始（`1,$`）每一行执行 `@a` 。由于 Vim 独立地在每一行执行命令，每一行都不会知道有一行（包含“foo”）会遇到执行错误。\n\n\n\n## 10.切换分屏(splits)和标签(tabs)\n\n### 分屏(splits)\n\n执行下面的命令可以实现分屏显示\n\n- **`:sp {relative-path-to-file}`** 水平分屏打开一个文件\n- **`:vsp {relative-path-to-file}`** 垂直分屏打开一个文件\n\n除了命令的方式，你也可以使用快捷键\n\n- **`\u003cCTRL-W\u003e S`** 打开一个水平分屏(上下分屏)的窗口\n- **`\u003cCTRL-W\u003e V`** 打开一个垂直分屏(所有分屏)的窗口\n\n在vscde的vim插件里面可以用 **`CTRL-P`*在分屏里打开新文件\n\n使用 **`CTRL-W`** + **`hjkl`**在分屏见移动\n\n### 标签(tabs)\n\n在分屏里面也可以打开标签\n\n使用命令打开标签的方式是\n\n-  **`:tabnew {file}`** 在新标签中打开文件\n-  **`:tabn`** (**`:tabnext`**) 切换到下一个标签\n-  **`:tabp`** (**`:tabprevious`**) 切换到前一个标签\n-  **`:tabo`** (**`:tabonly`**) 关闭所有其他标签\n\n\n\n\n\n\n\n\n\n## 11.vim-surround插件的使用\n\nVSCodeVim自带了这个插件，这个插件带来了一个新操作符s，surroundings值得是包裹单词句子的符号，比如引号，花括号还有html标签(quotes, parenthesis, braces, tags, etc…)等\n\n- **`ds`** 删除surroundings\n- **`cs`** 修改 surroundings\n- **`ys`** 添加 surroundings\n\n具体的语法如下\n\n```\nds{count}{motion}\ncs{count}{motion}\nys{count}{motion}\n```\n\n举个例子\n\n- **`ds'`** 删除包围的 **`'`** (`ds{char}`)\n- **`cs'\"`** 替换包围的 **`'`** 为 **`\"`** (`cs{old}{new}`)\n- **`ysaptli\u003e`** 包围一段话用 **`\u003cli\u003e`** 标签 (`ys{motion}{char}`)\n\n也可以在v视觉模式下选中然后 `S{desired character}`，就可以用你喜欢的符号包围了。\n\n## 12.自定义按键映射\n\n自定义映射可以把按键调整到你更舒服的位置\n\n在vscode里面的编辑步骤如下\n\n首先找到设置\n\n1. 打开命令面板 **`CMD-SHIFT-P`** 或者 **`CTRL-SHIFT-P`**\n2. 输入preferences（或者在菜单栏也可以打开）\n3. 选择 Open User Settings Options\n4. 输入  **`vim`**\n\n可以 编辑三种模式的自定义映射：\n\n- *Normal Mode Key Bindings Non Recursive* for normal mode\n- *Visual Mode Key Bindings Non Recursive* for visual mode\n- *Insert Mode Key Bindings Non Recursive* for insert mode\n\n举个例子，自定义normal模式的映射\n\n```json\n{\n  \"vim.insertModeKeyBindingsNonRecursive\": [\n    {\n      \"before\": [\"j\", \"k\"],\n      \"after\": [\"\u003cESC\u003e\"]\n    }\n  ],\n}\n```\n\n- **before**  就是你输入的命令\n- **after** 就是你映射的值，当你输入before里的值后就会执行after中映射的键\n\n在这个例子里，你可以在插入模式里把j和k当作ESC使用，不过这个设置就不是很实用，因为在插入模式里面j和k的输入需求也不少\n\n### 关于创建自定义映射的指导方针\n\n自定义映射比较灵活自由，但是不好的设置可能会给自己带来麻烦。\n\n一般来说，遵循以下3个原则会比较好：\n\n- 自定义映射用leader key打头来触发，一般是反斜杠`\\`，这样就不会和已有的键位发生冲突了\n- 如果你的工作流程中有经常使用的按键，那么映射替换vim默认的按键也是可以的。\n- 尽量使用更容易记忆的映射，比如vim的 c表示change，d表示delete\n\n### 自定义前导键(leader key)\n\n你也可以把leader key改成比反斜杠更容易输入的键。\n\n比如说你想把leader key改成空格键\n\n```json\n{\n\"vim.leader\": \"\u003cSpace\u003e\",\n}\n```\n\n### 下面比较好的映射的例子\n\n#### 让正常模式的上下移动更快\n\n这个改动遵循了一个vim的一个理念，就是大写字母命令会比小写版本的更强。\n\n所以大写的J会比小写的移动更快。\n\n但是我们在这里覆盖了一个比较有用的vim默认按键J，这个按键的作用是合并当前行和下一行。但是这个键的使用频率其实不高\n\nK键是用作关键词搜索，不过在VSCodeVim中还没有实现这个功能\n\n```json\n{\n  \"vim.normalModeKeyBindingsNonRecursive\": [\n    {\n      \"before\": [\"J\"],\n      \"after\": [\"5\", \"j\"]\n    },\n    {\n      \"before\": [\"K\"],\n      \"after\": [\"5\", \"k\"]\n    },\n  ]\n}\n```\n\n为了保持合并行功能，我们把它加到leader key里\n\n```json\n{\n  \"vim.normalModeKeyBindingsNonRecursive\": [\n    {\n      \"before\": [\"\u003cLeader\u003e\", \"j\"],\n      \"after\": [\"J\"]\n    },\n  ]\n}\n```\n\n#### 在分屏间快速切换\n\n```json\n{\n  \"vim.normalModeKeyBindingsNonRecursive\": [\n    {\n      \"before\": [\"\u003cC-h\u003e\"],\n      \"after\": [\"\u003cC-w\u003e\", \"h\"]\n    },\n    {\n      \"before\": [\"\u003cC-j\u003e\"],\n      \"after\": [\"\u003cC-w\u003e\", \"j\"]\n    },\n    {\n      \"before\": [\"\u003cC-k\u003e\"],\n      \"after\": [\"\u003cC-w\u003e\", \"k\"]\n    },\n    {\n      \"before\": [\"\u003cC-l\u003e\"],\n      \"after\": [\"\u003cC-w\u003e\", \"l\"]\n    }]\n}\n```\n\n#### 处理标签更方便\n\n因为VSCodeVim中处理标签唯一的方式是命令模式输入命令，所以你可以用按键映射来代替这一点\n\ncommands键就是用来替换命令模式的扩展命令的\n\n```json\n{\n  \"vim.normalModeKeyBindingsNonRecursive\": [\n    {\n      \"before\": [\"\u003cLeader\u003e\", \"t\", \"t\"],\n      \"commands\": [\":tabnew\"]\n    },\n    {\n      \"before\": [\"\u003cLeader\u003e\", \"t\", \"n\"],\n      \"commands\": [\":tabnext\"]\n    },\n    {\n      \"before\": [\"\u003cLeader\u003e\", \"t\", \"p\"],\n      \"commands\": [\":tabprev\"]\n    },\n    {\n      \"before\": [\"\u003cLeader\u003e\", \"t\", \"o\"],\n      \"commands\": [\":tabo\"]\n    }]\n}\n```\n\n#### 清除文本高亮\n\n当你使用搜索命令的时候（`/`和`?`），匹配项会被高亮，为了清除高亮你需要扩展命令`:noh`(no higlighting)\n\n这个任务很常见，我们可以创建下面的按键映射\n\n```json\n{\n  \"vim.normalModeKeyBindingsNonRecursive\": [\n    {\n      \"before\": [\"\u003cLeader\u003e\", \"/\"],\n      \"commands\": [\":noh\"]\n    }]\n}\n```\n\n这里的助记法是，斜杠是被用来搜索的，所以前导键加斜杠就是和搜索最相关的撤销高亮\n\n### 使用自定义映射影响vscode的action\n\n下面的例子就是用 leader+w来触发保存文件\n\n\n\n```json\n{\n  \"vim.normalModeKeyBindingsNonRecursive\": [\n    {\n      \"before\": [\"leader\", \"w\"],\n      \"commands\": [\n          \"workbench.action.files.save\",\n      ]\n    }\n}\n```\n\n找到设置**Preferences: Open Keyboard Shortcuts**，你就可以看到vscode里面命令的全名，然后你就可以替换你想替换的命令了。\n\n\n\n下面是例子\n\n`CTRL-SHIFT-P`是打开命令面板，我们替换成前导键+p\n\n`CTRL-T`  是**Go To Symbol in Workspace**，我们替换成前导键+t\n\n```json\n{\n  \"vim.normalModeKeyBindingsNonRecursive\": [\n    {\n      \"before\": [\"\u003cLeader\u003e\", \"p\"],\n      \"commands\": [\n          \"workbench.action.showCommands\",\n      ]\n    },\n    {\n      \"before\": [\"\u003cLeader\u003e\", \"t\"],\n      \"commands\": [\n          \"workbench.action.gotoSymbol\",\n      ]\n    }\n  ]\n}\n```\n\n## 13.使用vim插件更快的移动\n\n[Vim-sneak](https://github.com/justinmk/vim-sneak) 和[vim-EasyMotion](https://github.com/easymotion/vim-easymotion) 是能够帮助你在vim里快速移动的插件\n\nVSCodeVim 内置了这两个插件，不过需要你在设置里开启才能使用。\n\n## 14.增强vscode的文件浏览器\n\n **`\u003cCTRL-W\u003e h`**  切换到vscode的文件浏览器\n\n- **`k`** 和 **`j`** 在文件浏览器的条目中上下移动\n- Expand directories with\n-  **`l`** (right) 用于展开文件夹\n-  **`h`** (left) 用于折叠文件夹\n- 使用 **`l`** (right)打开光标下的文件\n\n记住vscode的其他快捷键会很有用\n\n- **Go To File** with `CMD-P` in Mac (or `CTRL-P` in Windows/Linux)\n- **Go To Symbol in File** with `CMD-SHIFT-O` in Mac (or `CTRL-SHIFT-O` in Windows/Linux)\n- **Go To Symbol in Workspace** with with `CMD-T` in Mac (or `CTRL-T` in Windows/Linux)\n\n你在弹出的面板里面也可以用k和j或者tab选择，enter进入"}},"__N_SSG":true},"page":"/posts/[id]","query":{"id":"vim使用指南"},"buildId":"ubgcf7xen3-XUfsSthoK7","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
