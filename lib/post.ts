@@ -111,8 +111,8 @@ export async function getAllPostIds() {
       params: {
         id: fileInfo.fileName.replace(/\.md$/, ''),
       },
-    }
-  })
+    };
+  });
 }
 
 export async function getPostData(id: string): Promise<PostData> {

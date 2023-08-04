@@ -133,18 +133,18 @@ export default function Home({
                   ))}
                 </div>
               </div>
-              <Link href={'/posts/' + id}>
-                <a className="cursor-pointer inline-block pt-1">
-                  <div className="text-base font-sans font-semibold">{id}</div>
-                  <div className="text-xs text-gray-400 font-sans pt-1">
-                    {excerpt}...
-                  </div>
-                </a>
+              <Link href={'/posts/' + id} className="cursor-pointer inline-block pt-1">
+
+                <div className="text-base font-sans font-semibold">{id}</div>
+                <div className="text-xs text-gray-400 font-sans pt-1">
+                  {excerpt}...
+                </div>
+
               </Link>
             </li>
           ))}
         </ul>
       </div>
     </Layout>
-  )
+  );
 }

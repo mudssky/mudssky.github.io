@@ -15,7 +15,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.3",
-    "codemirror": "^6.0.1",
+    "codemirror": "^5.65.14",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.8.0",
     "lodash": "^4.17.21",

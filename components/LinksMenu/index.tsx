@@ -32,11 +32,11 @@ export default function LinksMenu(props: Props) {
         {menuList.map((item) => {
           return (
             <MenuItem key={item.link}>
-              <Link href={item.link}>{item.title}</Link>
+              <Link href={item.link} legacyBehavior>{item.title}</Link>
             </MenuItem>
-          )
+          );
         })}
       </Menu>
     </div>
-  )
+  );
 }

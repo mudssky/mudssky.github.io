@@ -15,7 +15,7 @@ export default function Header(props: any) {
           onClick={props.handleLogoClick}
         >
           <Link href="/">
-            <a>Blog</a>
+            Blog
           </Link>
         </div>
         <div className="flex w-3/4 justify-end space-x-6">
@@ -31,7 +31,7 @@ export default function Header(props: any) {
           ></LinksMenu>
           <div className="flex items-center text-2xl font-mono  border-b-2 border-opacity-0 border-green-500 hover:border-opacity-100">
             <Link href="/posts/test">
-              <a>test</a>
+              test
             </Link>
           </div>
           <a
@@ -47,5 +47,5 @@ export default function Header(props: any) {
         </div>
       </div>
     </div>
-  )
+  );
 }
