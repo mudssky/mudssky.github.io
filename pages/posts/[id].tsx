@@ -38,9 +38,9 @@ export default function Post(props: Props) {
           <span>字数: {postData.content.length}</span>
         </div>
         <ReactMarkdown
-          linkTarget="_blank"
+          // linkTarget="_blank"
           // 转换图片链接到根目录
-          transformImageUri={(src, alt, title) => {
+          urlTransform={(src, alt, title) => {
             if (src.startsWith('assets')) {
               return '/' + src
             }

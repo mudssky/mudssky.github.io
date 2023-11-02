@@ -1,17 +1,26 @@
 import { useEffect, useRef } from 'react'
-import CodeMirror from 'codemirror'
+import { EditorView, keymap } from '@codemirror/view'
+import { defaultKeymap } from '@codemirror/commands'
+import { EditorState } from '@codemirror/state'
 interface Props {
   value?: string //文本内容
 }
 export default function useHooks() {
-  const codemirrorEditorDom = useRef<HTMLDivElement>(null)
+  const codemirrorEditorDom = useRef<any>()
   useEffect(() => {
-    const myCodeMirror = CodeMirror(document.body, {
-      value: 'function myScript(){return 100;}\n',
-      mode: 'javascript',
-      lineNumbers: true,
+    const startState = EditorState.create({
+      doc: 'Hello World',
+      extensions: [keymap.of(defaultKeymap)],
     })
-    return () => {}
+
+    const view = new EditorView({
+      state: startState,
+      parent: codemirrorEditorDom.current,
+    })
+
+    return () => {
+      view.destroy()
+    }
   }, [])
 
   return { codemirrorEditorDom }
