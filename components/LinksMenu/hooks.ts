@@ -1,4 +1,4 @@
-import { useReducer, useRef } from 'react'
+import { useReducer, useRef, useState } from 'react'
 
 interface Action {
   type: string
@@ -43,16 +43,20 @@ export default function useHook(props: Props) {
   const [state, dispatch] = useReducer(reducer, initialState)
   const { isMenuOpen } = state
   const buttonDom = useRef<any>(null)
-  const handleMenuOpen = async () => {
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
+  const handleMenuOpen = async (e: React.MouseEvent<HTMLButtonElement>) => {
     console.log('open menu', menuTitle)
+    setAnchorEl(e.currentTarget)
     dispatch(setIsMenuOpen(true))
   }
   const handleMenuClose = async () => {
     console.log('close menu', menuTitle)
+    setAnchorEl(null)
     dispatch(setIsMenuOpen(false))
   }
   return {
     buttonDom,
+    anchorEl,
     isMenuOpen,
     menuList,
     menuTitle,
