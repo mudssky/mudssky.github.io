@@ -25,8 +25,10 @@ export default function LinksMenu(props: Props) {
         anchorEl={buttonDom.current}
         open={isMenuOpen}
         onClose={handleMenuClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
+        slotProps={{
+          list: {
+            'aria-labelledby': 'basic-button',
+          },
         }}
       >
         {menuList.map((item) => {
