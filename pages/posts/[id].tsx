@@ -37,6 +37,7 @@ export default function Post(props: Props) {
           </span>
           <span>字数: {postData.content.length}</span>
         </div>
+        <div className="m-auto prose sm:prose-sm md:prose-base  2xl:prose-xl prose-indigo">
         <ReactMarkdown
           // linkTarget="_blank"
           // 转换图片链接到根目录
@@ -47,10 +48,10 @@ export default function Post(props: Props) {
             return src
           }}
           remarkPlugins={[gfm]}
-          className="m-auto prose sm:prose-sm md:prose-base  2xl:prose-xl prose-indigo"
         >
           {postData.content}
         </ReactMarkdown>
+        </div>
       </div>
       {/* <script
         src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"

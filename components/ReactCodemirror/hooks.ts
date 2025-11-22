@@ -6,7 +6,7 @@ interface Props {
   value?: string //文本内容
 }
 export default function useHooks() {
-  const codemirrorEditorDom = useRef<any>()
+  const codemirrorEditorDom = useRef<any>(null)
   useEffect(() => {
     const startState = EditorState.create({
       doc: 'Hello World',
