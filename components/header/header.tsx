@@ -14,9 +14,7 @@ export default function Header(props: any) {
           className="w-16 flex items-center justify-center text-2xl text-blue-500"
           onClick={props.handleLogoClick}
         >
-          <Link href="/">
-            Blog
-          </Link>
+          <Link href="/">Blog</Link>
         </div>
         <div className="flex w-3/4 justify-end space-x-6">
           <LinksMenu
@@ -26,17 +24,15 @@ export default function Header(props: any) {
                 title: 'txtformat',
                 link: '/tools/txtformat',
               },
-              {
-                title: '电费计算器',
-                link: '/tools/electricCostCalc',
-              },
+              // {
+              //   title: '电费计算器',
+              //   link: '/tools/electricCostCalc',
+              // },
             ]}
             menuTitle={'工具箱'}
           ></LinksMenu>
           <div className="flex items-center text-2xl font-mono  border-b-2 border-opacity-0 border-green-500 hover:border-opacity-100">
-            <Link href="/posts/test">
-              test
-            </Link>
+            <Link href="/posts/test">test</Link>
           </div>
           <a
             href="https://github.com/mudssky"
@@ -51,5 +47,5 @@ export default function Header(props: any) {
         </div>
       </div>
     </div>
-  );
+  )
 }
