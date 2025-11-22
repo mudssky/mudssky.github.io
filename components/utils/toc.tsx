@@ -35,7 +35,9 @@ export default function Toc() {
         })
       }
     )
-    setHeadList(currentTitleList)
+    setTimeout(() => {
+      setHeadList(currentTitleList)
+    }, 0)
 
     return () => {
       // cleanup
@@ -76,7 +78,9 @@ export default function Toc() {
       tocEl.current!.style.top = tocPosition.top + 'px'
     }
     if (isMobile()) {
-      setHideToc(true)
+      setTimeout(() => {
+        setHideToc(true)
+      }, 0)
     }
     ;``
     //   组件生成时，从localStorage获取过去使用的位置

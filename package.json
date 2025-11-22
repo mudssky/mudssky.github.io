@@ -8,7 +8,10 @@
     "build": "next build",
     "export": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "typecheck:fast": "tsgo --noEmit",
+    "qa": "pnpm typecheck:fast && pnpm lint"
   },
   "dependencies": {
     "@codemirror/commands": "^6.3.0",
@@ -37,6 +40,7 @@
     "@types/node": "24.10.1",
     "@types/react": "19.2.6",
     "@types/react-dom": "19.2.3",
+    "@typescript/native-preview": "7.0.0-dev.20251122.1",
     "autoprefixer": "^10.4.16",
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.0.3",
@@ -47,4 +51,4 @@
     "typescript": "5.9.3"
   },
   "packageManager": "pnpm@10.23.0+sha512.21c4e5698002ade97e4efe8b8b4a89a8de3c85a37919f957e7a0f30f38fbc5bbdd05980ffe29179b2fb6e6e691242e098d945d1601772cad0fef5fb6411e2a4b"
-  }
+}

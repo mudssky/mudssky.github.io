@@ -5,6 +5,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 export default function LinksMenu(props: Props) {
   const {
     buttonDom,
+    anchorEl,
     isMenuOpen,
     menuList,
     menuTitle,
@@ -22,7 +23,7 @@ export default function LinksMenu(props: Props) {
         {menuTitle}
       </Button>
       <Menu
-        anchorEl={buttonDom.current}
+        anchorEl={anchorEl}
         open={isMenuOpen}
         onClose={handleMenuClose}
         slotProps={{
